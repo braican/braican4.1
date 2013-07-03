@@ -15,15 +15,15 @@
 
 <link href='http://fonts.googleapis.com/css?family=Fredoka+One|Carrois+Gothic' rel='stylesheet' type='text/css'>
 
-<link rel="stylesheet" type="text/css" href="../css/master.css" />
-<link rel="stylesheet" type="text/css" href="wp-content/themes/new/style.css" />
-<link rel="stylesheet" type="text/css" href="wp-content/plugins/sexybookmarks/css/style.css" />
-<script src="../js/jquery-tools.js" type="text/javascript"></script>
-<script src="../js/braican.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="../../css/master.css" />
+<link rel="stylesheet" type="text/css" href="/blog/wp-content/themes/new/style.css" />
+<link rel="stylesheet" type="text/css" href="/blog/wp-content/plugins/sexybookmarks/css/style.css" />
+<script src="../../js/jquery-tools.js" type="text/javascript"></script>
+<script src="../../js/braican.js" type="text/javascript"></script>
 
 <style type="text/css" media="all">
 #blog-bg {
-	background: url(../assets/background-pics/blog<?php echo rand(1,4); ?>.jpg) no-repeat top left;
+	background: url(../../assets/background-pics/blog<?php echo rand(1,4); ?>.jpg) no-repeat top left;
 	height:300px;
 	margin-left:-2px;
 	-webkit-background-size: cover;
@@ -58,12 +58,12 @@
 <div id="blog-bg">
   <div id="header-container">
     <div id="header">
-    	<a href="../index.php"><img class="logo" src="../assets/logo/logo.png" border="0" /></a>
+    	<a href="../index.php"><img class="logo" src="../../assets/logo/logo.png" border="0" /></a>
       	<ul id="navigation">
-        	<li><a href="../about.html">More Info</a></li>
-	        <li><a href="../portfolio.html">The Work</a></li>
+        	<li><a href="../about.php">More Info</a></li>
+	        <li><a href="../portfolio.php">The Work</a></li>
 	        <li><a href="blog/" class="active">My Thoughts</a></li>
-	        <li><a href="../contact.html">Let's Talk</a></li>
+	        <li><a href="../contact.php">Let's Talk</a></li>
       	</ul>
       	<div class="clear"></div>
     </div>
