@@ -51,12 +51,6 @@ function randofact() {
         <p>Don't be shy. <a href="contact.php">Get in touch</a>.</p>
       </div>
     </div>
-    <div class="right socialbox">
-      <div id="twitter-bird">
-        <h4>I Tweet things <a class="twitter_name" href="http://www.twitter.com/braican" target="_blank"><strong style="text-decoration: underline;">@braican:</strong></a></h4>
-      </div>
-      <div class="tweet"></div>
-    </div>
     <div class="clear" style="height:40px;"></div>
     
     <!-- THE BLOG -->
@@ -113,16 +107,6 @@ $(window).load(function() {
 	});
 });
 </script>
-
-<script type="text/javascript">
-$(".tweet").tweet({
-    	username: "braican",
-        count: 1,
-        loading_text: "loading tweets..."
-	});
-
-</script>
-
 
 
 </body>
