@@ -1,0 +1,167 @@
+/** Australia CSS **/
+
+body{
+	margin:0;
+	padding:5px;
+	background: url('http://subtlepatterns.com/patterns/redox_01.png');
+}
+
+/** globals **/
+p, li{
+	font-size:0.8em;
+	line-height:1.6em;
+}
+
+li{
+	padding:4px 0;
+}
+
+a{
+	color:#000;
+}
+a:hover{
+	color:#00c;
+	text-decoration:none;
+}
+
+.container{
+	width:40%;
+	max-width:800px;
+	min-width:320px;
+	padding-left:250px;
+	background:url('aussie.png') no-repeat;
+}
+
+/** header **/
+.header{
+	font-family: 'Alfa Slab One', sans-serif;
+	font-size:3em;
+	line-height:1.6em;
+	border-bottom:10px solid #ddd;
+	padding-bottom:14px;
+	margin-bottom:82px;
+}
+
+
+/** the post **/
+.post{
+	font-family:Helvetica, Arial, sans-serif;
+	border:2px solid #ccc;
+	border-radius:45px;
+	padding:20px;
+	margin-bottom:20px;
+}
+.blog-title{
+	margin:0;
+	padding:10px;
+	border-radius:40px;
+	background-color:#ddd;
+	text-align:center;
+}
+
+.date {
+	position:relative; 
+	float:right;
+	right:-96px;
+	width:60px;
+	background-color:#ccc;
+	text-align:center;
+	padding:7px;
+}
+.date p{
+	margin:0;
+	padding:0;
+	line-height:1.2em;
+	color:#fff;
+	font-weight:bold;
+}
+.date .day{
+	font-size:2em;
+}
+
+/** comments **/
+.showcomments{
+	text-decoration:underline;
+	cursor:pointer;
+	display:inline-block;
+}
+.showcomments:hover{
+	color:#00c;
+	text-decoration:none;
+}
+
+#submit{
+	background-color:#ddd;
+	border:2px solid #999;
+	border-radius: 6px;
+	padding:10px;
+	font-weight:bold;
+	color:#000;
+	text-transform:uppercase;
+	cursor:pointer;
+}
+
+input[name="url"],
+label[for="url"]{
+	display:none;
+}
+#comment {
+	width:100%;
+}
+h3#comments{
+	border-bottom:1px solid #ddd;
+	padding-bottom:5px;
+}
+.commentlist{
+	list-style:none;
+	padding:0;
+}
+.comment-body{
+	padding:8px 0;
+	border-bottom:1px solid #ddd;
+}
+
+span.says {
+	display:none;
+}
+cite{
+	font-style:normal;
+	font-size: 0.8em;
+	line-height: 1.6em;
+}
+.comment-author{
+	display:inline-block;
+	font-weight:bold;
+	background-color:#ccc;
+	border-radius:10px;
+	padding:6px;
+}
+.comment-author img{
+	display:none;
+}
+.commentmetadata{
+	font-size:0.8em;
+	line-height:1.6em;
+	float:right;
+	display:inline-block;
+}
+.commentmetadata a{
+	text-decoration:none;
+}
+.commentmetadata a:hover{
+	text-decoration:none;
+	color:black;
+	cursor:default;
+}
+
+/** footer **/
+.footer p{
+	color:#999;
+	font-family:Helvetica, Arial, sans-serif;
+	font-size:0.7em;
+	padding:20px;
+}
+.footer a{
+	color:#999;
+	font-family:Helvetica, Arial, sans-serif;
+}

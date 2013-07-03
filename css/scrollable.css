@@ -1,0 +1,65 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+/* root element for the scrollable.
+	when scrolling occurs this element stays still.
+*/
+.scrollable {
+	position:relative;
+	width: 100%;
+	height:1000px;
+	overflow:hidden;
+	z-index:4;
+	/*margin-top:-20px;*/
+}
+
+/* root element for scrollable items. Must be absolutely positioned
+	 and it should have a width large enough for both divs.
+*/
+.scrollable .items {
+	width:20000px;
+	position:absolute;
+	clear:both;
+}
+
+.scrollable .items div.clients, .scrollable .items div.personal {
+	float:left;
+	width:800px;
+}
+
+
+/* ======================
+				SCROLLABLE ARROW
+========================*/				
+
+div.scrollable-arrow {
+	position:relative;
+	width:18px;
+	margin:-40px 44% 0px auto;
+	height:38px;
+	overflow:visible;
+	z-index:22;
+}
+
+/* root element for scrollable items. Must be absolutely positioned
+	 and it should have a width large enough for both divs.
+*/
+.scrollable-arrow .items {
+	width:380px;
+	position:relative;
+	clear:both;
+	overflow:hidden;
+}
+
+.scrollable-arrow .items div {
+	float:left;
+	width:170px;
+}
+
+.scrollable-arrow .items div.arrow-slider {
+	margin-left:-120px;
+	z-index:22;
+}
+
+

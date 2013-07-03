@@ -1,0 +1,2 @@
+[28-Jun-2013 09:04:06] PHP Fatal error:  require() [<a href='function.require'>function.require</a>]: Failed opening required '../blog/wp-blog-header.php' (include_path='.:/usr/lib64/php:/usr/lib/php:/usr/share/pear') in /home4/braican1/public_html/australia/index.php on line 37
+[28-Jun-2013 09:04:16] PHP Fatal error:  require() [<a href='function.require'>function.require</a>]: Failed opening required '../blog/wp-blog-header.php' (include_path='.:/usr/lib64/php:/usr/lib/php:/usr/share/pear') in /home4/braican1/public_html/australia/index.php on line 37

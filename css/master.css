@@ -1,0 +1,963 @@
+/* CSS Document */
+
+body, html { margin:0; width: 100%; height: 100%; }
+
+#index-bg {
+	background: url('../assets/background-pics/road.jpg') no-repeat center center fixed;
+	padding-bottom: 10px;
+	height:700px;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+	background-size:cover;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../assets/background-pics/road.jpg', sizingMethod='scale');
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../assets/background-pics/road.jpg', sizingMethod='scale')";
+	min-width:1000px;
+}
+
+#portfolio-bg {
+	background:url('../assets/background-pics/portfolio.jpg') no-repeat left bottom;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+	background-size:cover;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../assets/background-pics/portfolio.jpg', sizingMethod='scale');
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../assets/background-pics/portfolio.jpg', sizingMethod='scale')";
+	height: 300px;
+	min-width:1000px;
+}
+
+#contact-bg {
+	background:url('../assets/background-pics/about.jpg') no-repeat right top;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+	background-size:cover;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../assets/background-pics/about.jpg', sizingMethod='scale');
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../assets/background-pics/about.jpg', sizingMethod='scale')";
+	height: 300px;
+	min-width:1000px;
+}
+
+#error-bg {
+	background:url('../assets/background-pics/flying.jpg') no-repeat center bottom;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+	background-size:cover;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../assets/background-pics/flying.jpg', sizingMethod='scale');
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../assets/background-pics/flying.jpg', sizingMethod='scale')";
+	height: 300px;
+	min-width:1000px;
+}
+
+#about-bg {
+	background:url('../assets/background-pics/nick2.jpg') no-repeat center top;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+	background-size:cover;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../assets/background-pics/nick2.jpg', sizingMethod='scale');
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../assets/background-pics/nick2.jpg', sizingMethod='scale')";
+	height: 300px;
+	min-width:1000px;
+}
+
+/* == BASIC STUFF ==*/
+.clear { clear:both; }
+h1.bar {
+	float:left;
+	background-color:#000;
+	color:#FFF;
+	padding:20px 30px 20px 2500px;
+	margin:0 0 0 -2500px;
+	font-weight:100;
+	font-family:"Fredoka One", Century Gothic, Arial, Helvetica, sans-serif;
+}
+h4 {
+	margin: 20px 0 4px 0;
+	color: #c00;
+}
+/* =============================== HEADER ====================*/	
+
+#header-container {
+	width:100%;
+	background: url(../assets/bg-top.png) repeat-x;
+}
+#header {
+	width:1000px;
+	border-top:5px solid #000;
+	margin:0 auto;
+}
+#header img.logo { float:left; }
+#navigation {
+	margin:0;
+	list-style:none;
+	float:right;
+	font-family:"Fredoka One", Century Gothic, Arial, Helvetica, sans-serif;
+	text-transform:uppercase;
+	font-size:20px;
+	position:relative;
+	top:-5px;
+}
+#navigation li {
+	display:inline;
+	float:left;
+	margin:0 0 0 40px;
+}
+#navigation li a {
+	margin:0;
+	padding:7px 0 0 0;
+	float:left;
+	color:#000;
+	text-decoration:none;
+	border-top:5px solid #000;
+}
+#navigation li a:hover, #navigation li a.active {border-top:5px solid #F00;}
+#navigation li a.active {padding:12px 0 0 0;}
+
+/* ========================================================= MAIN CONTENT == */
+		
+#content-container {
+	width:100%;
+	background-color:#fff;
+	z-index:20;
+	position:relative;
+	min-width:1000px;
+	border-top:4px solid black;
+	padding-bottom:20px;
+}
+#content {
+	width:800px;
+	margin:0 auto 0 auto;
+	font-family:"Carrois Gothic", Century Gothic, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+}
+#content p {/* margin: 0;*/ line-height:1.5em; }
+#content p a { color:#c00;}
+#content p a:hover {
+	background-color:#c00;
+	color:#fff;
+	text-decoration: none;
+}
+#content-container .left {
+	float:left;
+	width:500px;
+	text-align:left;
+}
+#content-container .right {
+	float:right;
+	width:250px;
+}
+#content-container .blog {
+	margin:0;
+	padding:10px 0;
+}
+/* ================================================================= SOCIAL STUFF ==*/
+
+.twitter_name {
+	color:#000;
+	text-decoration:none;
+}
+.twitter_name:hover {
+	color:#fff;
+	background-color:#4ac7f3;
+}
+.socialbox #twitter-bird {
+	height:40px;
+	background:url(../assets/twitter-bird.png) no-repeat right top;
+	z-index:10;
+	width:230px;
+	padding-top:7px;
+}
+.socialbox #twitter-bird h4 {
+	font-weight:normal;
+	margin:0;
+}
+.socialbox .tweet {
+	z-index:7;
+	margin-top:-10px;
+	clear:both;
+}
+.tweet div {
+	list-style:none;
+	font-size:14px;
+	line-height:1.2em;
+	margin:0;
+	padding-left:10px;
+	border-left:4px solid #000;
+}
+/* ================================== INDEX PAGE BLOG == */
+
+.top-border {padding-top:20px;}
+.top-border h2 {
+	text-align: center;
+	border-top:2px solid #ccc;
+	padding:20px 0;
+	font-family:"Fredoka One", Century Gothic, Arial, Helvetica, sans-serif;
+	text-transform:uppercase;
+}
+.section-header a {
+	color: #000;
+	opacity:0.6;
+	text-decoration: none;
+}
+.section-header a:hover { opacity:1 }
+.blog { top:-28px; }
+.blog p { font-size:12px; }
+.blog .left h2 {
+	margin: 0;
+	border-top:0 !important;
+	text-align:left !important;
+}
+.blog .entry { margin-top:25px; }
+
+h2.blog-title a {
+	color:#000;
+	text-decoration: none;
+}
+h2.blog-title a:hover {
+	background-color: #c00;
+	color:#fff;
+}
+.blog .blog-right {
+	width:236px;
+	padding-left: 10px;
+	float:right;
+	border-left: 4px solid #000;
+}
+.blog-right h6 { margin: 32px 0; }
+.blog-right h6.keep-reading a {
+	color: white;
+	font-weight: 100;
+	font-size: 18px;
+	background-color: #000;
+	text-decoration: none;
+	padding: 10px;
+	position: relative;
+	left:-10px;
+}
+.blog-right h6.keep-reading a:hover {
+	background-color: #c00;
+	/*padding: 10px 16px;*/
+	left:-10px;
+}
+/* ============================================================= ABOUT PAGE ===*/	
+
+.talents {
+	list-style: none;
+	padding: 0;
+	font-size: 14px;
+	float: left;
+	width:400px;
+	margin: 0 0 20px 0;
+}
+.talents li { margin: 10px 0; }
+.talents img {
+	float: left;
+	padding-right:6px;
+}
+
+.stars {
+	width:100px;
+	float:right;
+	list-style: none;
+	padding: 0 6px;
+	
+}
+.aboutpage-socialstuff { padding: 18px 0; }
+.aboutpage-socialstuff a {
+	float: left;
+	height:32px;
+	width: 32px;
+	margin: 0;
+	background: url("../assets/socialicons.png");
+}
+#resume {
+	background-position: 0 -192px;
+	width:128px;
+}
+#resume:hover { background-position: 0 -160px; }
+
+/* ============================================	PORTFOLIO PAGE	====================*/	
+
+.personal, .clients { margin-top:50px; }
+#personal-title, #clients-title { top:-18px; }
+#clients-title {padding-bottom: 25px;}
+
+.personal .clear h2 {
+	width: 600px;
+	padding: 8px 0;
+}
+
+.personal .clear {padding-top: 40px;}
+
+
+/* ======= JQUERY BOXES	==*/
+
+/* -- CLIENTS -- */
+#dictata-perceptum { background: url(../portfolio/dictata-perceptum.jpg) no-repeat left top; }
+#boston-blues { background: url(../portfolio/bostonblues.png) no-repeat left top; }
+#nu-clubbaseball { background:url(../portfolio/nu-clubbaseball.jpg) no-repeat left top; }
+#energynu { background: url(../portfolio/energy-nu.png) no-repeat left top; }
+#joshlifton { background: url(../portfolio/lifton.png) no-repeat left top; }
+
+/* -- PERSONAL -- */
+#braican { background: url(../portfolio/braican.jpg) no-repeat left top; }
+#can-opener { background:url(../portfolio/canopener.png) no-repeat left top; }
+#second-nature {background:url(../portfolio/second-nature.png) no-repeat left top;}
+#renner-nazis{ background:url(../portfolio/type-book.png) no-repeat left top;}
+#dvd-series { background:url(../portfolio/dvd-covers.jpg); }
+#zambonis { background:url(../portfolio/zambonis.png);}
+#gfln { background: url(../portfolio/tgfln.jpg) no-repeat left top; }
+#whole-story { background:url(../portfolio/whole-story.jpg); }
+#beginnings { background:url(../portfolio/beginnings.jpg); }
+#mascotlovin { background:url(../portfolio/mascotlovin.jpg) no-repeat left top; }
+#green-innovations { background:url(../portfolio/green-innovations.png) no-repeat left top; }
+.img-margin { margin-right: 42px; }
+.boxgrid {
+	float: left;
+	overflow: hidden;
+	position: relative;
+	width:375px;
+	height: 225px;
+	border: 2px silver solid;
+	margin-bottom:20px;
+}
+.hoverable {
+	color:#fff;
+	text-decoration:none;
+}
+.hoverable:hover {
+	border:2px #222 solid !important;
+	cursor:pointer !important;
+}
+
+.boxcaption {
+	float: left;
+	position: absolute;
+	background: #000;
+	width: 100%;
+	top:225px;
+	color: #fff;
+	font-size:16px;
+	padding:10px 10px 20px 10px;
+	border:0;
+	opacity: 0.8;
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);  /* for IE 5-7 */
+	-MS-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; /* for IE 8 */
+}
+.boxcaption a { color:#fff !important; }
+.full-cover { height:225px !important; }
+.personal .boxcaption p { width:350px; }
+.boxcaption p {
+	margin:2px 0;
+	padding: 0 4px;
+}
+.boxcaption p.smaller { font-size: 13px; }
+.caption .boxcaption {
+	top: 180px;
+	left: 0;
+}
+
+.box-info {	width:355px;}
+
+/* ==== HIDDEN PORTFOLIO NAV	=====  */
+
+.fixed { position:fixed !important; }
+
+#fixit {
+	position: absolute;
+	z-index:220;
+	top:100px;
+	width: 160px;
+	font-family:"Carrois Gothic", Century Gothic, Arial, Helvetica, sans-serif;
+	padding: 0px 6px 6px 6px;
+	left:-172px;
+}
+
+#fixit h4 {
+	margin: 4px 0px;
+	padding: 0px;
+	color: #fff;
+}
+
+#fixit .search-form {
+	padding-top: 10px;
+	margin-bottom: 20px;
+}
+
+#fixit ul{
+	margin: 0px;
+	padding: 10px 0;
+	list-style:none;
+	width:170px;
+}
+#fixit ul li { margin: .3em 0;}
+#fixit ul li a {
+	cursor: pointer;
+	text-decoration: none;
+	font-size: 12px;
+}
+
+#fixit ul li a:hover, #fixit ul li a.active {
+	margin-left:-10px;
+	padding: 3px 6px 3px 20px;
+}
+
+#fixit ul span {
+	font-size:18px;
+	font-weight:bold;
+}
+
+#fixit-tab {
+	width: 38px;
+	height: 154px;
+	position: absolute;
+	right:-38px;
+	font-family:"Fredoka One", Century Gothic, Arial, Helvetica, sans-serif;
+}
+
+.rotate {
+	-webkit-transform: rotate(90deg);	
+	-moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	transform: rotate(90deg);
+	writing-mode: tb-rl;
+	position: absolute;
+	right:-50px;
+	top:62px;
+	font-size: 18px;
+	width: 140px;
+}
+
+.portfolio-fixit {
+	background-color: #c00;
+	height:148px;
+}
+.portfolio-fixit li{ margin: .5em 0 !important;}
+.portfolio-fixit ul li a {
+	color:#fff;
+	font-size: 14px !important;
+}
+.portfolio-fixit ul li a:hover{
+	background-color: #000;
+	margin-left:-10px;
+	padding: 6px 6px 6px 20px;
+}	
+.portfolio-fixit #fixit-tab {
+	background-color:#c00;
+	color: #fff;
+}
+
+/*==================================  CASE STUDIES  ====================*/
+
+#case-study-container {
+	width: 100%;
+	min-width: 1078px;
+}
+
+#case-study-content {
+	width:1000px;
+	margin:0 auto; 
+}
+#case-slideshow {
+	width:625px;
+	padding:2px;
+	float:right;
+	clear:both;
+}
+#case-slideshow img {
+	border:2px solid #ccc;
+	width: 625px;
+	margin: 0 0 30px 0;
+}
+
+#case-study {
+	width:330px;
+	font-family:"Carrois Gothic", Century Gothic, Arial, Helvetica, sans-serif;
+	line-height: 1.25em;
+	padding:0;
+	margin:0;
+	float:left;
+}
+#case-study a {padding:2px;}
+#case-study p:first-child {
+	margin:0;
+	font-size: 1.1em;
+	padding-bottom: 4px;
+}
+.slide-container h2 {
+	color:#fff;
+	float:left;
+}
+
+#case-study h4 {
+	padding:0;
+	margin:0;
+}
+
+#case-study p {font-size:14px;}
+
+
+/* ================= BOSTON BLUES PAGE == */
+
+.bostonblues {color:#fff;}
+.bostonblues a { color:#fff; }
+.bostonblues a:hover  {
+	color:#fff;
+	background-color: #034694;
+	text-decoration:none;
+}
+
+.bostonblues-fixit {background-color: #fff;}
+.bostonblues-fixit ul li a { color:#0861c5; }
+.bostonblues-fixit ul li a:hover, .bostonblues-fixit ul li a.active {
+	background-color: #0861c5;
+	color: #fff;
+}
+.bostonblues-fixit #fixit-tab {
+	background-color:#fff;
+	color:#0861c5;
+}
+
+/* ================= ENERGYNU PAGE == */
+.energy_nu { color:#000; }
+.energy_nu a {color: #347638; }
+.energy_nu a:hover {
+	color:#fff;
+	background-color: #347638;
+	text-decoration:none;
+}
+.energy_nu-fixit { background-color: #347638;}
+.energy_nu-fixit ul li a {
+	color:#fff;
+}
+.energy_nu-fixit ul li a:hover, .energy_nu-fixit ul li a.active {
+	background-color: #114d15;
+	color: #fff;
+}
+.energy_nu-fixit #fixit-tab {
+	background-color:#347638;
+	color:#fff;
+}
+
+/* ================= BRAICAN == */
+.braican { color:#000; }
+.braican a {color: #c00; }
+.braican a:hover{
+	color:#fff;
+	background-color: #c00;
+	text-decoration:none;
+}
+.braican-fixit { background-color: #c00;}
+.braican-fixit ul li a {
+	color:#fff;
+}
+.braican-fixit ul li a:hover, .braican-fixit ul li a.active{
+	background-color: #850000;
+	color: #fff;
+}
+.braican-fixit #fixit-tab {
+	background-color:#c00;
+	color:#fff;
+}
+
+/* ================== DVD Series == */
+
+.dvd-page-title {
+	font-family:"Fredoka One", Century Gothic, Arial, Helvetica, sans-serif;
+	position:relative;
+	left:372px;
+	padding-bottom:80px;
+	font-size:48px;
+	line-height:0.6em;
+}
+.dvd-page-title small { font-size:18px;}
+.dvd-page-title span {color:#f00; }
+
+/* =================== BEGINNINGS == */
+#drawing-images {
+	width:620px;
+	padding:2px;
+	float:right;
+	clear:both;
+	height:820px;
+}
+#drawing-images a { color:#fff; }
+
+#drawing-images div.slideshow span.image-wrapper {
+	display: block;
+	position: absolute;
+}
+
+#thumbs {width:350px;}
+#thumbs ul{
+	list-style:none;
+	padding:0;
+}
+
+#thumbs ul li { display:inline; }
+#thumbs ul li a { color:white !important; }
+#thumbs ul li a:hover{background-color:transparent !important;}
+#thumbs ul li img {
+	border:0;
+	padding:1px;
+}
+
+#thumbs ul li img:hover {
+	border:1px solid #666;
+	padding:0px !important;
+}
+#thumbs ul li.selected img {
+	border:1px solid #666;
+	padding:0px !important;
+}
+#drawing-images .loader {
+    background-image: url('/case-studies/beginnings/loader.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 620px;
+    height: 500px; /* This should be set to be at least the height of the largest image in the slideshow */
+}
+
+
+/* ========================================================	CONTACT PAGE ====================*/		
+#contact {
+	margin:50px 0;
+	min-height:270px;
+}
+#contact .holder label {
+	background-color: #c00;
+	color:#fff;
+	padding: 5px;
+}
+#contact .contact-left p { margin:0 0 14px 0; }
+#contact .holder .contact-left input {
+	font-size: 16px;
+	height:30px;
+	font-family:Arial, Helvetica, sans-serif;
+	width:190px;
+}
+#contact .holder .contact-left {
+	width:232px;
+	float:left;
+}
+#contact .holder p.message-container {
+	float:left;
+	width:262px;
+	margin:0;
+}
+#contact textarea {
+	resize: none;
+	font-family:Arial, Helvetica, sans-serif;
+	width:262px;
+	height:178px;
+}
+#contact input.submit {
+	width:128px;
+	height:32px;
+	background:url(../assets/socialicons.png) no-repeat;
+	background-position:0 -256px;
+	padding:0;
+	border:0;
+	cursor:pointer;
+}
+#contact input.submit:hover { background-position:0 -224px; }
+#contact label.error {
+	background:url(../assets/required.png) no-repeat;
+	height:20px;
+	width:144px;
+	float:right;
+	position:relative;
+}
+#contact p.message-container label.error { top:-215px; }
+#contact .contact-left label.error {
+	top:-60px;
+	display:block;
+}
+/* ========================================================= FOOTER ====*/			
+#footer-container {
+	width:100%;
+	border-top:#222 3px solid;
+	background-color:#333;
+	font-family:"Carrois Gothic", Century Gothic, Arial, Helvetica, sans-serif;
+	margin:0;
+	padding:0;
+	position:absolute;
+	z-index:100;
+	min-width:1000px;
+	clear: both;
+}
+#footer {
+	color:#FFF;
+	width:1000px;
+	margin:0 auto;
+	padding:10px 0;
+	font-size:12px;
+}
+#footer p.copy {
+	text-align: right;
+	margin: 0;
+}
+#social-footer-fixed .bottom-nav {
+	font-size:14px;
+	float:right;
+	margin:-30px 0 0 0;
+	padding:0;
+}
+#social-footer-fixed .bottom-nav a {
+	color:white;
+	text-decoration:none;
+}
+#social-footer-fixed .bottom-nav a:hover {
+	text-decoration:underline;
+}
+.case-study-footer { min-width: 1078px !important;}
+
+
+
+/* ============================================================ SOCIAL FIXED FOOTER ===============*/	
+
+#social-footer-fixed {
+	position: fixed;
+	background-color: #000;
+	height: 75px;
+	z-index: 101;
+	color: #fff;
+	bottom:-70px;
+	width: 100%;
+	font-family:"Carrois Gothic", Century Gothic, Arial, Helvetica, sans-serif;
+	border-top:2px solid white;
+}
+#social-footer-fixed #handle-container {
+	margin: 0 auto;
+	width: 1080px;
+}
+#social-footer-fixed #the-handle {
+	font-size: 14px;
+	border-top: 2px solid #fff;
+	border-left: 2px solid #fff;
+	border-right: 2px solid #fff;
+	position: relative;
+	width: 110px;
+	height: 28px;
+	top:-35px;
+	background-color: #000;
+	text-align: center;
+	padding: 5px 5px 0 5px;
+}
+.socialstuff {
+	position: absolute;
+	top:16px;
+}
+.socialstuff a {
+	float: left;
+	height:32px;
+	width: 32px;
+	margin: 10px;
+	background: url("../assets/socialicons.png");
+}
+/* -- Facebook --*/
+a#facebook { background-position: -32px 0; }
+a#facebook:hover { background-position: 0 0; }
+/* -- LinkedIn --*/
+a#linkedin { background-position: -96px 0; }
+a#linkedin:hover { background-position: -64px 0; }
+/* -- Twitter --*/
+a#twitter { background-position: -32px -32px; }
+a#twitter:hover { background-position: 0 -32px; }
+/* -- YouTube --*/
+a#youtube { background-position: -96px -32px; }
+a#youtube:hover { background-position: -64px -32px; }
+/* -- Flickr --*/
+a#flickr { background-position: -32px -64px; }
+a#flickr:hover { background-position: 0 -64px; }
+/* -- RSS --*/
+a#rss { background-position: -96px -64px; }
+a#rss:hover { background-position: -64px -64px; }
+/* -- EMAIL --*/
+a#email {
+	width: 128px !important;
+	background-position: 0 -128px;
+}
+a#email:hover { background-position: 0 -96px; }
+
+
+
+/* ============================================== ORBIT SLIDER ====================*/	
+/* CSS for jQuery Orbit Plugin 1.2.3
+ * www.ZURB.com/playground
+ * Copyright 2010, ZURB
+ 
+/* PUT IN YOUR SLIDER ID AND SIZE TO MAKE LOAD BEAUTIFULLY
+   ================================================== */
+#featured {
+	width: 940px;
+	height: 450px;
+	background: #000 url('orbit/loading.gif') no-repeat center center;
+	overflow: hidden;
+	margin: 0 auto 20px auto;
+	border:5px solid #000;
+}
+#featured>img, #featured>div, #featured>a { display: none; }
+/* CONTAINER
+   ================================================== */
+
+.orbit-wrapper {
+	width: 1px;
+	height: 1px;
+	position: relative;
+	margin: 0 auto 20px auto;
+	clear: both;
+}
+.orbit {
+	width: 1px;
+	height: 1px;
+	position: relative;
+	overflow: hidden
+}
+.orbit>img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+}
+.orbit>a {
+	border: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	line-height: 0;
+	display: none;
+}
+.orbit>div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* TIMER
+   ================================================== */
+
+.timer {
+	width: 40px;
+	height: 40px;
+	overflow: hidden;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	opacity: .6;
+	cursor: pointer;
+	z-index: 1001;
+}
+span.rotator {
+	display: block;
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 0;
+	left: -20px;
+	background: url(orbit/rotator-black.png) no-repeat;
+	z-index: 3;
+}
+span.mask {
+	display: block;
+	width: 20px;
+	height: 40px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 2;
+	overflow: hidden;
+}
+span.rotator.move { left: 0 }
+span.mask.move {
+	width: 40px;
+	left: 0;
+	background: url(orbit/timer-black.png) repeat 0 0;
+}
+span.pause {
+	display: block;
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: url(orbit/pause-black.png) no-repeat;
+	z-index: 4;
+	opacity: 0;
+}
+span.pause.active { background: url(orbit/pause-black.png) no-repeat 0 -40px }
+.timer:hover span.pause, span.pause.active { opacity: 1 }
+/* CAPTIONS
+   ================================================== */
+
+.orbit-caption {
+	display: none;
+	font-family:"Carrois Gothic", Century Gothic, Arial, Helvetica, sans-serif;
+}
+.orbit-wrapper .orbit-caption {
+	background: #000;
+	background: rgba(0, 0, 0, .6);
+	z-index: 1000;
+	color: #fff;
+	text-align: center;
+	padding: 7px 0;
+	font-size: 13px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+}
+/* DIRECTIONAL NAV
+   ================================================== */
+
+.slider-nav { display: block }
+.slider-nav span {
+	width: 78px;
+	height: 100px;
+	text-indent: -9999px;
+	position: absolute;
+	z-index: 1000;
+	top: 50%;
+	margin-top: -50px;
+	cursor: pointer;
+}
+.slider-nav span.right {
+	background: url(orbit/right-arrow.png);
+	right: -83px;
+}
+.slider-nav span.left {
+	background: url(orbit/left-arrow.png);
+	left: -78px;
+}
+/* BULLET NAV
+   ================================================== */
+
+.orbit-bullets {
+	position: absolute;
+	z-index: 1000;
+	list-style: none;
+	bottom: 0;
+	right: 15px;
+	padding: 0;
+}
+.orbit-bullets li {
+	float: left;
+	margin-left: 5px;
+	cursor: pointer;
+	background-color: #c00;
+	text-indent:-9999px;
+	width: 13px;
+	height: 12px;
+	overflow: hidden;
+	opacity:0.6;
+	border:1px solid #FFF;
+}
+
+.orbit-bullets li.hover { background-color:blue; }
+.orbit-bullets li.active { background-color:#000; }

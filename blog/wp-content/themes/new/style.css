@@ -1,0 +1,128 @@
+/*
+Theme Name: Braican
+Theme URI: http://wordpress.org/
+Description: the blog css for braican.com
+Version: 3.0
+Author: Nicholas Braica
+Author URI: http://braican.com
+Tags: braican, clean
+
+*/
+
+#content .post {margin-top:50px; padding-bottom: 25px;}
+#content .blog-separate {border-bottom: 1px solid #ccc;}
+
+#content #blog-left {
+	font-size: 14px;
+	width: 550px;
+	float: left;
+}
+#content #blog-left h2 {
+	margin: 0px 0px 20px 0px;
+	font-size: 28px;
+}
+
+#content div.post div.blog-right {
+	float: right;
+	width: 210px;
+	padding-left: 10px;
+	border-left: 4px solid #000;
+}
+
+div.post p.blog-time {margin: 0px;}
+div.post p.blog-time span {
+	font-weight: bold;
+	font-size: 18px;
+}
+
+div.post div.postmetadata, div.post div.comments {
+	margin: 20px 0px;
+}
+div.post div.postmetadata a {
+	color:#c00;
+	text-decoration: none;
+	font-size: 12px;
+	padding: 2px;
+}
+div.post div.postmetadata a:hover, div.post div.comments a:hover {
+	background-color: #c00;
+	color: #fff;
+}
+div.post div.comments a{
+	color:#c00;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: bold;
+	padding: 4px;
+}
+
+/*************************  NAVIGATION **/
+.navigation {
+	padding: 50px 0px;
+}
+.alignleft {
+	float: left;
+	text-align: right;
+}
+.alignright {
+	float: right;
+}
+
+.navigation a {
+	position: relative;
+	font-size: 22px;
+	color: #fff;
+	background-color: #000;
+	padding: 10px;
+	left: 0px;
+	text-decoration: none;
+}
+
+.navigation a:hover { background-color: #c00;}
+/*
+
+.navigation .alignright a:hover {
+	padding: 10px 10px 10px 30px;
+	right: -20px;
+	background-color: #c00;
+}
+.navigation .alignleft a:hover {
+	padding: 10px 30px 10px 10px;	
+	left:-20px;
+	background-color: #c00;
+}
+
+*/
+
+
+
+/* ========= NAVIGATION SINGLE ======== */
+
+
+.left-bracket a div{
+	background: url(http://braican.com/test/assets/picarrows.png) no-repeat center right #000;
+	width: 11px;
+	height: 12px;
+}
+
+/************************************************* Hidden Navigation **/
+
+.blog-fixit {background-color: #c00;}
+.blog-fixit li{ margin: .1em 0 !important;}
+.blog-fixit ul li a {
+	color:#fff;
+	font-size: 10px;
+}
+.blog-fixit ul li a:hover{
+	background-color: #000;
+	margin-left:-10px;
+	padding: 3px 6px 3px 20px;
+}	
+.blog-fixit #fixit-tab {
+	background-color:#c00;
+	color: #fff;
+	height:115px !important;
+}
+
+#fixit .screen-reader-text { color: #fff; }
+#fixit ul {padding: 0 0 20px 0 !important;}
