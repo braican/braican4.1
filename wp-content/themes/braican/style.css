@@ -10,9 +10,9 @@ License URI: license.txt
 Tags:
 */
 
-
-/* =Reset
--------------------------------------------------------------- */
+/* ================================================
+   RESET
+   ================================================ */
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -39,7 +39,8 @@ html {
 	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
 body {
-	background: #ededed;
+	/*background: #990000;*/
+	background: #333A3E;
 }
 article,
 aside,
@@ -82,39 +83,53 @@ a img {
 	border: 0;
 }
 
-
-/* =Global
------------------------------------------------ */
-
+/* ================================================
+   --GLOBAL
+   ================================================ */
 body,
 button,
 input,
 select,
 textarea {
-	color: #404040;
+	color: #d8d8d8;
 	font-family: 'Karla', sans-serif;
 	font-size: 16px;
 	font-size: 1.6rem;
 	line-height: 1.5;
 }
 
-/* Headings */
+
+/* ======================
+   --TYPOGRAPHY 
+   ====================== */
+
 h1,h2,h3,h4,h5,h6 {
 	clear: both;
 }
 
 h1{
-	font-size: 4em;
+	font-size: 3em;
 	font-family: 'Montserrat', sans-serif;
 }
 
-h2{}
-h3{}
-h4{}
+h2{
+	font-size: 3.2em;
+	line-height: 1em;
+	margin-bottom: 40px;
+}
+h3{
+	font-size: 1.5em;
+	font-family: 'Montserrat', sans-serif;
+	margin-bottom: .5em;
+}
+h4{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.2em;
+}
 h5{}
 h6{}
 hr {
-	background-color: #ccc;
+	background-color: #d8d8d8;
 	border: 0;
 	height: 1px;
 	margin-bottom: 1.5em;
@@ -146,6 +161,7 @@ dd {
 }
 b, strong {
 	font-weight: bold;
+	font-family: 'Montserrat', sans-serif;
 }
 dfn, cite, em, i {
 	font-style: italic;
@@ -210,7 +226,7 @@ th {
 }
 img {
 	height: auto; /* Make sure images are scaled correctly. */
-	max-width: 100%; /* Adhere to container width. */
+	width: 100%; /* Adhere to container width. */
 }
 button,
 input,
@@ -311,18 +327,21 @@ textarea {
 
 /* Links */
 a {
-	color: royalblue;
+	color: #d8d8d8;
+	text-decoration: underline;
 }
 a:visited {
-	color: purple;
 }
 a:hover,
 a:focus,
 a:active {
-	color: midnightblue;
+	text-decoration: none;
 }
 
-/* Alignment */
+/* ======================
+   --ALIGNMENT 
+   ====================== */
+
 .alignleft {
 	display: inline;
 	float: left;
@@ -366,42 +385,34 @@ a:active {
 	z-index: 100000; /* Above WP toolbar */
 }
 
-/* Clearing */
-.clear:before,
-.clear:after,
-[class*="content"]:before,
-[class*="content"]:after,
-[class*="site"]:before,
-[class*="site"]:after {
-	content: '';
-	display: table;
-}
 
-.clear:after,
-[class*="content"]:after,
-[class*="site"]:after {
-	clear: both;
-}
+/* ================================================
+   --HEADER
+   ================================================ */
 
-/* header
---------------------------------*/
 #masthead{
-	margin-top: 20px;
+	margin-top: 40px;
+	position: fixed;
+	left:50%;
 }
-h1.site-title{
-	border-left: 10px solid #222;
-	padding-left: 1%;
+.site-title{
+	border-left: 10px solid #d8d8d8;
+	padding:0 20px;
 	font-size: 5em;
+	position: relative;
+	z-index: 2;
 }
 
-/* =Menu
------------------------------------------------ */
-
+/* ================================================
+   --NAVIGATION
+   ================================================ */
 .navigation-main {
 	clear: both;
 	display: block;
 	float: left;
-	width: 180px;
+	z-index: 10;
+	position: relative;
+	margin-top: 10px;
 }
 .navigation-main ul {
 	list-style: none;
@@ -409,22 +420,34 @@ h1.site-title{
 	padding-left: 0;
 }
 .navigation-main li {
-	float: left;
 	position: relative;
+	float: left;
+	margin: 8px 0;
 }
 .navigation-main a {
-	display: block;
 	text-decoration: none;
+	color: #d8d8d8;
+	padding: 5px;
+	font-size: 1.2em;
+	position: relative;
+	margin-right: 10px;
+	left: -5px;
+
+	-webkit-transition: all .2s linear;
+  	-o-transition: all .2s linear;
+  	-moz-transition: all .2s linear;
+ 	 transition: all .2s linear;
 }
 
-.navigation-main li:hover > a {
-}
+.navigation-main a:hover {
+	background: #1A2125;
+	padding-top: 10px;
+	top:6px;
 
-.navigation-main ul li:hover > ul {
-	display: block;
-}
-.navigation-main li.current_page_item a,
-.navigation-main li.current-menu-item a {
+	-webkit-transition: all .2s linear;
+  	-o-transition: all .2s linear;
+  	-moz-transition: all .2s linear;
+ 	 transition: all .2s linear;
 }
 
 /* Small menu */
@@ -437,34 +460,93 @@ h1.site-title{
 	display: none;
 }
 
-/* =Content
------------------------------------------------ */
-#content section{
-	margin-left: 200px;
+/* ================================================
+   --CONTENT
+   ================================================ */
+
+#home{
+	background: #D0482B;
 }
 
-.hentry {
-	margin: 0 0 1.5em;
+#projects{
+	z-index: 4;
+	position: relative;
+	/*background: #d8d8d8 url(/wp-content/themes/braican/img/noise.png) repeat;*/
+	background: #d8d8d8;
+	color: #404040;
 }
-.byline {
-	display: none;
+
+#about{
+	background: #D0482B;
 }
-.single .byline,
-.group-blog .byline {
-	display: inline;
+
+section{
+	width: 100%;
+	min-height: 404px;
 }
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
+section h1{
+	margin-bottom: 40px;
 }
-.page-links {
-	clear: both;
-	margin: 0 0 1.5em;
+section .page-content{
+	padding: 40px 0;
+	width: 35%;
+	margin-left: 5%;
+	float: left;
+}
+
+/* ======================
+   --projects 
+   ====================== */
+
+#projects .page-content{
+	width: 90%;
+}
+
+.project-thumb{
+	display: block;
+	width: 24%;
+	min-width: 260px;
+	margin-right: 10px;
+	float: left;
+	margin-bottom: 10px;
+	border: 2px solid #aaa;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	position: relative;
+	overflow: hidden;
+}
+.project-thumb .underlay{
+	top:0;
+	left: 0;
+	width: 100%;
+	position: absolute;
+	z-index: 9;
+	color: #fff;
+	background: #aaa;
+	padding: 10px;
+	display: block;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.project-thumb img{
+	display: block;
+	position: relative;
+	z-index: 10;
 }
 
 
-/* =Asides
------------------------------------------------ */
+#slideout{
+	width: 90%;
+	margin:0 0 40px 0;
+}
+
+
+/* ================================================
+   --ASIDES
+   ================================================ */
+
 
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
@@ -472,8 +554,9 @@ h1.site-title{
 }
 
 
-/* =Media
------------------------------------------------ */
+/* ================================================
+   --MEDIA
+   ================================================ */
 
 .entry-content img.wp-smiley,
 .comment-content img.wp-smiley {
@@ -524,35 +607,18 @@ object {
 }
 
 
-/* =Navigation
------------------------------------------------ */
-
-.site-content [class*="navigation"] {
-	margin: 0 0 1.5em;
-	overflow: hidden;
-}
-[class*="navigation"] .previous {
-	float: left;
-	width: 50%;
-}
-[class*="navigation"] .next {
-	float: right;
-	text-align: right;
-	width: 50%;
-}
-
-/* =Comments
------------------------------------------------ */
-
+/* ================================================
+   --COMMENTS
+   ================================================ */
 .comment-content a {
 	word-wrap: break-word;
 }
 .bypostauthor {
 }
 
-/* =Widgets
------------------------------------------------ */
-
+/* ================================================
+   --WIDGETS
+   ================================================ */
 .widget {
 	margin: 0 0 1.5em;
 }
@@ -567,22 +633,40 @@ object {
 	display: none;
 }
 
-/* =Infinite Scroll
------------------------------------------------ */
 
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .navigation-paging, /* Older / Newer Posts Navigation (always hidden) */
-.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
-	display: none;
+/* ================================================
+   --footer
+   ================================================ */
+.site-footer{
+	margin-left: 50%;
 }
 
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
-.infinity-end.neverending .site-footer {
+
+/* ================================================
+   --helper classes
+   ================================================ */
+.clearfix:after {
+	visibility: hidden;
 	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+	}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+.visuallyhidden { 
+  position: absolute; 
+  overflow: hidden; 
+  clip: rect(0 0 0 0); 
+  height: 1px; width: 1px; 
+  margin: -1px; padding: 0; border: 0; 
 }
 
-/* MEDIA QUERIES
---------------------------------*/
+/* ================================================
+   --MEDIA QUERIES
+   ================================================ */
 
 @media screen and (max-width: 600px) {
 	.menu-toggle,

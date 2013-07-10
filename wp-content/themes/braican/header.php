@@ -27,15 +27,17 @@
 	<header id="masthead" class="site-header" role="banner">
 		<hgroup>
 			<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-		</hgroup>		
+			<h2 class="site-description visuallyhidden"><?php bloginfo( 'description' ); ?></h2>
+		</hgroup>
+
+		<nav id="site-navigation" class="navigation-main" role="navigation">
+			<h1 class="menu-toggle"><?php _e( 'Menu', 'braican' ); ?></h1>
+			<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'braican' ); ?>"><?php _e( 'Skip to content', 'braican' ); ?></a></div>
+
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'clearfix' ) ); ?>
+		</nav><!-- #site-navigation -->		
 	</header><!-- #masthead -->
 
-	<nav id="site-navigation" class="navigation-main" role="navigation">
-		<h1 class="menu-toggle"><?php _e( 'Menu', 'braican' ); ?></h1>
-		<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'braican' ); ?>"><?php _e( 'Skip to content', 'braican' ); ?></a></div>
 
-		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-	</nav><!-- #site-navigation -->
 
 	<div id="main" class="site-main">
