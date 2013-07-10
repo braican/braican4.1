@@ -1,5 +1,8 @@
 braican.com
 ===========
+Public repository of [braican.com](http://braican.com), [Nick Braica's](http://twitter.com/braican) portfolio site. 
+
+The master branch is what is currently live.
 
 ## version 4.1
 `current development`
