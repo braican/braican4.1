@@ -103,19 +103,15 @@ textarea {
    --TYPOGRAPHY 
    ====================== */
 
-h1,h2,h3,h4,h5,h6 {
-	clear: both;
-}
-
 h1{
-	font-size: 3em;
-	font-family: 'Montserrat', sans-serif;
+	font-size: 3.2em;
+	line-height: 1em;
+	margin-bottom: 30px;
 }
 
 h2{
-	font-size: 3.2em;
-	line-height: 1em;
-	margin-bottom: 40px;
+	font-size: 1.5em;
+	font-family: 'Montserrat', sans-serif;
 }
 h3{
 	font-size: 1.5em;
@@ -385,39 +381,60 @@ a:active {
 	z-index: 100000; /* Above WP toolbar */
 }
 
+/* ======================
+   --layout 
+   ====================== */
 
-/* ================================================
-   --HEADER
-   ================================================ */
+#main{
+	padding-top: 40px;
+}
+section{
+	width: 100%;
+	padding: 20px;
+}
+
+.left-band{
+	float: left;
+	width: 180px;
+}
+.section-content{
+	float: left;
+	width: 40%;
+}
+
+/* ======================
+   --header 
+   ====================== */
 
 #masthead{
 	margin-top: 40px;
 	position: fixed;
-	left:50%;
+	left:65%;
 }
 .site-title{
-	border-left: 10px solid #d8d8d8;
+	border-left: 10px solid #333A3E;
 	padding:0 20px;
 	font-size: 5em;
 	position: relative;
 	z-index: 2;
+	font-family: 'Montserrat', sans-serif;
 }
 
-/* ================================================
-   --NAVIGATION
-   ================================================ */
+/* ======================
+   --nav 
+   ====================== */
+
 .navigation-main {
-	clear: both;
-	display: block;
-	float: left;
 	z-index: 10;
-	position: relative;
-	margin-top: 10px;
+	position: fixed;
+	width: 100%;
+	background: #333A3E;
 }
 .navigation-main ul {
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
+	margin-left: 65%;
 }
 .navigation-main li {
 	position: relative;
@@ -432,7 +449,8 @@ a:active {
 	position: relative;
 	margin-right: 10px;
 	left: -5px;
-
+	text-transform: uppercase
+;
 	-webkit-transition: all .2s linear;
   	-o-transition: all .2s linear;
   	-moz-transition: all .2s linear;
@@ -461,7 +479,7 @@ a:active {
 }
 
 /* ================================================
-   --CONTENT
+   --SPECIFICS
    ================================================ */
 
 #home{
@@ -480,19 +498,7 @@ a:active {
 	background: #D0482B;
 }
 
-section{
-	width: 100%;
-	min-height: 404px;
-}
-section h1{
-	margin-bottom: 40px;
-}
-section .page-content{
-	padding: 40px 0;
-	width: 35%;
-	margin-left: 5%;
-	float: left;
-}
+
 
 /* ======================
    --projects 
