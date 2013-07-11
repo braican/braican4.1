@@ -22,18 +22,26 @@ jQuery(document).ready( function($) {
 	// ---------------------------------
 	// AJAX the content
 	//
-	$('#projects a').on('click', function(e){
-		e.preventDefault();
-		var link = $(this).attr('href'),
-			project_top = $('#projects').offset().top;
+	// $('#projects a').on('click', function(e){
+	// 	e.preventDefault();
+	// 	var link = $(this).attr('href'),
+	// 		project_top = $('#projects').offset().top;
 
-		console.log("project clicked");
+	// 	console.log("project clicked");
 
-		$('html, body').animate({scrollTop: project_top}, 1000);
-		$('#slideout').load(link, function(response, status, xhr){
+	// 	$('html, body').animate({scrollTop: project_top}, 1000);
+	// 	$('#slideout').load(link, function(response, status, xhr){
 			
-			//alert('load was performed');
-		});
+	// 		//alert('load was performed');
+	// 	});
+	// });
+
+	$('#projects a').on('click', function(event) {
+		event.preventDefault();
+		console.log("clicked");
+		$('.project-group').animate({
+			'width' : '180px'
+		}, 1000);
 	});
 
 	// -------------------------------

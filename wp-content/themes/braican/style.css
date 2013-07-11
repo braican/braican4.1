@@ -385,12 +385,12 @@ a:active {
    --layout 
    ====================== */
 
-#main{
-	padding-top: 40px;
-}
 section{
 	width: 100%;
 	padding: 20px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 .left-band{
@@ -399,7 +399,7 @@ section{
 }
 .section-content{
 	float: left;
-	width: 40%;
+	width: 30%;
 }
 
 /* ======================
@@ -409,15 +409,16 @@ section{
 #masthead{
 	margin-top: 40px;
 	position: fixed;
-	left:65%;
+	left:55%;
 }
 .site-title{
-	border-left: 10px solid #333A3E;
-	padding:0 20px;
+	border-left: 3px solid #d8d8d8;
+	padding:40px 20px;
 	font-size: 5em;
 	position: relative;
 	z-index: 2;
 	font-family: 'Montserrat', sans-serif;
+	margin-top: 40px;
 }
 
 /* ======================
@@ -434,23 +435,24 @@ section{
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
-	margin-left: 65%;
+	margin-left: 55%;
 }
 .navigation-main li {
 	position: relative;
 	float: left;
-	margin: 8px 0;
+	margin: 0;
 }
 .navigation-main a {
 	text-decoration: none;
+	font-weight: bold;
 	color: #d8d8d8;
 	padding: 5px;
+	float: left;
 	font-size: 1.2em;
 	position: relative;
 	margin-right: 10px;
-	left: -5px;
-	text-transform: uppercase
-;
+	height: 100%;
+	text-transform: uppercase;
 	-webkit-transition: all .2s linear;
   	-o-transition: all .2s linear;
   	-moz-transition: all .2s linear;
@@ -459,8 +461,6 @@ section{
 
 .navigation-main a:hover {
 	background: #1A2125;
-	padding-top: 10px;
-	top:6px;
 
 	-webkit-transition: all .2s linear;
   	-o-transition: all .2s linear;
@@ -484,8 +484,18 @@ section{
 
 #home{
 	background: #D0482B;
+	padding-top: 60px;
 }
 
+
+
+#about{
+	background: #D0482B;
+}
+
+/* ======================
+   --projects 
+   ====================== */
 #projects{
 	z-index: 4;
 	position: relative;
@@ -493,26 +503,18 @@ section{
 	background: #d8d8d8;
 	color: #404040;
 }
-
-#about{
-	background: #D0482B;
+#projects .left-band{
+	float:none;
 }
-
-
-
-/* ======================
-   --projects 
-   ====================== */
-
-#projects .page-content{
-	width: 90%;
+.project-group{
+	width: 100%;
+	clear:both;
 }
-
 .project-thumb{
 	display: block;
-	width: 24%;
-	min-width: 260px;
-	margin-right: 10px;
+	width: 25%;
+	min-width: 160px;
+	margin-right: 0;
 	float: left;
 	margin-bottom: 10px;
 	border: 2px solid #aaa;

@@ -30,9 +30,7 @@ get_header(); ?>
 				<div class="left-band">
 					<h2>Projects</h2>
 				</div>
-				<div class="section-content">
-					
-					<div id="slideout"></div>
+				<div class="project-group clearfix">
 					<div id="freetile mosaic">
 						<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 							<?php if(has_post_thumbnail()) : ?>
