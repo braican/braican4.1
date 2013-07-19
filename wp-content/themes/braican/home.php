@@ -26,13 +26,15 @@ get_header(); ?>
 		<?php $args = array( 'post_type' => 'project', 'posts_per_page' => -1 ); ?>
 		<?php $loop = new WP_Query( $args ); ?>
 		<?php if($loop->have_posts()): ?>
+			<?php $project_list = array(); ?>
 			<section id="projects" class="clearfix">
 				<div class="left-band">
 					<h2>Projects</h2>
 				</div>
 				<div class="project-group clearfix">
-					<div id="freetile mosaic">
+					<div id="freetile">
 						<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+							<?php $project_list[get_the_title()] = get_permalink(); ?>
 							<?php if(has_post_thumbnail()) : ?>
 								<a href="<?php the_permalink(); ?>" class="project-thumb">
 									<div class="underlay">
@@ -46,7 +48,17 @@ get_header(); ?>
 
 						<?php endwhile; ?>
 					</div>
-				</div>
+				</div><!-- .project-group -->
+
+				<div class="project-area"></div><!-- .project-area -->
+				<div class="project-list">
+					<ul>
+						<?php foreach ($project_list as $title => $permalink) : ?>
+							<li><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></li>
+						<?php endforeach; ?>
+					</ul>
+				</div><!-- .project-list -->
+				<img class="loader" src="/wp-content/themes/braican/img/load.gif">
 			</section>
 		<?php endif; ?>
 		

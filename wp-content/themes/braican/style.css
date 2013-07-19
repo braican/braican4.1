@@ -114,7 +114,7 @@ h2{
 	font-family: 'Montserrat', sans-serif;
 }
 h3{
-	font-size: 1.5em;
+	font-size: 2em;
 	font-family: 'Montserrat', sans-serif;
 	margin-bottom: .5em;
 }
@@ -446,7 +446,7 @@ section{
 	text-decoration: none;
 	font-weight: bold;
 	color: #d8d8d8;
-	padding: 5px;
+	padding: 15px 5px;
 	float: left;
 	font-size: 1.2em;
 	position: relative;
@@ -457,6 +457,7 @@ section{
   	-o-transition: all .2s linear;
   	-moz-transition: all .2s linear;
  	 transition: all .2s linear;
+ 	 font-family: 'Montserrat', sans-serif;;
 }
 
 .navigation-main a:hover {
@@ -484,10 +485,8 @@ section{
 
 #home{
 	background: #D0482B;
-	padding-top: 60px;
+	padding-top: 80px;
 }
-
-
 
 #about{
 	background: #D0482B;
@@ -503,26 +502,26 @@ section{
 	background: #d8d8d8;
 	color: #404040;
 }
-#projects .left-band{
-	float:none;
-}
+
 .project-group{
-	width: 100%;
-	clear:both;
+	margin-left: 180px;
+	position: relative;
+	background: #d8d8d8;
 }
 .project-thumb{
 	display: block;
 	width: 25%;
 	min-width: 160px;
-	margin-right: 0;
 	float: left;
-	margin-bottom: 10px;
-	border: 2px solid #aaa;
+	border: 2px solid #d8d8d8;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	position: relative;
 	overflow: hidden;
+}
+.project-thumb:nth-child(4n){
+	/* margin-right: 0; */
 }
 .project-thumb .underlay{
 	top:0;
@@ -544,12 +543,59 @@ section{
 	z-index: 10;
 }
 
-
-#slideout{
-	width: 90%;
-	margin:0 0 40px 0;
+.project-content{
+	float: left;
+}
+#freetile{
+	position: relative;
+}
+.project-list{
+	position: absolute;
+	width: 180px;
+	left:-220px;
+	top:72px;
+}
+.project-list ul{
+	margin: 0;
+	padding: 0;
+}
+.project-list ul li{
+	list-style: none;
+	margin: 10px 0;
+}
+.project-list ul li a{
+	background-color: #D0482B;
+	padding: 8px;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 12px;
+	-webkit-transition: all .2s linear;
+  	-o-transition: all .2s linear;
+  	-moz-transition: all .2s linear;
+ 	 transition: all .2s linear;
+}
+.project-list ul li a:hover{
+	padding-left: 20px;
+	-webkit-transition: all .2s linear;
+  	-o-transition: all .2s linear;
+  	-moz-transition: all .2s linear;
+ 	 transition: all .2s linear;
 }
 
+.project-area{
+	margin-left: 180px;
+	background: #d8d8d8;
+}
+
+.loader{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-top: -7px;
+	margin-left: -64px;
+	width: auto;
+	display: none;
+}
 
 /* ================================================
    --ASIDES
