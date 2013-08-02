@@ -14,7 +14,15 @@ var projectsHeight;
 
 	// when the window scrolls
 	$(window).scroll(function() {
-		// console.log('scrolll');
+		if($('.secondary-braican').hasClass('showit') && $(window).scrollTop() < 150){
+			$('.secondary-braican').fadeOut(200, function(){
+				$(this).removeClass('showit');	
+			})
+		} else if(! $('.secondary-braican').hasClass('showit') && $(window).scrollTop() > 150){
+			$('.secondary-braican').fadeIn(200, function(){
+				$(this).addClass('showit');
+			});
+		}
 	});
 
 	// initialize the things
@@ -43,17 +51,7 @@ var projectsHeight;
 			event.preventDefault();
 			var link = $(this).attr('href');
 			$(this).addClass('active');
-			console.log("clicked");
-			// var width = $(window).width();
-			// $('#freetile').animate({
-			// 	// 'left':'-' + width + 'px'
-			// 	'opacity':'0'
-			// }, 400, 'linear', function(){
-			// 	$('#freetile').hide();
-			// 	$('.project-list').animate({
-			// 		'left':'0px'
-			// 	});
-			// });
+
 			$('#projects').height(projectsHeight);
 			$('.project-group').fadeOut(function(){
 				$('.loader').fadeIn();
@@ -86,7 +84,7 @@ var projectsHeight;
 		$('a[href*=#]').on('click', function(e){
 			e.preventDefault();
 			var id = $(this).attr('href');
-			var offset = $(id).offset().top - 28;
+			var offset = $(id).offset().top - 68;
 
 			$('html, body').animate({scrollTop: offset}, 1000);
 		});

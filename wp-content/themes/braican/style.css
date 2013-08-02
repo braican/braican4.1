@@ -33,7 +33,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	vertical-align: baseline;
 }
 html {
-	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+	font-size: 75%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
 	overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
 	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
 	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
@@ -104,22 +104,24 @@ textarea {
    ====================== */
 
 h1{
-	font-size: 3.2em;
-	line-height: 1em;
+	font-size: 3em;
+	line-height: 1.1em;
 	margin-bottom: 30px;
+	font-family: 'Arvo', Rocwell, sans-serif;
 }
 
 h2{
 	font-size: 1.5em;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Arvo', sans-serif;
+	margin-bottom: 1em;
 }
 h3{
 	font-size: 2em;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Arvo', sans-serif;
 	margin-bottom: .5em;
 }
 h4{
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Arvo', sans-serif;
 	font-size: 1.2em;
 }
 h5{}
@@ -222,7 +224,7 @@ th {
 }
 img {
 	height: auto; /* Make sure images are scaled correctly. */
-	width: 100%; /* Adhere to container width. */
+	max-width: 100%; /* Adhere to container width. */
 }
 button,
 input,
@@ -323,15 +325,26 @@ textarea {
 
 /* Links */
 a {
-	color: #d8d8d8;
+	color: #aaa;
 	text-decoration: underline;
+
+	-webkit-transition: all .2s linear;
+  	-o-transition: all .2s linear;
+  	-moz-transition: all .2s linear;
+ 	transition: all .2s linear;
 }
 a:visited {
 }
 a:hover,
 a:focus,
 a:active {
-	text-decoration: none;
+	color: #fff;
+	text-decoration: underline;
+	-webkit-transition: all .2s linear;
+  	-o-transition: all .2s linear;
+  	-moz-transition: all .2s linear;
+ 	transition: all .2s linear;
+
 }
 
 /* ======================
@@ -391,16 +404,23 @@ section{
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+	position: relative;
 }
 
+.project-area,
+.project-group,
+.site-footer{
+	margin-left: 20%;
+}
 .left-band{
 	float: left;
-	width: 180px;
+	width: 20%;
 }
 .section-content{
 	float: left;
 	width: 30%;
 }
+
 
 /* ======================
    --header 
@@ -408,23 +428,43 @@ section{
 
 #masthead{
 	margin-top: 40px;
-	position: fixed;
-	left:55%;
+	position: absolute;
+	left:60%;
 }
 .site-title{
-	border-left: 3px solid #d8d8d8;
-	padding:40px 20px;
-	font-size: 5em;
+	/*border-left: 3px solid #d8d8d8;*/
+	padding:40px 0;
+	font-size: 4em;
 	position: relative;
 	z-index: 2;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Arvo', sans-serif;
 	margin-top: 40px;
 }
+
+.secondary-braican h1{
+	float:left;
+	margin: 0 0 0 20%;
+	font-size: 1.4em;
+	line-height: 64px;
+}
+.secondary-braican{
+	display: none;
+}
+.secondary-braican.showit{
+	display: block;
+}
+#up-arrow{
+	left: 20px;
+}
+
 
 /* ======================
    --nav 
    ====================== */
 
+.menu-primary-container{
+	margin-left: -8px;
+}
 .navigation-main {
 	z-index: 10;
 	position: fixed;
@@ -433,9 +473,8 @@ section{
 }
 .navigation-main ul {
 	list-style: none;
-	margin: 0;
+	margin: 0 0 0 60%;
 	padding-left: 0;
-	margin-left: 55%;
 }
 .navigation-main li {
 	position: relative;
@@ -484,12 +523,9 @@ section{
    ================================================ */
 
 #home{
-	background: #D0482B;
+	/*background: #D0482B url(img/braican.png) no-repeat bottom right;*/
+	background: #FF6D00;
 	padding-top: 80px;
-}
-
-#about{
-	background: #D0482B;
 }
 
 /* ======================
@@ -503,11 +539,6 @@ section{
 	color: #404040;
 }
 
-.project-group{
-	margin-left: 180px;
-	position: relative;
-	background: #d8d8d8;
-}
 .project-thumb{
 	display: block;
 	width: 25%;
@@ -582,10 +613,14 @@ section{
  	 transition: all .2s linear;
 }
 
-.project-area{
-	margin-left: 180px;
+.project-group{
+	position: relative;
 	background: #d8d8d8;
 }
+.project-area{
+	background: #d8d8d8;
+}
+
 
 .loader{
 	position: absolute;
@@ -597,6 +632,28 @@ section{
 	display: none;
 }
 
+/* ======================
+   --about 
+   ====================== */
+
+#about{
+	background: #82251C;
+	overflow: hidden;
+}
+
+.braican-pic{
+	position: absolute;
+	left: 60%;
+	bottom: -65px;
+}
+
+/* ======================
+   --contact 
+   ====================== */
+
+#content{
+	background: #363659;
+}
 /* ================================================
    --ASIDES
    ================================================ */
@@ -692,7 +749,23 @@ object {
    --footer
    ================================================ */
 .site-footer{
-	margin-left: 50%;
+	font-size: 0.8em;
+	padding: 20px;
+	margin-top: 50px;
+	opacity: .8;
+
+	-webkit-transition: all .2s linear;
+  	-o-transition: all .2s linear;
+  	-moz-transition: all .2s linear;
+ 	 transition: all .2s linear;
+}
+.site-footer:hover{
+	opacity: 1;
+
+	-webkit-transition: all .2s linear;
+  	-o-transition: all .2s linear;
+  	-moz-transition: all .2s linear;
+ 	transition: all .2s linear;
 }
 
 

@@ -8,6 +8,7 @@
 get_header(); ?>
 
 	<div id="content" class="site-content" role="main">
+
 		<!-- home section -->
 		<section id="home" class="clearfix">
 			<div class="left-band">
@@ -18,6 +19,7 @@ get_header(); ?>
 			<?php $content = $page->post_content; ?>
 			<?php $content = apply_filters('the_content', $content); ?>
 			<div class="section-content">
+
 				<?php echo $content; ?>
 			</div>
 		</section>
@@ -58,7 +60,7 @@ get_header(); ?>
 						<?php endforeach; ?>
 					</ul>
 				</div><!-- .project-list -->
-				<img class="loader" src="/wp-content/themes/braican/img/load.gif">
+				<img class="loader" src="<?php echo get_template_directory_uri(); ?>/img/load.gif">
 			</section>
 		<?php endif; ?>
 		
@@ -75,6 +77,10 @@ get_header(); ?>
 			
 			<div class="section-content">
 				<?php echo $content; ?>
+				<h2>This is me</h2>
+			</div>
+			<div class="braican-pic">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/braican.png" alt="">
 			</div>
 		</section>
 
@@ -89,7 +95,7 @@ get_header(); ?>
 				<h2><?php echo $page->post_title; ?></h2>
 			</div>
 			
-			<div class="page-content">
+			<div class="section-content">
 				<?php echo $content; ?>
 			</div>
 		</section>

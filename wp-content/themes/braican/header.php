@@ -17,7 +17,7 @@
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
-<link href='http://fonts.googleapis.com/css?family=Montserrat:700|Karla' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Montserrat:700|Karla|Arvo' rel='stylesheet' type='text/css'>
 <?php wp_head(); ?>
 </head>
 
@@ -27,8 +27,13 @@
 
 	<nav id="site-navigation" class="navigation-main" role="navigation">
 		<h1 class="menu-toggle"><?php _e( 'Menu', 'braican' ); ?></h1>
-		<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'braican' ); ?>"><?php _e( 'Skip to content', 'braican' ); ?></a></div>
-
+		<div class="screen-reader-text skip-link">
+			<a href="#content" title="<?php esc_attr_e( 'Skip to content', 'braican' ); ?>"><?php _e( 'Skip to content', 'braican' ); ?></a>
+		</div>
+		
+		<div class="secondary-braican">
+			<h1>braican</h1><a id="up-arrow" href="#home">&#8593;</a>
+		</div>
 		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'clearfix' ) ); ?>
 	</nav><!-- #site-navigation -->	
 	
