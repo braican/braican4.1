@@ -50,12 +50,9 @@
   <div id="content">
     <div class="left">
       <h2>I make websites, graphic stuff, interactive goodies, music, and food.</h2>
-<p>Less specifically, I'm a college kid living in Boston just trying to have a good time and learn some things while I'm at it.</p>
-      <p>Officially, I'm studying to get a dual B.F.A. in Graphic Design and Interactive Media, with a minor in Computer Science from Northeastern University. Although I'm pretty sure that's not what I said I wanted to do when I was younger. Home was a small town in northern Connecticut, a nice place filled with cows and farms, but a little bit slow. So I came to the city.</p>
-      <p>It's kept me busy. In my first few years in Boston I've held jobs at three companies doing web and graphics stuff, in addition to taking on a number of freelance projects as well as personal projects and that other important thing, schoolwork. This experience has led to a strong proficiency in a number of areas and more importantly, a strong desire to learn more. It's a good thing I learn quickly. Just imagine what I'll be able to do in the next couple years.</p>
-      <p>Of course, I'm not all work and no play. I'm a big fan of going to Red Sox games, eating in the North End of Boston, and sitting around reading a good book.</p>
+      <p>I graduated in 2013 with a B.F.A. from Northeaster University in Graphic Deisgn and Interactive Media, which makes me trained in all things vizual. An early intro into HTML and CSS, and I never looked back. Today, I'm building cool stuff online working for an awesome firm in Cambridge, Tank Design.</p>
+      <p>Of course, I'm not all work and no play. I'm a big fan of going to Red Sox games, drinking craft beer on a porch, eating in the North End of Boston, and sitting around reading a good book.</p>
       
-       
     </div>
     
     
