@@ -1,0 +1,617 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"cmt",
+				"cmntSubhdr	cmntSubhdr"
+			],
+			[
+				"cm",
+				"cmntHdr	cmntHdr"
+			],
+			[
+				"pro",
+				"projectsHeight"
+			],
+			[
+				"projects",
+				"projectsHeight"
+			],
+			[
+				"project",
+				"projectsHeight"
+			],
+			[
+				"list-s",
+				"list-style"
+			],
+			[
+				"ma",
+				"mah	max-height"
+			],
+			[
+				"ov",
+				"overflow"
+			],
+			[
+				"min",
+				"min-width"
+			],
+			[
+				"proj",
+				"project-thumb"
+			],
+			[
+				"bd",
+				"bdrs	border-radius"
+			],
+			[
+				"brai",
+				"braican_doc"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"about",
+				"about_y"
+			],
+			[
+				"is",
+				"isScrolledIntoView"
+			],
+			[
+				"sco",
+				"scrollTop"
+			],
+			[
+				"contac",
+				"contact_offset"
+			],
+			[
+				"projec",
+				"project_offset"
+			],
+			[
+				"scroll",
+				"scrollTop"
+			],
+			[
+				"home",
+				"home_offset"
+			],
+			[
+				"con",
+				"console	console"
+			],
+			[
+				"cont",
+				"contact_offset"
+			],
+			[
+				"abot",
+				"about_offset"
+			],
+			[
+				"hom",
+				"home_offset"
+			],
+			[
+				"mi",
+				"mih	min-height"
+			],
+			[
+				"c",
+				"c	color: #${1:000};"
+			],
+			[
+				"prin",
+				"print_r"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"tex",
+				"text-decoration"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/C/Users/braican/Documents/raquel/raquel/wp-content/themes/raquel/functions.php",
+			"settings":
+			{
+				"buffer_size": 4676,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/braican/Documents/raquel/raquel/wp-content/themes/raquel/header.php",
+			"settings":
+			{
+				"buffer_size": 1480,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/braican/Documents/raquel/raquel/wp-content/themes/raquel/index.php",
+			"settings":
+			{
+				"buffer_size": 1207,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/braican/Documents/raquel/raquel/wp-content/themes/raquel/footer.php",
+			"settings":
+			{
+				"buffer_size": 809,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/braican/Documents/raquel/raquel/wp-content/themes/raquel/page-home.php",
+			"settings":
+			{
+				"buffer_size": 862,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/braican/Documents/raquel/raquel/wp-content/themes/raquel/style.css",
+			"settings":
+			{
+				"buffer_size": 12310,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 357.0,
+		"selected_items":
+		[
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"packac",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 512.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/braican/Documents/raquel/raquel/wp-content/themes/raquel/page-front.php",
+		"/C/Users/braican/Documents/raquel/raquel/wp-content/themes/raquel/sidebar.php",
+		"/C/Users/braican/Downloads/web fonts/bebas_regular_macroman/stylesheet.css",
+		"/C/Users/braican/Downloads/web fonts/bebas_regular_macroman/specimen_files/easytabs.js",
+		"/C/Users/braican/Documents/raquel/raquel/wp-config.php",
+		"/C/wamp/bin/apache/apache2.2.22/conf/extra/httpd-vhosts.conf",
+		"/C/Users/braican/Documents/braican_v4.1/site/wp-includes/nav-menu-template.php",
+		"/C/Users/braican/Documents/braican_v4.1/site/wp-content/themes/braican/header.php",
+		"/C/Users/braican/Desktop/braican/home.php",
+		"/C/Users/braican/Documents/braican_v4.1/site/wp-content/themes/braican/functions.php",
+		"/C/Users/braican/Documents/braican_v4.1/site/wp-config.php",
+		"/C/Users/braican/Documents/braican_v4.1/site/.gitignore",
+		"/C/Users/braican/Desktop/braican/inc/extras.php",
+		"/C/Users/braican/Documents/braican_v4.1/site/wp-content/themes/braican/js/braican.js",
+		"/C/Users/braican/Documents/braican_v4.1/site/wp-content/themes/braican/style.css",
+		"/C/Users/braican/Documents/braican_v4.1/site/wp-content/themes/braican/home.php",
+		"/C/Users/braican/Documents/braican_v4.1/site/wp-content/themes/braican/single.php",
+		"/C/Users/braican/Documents/braican_v4.1/site/wp-content/themes/braican/single-project.php",
+		"/C/Users/braican/Documents/braican_v4.1/site/.htaccess",
+		"/C/Users/braican/Desktop/braican1_braican_v4.sql",
+		"/C/Users/braican/.gitconfig",
+		"/C/Users/braican/Downloads/buildinternet-mosaic-ef45e11/buildinternet-mosaic-ef45e11/examples.html",
+		"/C/Users/braican/Documents/braican_v4.1/site/wp-content/themes/braican/content-single.php",
+		"/C/Users/braican/Documents/braican_v4.1/site/wp-includes/functions.php",
+		"/C/Users/braican/Documents/braican_v4.1/site/wp-content/themes/braican/index.php",
+		"/C/Users/braican/AppData/Roaming/Sublime Text 2/Packages/User/console.sublime-snippet",
+		"/C/Users/braican/AppData/Roaming/Sublime Text 2/Packages/SideBarEnhancements/messages/11.13.2012.1305.0.txt",
+		"/C/Users/braican/Documents/braican_v4.1/site/wp-content/themes/braican/single-projects.php",
+		"/C/Users/braican/Documents/braican_v4.1/site/wp-content/themes/braican/footer.php",
+		"/C/Users/braican/Documents/braican_v4.1/site/wp-content/themes/braican/js/skip-link-focus-fix.js",
+		"/C/Users/braican/Documents/braican_v4.1/site/wp-content/themes/braican/js/keyboard-image-navigation.js",
+		"/C/Users/braican/Documents/braican_v4.1/site/wp-content/themes/braican/js/navigation.js",
+		"/C/Users/braican/AppData/Roaming/Sublime Text 2/Packages/User/js_comment.sublime-snippet",
+		"/C/Users/braican/Documents/braican_v4.1/site/index.php",
+		"/E/Backup/_backup2012.09/Documents/beerfest/beer.php",
+		"/E/Backup/_backup2012.09/Documents/beerfest/beertable.php"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"<project>"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"clear",
+			"'bebas",
+			"BEBAS___-webfont",
+			"h2",
+			"font-fami",
+			"animate",
+			"project-",
+			"section",
+			".site-content",
+			"nav_menu",
+			"function wp_nav_menu",
+			"wp_nav_menu",
+			"menu-item",
+			"h1",
+			"content",
+			">>>>>>>",
+			"666",
+			"style",
+			"d8d8d8",
+			"color",
+			"slideout",
+			"});",
+			"top',",
+			", ",
+			"css",
+			")))",
+			"isScrolledIntoView($(",
+			"$(",
+			"_offset",
+			",",
+			"css",
+			"_offset",
+			"home_offset",
+			"opacity",
+			"page_content",
+			"section{",
+			"section",
+			"customizer"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"header.php"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/C/Users/braican/Documents/raquel/raquel/wp-content/themes/raquel/functions.php",
+					"settings":
+					{
+						"buffer_size": 4676,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4620,
+								4620
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML5/Syntaxes/HTML 5.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1998.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/braican/Documents/raquel/raquel/wp-content/themes/raquel/header.php",
+					"settings":
+					{
+						"buffer_size": 1480,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								483,
+								483
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML5/Syntaxes/HTML 5.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/braican/Documents/raquel/raquel/wp-content/themes/raquel/index.php",
+					"settings":
+					{
+						"buffer_size": 1207,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								549,
+								549
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML5/Syntaxes/HTML 5.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/Users/braican/Documents/raquel/raquel/wp-content/themes/raquel/footer.php",
+					"settings":
+					{
+						"buffer_size": 809,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								696,
+								696
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML5/Syntaxes/HTML 5.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/Users/braican/Documents/raquel/raquel/wp-content/themes/raquel/page-home.php",
+					"settings":
+					{
+						"buffer_size": 862,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								466,
+								466
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML5/Syntaxes/HTML 5.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 5,
+					"file": "/C/Users/braican/Documents/raquel/raquel/wp-content/themes/raquel/style.css",
+					"settings":
+					{
+						"buffer_size": 12310,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8301,
+								8301
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 4967.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.sftp":
+	{
+		"height": 0.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"braican",
+				"wp-content/themes/braican/js/braican.js"
+			],
+			[
+				"nav-menu-template",
+				"wp-includes/nav-menu-template.php"
+			],
+			[
+				"header.php",
+				"wp-content/themes/braican/header.php"
+			],
+			[
+				"header",
+				"wp-content/themes/braican/header.php"
+			],
+			[
+				"funcion",
+				"wp-content/themes/braican/functions.php"
+			],
+			[
+				"function",
+				"wp-content/themes/braican/functions.php"
+			],
+			[
+				"home",
+				"wp-content/themes/braican/home.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/C/Users/braican/Documents/braican_v4.1/braican.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 197.0,
+	"status_bar_visible": true
+}
