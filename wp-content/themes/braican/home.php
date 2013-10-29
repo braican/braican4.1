@@ -15,6 +15,8 @@ get_header(); ?>
 			<?php $page = get_page($id); ?>
 			<?php $content = $page->post_content; ?>
 			<?php $content = apply_filters('the_content', $content); ?>
+
+			<div class="braica-container topborder"></div>
 			<div class="braica-container br-cf">
 				<div class="col col4">
 					<div class="braica-block">
@@ -30,10 +32,11 @@ get_header(); ?>
 		<?php if($loop->have_posts()): ?>
 			<?php $project_list = array(); ?>
 			<section id="projects" class="clearfix">
-				<div class="left-band">
-					<h2>Projects</h2>
+				<div class="braica-container topborder">
+					<div class="right-rail">
+						<h3>Projects</h3>
+					</div>
 				</div>
-
 				<div class="braica-container br-cf">
 					<div class="project-group">
 						
@@ -58,11 +61,12 @@ get_header(); ?>
 						
 					</div><!-- .project-group -->
 
+					<div class="project-area"></div><!-- .project-area -->
+
+					<img class="loader" src="<?php echo get_template_directory_uri(); ?>/img/load.gif">
 				</div>
 
-				<div class="project-area"></div><!-- .project-area -->
-
-				<img class="loader" src="<?php echo get_template_directory_uri(); ?>/img/load.gif">
+				
 			</section>
 		<?php endif; ?>
 		
@@ -72,19 +76,20 @@ get_header(); ?>
 			<?php $page = get_page($id); ?>
 			<?php $content = $page->post_content; ?>
 			<?php $content = apply_filters('the_content', $content); ?>
-
+			<div class="braica-container topborder">
+				<div class="right-rail">
+					<h3><?php echo $page->post_title; ?></h3>
+				</div>
+			</div>
 			<div class="braica-container br-cf">
 				<div class="col col4 right">
 					<div class="braica-block">
 						<?php echo $content; ?>
 					</div>
 				</div>
+
+				
 			</div>
-			
-			<div class="left-band">
-				<h2><?php echo $page->post_title; ?></h2>
-			</div>
-			
 			
 		</section>
 
@@ -94,17 +99,19 @@ get_header(); ?>
 			<?php $page = get_page($id); ?>
 			<?php $content = $page->post_content; ?>
 			<?php $content = apply_filters('the_content', $content); ?>
-
-			<div class="left-band">
-				<h2><?php echo $page->post_title; ?></h2>
+			<div class="braica-container topborder">
+				<div class="right-rail">
+					<h3><?php echo $page->post_title; ?></h3>
+				</div>
 			</div>
-			
 			<div class="braica-container br-cf">
 				<div class="col col4 right">
 					<div class="braica-block">
 						<?php echo $content; ?>
 					</div>
 				</div>
+
+				
 			</div>
 		</section>
 

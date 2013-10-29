@@ -39,7 +39,6 @@ html {
 	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
 body {
-	/*background: #990000;*/
 	background: #333A3E;
 }
 article,
@@ -91,24 +90,13 @@ button,
 input,
 select,
 textarea {
-	color: #d8d8d8;
+	color: #fff;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 	font-weight: 300;
 	font-size: 1.6rem;
 	line-height: 1.5;
 }
-
-
-/* --------------------------
- * --COLORS
- * --------------------------
- *  orange     |  #f47c20
- * --------------------------
- *  green      |  #5cbe85
- * --------------------------
- *  gray       |  #606a67
- * -------------------------- */
  
 
 /* ======================
@@ -130,9 +118,13 @@ h2{
 	margin-bottom: 1em;
 }
 h3{
-	font-size: 2em;
-	font-family: 'Montserrat', sans-serif;
-	margin-bottom: .5em;
+	font-size: 1em;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #fff;
+	text-align: center;
+	padding: 10px 0;
 }
 h4{
 	font-family: 'Montserrat', sans-serif;
@@ -414,10 +406,6 @@ a:active {
 
 section{
 	width: 100%;
-	padding: 20px;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
 	position: relative;
 }
 
@@ -425,6 +413,7 @@ section{
 	width: 100%;
 	max-width: 872px;
 	margin: 0 auto;
+	position: relative;
 }
 
 .braica-container .col{
@@ -443,6 +432,21 @@ section{
 
 .braica-container .braica-block{
 	margin: 0 8px 16px;
+}
+
+.right-rail{
+	position: absolute;
+	width: 138px;
+	top: -10px;
+	right: -138px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding-left: 16px;
+}
+
+.topborder{
+	max-width: 856px;
 }
 
 /* ======================
@@ -507,11 +511,26 @@ section{
 
 /* ================================================
    --SPECIFICS
+
+   * --------------------------
+   * --COLORS
+   * --------------------------
+   *  orange      |  #f47c20
+   *  dark orange |  #e47125
+   * --------------------------
+   *  green       |  #5cbe85
+   *  dark green  |  #42b679
+   * --------------------------
+   *  gray        |  #606a67
+   *  dark gray   |  #565f5d
    ================================================ */
 
 #home{
 	background: #f47c20;
 	padding-top: 80px;
+}
+#home .braica-container.topborder{
+	border-top: 10px solid #e47125;
 }
 
 /* ======================
@@ -523,10 +542,16 @@ section{
 	background: #fff;
 	color: #404040;
 }
+#projects .right-rail h3{
+	background: #e6e7e7;
+}
+#projects .braica-container.topborder,
+#projects .right-rail{
+	border-top: 10px solid #e6e7e7;
+}
 
 .project-thumb{
 	display: block;
-	border: 2px solid #d8d8d8;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -579,6 +604,13 @@ section{
 #about{
 	background: #5cbe85;
 }
+#about .right-rail h3{
+	background: #42b679;
+}
+#about .braica-container.topborder,
+#about .right-rail{
+	border-top: 10px solid #42b679;
+}
 
 /* ======================
    --contact 
@@ -587,6 +619,14 @@ section{
 #contact{
 	background: #606a67;
 }
+#contact .right-rail h3{
+	background:#565f5d;
+}
+#contact .braica-container.topborder,
+#contact .right-rail{
+	border-top: 10px solid #565f5d;
+}
+
 /* ================================================
    --ASIDES
    ================================================ */
