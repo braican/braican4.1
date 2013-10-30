@@ -407,6 +407,7 @@ a:active {
 section{
 	width: 100%;
 	position: relative;
+	padding-bottom: 60px;
 }
 
 .braica-container{
@@ -447,6 +448,7 @@ section{
 
 .topborder{
 	max-width: 856px;
+	margin-bottom: 60px;
 }
 
 /* ======================
