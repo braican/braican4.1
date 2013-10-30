@@ -39,7 +39,6 @@ html {
 	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
 body {
-	/*background: #990000;*/
 	background: #333A3E;
 }
 article,
@@ -84,44 +83,51 @@ a img {
 }
 
 /* ================================================
-   --GLOBAL
+   --global
    ================================================ */
 body,
 button,
 input,
 select,
 textarea {
-	color: #d8d8d8;
-	font-family: 'Karla', sans-serif;
+	color: #fff;
+	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
+	font-weight: 300;
 	font-size: 1.6rem;
 	line-height: 1.5;
 }
-
+ 
 
 /* ======================
-   --TYPOGRAPHY 
+   --typography 
    ====================== */
 
 h1{
 	font-size: 3em;
 	line-height: 1.1em;
 	margin-bottom: 30px;
-	font-family: 'Arvo', Rocwell, sans-serif;
+	font-family: 'Raleway', Rockwell, sans-serif;
+	font-weight: 100;
+	color: #fff;
 }
 
 h2{
 	font-size: 1.5em;
-	font-family: 'Arvo', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	margin-bottom: 1em;
 }
 h3{
-	font-size: 2em;
-	font-family: 'Arvo', sans-serif;
-	margin-bottom: .5em;
+	font-size: 1em;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #fff;
+	text-align: center;
+	padding: 10px 0;
 }
 h4{
-	font-family: 'Arvo', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-size: 1.2em;
 }
 h5{}
@@ -348,7 +354,7 @@ a:active {
 }
 
 /* ======================
-   --ALIGNMENT 
+   --alignment 
    ====================== */
 
 .alignleft {
@@ -400,63 +406,48 @@ a:active {
 
 section{
 	width: 100%;
-	padding: 20px;
+	position: relative;
+}
+
+.braica-container{
+	width: 100%;
+	max-width: 872px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.braica-container .col{
+	float: left;
+	width: 100%;
+}
+.braica-container .col.right{
+	float: right;
+}
+.braica-container .col.col4{
+	width: 66.66667%;
+}
+.braica-container .col.col2{
+	width: 33.33333%;
+}
+
+.braica-container .braica-block{
+	margin: 0 8px 16px;
+}
+
+.right-rail{
+	position: absolute;
+	width: 138px;
+	top: -10px;
+	right: -138px;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	position: relative;
+	padding-left: 16px;
 }
 
-.project-area,
-.project-group,
-.site-footer{
-	margin-left: 20%;
+.topborder{
+	max-width: 856px;
 }
-.left-band{
-	float: left;
-	width: 20%;
-}
-.section-content{
-	float: left;
-	width: 30%;
-}
-
-
-/* ======================
-   --header 
-   ====================== */
-
-#masthead{
-	margin-top: 40px;
-	position: absolute;
-	left:60%;
-}
-.site-title{
-	/*border-left: 3px solid #d8d8d8;*/
-	padding:40px 0;
-	font-size: 4em;
-	position: relative;
-	z-index: 2;
-	font-family: 'Arvo', sans-serif;
-	margin-top: 40px;
-}
-
-.secondary-braican h1{
-	float:left;
-	margin: 0 0 0 20%;
-	font-size: 1.4em;
-	line-height: 64px;
-}
-.secondary-braican{
-	display: none;
-}
-.secondary-braican.showit{
-	display: block;
-}
-#up-arrow{
-	left: 20px;
-}
-
 
 /* ======================
    --nav 
@@ -520,12 +511,26 @@ section{
 
 /* ================================================
    --SPECIFICS
+
+   * --------------------------
+   * --COLORS
+   * --------------------------
+   *  orange      |  #f47c20
+   *  dark orange |  #e47125
+   * --------------------------
+   *  green       |  #5cbe85
+   *  dark green  |  #42b679
+   * --------------------------
+   *  gray        |  #606a67
+   *  dark gray   |  #565f5d
    ================================================ */
 
 #home{
-	/*background: #D0482B url(img/braican.png) no-repeat bottom right;*/
-	background: #FF6D00;
+	background: #f47c20;
 	padding-top: 80px;
+}
+#home .braica-container.topborder{
+	border-top: 10px solid #e47125;
 }
 
 /* ======================
@@ -534,25 +539,24 @@ section{
 #projects{
 	z-index: 4;
 	position: relative;
-	/*background: #d8d8d8 url(/wp-content/themes/braican/img/noise.png) repeat;*/
-	background: #d8d8d8;
+	background: #fff;
 	color: #404040;
+}
+#projects .right-rail h3{
+	background: #e6e7e7;
+}
+#projects .braica-container.topborder,
+#projects .right-rail{
+	border-top: 10px solid #e6e7e7;
 }
 
 .project-thumb{
 	display: block;
-	width: 25%;
-	min-width: 160px;
-	float: left;
-	border: 2px solid #d8d8d8;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	position: relative;
 	overflow: hidden;
-}
-.project-thumb:nth-child(4n){
-	/* margin-right: 0; */
 }
 .project-thumb .underlay{
 	top:0;
@@ -577,48 +581,9 @@ section{
 .project-content{
 	float: left;
 }
-#freetile{
-	position: relative;
-}
-.project-list{
-	position: absolute;
-	width: 180px;
-	left:-220px;
-	top:72px;
-}
-.project-list ul{
-	margin: 0;
-	padding: 0;
-}
-.project-list ul li{
-	list-style: none;
-	margin: 10px 0;
-}
-.project-list ul li a{
-	background-color: #D0482B;
-	padding: 8px;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 12px;
-	-webkit-transition: all .2s linear;
-  	-o-transition: all .2s linear;
-  	-moz-transition: all .2s linear;
- 	 transition: all .2s linear;
-}
-.project-list ul li a:hover{
-	padding-left: 20px;
-	-webkit-transition: all .2s linear;
-  	-o-transition: all .2s linear;
-  	-moz-transition: all .2s linear;
- 	 transition: all .2s linear;
-}
 
 .project-group{
 	position: relative;
-	background: #d8d8d8;
-}
-.project-area{
-	background: #d8d8d8;
 }
 
 
@@ -637,23 +602,31 @@ section{
    ====================== */
 
 #about{
-	background: #82251C;
-	overflow: hidden;
+	background: #5cbe85;
 }
-
-.braican-pic{
-	position: absolute;
-	left: 60%;
-	bottom: -65px;
+#about .right-rail h3{
+	background: #42b679;
+}
+#about .braica-container.topborder,
+#about .right-rail{
+	border-top: 10px solid #42b679;
 }
 
 /* ======================
    --contact 
    ====================== */
 
-#content{
-	background: #363659;
+#contact{
+	background: #606a67;
 }
+#contact .right-rail h3{
+	background:#565f5d;
+}
+#contact .braica-container.topborder,
+#contact .right-rail{
+	border-top: 10px solid #565f5d;
+}
+
 /* ================================================
    --ASIDES
    ================================================ */
@@ -772,7 +745,7 @@ object {
 /* ================================================
    --helper classes
    ================================================ */
-.clearfix:after {
+.br-cf:after {
 	visibility: hidden;
 	display: block;
 	font-size: 0;
@@ -780,8 +753,8 @@ object {
 	clear: both;
 	height: 0;
 	}
-* html .clearfix             { zoom: 1; } /* IE6 */
-*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+* html .br-cf             { zoom: 1; } /* IE6 */
+*:first-child+html .br-cf { zoom: 1; } /* IE7 */
 
 .visuallyhidden { 
   position: absolute; 
