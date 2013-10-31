@@ -10,13 +10,22 @@ get_header(); ?>
 	<div id="content" class="site-content" role="main">
 
 		<!-- home section -->
-		<section id="home" class="clearfix">
+		<section id="home" class="br-cf">
 			<?php $id = 8; ?>
 			<?php $page = get_page($id); ?>
 			<?php $content = $page->post_content; ?>
 			<?php $content = apply_filters('the_content', $content); ?>
 
-			<div class="braica-container topborder"></div>
+			<div class="braica-container topborder">
+				<div class="right-rail">
+					<div class="logo"></div>
+					<ul id="nav">
+						<li><a href="#projects">Projects</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</div>
+			</div>
 			<div class="braica-container br-cf">
 				<div class="col col4">
 					<div class="braica-block">
@@ -31,7 +40,7 @@ get_header(); ?>
 		<?php $loop = new WP_Query( $args ); ?>
 		<?php if($loop->have_posts()): ?>
 			<?php $project_list = array(); ?>
-			<section id="projects" class="clearfix">
+			<section id="projects" class="br-cf">
 				<div class="braica-container topborder">
 					<div class="right-rail">
 						<h3>Projects</h3>
@@ -71,7 +80,7 @@ get_header(); ?>
 		<?php endif; ?>
 		
 		<!-- about section -->
-		<section id="about" class="clearfix">
+		<section id="about" class="br-cf">
 			<?php $id = 10; ?>
 			<?php $page = get_page($id); ?>
 			<?php $content = $page->post_content; ?>
@@ -94,7 +103,7 @@ get_header(); ?>
 		</section>
 
 		<!-- contact section -->
-		<section id="contact" class="clearfix">
+		<section id="contact" class="br-cf">
 			<?php $id = 11; ?>
 			<?php $page = get_page($id); ?>
 			<?php $content = $page->post_content; ?>
