@@ -116,9 +116,7 @@ function braican_scripts() {
 	wp_enqueue_style( 'braican-style', get_stylesheet_uri() );
 
 	//wp_enqueue_script("jquery");
-
 	wp_enqueue_script( 'braican-js', get_template_directory_uri() . '/js/braican.js', array('jquery'), '20130115', true );
-	wp_enqueue_script( 'freetile', get_template_directory_uri() . '/js/jquery.freetile.min.js', array('jquery'), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

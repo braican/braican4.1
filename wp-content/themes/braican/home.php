@@ -19,11 +19,9 @@ get_header(); ?>
 			<div class="braica-container topborder">
 				<div class="right-rail">
 					<div class="logo"></div>
-					<ul id="nav">
-						<li><a href="#projects">Projects</a></li>
-						<li><a href="#about">About</a></li>
-						<li><a href="#contact">Contact</a></li>
-					</ul>
+					<div id="nav">
+						 <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'clearfix' ) ); ?>
+					</div>
 				</div>
 			</div>
 			<div class="braica-container br-cf">

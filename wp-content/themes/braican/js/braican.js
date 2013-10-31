@@ -4,34 +4,66 @@
 
 var projectsHeight;
 
-(function(braican, $){
+(function(BRAICAN, $, undefined){
 
-	// when the window loads, get the heights
-	$(window).load(function(){
-		projectsHeight = $('#projects').height();
-		console.log(projectsHeight);
-	});
+	// -----------------------------------------
+	// PUBLIC
+	//
+	// Properties
+	//
+	BRAICAN.property = '';
 
-	// when the window scrolls
-	$(window).scroll(function() {
-		if($('.secondary-braican').hasClass('showit') && $(window).scrollTop() < 150){
-			$('.secondary-braican').fadeOut(200, function(){
-				$(this).removeClass('showit');	
-			})
-		} else if(! $('.secondary-braican').hasClass('showit') && $(window).scrollTop() > 150){
-			$('.secondary-braican').fadeIn(200, function(){
-				$(this).addClass('showit');
-			});
+
+	// -----------------------------------------
+	// PRIVATE
+	//
+	// Properties
+	//
+	var contentLoadTarget  = '#content', // content injected into this element
+		contentLoadPath    = 'inc/',     // path to included files
+		contentLoadExt     = '.html',    // file extension of included files
+		defaultLoadContent = 'content';  // what do we load when no hash?
+
+
+	// -----------------------------------------
+	// PRIVATE
+	//
+	// Methods
+	//
+
+	//
+	// getUrlParam
+	//
+	// Utility function to snag a query string value when passed the parameter
+	//
+	function getUrlParam(name) {
+		var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
+		if (!results) {
+			return 0;
 		}
-	});
+		return results[1] || 0;
+	}
+
+	// -----------------------------------------
+	// PUBLIC
+	//
+	// Methods
+	//
 
 	// initialize the things
-	braican.init = function(){
+	BRAICAN.init = function(){
 
 		// -------------------------------
-		// freetile
+		// slide to nav
 		//
-		// $('#freetile').freetile();
+		$('a[href*=#]').on('click', function(e){
+			e.preventDefault();
+			var id = $(this).attr('href');
+			var offset = $(id).offset().top - 68;
+
+			$('html, body').animate({scrollTop: offset}, 1000);
+		});
+
 
 		// -------------------------------
 		// get the height of the underlay for each project
@@ -78,17 +110,7 @@ var projectsHeight;
 			});
 		});
 
-		// -------------------------------
-		// slide to nav
-		//
-		$('a[href*=#]').on('click', function(e){
-			e.preventDefault();
-			var id = $(this).attr('href');
-			var offset = $(id).offset().top - 68;
-
-			$('html, body').animate({scrollTop: offset}, 1000);
-		});
-
+		
 		// ---------------------------------
 		// skip link focus
 		//
@@ -112,6 +134,12 @@ var projectsHeight;
 	}
 
 	// DOM is ready
-	$(document).ready( function() {braican.init();});
+	$(document).ready( function() {BRAICAN.init();});
 
-})(window.braican = window.braican || {}, jQuery);
+	// when the window loads
+	$(window).load(function(){});
+
+	// when the window scrolls
+	$(window).scroll(function() {});
+
+}(window.BRAICAN = window.BRAICAN || {}, jQuery));
