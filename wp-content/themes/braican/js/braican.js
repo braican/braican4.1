@@ -19,10 +19,13 @@ var projectsHeight;
 	//
 	// Properties
 	//
-	var contentLoadTarget  = '#content', // content injected into this element
-		contentLoadPath    = 'inc/',     // path to included files
-		contentLoadExt     = '.html',    // file extension of included files
-		defaultLoadContent = 'content';  // what do we load when no hash?
+
+	var homeTop,			// the distance from the top of the home section
+		projectTop,			// the distance from the top of the project section
+		aboutTop,			// the distance from the top of the about section
+		contactTop;			// the distance from the top of the contact section
+	
+
 
 
 	// -----------------------------------------
@@ -50,8 +53,20 @@ var projectsHeight;
 	// Methods
 	//
 
+	// set the global variables
+	BRAICAN.variables = function(){
+
+		homeTop = $('#home').offset().top,
+		projectTop = $('#projects').offset().top,
+		aboutTop = $('#about').offset().top,
+		contactTop = $('#contact').offset().top;
+		
+	};
+
 	// initialize the things
 	BRAICAN.init = function(){
+
+		
 
 		// -------------------------------
 		// slide to nav
@@ -59,7 +74,7 @@ var projectsHeight;
 		$('a[href*=#]').on('click', function(e){
 			e.preventDefault();
 			var id = $(this).attr('href');
-			var offset = $(id).offset().top - 68;
+			var offset = $(id).offset().top - adminbarOffset;
 
 			$('html, body').animate({scrollTop: offset}, 1000);
 		});
@@ -133,13 +148,47 @@ var projectsHeight;
 		}
 	}
 
+	// debug a whole buncha stuff. console logs and the like
+	BRAICAN.debug = function(){
+		console.log(homeTop);
+		console.log(projectTop);
+		console.log(aboutTop);
+		console.log(contactTop);
+	};
+
 	// DOM is ready
-	$(document).ready( function() {BRAICAN.init();});
+	$(document).ready( function() {
+		BRAICAN.init();
+		BRAICAN.variables();
+		BRAICAN.debug();
+	});
 
 	// when the window loads
 	$(window).load(function(){});
 
 	// when the window scrolls
-	$(window).scroll(function() {});
+	$(window).scroll(function(){
+		var fromTop = $(window).scrollTop();
+
+		if(fromTop > homeTop + 60 && fromTop < projectTop){
+			console.log("home");
+			$('.topborder').removeClass('fixed');
+			$('#home .topborder').addClass('fixed');
+		} else if(fromTop > projectTop && fromTop < aboutTop){
+			console.log("projects");
+			$('.topborder').removeClass('fixed');
+			$('#projects .topborder').addClass('fixed');
+		} else if(fromTop > aboutTop && fromTop < contactTop){
+			console.log("about");
+			$('.topborder').removeClass('fixed');
+			$('#about .topborder').addClass('fixed');
+		} else if(fromTop > contactTop){
+			console.log("contact");
+			$('.topborder').removeClass('fixed');
+			$('#contact .topborder').addClass('fixed');
+		} else {
+			$('.topborder').removeClass('fixed');
+		}
+	});
 
 }(window.BRAICAN = window.BRAICAN || {}, jQuery));

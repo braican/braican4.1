@@ -9,6 +9,11 @@
 @ini_set( 'post_max_size', '6M');
 @ini_set( 'max_execution_time', '300' );
 
+
+// remove the admin bar
+add_filter('show_admin_bar', '__return_false');
+
+
 /**
  * Set the content width based on the theme's design and stylesheet.
  */

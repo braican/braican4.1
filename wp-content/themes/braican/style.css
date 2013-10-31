@@ -407,11 +407,11 @@ a:active {
 section{
 	width: 100%;
 	position: relative;
-	padding-bottom: 60px;
+	padding: 60px 0;
 }
 
 .braica-container{
-	width: 100%;
+	width: 96%;
 	max-width: 872px;
 	margin: 0 auto;
 	position: relative;
@@ -447,8 +447,18 @@ section{
 }
 
 .topborder{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 999;
+}
+.topborder.fixed{
+	position: fixed;
+	top: 0 !important;
+}
+.topborder .braica-container{
 	max-width: 856px;
-	margin-bottom: 60px;
+	padding-bottom: 60px;
 }
 
 
@@ -468,14 +478,22 @@ section{
    *  dark gray   |  #565f5d
    ================================================ */
 
+/* ======================
+   --home 
+   ====================== */
+
 #home{
 	background: #f47c20;
-	padding-top: 80px;
+	padding-top: 160px;
+	z-index: 1;
+}
+#home .topborder{
+	top: 60px;
 }
 #home .right-rail h3{
 	background: #e47125;
 }
-#home .braica-container.topborder,
+#home .topborder .braica-container,
 #home .right-rail{
 	border-top: 10px solid #e47125;
 }
@@ -492,7 +510,7 @@ section{
 
 /* ------------------
  * --nav 
- */
+ * ------------------*/
 
 #nav ul {
 	list-style: none;
@@ -537,7 +555,7 @@ section{
    --projects 
    ====================== */
 #projects{
-	z-index: 4;
+	z-index: 2;
 	position: relative;
 	background: #fff;
 	color: #404040;
@@ -545,7 +563,7 @@ section{
 #projects .right-rail h3{
 	background: #e6e7e7;
 }
-#projects .braica-container.topborder,
+#projects .topborder .braica-container,
 #projects .right-rail{
 	border-top: 10px solid #e6e7e7;
 }
@@ -603,11 +621,12 @@ section{
 
 #about{
 	background: #5cbe85;
+	z-index: 3;
 }
 #about .right-rail h3{
 	background: #42b679;
 }
-#about .braica-container.topborder,
+#about .topborder .braica-container,
 #about .right-rail{
 	border-top: 10px solid #42b679;
 }
@@ -618,11 +637,12 @@ section{
 
 #contact{
 	background: #606a67;
+	z-index: 4;
 }
 #contact .right-rail h3{
 	background:#565f5d;
 }
-#contact .braica-container.topborder,
+#contact .topborder .braica-container,
 #contact .right-rail{
 	border-top: 10px solid #565f5d;
 }
@@ -768,13 +788,25 @@ object {
    --MEDIA QUERIES
    ================================================ */
 
-@media screen and (max-width: 600px) {
-	.menu-toggle,
-	.main-small-navigation ul.nav-menu.toggled-on {
-		display: block;
+@media screen and (max-width: 1166px) {
+	.topborder .braica-container{
+		margin-left: 8px;
+		max-width: 1008px;
 	}
 
-	.navigation-main ul {
-		display: none;
+	section > .braica-container{
+		max-width: 1022px;
+		margin: 0;
+		padding-right:138px;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
 	}
+	
+	.right-rail{
+		right: 0;
+	}
+
 }
+
+

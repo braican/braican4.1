@@ -15,15 +15,18 @@ get_header(); ?>
 			<?php $page = get_page($id); ?>
 			<?php $content = $page->post_content; ?>
 			<?php $content = apply_filters('the_content', $content); ?>
-
-			<div class="braica-container topborder">
-				<div class="right-rail">
-					<div class="logo"></div>
-					<div id="nav">
-						 <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'clearfix' ) ); ?>
+			
+			<div class="topborder">
+				<div class="braica-container">
+					<div class="right-rail">
+						<div class="logo"></div>
+						<div id="nav">
+							 <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'clearfix' ) ); ?>
+						</div>
 					</div>
 				</div>
 			</div>
+
 			<div class="braica-container br-cf">
 				<div class="col col4">
 					<div class="braica-block">
@@ -31,19 +34,23 @@ get_header(); ?>
 					</div>
 				</div>
 			</div>
-		</section>
+		</section><!-- #home -->
 		
-		<!-- projects section -->
+		<!-- PROJECTS -->
 		<?php $args = array( 'post_type' => 'project', 'posts_per_page' => -1 ); ?>
 		<?php $loop = new WP_Query( $args ); ?>
 		<?php if($loop->have_posts()): ?>
 			<?php $project_list = array(); ?>
 			<section id="projects" class="br-cf">
-				<div class="braica-container topborder">
-					<div class="right-rail">
-						<h3>Projects</h3>
+				
+				<div class="topborder">
+					<div class="braica-container">
+						<div class="right-rail">
+							<h3>Projects</h3>
+						</div>
 					</div>
 				</div>
+
 				<div class="braica-container br-cf">
 					<div class="project-group">
 						
@@ -73,54 +80,59 @@ get_header(); ?>
 					<img class="loader" src="<?php echo get_template_directory_uri(); ?>/img/load.gif">
 				</div>
 
-				
-			</section>
+			</section><!-- #projects -->
 		<?php endif; ?>
 		
-		<!-- about section -->
+		<!-- ABOUT -->
 		<section id="about" class="br-cf">
 			<?php $id = 10; ?>
 			<?php $page = get_page($id); ?>
 			<?php $content = $page->post_content; ?>
 			<?php $content = apply_filters('the_content', $content); ?>
-			<div class="braica-container topborder">
-				<div class="right-rail">
-					<h3><?php echo $page->post_title; ?></h3>
+			
+			<div class="topborder">
+				<div class="braica-container">
+					<div class="right-rail">
+						<h3><?php echo $page->post_title; ?></h3>
+					</div>
 				</div>
 			</div>
+
 			<div class="braica-container br-cf">
 				<div class="col col4 right">
 					<div class="braica-block">
 						<?php echo $content; ?>
 					</div>
 				</div>
-
-				
 			</div>
 			
-		</section>
+		</section><!-- #about -->
 
-		<!-- contact section -->
+
+		<!-- CONTACT -->
 		<section id="contact" class="br-cf">
 			<?php $id = 11; ?>
 			<?php $page = get_page($id); ?>
 			<?php $content = $page->post_content; ?>
 			<?php $content = apply_filters('the_content', $content); ?>
-			<div class="braica-container topborder">
-				<div class="right-rail">
-					<h3><?php echo $page->post_title; ?></h3>
+			
+			<div class="topborder">
+				<div class="braica-container">
+					<div class="right-rail">
+						<h3><?php echo $page->post_title; ?></h3>
+					</div>
 				</div>
 			</div>
+			
 			<div class="braica-container br-cf">
 				<div class="col col4 right">
 					<div class="braica-block">
 						<?php echo $content; ?>
 					</div>
 				</div>
-
-				
 			</div>
-		</section>
+
+		</section><!-- #contact -->
 
 	</div><!-- #content -->
 
