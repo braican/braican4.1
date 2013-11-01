@@ -21,7 +21,7 @@ var projectsHeight;
 	//
 
 	var homeTop,			// the distance from the top of the home section
-		projectTop,			// the distance from the top of the project section
+		workTop,			// the distance from the top of the Work section
 		aboutTop,			// the distance from the top of the about section
 		contactTop;			// the distance from the top of the contact section
 	
@@ -57,7 +57,7 @@ var projectsHeight;
 	BRAICAN.variables = function(){
 
 		homeTop = $('#home').offset().top,
-		projectTop = $('#projects').offset().top,
+		workTop = $('#work').offset().top,
 		aboutTop = $('#about').offset().top,
 		contactTop = $('#contact').offset().top;
 		
@@ -65,22 +65,39 @@ var projectsHeight;
 
 	// initialize the things
 	BRAICAN.init = function(){
-
+		
+		$('body').addClass('initialized');
 		
 
 		// -------------------------------
+		//
 		// slide to nav
 		//
 		$('a[href*=#]').on('click', function(e){
 			e.preventDefault();
 			var id = $(this).attr('href');
-			var offset = $(id).offset().top - adminbarOffset;
+			var offset = $(id).offset().top + 1;
 
 			$('html, body').animate({scrollTop: offset}, 1000);
 		});
 
-
 		// -------------------------------
+		//
+		// expanding navigation items
+		//
+		$('.nav.collapsed').hover(function(){
+			$(this).find('li').addClass('expanded');
+		}, function(){
+			$(this).find('li').removeClass('expanded');
+		});
+
+		// --------------------------------
+		//
+		// the projects section
+		//
+
+
+		// 
 		// get the height of the underlay for each project
 		//
 		$('.project-thumb').hover(function(){
@@ -90,7 +107,7 @@ var projectsHeight;
 			$(this).find('img').animate({'top':'0'}, 100);
 		});
 
-		// ---------------------------------
+		// 
 		// AJAX the content
 		//
 
@@ -150,10 +167,6 @@ var projectsHeight;
 
 	// debug a whole buncha stuff. console logs and the like
 	BRAICAN.debug = function(){
-		console.log(homeTop);
-		console.log(projectTop);
-		console.log(aboutTop);
-		console.log(contactTop);
 	};
 
 	// DOM is ready
@@ -169,21 +182,23 @@ var projectsHeight;
 	// when the window scrolls
 	$(window).scroll(function(){
 		var fromTop = $(window).scrollTop();
+		var parallaxSpeed = .2;
 
-		if(fromTop > homeTop + 60 && fromTop < projectTop){
-			console.log("home");
+		$('.parallax-it').css({
+			'top': fromTop * parallaxSpeed + 'px',
+			'opacity': Math.abs((1 + 400) / (fromTop + 400))
+		});
+
+		if(fromTop > homeTop + 60 && fromTop < workTop){
 			$('.topborder').removeClass('fixed');
 			$('#home .topborder').addClass('fixed');
-		} else if(fromTop > projectTop && fromTop < aboutTop){
-			console.log("projects");
+		} else if(fromTop > workTop && fromTop < aboutTop){
 			$('.topborder').removeClass('fixed');
-			$('#projects .topborder').addClass('fixed');
+			$('#work .topborder').addClass('fixed');
 		} else if(fromTop > aboutTop && fromTop < contactTop){
-			console.log("about");
 			$('.topborder').removeClass('fixed');
 			$('#about .topborder').addClass('fixed');
 		} else if(fromTop > contactTop){
-			console.log("contact");
 			$('.topborder').removeClass('fixed');
 			$('#contact .topborder').addClass('fixed');
 		} else {

@@ -20,14 +20,18 @@ get_header(); ?>
 				<div class="braica-container">
 					<div class="right-rail">
 						<div class="logo"></div>
-						<div id="nav">
-							 <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'clearfix' ) ); ?>
+						<div class="nav">
+							<ul>
+								<li><a href="#work">Work</a></li>
+								<li><a href="#about">About</a></li>
+								<li><a href="#contact">Contact</a></li>
+							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<div class="braica-container br-cf">
+			<div class="braica-container br-cf parallax-it">
 				<div class="col col4">
 					<div class="braica-block">
 						<?php echo $content; ?>
@@ -41,12 +45,18 @@ get_header(); ?>
 		<?php $loop = new WP_Query( $args ); ?>
 		<?php if($loop->have_posts()): ?>
 			<?php $project_list = array(); ?>
-			<section id="projects" class="br-cf">
+			<section id="work" class="br-cf">
 				
 				<div class="topborder">
 					<div class="braica-container">
 						<div class="right-rail">
-							<h3>Projects</h3>
+							<div class="nav collapsed">
+								<ul>
+									<li class="active"><a href="#work">Work</a></li>
+									<li><a href="#about">About</a></li>
+									<li><a href="#contact">Contact</a></li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -93,7 +103,13 @@ get_header(); ?>
 			<div class="topborder">
 				<div class="braica-container">
 					<div class="right-rail">
-						<h3><?php echo $page->post_title; ?></h3>
+						<div class="nav collapsed">
+							<ul>
+								<li class="active"><a href="#about">About</a></li>
+								<li><a href="#work">Work</a></li>
+								<li><a href="#contact">Contact</a></li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -119,7 +135,13 @@ get_header(); ?>
 			<div class="topborder">
 				<div class="braica-container">
 					<div class="right-rail">
-						<h3><?php echo $page->post_title; ?></h3>
+						<div class="nav collapsed">
+							<ul>
+								<li class="active"><a href="#contact">Contact</a></li>
+								<li><a href="#work">Work</a></li>
+								<li><a href="#about">About</a></li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
