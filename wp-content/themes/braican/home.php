@@ -42,7 +42,7 @@ get_header(); ?>
 		<?php if($loop->have_posts()): ?>
 			<?php $project_list = array(); ?>
 			<section id="projects" class="br-cf">
-				
+				<?php get ?>
 				<div class="topborder">
 					<div class="braica-container">
 						<div class="right-rail">
@@ -52,6 +52,17 @@ get_header(); ?>
 				</div>
 
 				<div class="braica-container br-cf">
+					<?php $work_types = get_terms('project_categories'); ?>
+					<?php if($work_types) : ?>
+						<div class="categories">
+							<ul>
+								<?php foreach ($work_types as $t) : ?>
+									<li><a href="#"><?php echo $t->name; ?></a></li>
+								<?php endforeach; ?>
+							</ul>
+						</div>
+					<?php endif; ?>
+
 					<div class="project-group">
 						
 						<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>

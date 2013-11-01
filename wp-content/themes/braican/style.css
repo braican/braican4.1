@@ -458,7 +458,6 @@ section{
 }
 .topborder .braica-container{
 	max-width: 856px;
-	padding-bottom: 60px;
 }
 
 
@@ -560,6 +559,7 @@ section{
 	background: #fff;
 	color: #404040;
 }
+
 #projects .right-rail h3{
 	background: #e6e7e7;
 }
@@ -613,6 +613,28 @@ section{
 	margin-left: -64px;
 	width: auto;
 	display: none;
+}
+
+.categories{
+	position: relative;
+	top: -50px;
+	margin-left: 8px;
+	/*z-index: 1000;*/
+}
+.categories ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.categories ul li{
+	display: inline;
+}
+.categories ul li a{
+	font-size: .8em;
+	text-transform: lowercase;
+	text-decoration: none;
+	color: #333;
+	margin-right: 20px;
 }
 
 /* ======================
