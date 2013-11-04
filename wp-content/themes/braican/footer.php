@@ -15,6 +15,12 @@
 			<div class="site-info">Copyright &copy; <?php echo date('Y'); ?> Nicholas Braica</div><!-- .site-info -->
 		</div>
 	</footer><!-- #colophon -->
+
+	<div id="project-modal">
+		<div class="stuff">
+			
+		</div>
+	</div>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

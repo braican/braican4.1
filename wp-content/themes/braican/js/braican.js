@@ -2,8 +2,6 @@
 // braican.js
 //
 
-var projectsHeight;
-
 (function(BRAICAN, $, undefined){
 
 	// -----------------------------------------
@@ -23,7 +21,8 @@ var projectsHeight;
 	var homeTop,			// the distance from the top of the home section
 		workTop,			// the distance from the top of the Work section
 		aboutTop,			// the distance from the top of the about section
-		contactTop;			// the distance from the top of the contact section
+		contactTop,			// the distance from the top of the contact section
+		projectsHeight;
 	
 
 
@@ -47,26 +46,29 @@ var projectsHeight;
 		return results[1] || 0;
 	}
 
-	// -----------------------------------------
-	// PUBLIC
-	//
-	// Methods
-	//
-
 	// set the global variables
-	BRAICAN.variables = function(){
+	function updateVariables(){
 
 		homeTop = $('#home').offset().top,
 		workTop = $('#work').offset().top,
 		aboutTop = $('#about').offset().top,
 		contactTop = $('#contact').offset().top;
 		
+		console.log(aboutTop);
 	};
+
+	// -----------------------------------------
+	// PUBLIC
+	//
+	// Methods
+	//
 
 	// initialize the things
 	BRAICAN.init = function(){
 		
 		$('body').addClass('initialized');
+
+		updateVariables();
 		
 
 		// -------------------------------
@@ -111,35 +113,17 @@ var projectsHeight;
 		// AJAX the content
 		//
 
+		$('#project-modal').css({'top': '-' + $('#project-modal').height() + 'px'});
 		$('.project-group a').on('click', function(event) {
 			event.preventDefault();
 			var link = $(this).attr('href');
+
+			// $('.project-thumb').addClass('small');
+
 			$(this).addClass('active');
 
-			$('#projects').height(projectsHeight);
-			$('.project-group').fadeOut(function(){
-				$('.loader').fadeIn();
-				$('.project-list').animate({
-					'left':'0px'
-				});
-
-				$('.project-area').hide().load(link, function(response, status, xhr){
-					$(this).fadeIn();
-					$('.loader').fadeOut();
-				});
-			});
-		});
-
-		$('.project-list a').on('click', function(event) {
-			event.preventDefault();
-			var link = $(this).attr('href');
-			$('.project-area').fadeOut(function(){
-				$('.loader').fadeIn();
-				$(this).load(link, function(response, status, xhr){
-					$(this).fadeIn();
-					$('.loader').fadeOut();
-				});
-			});
+			$('#project-modal').addClass('activated');
+			
 		});
 
 		
@@ -167,12 +151,12 @@ var projectsHeight;
 
 	// debug a whole buncha stuff. console logs and the like
 	BRAICAN.debug = function(){
+
 	};
 
 	// DOM is ready
 	$(document).ready( function() {
 		BRAICAN.init();
-		BRAICAN.variables();
 		BRAICAN.debug();
 	});
 

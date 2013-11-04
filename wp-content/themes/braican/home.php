@@ -60,8 +60,11 @@ get_header(); ?>
 						</div>
 					</div>
 				</div>
+				
 
 				<div class="braica-container br-cf">
+
+					<!-- the navigation -->
 					<?php $work_types = get_terms('project_categories'); ?>
 					<?php if($work_types) : ?>
 						<div class="categories">
@@ -73,7 +76,8 @@ get_header(); ?>
 						</div>
 					<?php endif; ?>
 
-					<div class="project-group">
+					<!-- the project thumbs -->
+					<div class="project-group br-cf">
 						
 						<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 							<?php $project_list[get_the_title()] = get_permalink(); ?>
@@ -96,7 +100,9 @@ get_header(); ?>
 						
 					</div><!-- .project-group -->
 
-					<div class="project-area"></div><!-- .project-area -->
+					<div id="project-area">
+						<div id="project-inner"></div>
+					</div><!-- .project-area -->
 
 					<img class="loader" src="<?php echo get_template_directory_uri(); ?>/img/load.gif">
 				</div>

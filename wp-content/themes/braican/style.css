@@ -103,6 +103,7 @@ textarea {
  * --typography
  * ----------------------------------- */
 
+/* first header */
 h1{
 	font-size: 3em;
 	line-height: 1.1em;
@@ -112,24 +113,22 @@ h1{
 	color: #fff;
 }
 
+/* main content, larger type */
 h2{
 	font-size: 1.5em;
 	font-family: 'Raleway', sans-serif;
 	margin-bottom: 1em;
+	font-weight: 100;
 }
+
+/* project titles */
 h3{
-	font-size: 1em;
-	font-family: 'Open Sans', sans-serif;
+	font-size: 2em;
+	font-family: 'Raleway', sans-serif;
 	font-weight: 700;
-	text-transform: uppercase;
-	color: #fff;
-	text-align: center;
-	padding: 10px 0;
+	color: #444;
 }
-h4{
-	font-family: 'Montserrat', sans-serif;
-	font-size: 1.2em;
-}
+h4{}
 h5{}
 h6{}
 hr {
@@ -404,7 +403,9 @@ a:active {
 /* -----------------------------------
  * --layout
  * ----------------------------------- */
-
+#page{
+	position: relative;
+}
 section{
 	width: 100%;
 	position: relative;
@@ -595,7 +596,21 @@ section{
 	box-sizing: border-box;
 	position: relative;
 	overflow: hidden;
+	height: 196px;
+
+	-webkit-transition: height .2s linear;
+	-o-transition: height .2s linear;
+	-moz-transition: height .2s linear;
+	transition: height .2s linear;
 }
+.project-thumb.small{
+	height: 100px;
+	-webkit-transition: height .2s linear;
+	-o-transition: height .2s linear;
+	-moz-transition: height .2s linear;
+	transition: height .2s linear;
+}
+
 .project-thumb .underlay{
 	top:0;
 	left: 0;
@@ -616,14 +631,16 @@ section{
 	z-index: 10;
 }
 
-.project-content{
-	float: left;
-}
 
-.project-group{
-	position: relative;
-}
+#project-modal{
 
+}
+#project-modal.activated{
+
+}
+#project-modal .stuff{
+
+}
 
 .loader{
 	position: absolute;

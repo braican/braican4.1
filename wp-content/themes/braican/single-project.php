@@ -2,7 +2,7 @@
 
 <?php while ( have_posts() ) : the_post(); ?>
 
-	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<article id="post-<?php the_ID(); ?>" <?php post_class('project-detail'); ?>>
 		<header class="project-header">
 			<h3 class="project-title"><?php the_title(); ?></h3>
 		</header><!-- .project-header -->
@@ -14,9 +14,7 @@
 		<div class="project-gallery">
 			<?php $gallery_id = get_field('braica_gallery'); ?>
 			<?php $gallery = get_post_gallery($gallery_id[0]); ?>
-			<pre>
-				<?php print_r($gallery); ?>
-			</pre>
+			<?php print_r($gallery); ?>
 		</div>
 
 		<footer class="project-meta">

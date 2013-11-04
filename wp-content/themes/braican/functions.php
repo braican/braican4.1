@@ -68,36 +68,6 @@ endif; // braican_setup
 
 add_action( 'after_setup_theme', 'braican_setup' );
 
-/**
- * Setup the WordPress core custom background feature.
- *
- * Use add_theme_support to register support for WordPress 3.4+
- * as well as provide backward compatibility for WordPress 3.3
- * using feature detection of wp_get_theme() which was introduced
- * in WordPress 3.4.
- *
- * @todo Remove the 3.3 support when WordPress 3.6 is released.
- *
- * Hooks into the after_setup_theme action.
- */
-function braican_register_custom_background() {
-	$args = array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	);
-
-	$args = apply_filters( 'braican_custom_background_args', $args );
-
-	if ( function_exists( 'wp_get_theme' ) ) {
-		add_theme_support( 'custom-background', $args );
-	} else {
-		define( 'BACKGROUND_COLOR', $args['default-color'] );
-		if ( ! empty( $args['default-image'] ) )
-			define( 'BACKGROUND_IMAGE', $args['default-image'] );
-		add_custom_background();
-	}
-}
-add_action( 'after_setup_theme', 'braican_register_custom_background' );
 
 /**
  * Register widgetized area and update sidebar with default widgets
@@ -114,10 +84,19 @@ function braican_widgets_init() {
 }
 add_action( 'widgets_init', 'braican_widgets_init' );
 
+
+if (!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
+function my_jquery_enqueue() {
+   wp_deregister_script('jquery');
+   wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js", false, false, true);
+   wp_enqueue_script('jquery');
+}
+
 /**
  * Enqueue scripts and styles
  */
 function braican_scripts() {
+
 	wp_enqueue_style( 'braican-style', get_stylesheet_uri() );
 
 	//wp_enqueue_script("jquery");
