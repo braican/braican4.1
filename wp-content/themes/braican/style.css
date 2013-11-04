@@ -480,19 +480,19 @@ section{
 
 .nav.collapsed li{
 	height: 0;
-	-webkit-transition: height .1s linear, font-size .1s linear;
-	-o-transition: height .1s linear, font-size .1s linear;
-	-moz-transition: height .1s linear, font-size .1s linear;
-	transition: height .1s linear, font-size .1s linear;
+	-webkit-transition: height .1s linear;
+	-o-transition: height .1s linear;
+	-moz-transition: height .1s linear;
+	transition: height .1s linear;
 }
 
 .nav.collapsed li.active,
 .nav.collapsed li.expanded {
 	height: 38px;
-	-webkit-transition: height .1s linear, font-size .1s linear;
-	-o-transition: height .1s linear, font-size .1s linear;
-	-moz-transition: height .1s linear, font-size .1s linear;
-	transition: height .1s linear, font-size .1s linear;
+	-webkit-transition: height .1s linear;
+	-o-transition: height .1s linear;
+	-moz-transition: height .1s linear;
+	transition: height .1s linear;
 }
 .nav a {
 	font-family: 'Open Sans', sans-serif;
@@ -513,9 +513,6 @@ section{
 }
 .nav.collapsed li:not(.active){
 	opacity: .8;
-}
-.nav.collapsed li.expanded.active{
-	font-size: 1.2em;
 }
 .nav li:not(.active) a:hover {
 	background: #1A2125;

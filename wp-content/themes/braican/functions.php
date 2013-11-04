@@ -150,6 +150,20 @@ function create_post_type() {
             'supports' => array('title', 'editor', 'thumbnail')
         )
     );
+
+    register_post_type( 'project_gallery',
+        array(
+            'labels' => array(
+                'name' => 'Project Galleries',
+                'singular_name' => 'Project Gallery',
+                'add_new_item' => 'Add New Gallery'
+            ),
+            'description' => 'create a visual gallery for the chosen project',
+            'public' => true,
+            'has_archive' => false,
+            'supports' => array('title', 'editor')
+        )
+    );
 }
 add_action( 'init', 'create_post_type' );
 
