@@ -69,6 +69,22 @@
 		$('body').addClass('initialized');
 
 		updateVariables();
+
+		// -------------------------------
+		// waypoints
+		//
+		$('section').waypoint(function(dir) {
+			$('.topborder').removeClass('fixed');
+			if(dir == 'up'){
+				$(this).prev().find('.topborder').addClass('fixed');
+			} else {
+				$(this).find('.topborder').addClass('fixed');	
+			}
+			
+			console.log(dir);
+		}, {
+			context: '#page'
+		});
 		
 
 		// -------------------------------
@@ -98,7 +114,6 @@
 		//
 		// the projects section
 		//
-
 
 		// 
 		// get the height of the underlay for each project
@@ -164,29 +179,29 @@
 
 	// when the window scrolls
 	$(window).scroll(function(){
-		var fromTop = $(window).scrollTop();
-		var parallaxSpeed = .2;
+		// var fromTop = $(window).scrollTop();
+		// var parallaxSpeed = .2;
 
-		$('.parallax-it').css({
-			'top': fromTop * parallaxSpeed + 'px',
-			'opacity': Math.abs((1 + 400) / (fromTop + 400))
-		});
+		// $('.parallax-it').css({
+		// 	'top': fromTop * parallaxSpeed + 'px',
+		// 	'opacity': Math.abs((1 + 400) / (fromTop + 400))
+		// });
 
-		if(fromTop > homeTop + 60 && fromTop < workTop){
-			$('.topborder').removeClass('fixed');
-			$('#home .topborder').addClass('fixed');
-		} else if(fromTop > workTop && fromTop < aboutTop){
-			$('.topborder').removeClass('fixed');
-			$('#work .topborder').addClass('fixed');
-		} else if(fromTop > aboutTop && fromTop < contactTop){
-			$('.topborder').removeClass('fixed');
-			$('#about .topborder').addClass('fixed');
-		} else if(fromTop > contactTop){
-			$('.topborder').removeClass('fixed');
-			$('#contact .topborder').addClass('fixed');
-		} else {
-			$('.topborder').removeClass('fixed');
-		}
+		// if(fromTop > homeTop + 60 && fromTop < workTop){
+		// 	$('.topborder').removeClass('fixed');
+		// 	$('#home .topborder').addClass('fixed');
+		// } else if(fromTop > workTop && fromTop < aboutTop){
+		// 	$('.topborder').removeClass('fixed');
+		// 	$('#work .topborder').addClass('fixed');
+		// } else if(fromTop > aboutTop && fromTop < contactTop){
+		// 	$('.topborder').removeClass('fixed');
+		// 	$('#about .topborder').addClass('fixed');
+		// } else if(fromTop > contactTop){
+		// 	$('.topborder').removeClass('fixed');
+		// 	$('#contact .topborder').addClass('fixed');
+		// } else {
+		// 	$('.topborder').removeClass('fixed');
+		// }
 	});
 
 }(window.BRAICAN = window.BRAICAN || {}, jQuery));

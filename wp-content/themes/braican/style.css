@@ -588,14 +588,13 @@ section{
 /* -----------------------------------
  * --home
  * ----------------------------------- */
-
+#above-home,
 #home{
 	background: #f47c20;
-	padding: 212px 0 100px 0;
-	z-index: 1;
 }
-#home .topborder{
-	top: 60px;
+#home{
+	padding: 100px 0;
+	z-index: 1;
 }
 #home .right-rail .nav{
 	background: #e47125;

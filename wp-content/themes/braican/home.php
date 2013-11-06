@@ -9,6 +9,8 @@ get_header(); ?>
 
 	<div id="content" class="site-content" role="main">
 
+		<section id="above-home" class="br-cf"></section>
+
 		<!-- home section -->
 		<section id="home" class="br-cf">
 			<?php $id = 8; ?>
