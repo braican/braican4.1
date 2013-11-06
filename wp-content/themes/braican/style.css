@@ -34,12 +34,16 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 }
 html {
 	font-size: 75%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
-	overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
 	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
 	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
 body {
 	background: #333A3E;
+	zoom:1;
+}
+
+body, html{
+	height: 100%;
 }
 article,
 aside,
@@ -405,11 +409,18 @@ a:active {
  * ----------------------------------- */
 #page{
 	position: relative;
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 section{
 	width: 100%;
 	position: relative;
 	padding: 60px 0;
+	margin: -1px;
 }
 
 .braica-container{
@@ -462,6 +473,40 @@ section{
 	max-width: 856px;
 }
 
+
+
+#project-modal{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+	top: 0;
+	left: 0;
+	margin:0;
+	background: #333;
+	opacity: 0;
+	z-index: 0;
+	-webkit-transition: opacity .2s linear;
+	-moz-transition: opacity .2s linear;
+	-ms-transition: opacity .2s linear;
+	-o-transition: opacity .2s linear;
+	transition: opacity .2s linear;
+}
+#project-modal.activated{
+	opacity: 1;
+	z-index: 1000;
+	-webkit-transition: opacity .2s linear;
+	-moz-transition: opacity .2s linear;
+	-ms-transition: opacity .2s linear;
+	-o-transition: opacity .2s linear;
+	transition: opacity .2s linear;
+}
+
+#project-modal .stuff{
+	width: 800px;
+	margin: 0 auto;
+	height: 100%;
+}
 
 /* -----------------------------------
  * --nav
@@ -632,15 +677,6 @@ section{
 }
 
 
-#project-modal{
-
-}
-#project-modal.activated{
-
-}
-#project-modal .stuff{
-
-}
 
 .loader{
 	position: absolute;

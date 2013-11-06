@@ -78,9 +78,10 @@
 		$('a[href*=#]').on('click', function(e){
 			e.preventDefault();
 			var id = $(this).attr('href');
-			var offset = $(id).offset().top + 1;
 
-			$('html, body').animate({scrollTop: offset}, 1000);
+			// $('body').animate({scrollTop: offset}, 1000);
+
+			$('#page').scrollTo(id, 1000, {axis: 'y', easing:'swing', margin:true});
 		});
 
 		// -------------------------------
@@ -112,20 +113,18 @@
 		// 
 		// AJAX the content
 		//
-
-		$('#project-modal').css({'top': '-' + $('#project-modal').height() + 'px'});
 		$('.project-group a').on('click', function(event) {
 			event.preventDefault();
 			var link = $(this).attr('href');
-
-			// $('.project-thumb').addClass('small');
-
-			$(this).addClass('active');
 
 			$('#project-modal').addClass('activated');
 			
 		});
 
+		$('.close-modal').on('click', function(event) {
+			event.preventDefault();
+			$('#project-modal').removeClass('activated');
+		});
 		
 		// ---------------------------------
 		// skip link focus
