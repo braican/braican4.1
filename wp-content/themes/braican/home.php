@@ -87,11 +87,12 @@ get_header(); ?>
 								<div class="col col2<?php foreach($categories as $cat){echo " " . $cat->slug;} ?>">
 									<div class="braica-block">
 										<a href="<?php the_permalink(); ?>" class="project-thumb">
-											<div class="underlay">
+											<?php the_post_thumbnail(); ?>
+											<div class="overlay">
 												<h4><?php the_title(); ?></h4>
 											</div>
-											<?php the_post_thumbnail(); ?>
 										</a>
+
 									</div>
 								</div>
 								
@@ -116,8 +117,9 @@ get_header(); ?>
 					<div class="right-rail">
 						<div class="nav collapsed">
 							<ul>
-								<li class="active"><a href="#about">About</a></li>
+								
 								<li><a href="#work">Work</a></li>
+								<li class="active"><a href="#about">About</a></li>
 								<li><a href="#contact">Contact</a></li>
 							</ul>
 						</div>
@@ -148,9 +150,10 @@ get_header(); ?>
 					<div class="right-rail">
 						<div class="nav collapsed">
 							<ul>
-								<li class="active"><a href="#contact">Contact</a></li>
+								
 								<li><a href="#work">Work</a></li>
 								<li><a href="#about">About</a></li>
+								<li class="active"><a href="#contact">Contact</a></li>
 							</ul>
 						</div>
 					</div>

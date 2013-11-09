@@ -111,12 +111,12 @@
 		// 
 		// get the height of the underlay for each project
 		//
-		$('.project-thumb').hover(function(){
-			var h = $(this).find('.underlay').height() + 20;
-			$(this).find('img').animate({'top': h + 'px'}, 200);
-		}, function(){
-			$(this).find('img').animate({'top':'0'}, 100);
-		});
+		// $('.project-thumb').hover(function(){
+		// 	var h = $(this).find('.underlay').height() + 20;
+		// 	$(this).find('img').animate({'top': h + 'px'}, 200);
+		// }, function(){
+		// 	$(this).find('img').animate({'top':'0'}, 100);
+		// });
 
 		//
 		// filter the projects by category

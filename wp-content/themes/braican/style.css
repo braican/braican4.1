@@ -596,10 +596,13 @@ section{
   	-o-transition: background .2s linear;
   	-moz-transition: background .2s linear;
  	 transition: background .2s linear;
+ 	 position: relative;
 }
+
 .nav.collapsed li:not(.active){
-	opacity: .8;
+	opacity: .5;
 }
+
 .nav li:not(.active) a:hover {
 	background: #1A2125;
 
@@ -696,24 +699,26 @@ section{
 	transition: height .2s linear;
 }
 
-.project-thumb .underlay{
+.project-thumb .overlay{
 	top:0;
 	left: 0;
+	bottom: 0;
 	width: 100%;
 	position: absolute;
 	z-index: 9;
 	color: #fff;
-	background: #aaa;
+	background: rgba(0,0,0,.6);
 	padding: 10px;
 	display: block;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+	text-align: center;
 }
 .project-thumb img{
 	display: block;
 	position: relative;
-	z-index: 10;
+	z-index: 8;
 }
 
 
