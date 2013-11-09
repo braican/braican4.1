@@ -20,25 +20,8 @@
 </div><!-- #page -->
 
 <div id="project-modal">
-	<span href="#" class="close-modal">X</span>
-	<div class="stuff">
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, necessitatibus, cupiditate ullam repellat rem esse iure aliquam voluptatem vitae accusantium! Nemo, est, voluptate cum vel non beatae sunt itaque perspiciatis!</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, necessitatibus, cupiditate ullam repellat rem esse iure aliquam voluptatem vitae accusantium! Nemo, est, voluptate cum vel non beatae sunt itaque perspiciatis!</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, necessitatibus, cupiditate ullam repellat rem esse iure aliquam voluptatem vitae accusantium! Nemo, est, voluptate cum vel non beatae sunt itaque perspiciatis!</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, necessitatibus, cupiditate ullam repellat rem esse iure aliquam voluptatem vitae accusantium! Nemo, est, voluptate cum vel non beatae sunt itaque perspiciatis!</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, necessitatibus, cupiditate ullam repellat rem esse iure aliquam voluptatem vitae accusantium! Nemo, est, voluptate cum vel non beatae sunt itaque perspiciatis!</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, necessitatibus, cupiditate ullam repellat rem esse iure aliquam voluptatem vitae accusantium! Nemo, est, voluptate cum vel non beatae sunt itaque perspiciatis!</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, necessitatibus, cupiditate ullam repellat rem esse iure aliquam voluptatem vitae accusantium! Nemo, est, voluptate cum vel non beatae sunt itaque perspiciatis!</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, necessitatibus, cupiditate ullam repellat rem esse iure aliquam voluptatem vitae accusantium! Nemo, est, voluptate cum vel non beatae sunt itaque perspiciatis!</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, necessitatibus, cupiditate ullam repellat rem esse iure aliquam voluptatem vitae accusantium! Nemo, est, voluptate cum vel non beatae sunt itaque perspiciatis!</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, necessitatibus, cupiditate ullam repellat rem esse iure aliquam voluptatem vitae accusantium! Nemo, est, voluptate cum vel non beatae sunt itaque perspiciatis!</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, necessitatibus, cupiditate ullam repellat rem esse iure aliquam voluptatem vitae accusantium! Nemo, est, voluptate cum vel non beatae sunt itaque perspiciatis!</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, necessitatibus, cupiditate ullam repellat rem esse iure aliquam voluptatem vitae accusantium! Nemo, est, voluptate cum vel non beatae sunt itaque perspiciatis!</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, necessitatibus, cupiditate ullam repellat rem esse iure aliquam voluptatem vitae accusantium! Nemo, est, voluptate cum vel non beatae sunt itaque perspiciatis!</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, necessitatibus, cupiditate ullam repellat rem esse iure aliquam voluptatem vitae accusantium! Nemo, est, voluptate cum vel non beatae sunt itaque perspiciatis!</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, necessitatibus, cupiditate ullam repellat rem esse iure aliquam voluptatem vitae accusantium! Nemo, est, voluptate cum vel non beatae sunt itaque perspiciatis!</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, necessitatibus, cupiditate ullam repellat rem esse iure aliquam voluptatem vitae accusantium! Nemo, est, voluptate cum vel non beatae sunt itaque perspiciatis!</p>
-	</div>
+	<span href="#" id="close-modal" class="icon-cancel"></span>
+	<div id="project-content"></div>
 </div>
 
 <?php wp_footer(); ?>

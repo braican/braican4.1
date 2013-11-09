@@ -18,11 +18,7 @@
 	// Properties
 	//
 
-	var homeTop,			// the distance from the top of the home section
-		workTop,			// the distance from the top of the Work section
-		aboutTop,			// the distance from the top of the about section
-		contactTop,			// the distance from the top of the contact section
-		projectsHeight;
+	var homelink	= window.location.href	// the initial page load url
 	
 
 
@@ -46,16 +42,23 @@
 		return results[1] || 0;
 	}
 
-	// set the global variables
-	function updateVariables(){
+	//
+	// loadpage
+	//
+	// loads the page
+	function loadpage(link){
+		$('#project-content').load(link, function(){
+			$('#project-modal').fadeIn();
+			
+			$('body').scrollTo(0, 500, {axis: 'y', easing:'swing', margin:true});
+		});	
+	}
 
-		homeTop = $('#home').offset().top,
-		workTop = $('#work').offset().top,
-		aboutTop = $('#about').offset().top,
-		contactTop = $('#contact').offset().top;
-		
-		console.log(aboutTop);
-	};
+	function addListener(){
+		window.addEventListener("popstate", function(e) {
+			loadpage(location.pathname);
+		});
+	}
 
 	// -----------------------------------------
 	// PUBLIC
@@ -68,8 +71,6 @@
 		
 		$('body').addClass('initialized');
 
-		updateVariables();
-
 		// -------------------------------
 		// waypoints
 		//
@@ -80,12 +81,7 @@
 			} else {
 				$(this).find('.topborder').addClass('fixed');	
 			}
-			
-			console.log(dir);
-		}, {
-			context: '#page'
 		});
-		
 
 		// -------------------------------
 		//
@@ -94,10 +90,8 @@
 		$('a[href*=#]').on('click', function(e){
 			e.preventDefault();
 			var id = $(this).attr('href');
-
-			// $('body').animate({scrollTop: offset}, 1000);
-
-			$('#page').scrollTo(id, 1000, {axis: 'y', easing:'swing', margin:true});
+			if(id.length > 1)
+				$('body').scrollTo(id, 1000, {axis: 'y', easing:'swing', margin:true});
 		});
 
 		// -------------------------------
@@ -111,10 +105,9 @@
 		});
 
 		// --------------------------------
-		//
 		// the projects section
+		// --------------------------------
 		//
-
 		// 
 		// get the height of the underlay for each project
 		//
@@ -125,6 +118,24 @@
 			$(this).find('img').animate({'top':'0'}, 100);
 		});
 
+		//
+		// filter the projects by category
+		//
+		$('.categories a').click(function(event) {
+			event.preventDefault();
+			if($(this).hasClass('showall')){
+				$('.categories a').removeClass('active');
+				$('.project-group > .col').show();
+			} else {
+				$(this).toggleClass('active');
+				$('.project-group > .col').hide();
+				$('.categories a.active').each(function(index, el) {
+					var cat = $(el).attr('data-category');
+					$('.project-group > .col.' + cat).show();
+				});	
+			}
+		});
+
 		// 
 		// AJAX the content
 		//
@@ -132,14 +143,24 @@
 			event.preventDefault();
 			var link = $(this).attr('href');
 
-			$('#project-modal').addClass('activated');
-			
+			$('#page').fadeOut();
+
+			loadpage(link);
+			addListener();
+			history.pushState(null, null, link);
 		});
 
-		$('.close-modal').on('click', function(event) {
+		//
+		// close the modal
+		//
+		$('#close-modal').on('click', function(event) {
 			event.preventDefault();
-			$('#project-modal').removeClass('activated');
+			$('#page').fadeIn(function(){
+				history.pushState(null, null, homelink);
+				$('#project-content').removeAttr('style').empty();
+			});
 		});
+
 		
 		// ---------------------------------
 		// skip link focus
@@ -179,29 +200,7 @@
 
 	// when the window scrolls
 	$(window).scroll(function(){
-		// var fromTop = $(window).scrollTop();
-		// var parallaxSpeed = .2;
 
-		// $('.parallax-it').css({
-		// 	'top': fromTop * parallaxSpeed + 'px',
-		// 	'opacity': Math.abs((1 + 400) / (fromTop + 400))
-		// });
-
-		// if(fromTop > homeTop + 60 && fromTop < workTop){
-		// 	$('.topborder').removeClass('fixed');
-		// 	$('#home .topborder').addClass('fixed');
-		// } else if(fromTop > workTop && fromTop < aboutTop){
-		// 	$('.topborder').removeClass('fixed');
-		// 	$('#work .topborder').addClass('fixed');
-		// } else if(fromTop > aboutTop && fromTop < contactTop){
-		// 	$('.topborder').removeClass('fixed');
-		// 	$('#about .topborder').addClass('fixed');
-		// } else if(fromTop > contactTop){
-		// 	$('.topborder').removeClass('fixed');
-		// 	$('#contact .topborder').addClass('fixed');
-		// } else {
-		// 	$('.topborder').removeClass('fixed');
-		// }
 	});
 
 }(window.BRAICAN = window.BRAICAN || {}, jQuery));
