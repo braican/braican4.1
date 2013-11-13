@@ -46,7 +46,6 @@ get_header(); ?>
 		<?php $args = array( 'post_type' => 'project', 'posts_per_page' => -1 ); ?>
 		<?php $loop = new WP_Query( $args ); ?>
 		<?php if($loop->have_posts()): ?>
-			<?php $project_list = array(); ?>
 			<section id="work" class="br-cf">
 				
 				<div class="topborder">
@@ -72,8 +71,9 @@ get_header(); ?>
 						<div class="categories">
 							<ul>
 								<?php foreach ($work_types as $t) : ?>
-									<li><a href="#"><?php echo $t->name; ?></a></li>
+									<li><a href="#" data-category="<?php echo $t->slug; ?>"><?php echo $t->name; ?></a></li>
 								<?php endforeach; ?>
+								<li><a href="#" class="showall">show all</a></li>
 							</ul>
 						</div>
 					<?php endif; ?>
@@ -82,17 +82,17 @@ get_header(); ?>
 					<div class="project-group br-cf">
 						
 						<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-							<?php $project_list[get_the_title()] = get_permalink(); ?>
 							<?php if(has_post_thumbnail()) : ?>
-								<div class="col col2">
+								<?php $categories = wp_get_post_terms($post->ID, 'project_categories'); ?>
+								<div class="col col2<?php foreach($categories as $cat){echo " " . $cat->slug;} ?>">
 									<div class="braica-block">
 										<a href="<?php the_permalink(); ?>" class="project-thumb">
-											<div class="underlay">
-												<h4><?php the_title(); ?></h4>
-
-											</div>
 											<?php the_post_thumbnail(); ?>
+											<div class="overlay">
+												<h4><?php the_title(); ?></h4>
+											</div>
 										</a>
+
 									</div>
 								</div>
 								
@@ -101,14 +101,7 @@ get_header(); ?>
 						<?php endwhile; ?>
 						
 					</div><!-- .project-group -->
-
-					<div id="project-area">
-						<div id="project-inner"></div>
-					</div><!-- .project-area -->
-
-					<img class="loader" src="<?php echo get_template_directory_uri(); ?>/img/load.gif">
 				</div>
-
 			</section><!-- #projects -->
 		<?php endif; ?>
 		
@@ -124,8 +117,9 @@ get_header(); ?>
 					<div class="right-rail">
 						<div class="nav collapsed">
 							<ul>
-								<li class="active"><a href="#about">About</a></li>
+								
 								<li><a href="#work">Work</a></li>
+								<li class="active"><a href="#about">About</a></li>
 								<li><a href="#contact">Contact</a></li>
 							</ul>
 						</div>
@@ -156,9 +150,10 @@ get_header(); ?>
 					<div class="right-rail">
 						<div class="nav collapsed">
 							<ul>
-								<li class="active"><a href="#contact">Contact</a></li>
+								
 								<li><a href="#work">Work</a></li>
 								<li><a href="#about">About</a></li>
+								<li class="active"><a href="#contact">Contact</a></li>
 							</ul>
 						</div>
 					</div>

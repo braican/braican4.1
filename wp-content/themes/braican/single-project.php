@@ -1,21 +1,33 @@
-
+<?php //get_header(); ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
 
-	<article id="post-<?php the_ID(); ?>" <?php post_class('project-detail'); ?>>
-		<header class="project-header">
-			<h3 class="project-title"><?php the_title(); ?></h3>
+	<article id="post-<?php the_ID(); ?>" <?php post_class('braica-container br-cf'); ?>>
+		<header class="project-header col">
+			<div class="braica-block">
+				<h3 class="project-title"><?php the_title(); ?></h3>
+			</div>
 		</header><!-- .project-header -->
 
-		<div class="project-content">
-			<?php the_content(); ?>
+		<div class="project-content col col2">
+			<div class="braica-block">
+				<?php the_field('braican_project_text'); ?>
+			</div>
 		</div><!-- .project-content -->
 
-		<div class="project-gallery">
-			<?php $gallery_id = get_field('braica_gallery'); ?>
-			<?php $gallery = get_post_gallery($gallery_id[0]); ?>
-			<?php print_r($gallery); ?>
-		</div>
+		<?php if(has_shortcode($post->post_content, 'gallery')) : ?>
+			<div class="project-gallery col col4">
+				<div class="braica-block">
+				<?php $gallery = get_post_gallery_images( $post ); ?>
+				<?php foreach($gallery as $img) : ?>
+					<div class="img-container">
+						<img src="<?php echo $img; ?>" alt="">
+					</div>
+				<?php endforeach; ?>
+				</div>
+			</div>
+		<?php endif; ?>
+		
 
 		<footer class="project-meta">
 			<?php edit_post_link( __( 'Edit', 'braican' ), '<span class="edit-link">', '</span>' ); ?>
