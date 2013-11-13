@@ -675,8 +675,6 @@ section{
 	z-index: 10;
 }
 
-
-
 .loader{
 	position: absolute;
 	left: 50%;
@@ -692,15 +690,16 @@ section{
  * ----------------------------------- */
 
 #about{
-	background: #5cbe85;
+	background: #606a67;
 	z-index: 3;
 }
 #about .right-rail .nav{
-	background: #42b679;
+	background:#565f5d;
+	
 }
 #about .topborder .braica-container,
 #about .right-rail{
-	border-top: 10px solid #42b679;
+	border-top: 10px solid #565f5d;
 }
 .categories{
 	position: relative;
@@ -730,15 +729,15 @@ section{
  * ----------------------------------- */
 
 #contact{
-	background: #606a67;
+	background: #5cbe85;
 	z-index: 4;
 }
 #contact .right-rail .nav{
-	background:#565f5d;
+	background: #42b679;
 }
 #contact .topborder .braica-container,
 #contact .right-rail{
-	border-top: 10px solid #565f5d;
+	border-top: 10px solid #42b679;
 }
 
 /* -----------------------------------
