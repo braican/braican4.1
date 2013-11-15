@@ -99,6 +99,33 @@ textarea {
 	line-height: 1.5;
 }
  
+/* Text meant only for screen readers */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar */
+}
+
 
 /* -----------------------------------
  * --typography
@@ -335,7 +362,7 @@ textarea {
 
 /* Links */
 a {
-	color: #aaa;
+	color: #ccc;
 	text-decoration: underline;
 
 /*	-webkit-transition: all .2s linear;
@@ -355,6 +382,23 @@ a:active {
   	-moz-transition: all .2s linear;
  	transition: all .2s linear;
 
+}
+
+.button{
+	background: rgba(0,0,0,0.4);
+	padding: 6px;
+	font-size: .8em;
+	text-decoration: none;
+	color: #fff;
+}
+.button:hover{
+	text-decoration: none;
+	background: rgba(0,0,0,.6);
+	-webkit-transition: background .2s linear;
+	-moz-transition: background .2s linear;
+	-ms-transition: background .2s linear;
+	-o-transition: background .2s linear;
+	transition: background .2s linear;
 }
 
 /* icon fonts */
@@ -449,33 +493,6 @@ a:active {
 	clear: both;
 	display: block;
 	margin: 0 auto;
-}
-
-/* Text meant only for screen readers */
-.screen-reader-text {
-	clip: rect(1px, 1px, 1px, 1px);
-	position: absolute !important;
-}
-
-.screen-reader-text:hover,
-.screen-reader-text:active,
-.screen-reader-text:focus {
-	background-color: #f1f1f1;
-	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-	clip: auto !important;
-	color: #21759b;
-	display: block;
-	font-size: 14px;
-	font-weight: bold;
-	height: auto;
-	left: 5px;
-	line-height: normal;
-	padding: 15px 23px 14px;
-	text-decoration: none;
-	top: 5px;
-	width: auto;
-	z-index: 100000; /* Above WP toolbar */
 }
 
 
@@ -595,8 +612,8 @@ section{
 	-webkit-transition: background .2s linear;
   	-o-transition: background .2s linear;
   	-moz-transition: background .2s linear;
- 	 transition: background .2s linear;
- 	 position: relative;
+	transition: background .2s linear;
+	position: relative;
 }
 
 .nav.collapsed li:not(.active){
@@ -665,16 +682,16 @@ section{
 #work{
 	z-index: 3;
 	position: relative;
-	background: #fff;
+	background: #F0EFEF;
 	color: #404040;
 }
 
 #work .right-rail .nav{
-	background: #e6e7e7;
+	background: #D7D6D6;
 }
 #work .topborder .braica-container,
 #work .right-rail{
-	border-top: 10px solid #e6e7e7;
+	border-top: 10px solid #D7D6D6;
 }
 
 .project-thumb{
@@ -731,6 +748,59 @@ section{
 	display: none;
 }
 
+.categories{
+	position: relative;
+	top: -50px;
+	margin-left: 8px;
+	/*z-index: 1000;*/
+}
+
+/* categories */
+.categories ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.categories ul li{
+	display: inline;
+}
+.categories ul li a{
+	font-size: .8em;
+	text-transform: lowercase;
+	text-decoration: none;
+	color: #333;
+	margin-right: 20px;
+	position: relative;
+	display: inline-block;
+
+	-webkit-transition: all .2s linear;
+	-moz-transition: all .2s linear;
+	-ms-transition: all .2s linear;
+	-o-transition: all .2s linear;
+	transition: all .2s linear;
+}
+.categories ul li a:hover{
+	color:#666;
+
+	-webkit-transform: translate(0, -2px);
+	-moz-transform: translate(0, -2px);
+	-ms-transform: translate(0, -2px);
+	-o-transform: translate(0, -2px);
+	transform: translate(0, -2px);
+
+	-webkit-transition: all .2s linear;
+	-moz-transition: all .2s linear;
+	-ms-transition: all .2s linear;
+	-o-transition: all .2s linear;
+	transition: all .2s linear;
+}
+
+.categories ul li a.active{
+	padding-bottom: 4px;
+	border-bottom:4px solid #D7D6D6;
+}
+
+
 /* -----------------------------------
  * --project modal
  * ----------------------------------- */
@@ -767,42 +837,17 @@ section{
 /* -----------------------------------
  * --about
  * ----------------------------------- */
-
 #about{
-	background: #606a67;
+	background: #5cbe85;
 	z-index: 3;
 }
 #about .right-rail .nav{
-	background:#565f5d;
+	background:#42b679;
 	
 }
 #about .topborder .braica-container,
 #about .right-rail{
-	border-top: 10px solid #565f5d;
-}
-.categories{
-	position: relative;
-	top: -50px;
-	margin-left: 8px;
-	/*z-index: 1000;*/
-}
-.categories ul{
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-}
-.categories ul li{
-	display: inline;
-}
-.categories ul li a{
-	font-size: .8em;
-	text-transform: lowercase;
-	text-decoration: none;
-	color: #333;
-	margin-right: 20px;
-}
-.categories ul li a.active{
-	font-weight: 700;
+	border-top: 10px solid #42b679;
 }
 
 
@@ -811,15 +856,15 @@ section{
  * ----------------------------------- */
 
 #contact{
-	background: #5cbe85;
+	background: #606a67;
 	z-index: 4;
 }
 #contact .right-rail .nav{
-	background: #42b679;
+	background: #565f5d;
 }
 #contact .topborder .braica-container,
 #contact .right-rail{
-	border-top: 10px solid #42b679;
+	border-top: 10px solid #565f5d;
 }
 
 /* -----------------------------------

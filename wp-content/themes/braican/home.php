@@ -13,10 +13,16 @@ get_header(); ?>
 
 		<!-- home section -->
 		<section id="home" class="br-cf">
-			<?php $id = 8; ?>
-			<?php $page = get_page($id); ?>
-			<?php $content = $page->post_content; ?>
-			<?php $content = apply_filters('the_content', $content); ?>
+			<?php
+			$id = 8;
+			$page = get_page($id);
+			$content = $page->post_content;
+			$content = apply_filters('the_content', $content);
+			$fact = get_posts(array(
+				'posts_per_page'   => 1,
+				'orderby'		   => 'rand',
+				'post_type'		   => 'funfact'
+			)); ?>
 			
 			<div class="topborder">
 				<div class="braica-container">
@@ -37,6 +43,7 @@ get_header(); ?>
 				<div class="col col4">
 					<div class="braica-block">
 						<?php echo $content; ?>
+						<p>I also <?php print_r($fact[0]->post_title); ?>, but that's probably less important.</p>
 					</div>
 				</div>
 			</div>
@@ -107,6 +114,7 @@ get_header(); ?>
 		
 		<!-- ABOUT -->
 		<section id="about" class="br-cf">
+			<div class="coolbg"></div>
 			<?php $id = 10; ?>
 			<?php $page = get_page($id); ?>
 			<?php $content = $page->post_content; ?>
@@ -161,6 +169,11 @@ get_header(); ?>
 			</div>
 			
 			<div class="braica-container br-cf">
+				<div class="col col2">
+					<div class="braica-block">
+						<a class="button" href="#">View the resume</a>
+					</div>
+				</div>
 				<div class="col col4 right">
 					<div class="braica-block">
 						<?php echo $content; ?>
