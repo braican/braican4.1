@@ -136,7 +136,8 @@ function create_post_type() {
             'labels' => array(
                 'name' => 'Fun Fact',
                 'singular_name' => 'Fun Fact',
-                'add_new_item' => 'Add New Fact'
+                'add_new_item' => 'Add New Fact (I also...)',
+                'edit_item' => 'Edit Fact (I also...)'
             ),
             'description' => 'a content type for adding fun little factoids',
             'public' => true,
