@@ -51,6 +51,7 @@
 			$('#project-modal').fadeIn();
 			
 			$('body').scrollTo(0, 500, {axis: 'y', easing:'swing', margin:true});
+			$('#project-content .topborder').addClass('fixed');
 		});	
 	}
 
@@ -74,8 +75,8 @@
 		// -------------------------------
 		// waypoints
 		//
-		$('section').waypoint(function(dir) {
-			$('.topborder').removeClass('fixed');
+		$('#main section').waypoint(function(dir) {
+			$('#main .topborder').removeClass('fixed');
 			if(dir == 'up'){
 				$(this).prev().find('.topborder').addClass('fixed');
 			} else {
@@ -134,12 +135,14 @@
 		$('.project-group a').on('click', function(event) {
 			event.preventDefault();
 			var link = $(this).attr('href');
+			var src = $(this).attr('data-project');
+			console.log(link);
 
 			$('#page').fadeOut();
 
 			loadpage(link);
 			addListener();
-			history.pushState(null, null, link);
+			history.pushState(null, null, src);
 		});
 
 		//

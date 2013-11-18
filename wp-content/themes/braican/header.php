@@ -17,7 +17,7 @@
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.js" type="text/javascript"></script>
 <![endif]-->
-<link href='http://fonts.googleapis.com/css?family=Raleway:100,700|Open+Sans:300,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Raleway:100,500,700|Open+Sans:300,700' rel='stylesheet' type='text/css'>
 <?php wp_head(); ?>
 </head>
 

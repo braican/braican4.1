@@ -133,7 +133,7 @@ textarea {
 
 /* first header */
 h1{
-	font-size: 3em;
+	font-size: 4em;
 	line-height: 1.1em;
 	margin-bottom: 30px;
 	font-family: 'Raleway', Rockwell, sans-serif;
@@ -652,6 +652,7 @@ section{
 #above-home,
 #home{
 	background: #f47c20;
+	background: rgba(244,134,32,.9);
 }
 #home{
 	padding: 100px 0;
@@ -667,12 +668,32 @@ section{
 
 .logo{
 	width: 100%;
-	height: 130px;
+	/*height: 130px;*/
 	display: block;
-	background: #e47125 url(img/braican.png) no-repeat center center;
-	-webkit-background-size: 40% auto;
-	background-size: 40% auto;
+	/*background: #e47125 url(img/braican.png) no-repeat center center;*/
+	background: #e47125;
+	/*-webkit-background-size: 40% auto;*/
+	/*background-size: 40% auto;*/
 	margin: 0 auto;
+	padding: 10px 0;
+	text-align: center;
+	
+	
+}
+.logo span{
+	border-top: 5px solid #fff;
+	display: inline-block;
+	line-height: 1.2em;
+	font-family: 'Raleway' sans-serif;
+	font-weight: 700;
+	font-size: 2.6em;
+}
+
+.main-bg{
+	background: url(img/australia.jpg);
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-attachment: fixed;
 }
 
 
@@ -811,12 +832,27 @@ section{
 	display: none;
 }
 
+#project-content .right-rail .nav,
+#project-content .logo{
+	background: #565f5d;
+}
+#project-content .topborder .braica-container,
+#project-content .right-rail{
+	border-top: 10px solid #565f5d;
+}
+
+
+#project-content article{
+	padding-top: 40px;
+}
+
 .project-gallery .img-container img{
 	width: 100%;
 }
 
+
 #close-modal{
-	position: absolute;
+	position: fixed;
 	right: 20px;
 	top: 20px;
 	cursor:pointer;
@@ -838,18 +874,33 @@ section{
  * --about
  * ----------------------------------- */
 #about{
-	background: #5cbe85;
+	/*background: #5cbe85;*/
+	
+	background: url(img/borestone.jpg);
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-attachment: fixed;
 	z-index: 3;
 }
 #about .right-rail .nav{
-	background:#42b679;
+	/*background:#42b679;*/
+	background:#860E00;
 	
 }
 #about .topborder .braica-container,
 #about .right-rail{
-	border-top: 10px solid #42b679;
+	/*border-top: 10px solid #42b679;*/
+	border-top: 10px solid #860E00;
 }
 
+#about .coolbg{
+	width: 100%;
+	background: #9F270C;
+	opacity: .9;
+	top: 0;
+	bottom: 0;
+	position: absolute;
+}
 
 /* -----------------------------------
  * --contact
