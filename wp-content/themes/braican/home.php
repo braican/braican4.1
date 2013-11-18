@@ -92,7 +92,6 @@ get_header(); ?>
 												<h4><?php the_title(); ?></h4>
 											</div>
 										</a>
-
 									</div>
 								</div>
 								
