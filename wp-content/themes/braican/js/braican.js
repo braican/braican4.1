@@ -51,6 +51,7 @@
 			$('#project-modal').fadeIn();
 			
 			$('body').scrollTo(0, 500, {axis: 'y', easing:'swing', margin:true});
+			$('#project-content .topborder').addClass('fixed');
 		});	
 	}
 
@@ -74,8 +75,8 @@
 		// -------------------------------
 		// waypoints
 		//
-		$('section').waypoint(function(dir) {
-			$('.topborder').removeClass('fixed');
+		$('#main section').waypoint(function(dir) {
+			$('#main .topborder').removeClass('fixed');
 			if(dir == 'up'){
 				$(this).prev().find('.topborder').addClass('fixed');
 			} else {
@@ -108,31 +109,23 @@
 		// the projects section
 		// --------------------------------
 		//
-		// 
-		// get the height of the underlay for each project
-		//
-		// $('.project-thumb').hover(function(){
-		// 	var h = $(this).find('.underlay').height() + 20;
-		// 	$(this).find('img').animate({'top': h + 'px'}, 200);
-		// }, function(){
-		// 	$(this).find('img').animate({'top':'0'}, 100);
-		// });
 
 		//
 		// filter the projects by category
 		//
 		$('.categories a').click(function(event) {
 			event.preventDefault();
+			
+			$('.categories a.active').removeClass('active');
 			if($(this).hasClass('showall')){
-				$('.categories a').removeClass('active');
 				$('.project-group > .col').show();
 			} else {
-				$(this).toggleClass('active');
+
+				$(this).addClass('active');
+				var cat = $(this).attr('data-category');
+				
 				$('.project-group > .col').hide();
-				$('.categories a.active').each(function(index, el) {
-					var cat = $(el).attr('data-category');
-					$('.project-group > .col.' + cat).show();
-				});	
+				$('.project-group > .col.' + cat).show();
 			}
 		});
 
@@ -142,12 +135,14 @@
 		$('.project-group a').on('click', function(event) {
 			event.preventDefault();
 			var link = $(this).attr('href');
+			var src = $(this).attr('data-project');
+			console.log(link);
 
 			$('#page').fadeOut();
 
 			loadpage(link);
 			addListener();
-			history.pushState(null, null, link);
+			history.pushState(null, null, src);
 		});
 
 		//

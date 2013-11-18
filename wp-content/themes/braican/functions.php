@@ -126,8 +126,23 @@ function create_post_type() {
             ),
             'description' => 'a content type for adding new projects',
             'public' => true,
-            'has_archive' => true,
+            // 'has_archive' => true,
             'supports' => array('title', 'editor', 'thumbnail')
+        )
+    );
+
+    register_post_type( 'funfact',
+        array(
+            'labels' => array(
+                'name' => 'Fun Fact',
+                'singular_name' => 'Fun Fact',
+                'add_new_item' => 'Add New Fact (I also...)',
+                'edit_item' => 'Edit Fact (I also...)'
+            ),
+            'description' => 'a content type for adding fun little factoids',
+            'public' => true,
+            'has_archive' => false,
+            'supports' => array('title')
         )
     );
 }
