@@ -47,7 +47,8 @@
 	//
 	// loads the page
 	function loadpage(link){
-		$('#project-content').load(link, function(){
+		$('#project-content').load(link, {'load': 'from'}, function(data){
+			console.log(data);
 			$('#project-modal').fadeIn();
 			
 			$('body').scrollTo(0, 500, {axis: 'y', easing:'swing', margin:true});
@@ -120,7 +121,6 @@
 			if($(this).hasClass('showall')){
 				$('.project-group > .col').show();
 			} else {
-
 				$(this).addClass('active');
 				var cat = $(this).attr('data-category');
 				

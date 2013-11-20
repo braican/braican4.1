@@ -1,7 +1,13 @@
-<?php
-//get_header(); 
-?>
+<?php session_start();
 
+//The second parameter on print_r returns the result to a variable rather than displaying it
+$RequestSignature = md5($_SERVER['REQUEST_URI'].$_SERVER['QUERY_STRING'].print_r($_POST, true));
+
+if ($_SESSION['LastRequest'] == $RequestSignature){
+  get_header();
+} else {
+  $_SESSION['LastRequest'] = $RequestSignature;
+} ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
 	

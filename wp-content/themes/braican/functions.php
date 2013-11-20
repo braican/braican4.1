@@ -5,6 +5,9 @@
  * @package braican
  */
 
+
+$SET_THIS = 'set in functions';
+
 @ini_set( 'upload_max_size' , '6M' );
 @ini_set( 'post_max_size', '6M');
 @ini_set( 'max_execution_time', '300' );
