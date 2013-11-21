@@ -858,17 +858,17 @@ section{
 	display: none;
 }
 
-#project-content .right-rail .nav,
-#project-content .logo{
+#single-project .right-rail .nav,
+#single-project .logo{
 	background: #565f5d;
 }
-#project-content .topborder .braica-container,
-#project-content .right-rail{
+#single-project .topborder .braica-container,
+#single-project .right-rail{
 	border-top: 10px solid #565f5d;
 }
 
 
-#project-content article{
+#single-project article{
 	padding-top: 40px;
 }
 

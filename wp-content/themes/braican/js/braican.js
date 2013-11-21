@@ -47,7 +47,10 @@
 	//
 	// loads the page
 	function loadpage(link){
-		$('#project-content').load(link, {'load': 'from'}, function(data){
+
+		$('#page').fadeOut();
+		
+		$('#project-content').load(link + ' #single-project', function(data){
 			console.log(data);
 			$('#project-modal').fadeIn();
 			
@@ -136,12 +139,10 @@
 			event.preventDefault();
 			var link = $(this).attr('href');
 			var src = $(this).attr('data-project');
-			console.log(link);
-
-			$('#page').fadeOut();
 
 			loadpage(link);
 			addListener();
+
 			history.pushState(null, null, src);
 		});
 
