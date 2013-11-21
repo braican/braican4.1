@@ -21,8 +21,6 @@
 	var homelink	= window.location.href	// the initial page load url
 	
 
-
-
 	// -----------------------------------------
 	// PRIVATE
 	//
@@ -75,6 +73,8 @@
 	BRAICAN.init = function(){
 		
 		$('body').addClass('initialized');
+
+
 
 		// -------------------------------
 		// waypoints
@@ -154,6 +154,22 @@
 			$('#page').fadeIn(function(){
 				history.pushState(null, null, homelink);
 				$('#project-content').removeAttr('style').empty();
+			});
+		});
+
+		// -------------------------------
+		// THE AJAXED PROJECT DETAIL
+		// -------------------------------
+		//
+		$('#project-modal').on('click', '.nav li a', function(event){
+			event.preventDefault();
+			var href = $(this).attr('href');
+			console.log(homelink);
+			$('#page').fadeIn(function(){
+				// window.location.hash = '';
+				history.pushState(null, null, window.location.href.substring(0, window.location.href.indexOf('#')) + href);
+				$('#project-content').removeAttr('style').empty();
+				$('body').scrollTo(href, 1000, {axis: 'y', easing:'swing', margin:true});
 			});
 		});
 

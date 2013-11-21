@@ -173,14 +173,15 @@ get_header(); ?>
 			</div>
 			
 			<div class="braica-container br-cf">
+				
+				<div class="col col4">
+					<div class="braica-block">
+						<?php echo $content; ?>
+					</div>
+				</div>
 				<div class="col col2">
 					<div class="braica-block">
 						<a class="button" href="#">View the resume</a>
-					</div>
-				</div>
-				<div class="col col4 right">
-					<div class="braica-block">
-						<?php echo $content; ?>
 					</div>
 				</div>
 			</div>

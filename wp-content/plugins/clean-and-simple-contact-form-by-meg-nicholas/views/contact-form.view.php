@@ -21,7 +21,7 @@
 
             <!--email address-->
             <div class="control-group form-group<?php if (isset($contact->Errors['email'])) echo ' error has-error'; ?>">
-                <label for="cscf_email"><?php _e('Email Address:','cleanandsimple');?></label>
+                <label for="cscf_email"><?php _e('Email Address','cleanandsimple');?></label>
                 <div class="<?php echo cscf_PluginSettings::InputIcons() ? "input-group" : ""; ?>">
                     <?php if ( cscf_PluginSettings::InputIcons() == true ) { ?>
                         <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
@@ -44,7 +44,7 @@
             <?php if ( $confirmEmail ) { ?>
             <!--confirm email address -->
             <div class="control-group form-group<?php if (isset($contact->Errors['confirm-email'])) echo ' error has-error'; ?>">
-                <label for="cscf_confirm-email"><?php _e('Confirm Email Address:','cleanandsimple');?></label>
+                <label for="cscf_confirm-email"><?php _e('Confirm Email Address','cleanandsimple');?></label>
                 <div class="<?php echo cscf_PluginSettings::InputIcons() ? "input-group" : ""; ?>">
                     <?php if ( cscf_PluginSettings::InputIcons() == true ) { ?>
                         <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
@@ -69,7 +69,7 @@
 
             <!-- name --> 
             <div class="control-group form-group<?php if (isset($contact->Errors['name'])) echo ' error has-error'; ?>">
-                <label for="cscf_name"><?php _e('Name:','cleanandsimple');?></label>
+                <label for="cscf_name"><?php _e('Name','cleanandsimple');?></label>
                 <div class="<?php echo cscf_PluginSettings::InputIcons() ? "input-group" : ""; ?>">
                     <?php if ( cscf_PluginSettings::InputIcons() == true ) { ?>
                         <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
@@ -89,7 +89,7 @@
 
             <!-- message -->
             <div class="control-group form-group<?php if (isset($contact->Errors['message'])) echo ' error has-error'; ?>">
-                <label for="cscf_message"><?php _e('Message:','cleanandsimple');?></label>
+                <label for="cscf_message"><?php _e('What\'s Up?','cleanandsimple');?></label>
                 <div class="<?php echo cscf_PluginSettings::InputIcons() ? "input-group" : ""; ?>">
                     <?php if ( cscf_PluginSettings::InputIcons() == true ) { ?>
                         <span class="input-group-addon"><span class="glyphicon glyphicon-comment"></span></span>
@@ -97,7 +97,7 @@
                     <textarea class="form-control input-xlarge"
                         data-rule-required="true"
                         data-msg-required="<?php _e('Please give a message.','cleanandsimple');?>"
-                        id="cscf_message" name="cscf[message]" rows="10" 
+                        id="cscf_message" name="cscf[message]" rows="6" 
                         placeholder="<?php _e('Your Message','cleanandsimple');?>"><?php echo $contact->Message; ?></textarea>
                 </div>
                 <span for="cscf_message" class="help-inline help-block error" style="display:<?php echo isset($contact->Errors['message']) ? 'block' : 'none'; ?>;">
@@ -120,7 +120,7 @@
                      </div>	
                 </div>	
             <?php } ?>     
-                <input type="submit" class="btn btn-default" value="<?php _e('Send Message','cleanandsimple');?>"/>
+                <input type="submit" class="btn btn-default" value="<?php _e('Send Away','cleanandsimple');?>"/>
         </form>
     </div>
 </div>
