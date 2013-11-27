@@ -713,9 +713,11 @@ section{
 	box-sizing: border-box;
 	position: relative;
 	overflow: hidden;
-	/*height: 300px;*/
+	border: 4px solid #D7D6D6;
 }
-
+.project-thumb:hover{
+	border-color: #2c3f52;
+}
 .project-thumb img{
 	display: block;
 	position: relative;
