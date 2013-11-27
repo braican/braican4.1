@@ -217,6 +217,7 @@ pre {
 	padding: 1.6em;
 	overflow: auto;
 	max-width: 100%;
+	color: #404040;
 }
 code, kbd, tt, var {
 	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
@@ -279,27 +280,33 @@ input {
 button,
 html input[type="button"],
 input[type="reset"],
-input[type="submit"] {
-	border: 1px solid #ccc;
-	border-color: #ccc #ccc #bbb #ccc;
-	border-radius: 3px;
-	background: #e6e6e6;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-	color: rgba(0, 0, 0, .8);
-	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
-	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
-	font-size: 12px;
-	font-size: 1.2rem;
-	line-height: 1;
-	padding: .6em 1em .4em;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+input[type="submit"],
+.button {
+	background: rgba(0,0,0,0.4);
+	padding: 8px;
+	font-size: 1em;
+	text-decoration: none;
+	color: #fff;
+	border: 0;
+	cursor: pointer;
+	-webkit-transition: background .2s linear;
+	-moz-transition: background .2s linear;
+	-ms-transition: background .2s linear;
+	-o-transition: background .2s linear;
+	transition: background .2s linear;
 }
 button:hover,
 html input[type="button"]:hover,
 input[type="reset"]:hover,
-input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa #bbb;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
+input[type="submit"]:hover,
+.button:hover{
+	text-decoration: none;
+	background: rgba(0,0,0,.6);
+	-webkit-transition: background .2s linear;
+	-moz-transition: background .2s linear;
+	-ms-transition: background .2s linear;
+	-o-transition: background .2s linear;
+	transition: background .2s linear;
 }
 button:focus,
 html input[type="button"]:focus,
@@ -338,7 +345,7 @@ input[type="search"],
 textarea {
 	color: #666;
 	border: 1px solid #ccc;
-	border-radius: 3px;
+	background: #ddd;
 }
 input[type="text"]:focus,
 input[type="email"]:focus,
@@ -381,24 +388,6 @@ a:active {
   	-o-transition: all .2s linear;
   	-moz-transition: all .2s linear;
  	transition: all .2s linear;
-
-}
-
-.button{
-	background: rgba(0,0,0,0.4);
-	padding: 6px;
-	font-size: .8em;
-	text-decoration: none;
-	color: #fff;
-}
-.button:hover{
-	text-decoration: none;
-	background: rgba(0,0,0,.6);
-	-webkit-transition: background .2s linear;
-	-moz-transition: background .2s linear;
-	-ms-transition: background .2s linear;
-	-o-transition: background .2s linear;
-	transition: background .2s linear;
 }
 
 /* icon fonts */
@@ -533,12 +522,15 @@ section{
 .braica-container .col.col4{
 	width: 66.66667%;
 }
+.braica-container .col.col3{
+	width: 50%;
+}
 .braica-container .col.col2{
 	width: 33.33333%;
 }
 
 .braica-container .braica-block{
-	margin: 0 8px 16px;
+	margin: 0 12px 24px;
 }
 
 .right-rail{
@@ -562,9 +554,7 @@ section{
 	position: fixed;
 	top: 0 !important;
 }
-.topborder .braica-container{
-	max-width: 856px;
-}
+
 
 /* -----------------------------------
  * --nav
@@ -710,6 +700,7 @@ section{
 #work .right-rail .nav{
 	background: #D7D6D6;
 }
+
 #work .topborder .braica-container,
 #work .right-rail{
 	border-top: 10px solid #D7D6D6;
@@ -722,42 +713,63 @@ section{
 	box-sizing: border-box;
 	position: relative;
 	overflow: hidden;
-	height: 196px;
-
-	-webkit-transition: height .2s linear;
-	-o-transition: height .2s linear;
-	-moz-transition: height .2s linear;
-	transition: height .2s linear;
-}
-.project-thumb.small{
-	height: 100px;
-	-webkit-transition: height .2s linear;
-	-o-transition: height .2s linear;
-	-moz-transition: height .2s linear;
-	transition: height .2s linear;
+	/*height: 300px;*/
 }
 
-.project-thumb .overlay{
-	top:0;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	position: absolute;
-	z-index: 9;
-	color: #fff;
-	background: rgba(0,0,0,.6);
-	padding: 10px;
-	display: block;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	text-align: center;
-}
 .project-thumb img{
 	display: block;
 	position: relative;
 	z-index: 8;
+	max-width: 100%;
+	width: 100%;
+
+	-webkit-transition: -webkit-transform 0.4s;
+	-moz-transition: -moz-transform 0.4s;
+	transition: transform 0.4s;
 }
+.project-thumb:hover img{
+	-webkit-transform: translateY(-25px);
+	-moz-transform: translateY(-25px);
+	-ms-transform: translateY(-25px);
+	transform: translateY(-25px);
+}
+
+.project-thumb .overlay{
+	/*height: 100px;*/
+	width: 100%;
+	top: auto;
+	bottom: 0;
+	opacity: 1;
+	position: absolute;
+	left: 0;
+	padding: 20px;
+	background: #2c3f52;
+	color: #fff;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	z-index: 9;
+	
+	-webkit-transform: translateY(100%);
+	-moz-transform: translateY(100%);
+	-ms-transform: translateY(100%);
+	transform: translateY(100%);
+
+	-webkit-transition: -webkit-transform 0.4s;
+	-moz-transition: -moz-transform 0.4s;
+	transition: transform 0.4s;
+}
+.project-thumb:hover .overlay{
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	-ms-transform: translateY(0px);
+	transform: translateY(0px);
+
+	-webkit-transition: -webkit-transform 0.4s;
+	-moz-transition: -moz-transform 0.4s;
+	transition: transform 0.4s;
+}
+
 
 #loader{
 	position: absolute;
@@ -832,24 +844,23 @@ section{
 	display: none;
 }
 
-#project-content .right-rail .nav,
-#project-content .logo{
+#single-project .right-rail .nav,
+#single-project .logo{
 	background: #565f5d;
 }
-#project-content .topborder .braica-container,
-#project-content .right-rail{
+#single-project .topborder .braica-container,
+#single-project .right-rail{
 	border-top: 10px solid #565f5d;
 }
 
 
-#project-content article{
+#single-project article{
 	padding-top: 40px;
 }
 
 .project-gallery .img-container img{
 	width: 100%;
 }
-
 
 #close-modal{
 	position: fixed;
@@ -874,32 +885,28 @@ section{
  * --about
  * ----------------------------------- */
 #about{
-	/*background: #5cbe85;*/
-	
-	background: url(img/borestone.jpg);
-	-webkit-background-size: cover;
-	background-size: cover;
-	background-attachment: fixed;
+	/*background: #9F270C;*/
+	/*background: rgba(159, 39, 12, .9);*/
+	background: #5cbe85;
+	background: rgba(92, 190, 133, .9);
 	z-index: 3;
 }
 #about .right-rail .nav{
-	/*background:#42b679;*/
-	background:#860E00;
+	background:#299D60;
+	/*background:#860E00;*/
 	
 }
 #about .topborder .braica-container,
 #about .right-rail{
-	/*border-top: 10px solid #42b679;*/
-	border-top: 10px solid #860E00;
+	border-top: 10px solid #299D60;
+	/*border-top: 10px solid #860E00;*/
 }
 
-#about .coolbg{
-	width: 100%;
-	background: #9F270C;
-	opacity: .9;
-	top: 0;
-	bottom: 0;
-	position: absolute;
+.about-bg{
+	background: url(img/borestone.jpg);
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-attachment: fixed;
 }
 
 /* -----------------------------------
@@ -911,11 +918,22 @@ section{
 	z-index: 4;
 }
 #contact .right-rail .nav{
-	background: #565f5d;
+	background: #393f3d;
 }
 #contact .topborder .braica-container,
 #contact .right-rail{
-	border-top: 10px solid #565f5d;
+	border-top: 10px solid #393f3d;
+}
+
+.cscfForm label{
+	background: #393f3d;
+	font-size: .8em;
+	padding: 6px;
+	display: inline-block;
+}
+
+.cscfForm .control-group{
+	margin-bottom: 20px;
 }
 
 /* -----------------------------------
@@ -1030,13 +1048,9 @@ object {
    ================================================ */
 
 @media screen and (max-width: 1166px) {
-	.topborder .braica-container{
-		margin-left: 8px;
-		max-width: 1008px;
-	}
 
-	section > .braica-container{
-		max-width: 1022px;
+	.braica-container{
+		max-width: 1166px;
 		margin: 0;
 		padding-right:138px;
 		-webkit-box-sizing: border-box;

@@ -21,8 +21,6 @@
 	var homelink	= window.location.href	// the initial page load url
 	
 
-
-
 	// -----------------------------------------
 	// PRIVATE
 	//
@@ -47,7 +45,11 @@
 	//
 	// loads the page
 	function loadpage(link){
-		$('#project-content').load(link, function(){
+
+		$('#page').fadeOut();
+		
+		$('#project-content').load(link + ' #single-project', function(data){
+			console.log(data);
 			$('#project-modal').fadeIn();
 			
 			$('body').scrollTo(0, 500, {axis: 'y', easing:'swing', margin:true});
@@ -71,6 +73,8 @@
 	BRAICAN.init = function(){
 		
 		$('body').addClass('initialized');
+
+
 
 		// -------------------------------
 		// waypoints
@@ -120,7 +124,6 @@
 			if($(this).hasClass('showall')){
 				$('.project-group > .col').show();
 			} else {
-
 				$(this).addClass('active');
 				var cat = $(this).attr('data-category');
 				
@@ -136,12 +139,10 @@
 			event.preventDefault();
 			var link = $(this).attr('href');
 			var src = $(this).attr('data-project');
-			console.log(link);
-
-			$('#page').fadeOut();
 
 			loadpage(link);
 			addListener();
+
 			history.pushState(null, null, src);
 		});
 
@@ -153,6 +154,22 @@
 			$('#page').fadeIn(function(){
 				history.pushState(null, null, homelink);
 				$('#project-content').removeAttr('style').empty();
+			});
+		});
+
+		// -------------------------------
+		// THE AJAXED PROJECT DETAIL
+		// -------------------------------
+		//
+		$('#project-modal').on('click', '.nav li a', function(event){
+			event.preventDefault();
+			var href = $(this).attr('href');
+			console.log(homelink);
+			$('#page').fadeIn(function(){
+				// window.location.hash = '';
+				history.pushState(null, null, window.location.href.substring(0, window.location.href.indexOf('#')) + href);
+				$('#project-content').removeAttr('style').empty();
+				$('body').scrollTo(href, 1000, {axis: 'y', easing:'swing', margin:true});
 			});
 		});
 

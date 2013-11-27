@@ -94,7 +94,7 @@ get_header(); ?>
 						<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 							<?php if(has_post_thumbnail()) : ?>
 								<?php $categories = wp_get_post_terms($post->ID, $term_type); ?>
-								<div class="col col2<?php foreach($categories as $cat){echo " " . $cat->slug;} ?>">
+								<div class="col col3<?php foreach($categories as $cat){echo " " . $cat->slug;} ?>">
 									<div class="braica-block">
 										<a href="<?php the_permalink(); ?>" data-project="#/<?php echo $post->post_name; ?>" class="project-thumb">
 											<?php the_post_thumbnail(); ?>
@@ -102,7 +102,6 @@ get_header(); ?>
 												<h4><?php the_title(); ?></h4>
 											</div>
 										</a>
-
 									</div>
 								</div>
 								
@@ -116,37 +115,39 @@ get_header(); ?>
 		<?php endif; ?>
 		
 		<!-- ABOUT -->
-		<section id="about" class="br-cf">
-			<div class="coolbg"></div>
-			<?php $id = 10; ?>
-			<?php $page = get_page($id); ?>
-			<?php $content = $page->post_content; ?>
-			<?php $content = apply_filters('the_content', $content); ?>
-			
-			<div class="topborder">
-				<div class="braica-container">
-					<div class="right-rail">
-						<div class="nav collapsed">
-							<ul>
-								
-								<li><a href="#work">Work</a></li>
-								<li class="active"><a href="#about">About</a></li>
-								<li><a href="#contact">Contact</a></li>
-							</ul>
+		<div class="about-bg">
+			<section id="about" class="br-cf">
+				
+				<?php $id = 10; ?>
+				<?php $page = get_page($id); ?>
+				<?php $content = $page->post_content; ?>
+				<?php $content = apply_filters('the_content', $content); ?>
+				
+				<div class="topborder">
+					<div class="braica-container">
+						<div class="right-rail">
+							<div class="nav collapsed">
+								<ul>
+									
+									<li><a href="#work">Work</a></li>
+									<li class="active"><a href="#about">About</a></li>
+									<li><a href="#contact">Contact</a></li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 
-			<div class="braica-container br-cf">
-				<div class="col col4 right">
-					<div class="braica-block">
-						<?php echo $content; ?>
+				<div class="braica-container br-cf">
+					<div class="col col4 right">
+						<div class="braica-block">
+							<?php echo $content; ?>
+						</div>
 					</div>
 				</div>
-			</div>
-			
-		</section><!-- #about -->
+				
+			</section><!-- #about -->
+		</div>
 
 
 		<!-- CONTACT -->
@@ -172,14 +173,15 @@ get_header(); ?>
 			</div>
 			
 			<div class="braica-container br-cf">
+				
+				<div class="col col4">
+					<div class="braica-block">
+						<?php echo $content; ?>
+					</div>
+				</div>
 				<div class="col col2">
 					<div class="braica-block">
 						<a class="button" href="#">View the resume</a>
-					</div>
-				</div>
-				<div class="col col4 right">
-					<div class="braica-block">
-						<?php echo $content; ?>
 					</div>
 				</div>
 			</div>
