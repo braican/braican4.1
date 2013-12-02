@@ -667,6 +667,27 @@ section{
 	border-top: 10px solid #e47125;
 }
 
+#home .col{
+	-webkit-transform: translateX(-25px);
+	-moz-transform: translateX(-25px);
+	-ms-transform: translateX(-25px);
+	transform: translateX(-25px);
+	
+	opacity: 0;
+
+	-webkit-transition: -webkit-transform 0.4s ease-in, opacity 0.4s ease-in;
+	-moz-transition: -moz-transform 0.4s ease-in, opacity 0.4s ease-in;
+	transition: transform 0.4s ease-in, opacity 0.4s ease-in;
+}
+.initialized #home .col{
+	opacity: 1;
+
+	-webkit-transform: translateX(0);
+	-moz-transform: translateX(0);
+	-ms-transform: translateX(0);
+	transform: translateX(0);
+}
+
 .logo{
 	width: 100%;
 	/*height: 130px;*/
@@ -689,7 +710,6 @@ section{
 	font-weight: 700;
 	font-size: 2.6em;
 }
-
 .main-bg{
 	background: url(img/australia.jpg);
 	-webkit-background-size: cover;
@@ -709,12 +729,12 @@ section{
 }
 
 #work .right-rail .nav{
-	background: #D7D6D6;
+	background: #BDBCBC;
 }
 
 #work .topborder .braica-container,
 #work .right-rail{
-	border-top: 10px solid #D7D6D6;
+	border-top: 10px solid #BDBCBC;
 }
 
 .project-thumb{
@@ -724,9 +744,11 @@ section{
 	box-sizing: border-box;
 	position: relative;
 	overflow: hidden;
-	/*height: 300px;*/
+	border: 4px solid #BDBCBC;
 }
-
+.project-thumb:hover{
+	border-color: #2c3f52;
+}
 .project-thumb img{
 	display: block;
 	position: relative;
