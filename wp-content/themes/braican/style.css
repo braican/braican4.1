@@ -619,6 +619,17 @@ section{
  	 transition: background .2s linear;
 }
 
+.mobile-hamburger{
+	width: 30px;
+	float: right;
+	margin-top: 10px;
+}
+.mobile-hamburger > div{
+	height: 5px;
+	background: #1A2125;
+	margin-bottom: 5px;
+}
+
 
 /* ================================================
    --SPECIFICS
@@ -1047,11 +1058,15 @@ object {
    --MEDIA QUERIES
    ================================================ */
 
+@media screen and (max-width: 1324px) {
+	#close-modal{
+		position: absolute;
+	}
+}
 @media screen and (max-width: 1166px) {
 
 	.braica-container{
 		max-width: 1166px;
-		margin: 0;
 		padding-right:138px;
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
@@ -1062,6 +1077,44 @@ object {
 		right: 0;
 	}
 
+	#close-modal{
+		top: 30px;
+		right: 148px;
+	}
+
+}
+
+@media screen and (max-width: 862px) {
+	
+	.braica-container .col.col4,
+	.braica-container .col.col2{
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 599px) {
+
+	body{
+		font-size: 14px;
+		font-size: 1.4rem;
+	}
+
+	.braica-container{
+		padding-right: 0;
+	}
+	.braica-container .col.col3{
+		width: 100%;
+	}
+	
+	#close-modal{
+		right: 20px;
+	}
+	.topborder .right-rail{
+		display: none;
+	}
+	.mobile-hamburger{
+		display: block;
+	}
 }
 
 

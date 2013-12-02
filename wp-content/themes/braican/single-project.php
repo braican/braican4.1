@@ -23,6 +23,7 @@
 			</div>
 		</div>
 		<div class="braica-container br-cf">
+			<span href="#" id="close-modal" class="icon-cancel"></span>
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<header class="project-header col">
 					<div class="braica-block">

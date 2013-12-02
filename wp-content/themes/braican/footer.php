@@ -20,7 +20,6 @@
 </div><!-- #page -->
 
 <div id="project-modal">
-	<span href="#" id="close-modal" class="icon-cancel"></span>
 	<div id="project-content"></div>
 </div>
 
