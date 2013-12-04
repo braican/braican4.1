@@ -74,8 +74,6 @@
 		
 		$('body').addClass('initialized');
 
-
-
 		// -------------------------------
 		// waypoints
 		//
@@ -108,6 +106,7 @@
 		}, function(){
 			$(this).find('li').removeClass('expanded');
 		});
+
 
 		// --------------------------------
 		// the projects section
@@ -149,10 +148,10 @@
 		//
 		// close the modal
 		//
-		$('#project-content').on('click', '#close-modal', function(event) {
+		$('#project-content').on('click', '#close-modal',function(event) {
 			event.preventDefault();
 			$('#page').fadeIn(function(){
-				history.pushState(null, null, homelink);
+				history.pushState(null, null, window.location.href.replace(window.location.hash, ''));
 				$('#project-content').removeAttr('style').empty();
 			});
 		});

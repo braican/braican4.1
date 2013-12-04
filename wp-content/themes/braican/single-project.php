@@ -4,7 +4,7 @@
 	
 	<div id="single-project">
 		<div class="topborder">
-			<div class="braica-container">
+			<div class="braica-container braica-larger">
 				<div class="right-rail">
 					<div class="logo"><span>b</span></div>
 					<div class="nav">
@@ -17,7 +17,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="braica-container br-cf">
+		<div class="braica-container braica-larger br-cf">
 			<span href="#" id="close-modal" class="icon-cancel"></span>
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<header class="project-header col">

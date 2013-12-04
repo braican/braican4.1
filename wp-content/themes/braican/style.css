@@ -507,9 +507,15 @@ section{
 
 .braica-container{
 	width: 96%;
-	max-width: 872px;
+	max-width: 932px;
 	margin: 0 auto;
 	position: relative;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.braica-larger{
+	max-width: 1064px;
 }
 
 .braica-container .col{
@@ -623,10 +629,10 @@ section{
 	width: 30px;
 	float: right;
 	margin-top: 10px;
+	display: none;
 }
 .mobile-hamburger > div{
 	height: 5px;
-	background: #1A2125;
 	margin-bottom: 5px;
 }
 
@@ -659,7 +665,8 @@ section{
 	padding: 100px 0;
 	z-index: 3;
 }
-#home .right-rail .nav{
+#home .right-rail .nav,
+#home .mobile-hamburger > div{
 	background: #e47125;
 }
 #home .topborder .braica-container,
@@ -728,7 +735,8 @@ section{
 	color: #404040;
 }
 
-#work .right-rail .nav{
+#work .right-rail .nav,
+#work .mobile-hamburger > div{
 	background: #BDBCBC;
 }
 
@@ -768,7 +776,6 @@ section{
 }
 
 .project-thumb .overlay{
-	/*height: 100px;*/
 	width: 100%;
 	top: auto;
 	bottom: 0;
@@ -803,7 +810,6 @@ section{
 	transition: transform 0.4s;
 }
 
-
 #loader{
 	position: absolute;
 	left: 50%;
@@ -818,7 +824,6 @@ section{
 	position: relative;
 	top: -50px;
 	margin-left: 8px;
-	/*z-index: 1000;*/
 }
 
 /* categories */
@@ -878,7 +883,8 @@ section{
 }
 
 #single-project .right-rail .nav,
-#single-project .logo{
+#single-project .logo,
+#single-project .mobile-hamburger > div{
 	background: #565f5d;
 }
 #single-project .topborder .braica-container,
@@ -886,11 +892,12 @@ section{
 	border-top: 10px solid #565f5d;
 }
 
-
 #single-project article{
 	padding-top: 40px;
 }
-
+#single-project .project-content{
+	font-size: .9em;
+}
 .project-gallery .img-container img{
 	width: 100%;
 }
@@ -924,7 +931,8 @@ section{
 	background: rgba(92, 190, 133, .9);
 	z-index: 3;
 }
-#about .right-rail .nav{
+#about .right-rail .nav,
+#about .mobile-hamburger > div{
 	background:#299D60;
 	/*background:#860E00;*/
 	
@@ -950,7 +958,8 @@ section{
 	background: #606a67;
 	z-index: 4;
 }
-#contact .right-rail .nav{
+#contact .right-rail .nav,
+#contact .mobile-hamburger > div{
 	background: #393f3d;
 }
 #contact .topborder .braica-container,
@@ -1009,49 +1018,12 @@ section{
 .wp-caption-text {
 	text-align: center;
 }
-.wp-caption .wp-caption-text {
-	margin: 0.8075em 0;
-}
-.site-content .gallery {
-	margin-bottom: 1.5em;
-}
-
-.site-content .gallery a img {
-	border: none;
-	height: auto;
-	max-width: 90%;
-}
-.site-content .gallery dd {
-	margin: 0;
-}
-.site-content .gallery-columns-4 .gallery-item {
-}
-.site-content .gallery-columns-4 .gallery-item img {
-}
 
 /* Make sure embeds and iframes fit their containers */
 embed,
 iframe,
 object {
 	max-width: 100%;
-}
-
-
-/* ================================================
-   --WIDGETS
-   ================================================ */
-.widget {
-	margin: 0 0 1.5em;
-}
-
-/* Make sure select elements fit in widgets */
-.widget select {
-	max-width: 100%;
-}
-
-/* Search widget */
-.widget_search .submit {
-	display: none;
 }
 
 /* ================================================
@@ -1069,30 +1041,31 @@ object {
 *:first-child+html .br-cf { zoom: 1; } /* IE7 */
 
 .visuallyhidden { 
-  position: absolute; 
-  overflow: hidden; 
-  clip: rect(0 0 0 0); 
-  height: 1px; width: 1px; 
-  margin: -1px; padding: 0; border: 0; 
+	position: absolute; 
+	overflow: hidden; 
+	clip: rect(0 0 0 0); 
+	height: 1px; width: 1px; 
+	margin: -1px; padding: 0; border: 0; 
 }
 
 /* ================================================
    --MEDIA QUERIES
    ================================================ */
 
-@media screen and (max-width: 1324px) {
-	#close-modal{
-		position: absolute;
+@media screen and (max-width: 1368px) {
+	.braica-larger{
+		max-width: 1166px;
+		padding-right:138px;
+	}
+	.braica-larger .right-rail{
+		right: 0;
 	}
 }
-@media screen and (max-width: 1166px) {
+@media screen and (max-width: 1228px) {
 
 	.braica-container{
 		max-width: 1166px;
 		padding-right:138px;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		box-sizing: border-box;
 	}
 	
 	.right-rail{
@@ -1119,6 +1092,10 @@ object {
 	body{
 		font-size: 14px;
 		font-size: 1.4rem;
+	}
+
+	.topborder.fixed{
+		position: absolute;
 	}
 
 	.braica-container{

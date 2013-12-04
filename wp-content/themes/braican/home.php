@@ -74,6 +74,12 @@ get_header(); ?>
 								</ul>
 							</div>
 						</div>
+
+						<div class="mobile-hamburger">
+							<div></div>
+							<div></div>
+							<div></div>
+						</div>
 					</div>
 				</div>
 				
@@ -134,12 +140,17 @@ get_header(); ?>
 						<div class="right-rail">
 							<div class="nav collapsed">
 								<ul>
-									
 									<li><a href="#work">Work</a></li>
 									<li class="active"><a href="#about">About</a></li>
 									<li><a href="#contact">Contact</a></li>
 								</ul>
 							</div>
+						</div>
+
+						<div class="mobile-hamburger">
+							<div></div>
+							<div></div>
+							<div></div>
 						</div>
 					</div>
 				</div>
@@ -175,6 +186,11 @@ get_header(); ?>
 						</div>
 					</div>
 
+					<div class="mobile-hamburger">
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
 				</div>
 			</div>
 			
