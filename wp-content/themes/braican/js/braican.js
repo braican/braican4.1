@@ -149,7 +149,7 @@
 		//
 		// close the modal
 		//
-		$('#close-modal').on('click', function(event) {
+		$('#project-content').on('click', '#close-modal', function(event) {
 			event.preventDefault();
 			$('#page').fadeIn(function(){
 				history.pushState(null, null, homelink);

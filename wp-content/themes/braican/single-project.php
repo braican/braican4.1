@@ -1,9 +1,4 @@
-<?php
-
-// if(!isset($_GET['ajaxed'])){
-	get_header();
-// }
-?>
+<?php get_header(); ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
 	
@@ -23,6 +18,7 @@
 			</div>
 		</div>
 		<div class="braica-container br-cf">
+			<span href="#" id="close-modal" class="icon-cancel"></span>
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<header class="project-header col">
 					<div class="braica-block">
@@ -60,8 +56,4 @@
 
 <?php endwhile; // end of the loop. ?>
 
-<?php 
-// if(!isset($_GET['ajaxed'])){
-	get_footer();
-// }
- ?>
+<?php get_footer(); ?>
