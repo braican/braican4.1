@@ -44,14 +44,6 @@ if ( ! function_exists( 'braican_setup' ) ) :
 		require( get_template_directory() . '/inc/extras.php' );
 
 		/**
-		 * Make theme available for translation
-		 * Translations can be filed in the /languages/ directory
-		 * If you're building a theme based on braican, use a find and replace
-		 * to change 'braican' to the name of your theme in all the template files
-		 */
-		load_theme_textdomain( 'braican', get_template_directory() . '/languages' );
-
-		/**
 		 * Add default posts and comments RSS feed links to head
 		 */
 		add_theme_support( 'automatic-feed-links' );
@@ -63,9 +55,6 @@ if ( ! function_exists( 'braican_setup' ) ) :
 		register_nav_menus( array(
 			'primary' => __( 'Primary Menu', 'braican' ),
 		) );
-
-		// Enable support for Post Formats
-		//add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
 	}
 endif; // braican_setup
 
@@ -116,8 +105,9 @@ function braican_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'braican_scripts' );
 
-// --------------------------
-// register post types
+/**
+ * REGISTER POST TYPES
+ */
 
 function create_post_type() {
     register_post_type( 'project',
@@ -151,8 +141,9 @@ function create_post_type() {
 }
 add_action( 'init', 'create_post_type' );
 
-// ----------------------------
-// register taxonomies
+/**
+ * REGISTER TAXONOMIES
+ */
 
 function create_taxonomies(){
 	// project categories
@@ -175,3 +166,17 @@ function create_taxonomies(){
 	);
 }
 add_action( 'init', 'create_taxonomies' );
+
+
+/** -------------------------------
+ * SOME CUSTOM FUNCTIONS
+ */
+
+// get filtered content by ID 
+function the_content_by_id($content_id) {
+     $page_data = get_page($content_id);
+     if ( $page_data )
+          return apply_filters('the_content',$page_data->post_content);
+     return false;
+}
+

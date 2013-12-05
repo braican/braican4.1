@@ -31,19 +31,22 @@
 						<?php the_field('braican_project_text'); ?>
 					</div>
 				</div><!-- .project-content -->
-
-				<?php if(has_shortcode($post->post_content, 'gallery')) : ?>
-					<div class="project-gallery col col4">
-						<div class="braica-block">
-						<?php $gallery = get_post_gallery_images( $post ); ?>
-						<?php foreach($gallery as $img) : ?>
-							<div class="img-container">
-								<img src="<?php echo $img; ?>" alt="">
-							</div>
-						<?php endforeach; ?>
-						</div>
+				
+				<div class="project-gallery col col4">
+					<div class="braica-block">
+						<?php if(get_field('braican_project_media')) : ?>
+							<?php print(get_field('braican_project_media')); ?>
+						<?php endif; ?>
+						<?php if(has_shortcode($post->post_content, 'gallery')) : ?>
+							<?php $gallery = get_post_gallery_images( $post ); ?>
+							<?php foreach($gallery as $img) : ?>
+								<div class="img-container">
+									<img src="<?php echo $img; ?>" alt="">
+								</div>
+							<?php endforeach; ?>
+						<?php endif; ?>
 					</div>
-				<?php endif; ?>
+				</div>
 				
 
 				<footer class="project-meta">
