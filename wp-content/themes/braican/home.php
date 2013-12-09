@@ -9,7 +9,7 @@ get_header(); ?>
 
 	<div id="content" class="site-content" role="main">
 		
-		<div class="main-bg">
+		<div class="main-bg bg-container">
 			<section id="above-home" class="br-cf"></section>
 
 			<!-- home section -->
@@ -106,7 +106,7 @@ get_header(); ?>
 						<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 							<?php if(has_post_thumbnail()) : ?>
 								<?php $categories = wp_get_post_terms($post->ID, $term_type); ?>
-								<div class="col col3<?php foreach($categories as $cat){echo " " . $cat->slug;} ?>">
+								<div class="col col2<?php foreach($categories as $cat){echo " " . $cat->slug;} ?>">
 									<div class="braica-block">
 										<a href="<?php the_permalink(); ?>" data-project="#/<?php echo $post->post_name; ?>" class="project-thumb">
 											<?php the_post_thumbnail(); ?>
@@ -127,7 +127,7 @@ get_header(); ?>
 		<?php endif; ?>
 		
 		<!-- ABOUT -->
-		<div class="about-bg">
+		<div class="about-bg bg-container">
 			<section id="about" class="br-cf">
 				
 				<?php $id = 10; ?>

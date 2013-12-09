@@ -79,10 +79,16 @@
 		//
 		$('#main section').waypoint(function(dir) {
 			$('#main .topborder').removeClass('fixed');
+			var $t = $(this);
 			if(dir == 'up'){
-				$(this).prev().find('.topborder').addClass('fixed');
+				if($t.parent().hasClass('bg-container')){
+					$t.parent().prev().find('.topborder').addClass('fixed');
+				} else {
+					$t.prev().find('.topborder').addClass('fixed');
+				}
 			} else {
-				$(this).find('.topborder').addClass('fixed');	
+				
+				$t.find('.topborder').addClass('fixed');
 			}
 		});
 
