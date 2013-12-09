@@ -558,6 +558,9 @@ section{
 .topborder .braica-container{
 	max-width: 908px;
 }
+.topborder .braica-larger{
+	max-width: 1040px;
+}
 .topborder.fixed{
 	position: fixed;
 	top: 0 !important;
@@ -1068,7 +1071,9 @@ object {
 	}
 }
 @media screen and (max-width: 1228px) {
-
+	.topborder .braica-container{
+		max-width: 1142px;
+	}
 	.braica-container{
 		max-width: 1166px;
 		padding-right:138px;
