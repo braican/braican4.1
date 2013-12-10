@@ -38,7 +38,8 @@ html {
 	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
 body {
-	background: #333A3E;
+	/*background: #333A3E;*/
+	background: #606a6d;
 	zoom:1;
 }
 
@@ -158,7 +159,7 @@ h3{
 }
 h4{
 	font-family: 'Raleway', sans-serif;
-	font-weight: 100;
+	font-weight: 500;
 	font-size: 1em;
 }
 h5{}
@@ -741,12 +742,17 @@ section{
 }
 
 #work .right-rail .nav,
-#work .mobile-hamburger > div{
+#work .mobile-hamburger > div,
+#single-project .right-rail .nav,
+#single-project .logo,
+#single-project .mobile-hamburger > div{
 	background: #475154;
 }
 
 #work .topborder .braica-container,
-#work .right-rail{
+#work .right-rail,
+#single-project .topborder .braica-container,
+#single-project .right-rail{
 	border-top: 10px solid #475154;
 }
 
@@ -892,16 +898,6 @@ section{
 	z-index: 1;
 	width: 100%;
 	display: none;
-}
-
-#single-project .right-rail .nav,
-#single-project .logo,
-#single-project .mobile-hamburger > div{
-	background: #565f5d;
-}
-#single-project .topborder .braica-container,
-#single-project .right-rail{
-	border-top: 10px solid #565f5d;
 }
 
 #single-project article{
