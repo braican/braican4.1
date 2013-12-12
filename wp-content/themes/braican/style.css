@@ -756,7 +756,6 @@ section{
 #single-project .right-rail{
 	border-top: 10px solid #D9D9D1;
 }
-
 .project-thumb{
 	display: block;
 	-webkit-box-sizing: border-box;
@@ -912,6 +911,23 @@ section{
 	display: none;
 }
 
+#single-project .project-content a{
+	background-color: #333;
+	text-decoration: none;
+	padding: 6px;
+	color: #fff;
+	-webkit-transition: background-color .2s linear;
+	-o-transition: background-color .2s linear;
+	-moz-transition: background-color .2s linear;
+	transition: background-color .2s linear;
+}
+#single-project .project-content a:hover{
+	background-color: #666;
+	-webkit-transition: background-color .2s linear;
+	-o-transition: background-color .2s linear;
+	-moz-transition: background-color .2s linear;
+	transition: background-color .2s linear;
+}
 #single-project article{
 	padding-top: 40px;
 }
