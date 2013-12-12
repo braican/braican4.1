@@ -29,6 +29,9 @@
 				<div class="project-content col col2">
 					<div class="braica-block">
 						<?php the_field('braican_project_text'); ?>
+						<div>
+							<a href="<?php the_field('braican_project_link'); ?>" target="_blank">Visit project.</a>
+						</div>
 					</div>
 				</div><!-- .project-content -->
 				
