@@ -18,7 +18,9 @@
 	// Properties
 	//
 
-	var homelink	= window.location.href	// the initial page load url
+	var homelink	= window.location.href,    // the initial page load url
+		EXTENDED	= false,
+		DOCHEIGHT;
 	
 
 	// -----------------------------------------
@@ -72,6 +74,8 @@
 	// initialize the things
 	BRAICAN.init = function(){
 		
+		DOCHEIGHT = $(document).height();
+
 		$('body').addClass('initialized');
 
 		// -------------------------------
@@ -90,6 +94,15 @@
 				
 				$t.find('.topborder').addClass('fixed');
 			}
+		});
+
+		$('#contact').waypoint(function(dir){
+			if(dir == 'up'){
+				$('#engage').removeClass('popup');
+			} else {
+				$('#engage').addClass('popup');
+			}
+			
 		});
 
 		// -------------------------------
@@ -162,9 +175,9 @@
 			});
 		});
 
-		// -------------------------------
+		//
 		// THE AJAXED PROJECT DETAIL
-		// -------------------------------
+		//
 		//
 		$('#project-modal').on('click', '.nav li a', function(event){
 			event.preventDefault();
@@ -176,6 +189,15 @@
 				$('#project-content').removeAttr('style').empty();
 				$('body').scrollTo(href, 1000, {axis: 'y', easing:'swing', margin:true});
 			});
+		});
+
+
+		// -------------------------------
+		// CONTACT
+		// -------------------------------
+		$('a[title="open-form"]').on('click', function(event){
+			event.preventDefault();
+			$('body').toggleClass('engage-activated');
 		});
 
 		
@@ -217,7 +239,17 @@
 
 	// when the window scrolls
 	$(window).scroll(function(){
-
+		var checkend = $(window).scrollTop() + $(window).innerHeight() >= DOCHEIGHT;
+		if(!EXTENDED && checkend){
+			console.log("go");
+			$('#engage').addClass('absolute');
+			EXTENDED = true;
+		} else if(EXTENDED && !checkend){
+			EXTENDED = false;
+			$('#engage').removeClass('absolute');
+		} 
+		// console.log(checkend);
+		// if($(document).scrollTop())
 	});
 
 }(window.BRAICAN = window.BRAICAN || {}, jQuery));
