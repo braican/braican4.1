@@ -25,7 +25,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="braica-container br-cf">
+		<div class="braica-container br-cf" id="project-content">
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<header class="project-header col">
 					<div class="braica-block">

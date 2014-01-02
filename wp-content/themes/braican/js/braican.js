@@ -49,13 +49,13 @@
     function loadpage(link){
 
         $('#page').fadeOut(600, function(){
-            $('#project-content').load(link + ' #single-project', function(data, textStatus, req){
+            $('#project-content').load(link + ' #project-content article', function(data, textStatus, req){
                 if(textStatus != "error"){
                     
                     setTimeout(function(){
                         $('#project-modal').fadeIn();
                     }, 600);
-                    
+
                     $('body').scrollTo(0, 500, {axis: 'y', easing:'swing', margin:true});
                     $('#project-content .topborder').addClass('fixed');
                 }
@@ -177,7 +177,7 @@
         //
         // close the modal
         //
-        $('#project-content').on('click', '#close-modal',function(event) {
+        $('#project-modal').on('click', '#close-modal',function(event) {
             event.preventDefault();
             $('#page').fadeIn(function(){
                 history.pushState(null, null, window.location.href.replace(window.location.hash, ''));
