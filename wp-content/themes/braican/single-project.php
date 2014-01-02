@@ -7,12 +7,18 @@
 			<div class="braica-container">
 				<div class="braica-block">
 					<div class="right-rail">
-						<div class="logo"><span>b</span></div>
+						<div class="logo"><span>nb</span></div>
 						<div class="nav">
 							<ul>
 								<li><a href="#work">Work</a></li>
 								<li><a href="#about">About</a></li>
 								<li><a href="#contact">Contact</a></li>
+								<li>
+									<div id="close-modal">
+										<div class="icon-cancel"></div>
+										<div>Close project</div>
+									</div>
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -20,7 +26,6 @@
 			</div>
 		</div>
 		<div class="braica-container br-cf">
-			<span href="#" id="close-modal" class="icon-cancel"></span>
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<header class="project-header col">
 					<div class="braica-block">

@@ -48,14 +48,17 @@
 	// loads the page
 	function loadpage(link){
 
-		$('#page').fadeOut();
 		
-		$('#project-content').load(link + ' #single-project', function(data){
-			console.log(data);
-			$('#project-modal').fadeIn();
-			
-			$('body').scrollTo(0, 500, {axis: 'y', easing:'swing', margin:true});
-			$('#project-content .topborder').addClass('fixed');
+		
+		$('#project-content').load(link + ' #single-project', function(data, textStatus, req){
+			if(textStatus != "error"){
+				$('#page').fadeOut();
+
+				$('#project-modal').fadeIn();
+				
+				$('body').scrollTo(0, 500, {axis: 'y', easing:'swing', margin:true});
+				$('#project-content .topborder').addClass('fixed');
+			}
 		});	
 	}
 
@@ -75,6 +78,11 @@
 	BRAICAN.init = function(){
 		
 		DOCHEIGHT = $(document).height();
+
+		if(window.location.hash){
+			loadpage(window.location.protocol + '//' + window.location.host + '/project' + window.location.hash.substring(1));
+			// console.log(window.location.protocol + '//' + window.location.host + '/project' + window.location.hash.substring(1));
+		}
 
 		$('body').addClass('initialized');
 
@@ -155,8 +163,8 @@
 		//
 		$('.project-group a').on('click', function(event) {
 			event.preventDefault();
-			var link = $(this).attr('href');
-			var src = $(this).attr('data-project');
+			var link = $(this).attr('href'),
+				src = $(this).attr('data-project');
 
 			loadpage(link);
 			addListener();
@@ -182,13 +190,25 @@
 		$('#project-modal').on('click', '.nav li a', function(event){
 			event.preventDefault();
 			var href = $(this).attr('href');
-			console.log(homelink);
 			$('#page').fadeIn(function(){
-				// window.location.hash = '';
 				history.pushState(null, null, window.location.href.substring(0, window.location.href.indexOf('#')) + href);
 				$('#project-content').removeAttr('style').empty();
 				$('body').scrollTo(href, 1000, {axis: 'y', easing:'swing', margin:true});
 			});
+		});
+
+		
+		window.addEventListener("popstate", function(e) {
+			var hash = window.location.hash;
+		    
+		    if(!hash){
+		    	$('#project-modal').fadeOut(function(){
+		    		$('#page').fadeIn();	
+		    	});
+		    
+		    } else {
+		    	loadpage(window.location.protocol + '//' + window.location.host + '/project' + hash.substring(1));
+		    }
 		});
 
 
@@ -238,18 +258,6 @@
 	$(window).load(function(){});
 
 	// when the window scrolls
-	$(window).scroll(function(){
-		var checkend = $(window).scrollTop() + $(window).innerHeight() >= DOCHEIGHT;
-		if(!EXTENDED && checkend){
-			console.log("go");
-			$('#engage').addClass('absolute');
-			EXTENDED = true;
-		} else if(EXTENDED && !checkend){
-			EXTENDED = false;
-			$('#engage').removeClass('absolute');
-		} 
-		// console.log(checkend);
-		// if($(document).scrollTop())
-	});
+	$(window).scroll(function(){});
 
 }(window.BRAICAN = window.BRAICAN || {}, jQuery));

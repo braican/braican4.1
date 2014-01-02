@@ -29,7 +29,7 @@ get_header(); ?>
                     <div class="braica-container">
                         <div class="braica-block">
                             <div class="right-rail">
-                                <div class="logo"><span>b</span></div>
+                                <div class="logo"><span>nb</span></div>
                                 <div class="nav">
                                     <ul>
                                         <li><a href="#work">Work</a></li>
@@ -94,7 +94,7 @@ get_header(); ?>
                     <?php $term_type = "project_categories"; ?>
                     <?php $work_types = get_terms($term_type); ?>
                     <?php if($work_types) : ?>
-                        <div class="categories">
+                        <div class="categories braica-block">
                             <ul>
                                 <?php foreach ($work_types as $t) : ?>
                                     <li><a href="#" data-category="<?php echo $t->slug; ?>"><?php echo $t->name; ?></a></li>
@@ -167,6 +167,12 @@ get_header(); ?>
                             <?php echo $content; ?>
                         </div>
                     </div>
+
+                    <div class="col col2 left">
+                        <div class="braica-block">
+                            <a class="button" href="#">View the resume</a>
+                        </div>
+                    </div>
                 </div>
                 
             </section><!-- #about -->
@@ -206,7 +212,11 @@ get_header(); ?>
                 <div class="col col3">
                     <div class="braica-block">
                         <?php echo $content; ?>
-                        <a class="button" href="#">View the resume</a>
+                        <div id="social">
+                            <a href="http://twitter.com/braican" target="_blank" class="twitter">Twitter</a>
+                            <a href="http://facebook.com/braica.n" target="_blank" class="facebook">Facebook</a>
+                            <a href="http://linkedin.com/in/nicholasbraica" target="_blank" class="linkedin">LinkedIn</a>
+                        </div>
                     </div>
                 </div>
                 <div class="col col3">
