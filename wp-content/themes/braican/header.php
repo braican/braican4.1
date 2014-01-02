@@ -28,7 +28,6 @@
 	<header id="masthead" class="site-header" role="banner">
 		<hgroup class="visuallyhidden">
 			<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
-			<h2 class="site-description visuallyhidden"><?php bloginfo( 'description' ); ?></h2>
 		</hgroup>	
 	</header><!-- #masthead -->
 

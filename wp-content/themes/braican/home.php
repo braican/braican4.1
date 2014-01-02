@@ -71,7 +71,7 @@ get_header(); ?>
                             <div class="right-rail">
                                 <div class="nav collapsed">
                                     <ul>
-                                        <li class="active"><a href="#work">Work</a></li>
+                                        <li class="active"><a href="#work">Work <span class="icon-down-dir"></span></a></li>
                                         <li><a href="#about">About</a></li>
                                         <li><a href="#contact">Contact</a></li>
                                     </ul>
@@ -146,7 +146,7 @@ get_header(); ?>
                                 <div class="nav collapsed">
                                     <ul>
                                         <li><a href="#work">Work</a></li>
-                                        <li class="active"><a href="#about">About</a></li>
+                                        <li class="active"><a href="#about">About <span class="icon-down-dir"></span></a></li>
                                         <li><a href="#contact">Contact</a></li>
                                     </ul>
                                 </div>
@@ -193,7 +193,7 @@ get_header(); ?>
                                 <ul>
                                     <li><a href="#work">Work</a></li>
                                     <li><a href="#about">About</a></li>
-                                    <li class="active"><a href="#contact">Contact</a></li>
+                                    <li class="active"><a href="#contact">Contact <span class="icon-down-dir"></span></a></li>
                                 </ul>
                             </div>
                         </div>

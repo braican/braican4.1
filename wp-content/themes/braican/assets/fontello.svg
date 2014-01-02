@@ -1,14 +1,14 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg">
-<metadata>Copyright (C) 2013 by original authors @ fontello.com</metadata>
+<metadata>Copyright (C) 2014 by original authors @ fontello.com</metadata>
 <defs>
 <font id="fontello" horiz-adv-x="1000" >
 <font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
 <missing-glyph horiz-adv-x="1000" />
 <glyph glyph-name="cancel" unicode="&#xe802;" d="m799 116l-156-157l-234 235l-235-235l-156 157l234 234l-234 234l156 157l235-235l234 235l156-157l-234-234z" horiz-adv-x="817" />
-<glyph glyph-name="left" unicode="&#xe804;" d="m464-97l-446 448l446 446l159-158l-177-177l465 0l0-223l-465 0l177-176z" horiz-adv-x="928" />
-<glyph glyph-name="right" unicode="&#xe803;" d="m464 797l447-446l-447-448l-157 160l175 176l-464 0l0 224l464 0l-175 176z" horiz-adv-x="928" />
+<glyph glyph-name="down-dir" unicode="&#xe800;" d="m460 550l-230-400l-230 400l460 0z" horiz-adv-x="460" />
+<glyph glyph-name="left-dir" unicode="&#xe801;" d="m400 580l0-460l-400 230z" horiz-adv-x="400" />
 </font>
 </defs>
 </svg>
