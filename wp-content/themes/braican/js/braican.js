@@ -182,6 +182,7 @@
             $('#page').fadeIn(function(){
                 history.pushState(null, null, window.location.href.replace(window.location.hash, ''));
                 $('#project-content').removeAttr('style').empty();
+                $('#project-modal').removeAttr('style');
             });
         });
 
