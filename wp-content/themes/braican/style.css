@@ -42,7 +42,6 @@ body {
     /*background: #606a6d;*/
     background: #f2f2ea;
     zoom:1;
-    padding-bottom: 88px;
     position: relative;
 }
 
@@ -147,7 +146,7 @@ h1{
 
 /* main content, larger type */
 h2{
-    font-size: 1.5em;
+    font-size: 1.8em;
     font-family: 'Raleway', sans-serif;
     margin-bottom: 1em;
     font-weight: 100;
@@ -348,8 +347,8 @@ input[type="password"],
 input[type="search"],
 textarea {
     color: #666;
-    border: 1px solid #ccc;
-    background: #ddd;
+    border: 0;
+    background: #fff;
 }
 input[type="text"]:focus,
 input[type="email"]:focus,
@@ -362,7 +361,7 @@ input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="search"] {
-    padding: 6px;
+    padding: 12px;
 }
 textarea {
     overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
@@ -371,6 +370,7 @@ textarea {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    padding: 12px;
 }
 
 /* Links */
@@ -512,17 +512,14 @@ section{
 
 .braica-container{
     width: 96%;
-    max-width: 932px;
+    max-width: 1166px;
+    padding-right:138px;
     margin: 0 auto;
     position: relative;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-.braica-larger{
-    max-width: 1064px;
-}
-
 .braica-container .col{
     float: left;
     width: 100%;
@@ -540,18 +537,18 @@ section{
     width: 33.33333%;
 }
 .braica-container .braica-block{
-    margin: 0 12px 24px;
+    margin: 0 18px 24px;
 }
 
 .right-rail{
     position: absolute;
-    width: 138px;
-    top: -10px;
-    right: -138px;
+    width: 156px;
+    top: 0;
+    right: 0;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    padding-left: 16px;
+    padding-left: 24px;
 }
 
 .topborder{
@@ -559,12 +556,6 @@ section{
     top: 0;
     width: 100%;
     z-index: 999;
-}
-.topborder .braica-container{
-    max-width: 908px;
-}
-.topborder .braica-larger{
-    max-width: 1040px;
 }
 .topborder.fixed{
     position: fixed;
@@ -680,7 +671,7 @@ section{
 #home .mobile-hamburger > div{
     background: #e47125;
 }
-#home .topborder .braica-container,
+#home .topborder .braica-block,
 #home .right-rail{
     border-top: 10px solid #e47125;
 }
@@ -754,9 +745,9 @@ section{
     background: #D9D9D1;
 }
 
-#work .topborder .braica-container,
+#work .topborder .braica-block,
 #work .right-rail,
-#single-project .topborder .braica-container,
+#single-project .topborder .braica-block,
 #single-project .right-rail{
     border-top: 10px solid #D9D9D1;
 }
@@ -970,18 +961,18 @@ section{
  * --about
  * ----------------------------------- */
 #about{
-    background: #5cbe85;
-    background: rgba(92, 190, 133, .9);
+    background: #06658e;
+    background: rgba(6, 101, 142, .9);
     z-index: 3;
 }
 #about .right-rail .nav,
 #about .mobile-hamburger > div{
-    background:#299D60;
+    background:#004C75;
     
 }
-#about .topborder .braica-container,
+#about .topborder .braica-block,
 #about .right-rail{
-    border-top: 10px solid #299D60;
+    border-top: 10px solid #004C75;
 }
 
 .about-bg{
@@ -996,60 +987,16 @@ section{
  * ----------------------------------- */
 
 #contact{
-    background: #9F3B21;
+    background: #c03712;
     z-index: 4;
 }
 #contact .right-rail .nav,
 #contact .mobile-hamburger > div{
-    background: #6f2917;
+    background: #86260c;
 }
-#contact .topborder .braica-container,
+#contact .topborder .braica-block,
 #contact .right-rail{
-    border-top: 10px solid #6f2917;
-}
-
-
-/* -----------------------------------
- * --engage
- * ----------------------------------- */
-
-#engage{
-    background: #606a67;
-    position: fixed;
-    bottom: -268px;
-    z-index: 100;
-    width: 100%;
-    border-top: 10px solid #434a48;
-
-    -webkit-transition: bottom .2s linear;
-    -o-transition: bottom .2s linear;
-    -moz-transition: bottom .2s linear;
-    transition: bottom .2s linear;
-}
-#engage.absolute{
-    position: absolute;
-}
-
-#engage .tab{
-    font-weight: 700;
-    text-decoration: none;
-    font-weight: bold;
-    color: #fff;
-    font-size: .9em;
-    display: inline-block;
-    padding: 8px 6px;
-    text-align: center;
-    position: relative;
-    text-transform: uppercase;
-    top: 0;
-    background: #434a48;
-    -webkit-transition: top .2s linear;
-    -o-transition: top .2s linear;
-    -moz-transition: top .2s linear;
-    transition: top .2s linear;
-}
-#engage.popup .tab{
-    top: -50px;
+    border-top: 10px solid #86260c;
 }
 
 /* the form */
@@ -1058,22 +1005,18 @@ section{
     padding: 0;
     margin: 0;
 }
-#cscf .message label{
-    display: none;
-}
 
 #cscf label{
     background: rgba(0,0,0,0.3);
     font-size: .9em;
     padding: 8px;
-    display: block;
-    float: left;
+    display: none;
     width: 132px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     vertical-align: top;
-    text-align: right;
+    text-align: left;
 }
 #cscf .form-left label + div{
     margin-left: 132px;
@@ -1099,18 +1042,44 @@ section{
     margin-bottom: 40px;
 }
 
-#cscf h3{
+#contact h3{
     color: #fff;
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+::-webkit-input-placeholder {
+   color: #9F3B21;
+   text-transform: uppercase;
+   font-weight: 700;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #9F3B21;
+   text-transform: uppercase;
+   font-weight: 700;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #9F3B21;
+   text-transform: uppercase;
+   font-weight: 700;
+}
+
+:-ms-input-placeholder {  
+   color: #9F3B21;
+   text-transform: uppercase;
+   font-weight: 700;
 }
 
 /* -----------------------------------
  * --footer
  * ----------------------------------- */
 .site-footer{
+    background: #202020;
     font-size: 0.8em;
-    padding: 20px;
-    margin-top: 50px;
-    opacity: .7;
+    padding: 70px 20px 100px 20px;
+    opacity: .96;
 
     -webkit-transition: opacity .2s linear;
     -o-transition: opacity .2s linear;
@@ -1188,33 +1157,18 @@ section{
    --MEDIA QUERIES
    ================================================ */
 
-@media screen and (max-width: 1368px) {
-    .braica-larger{
-        max-width: 1166px;
-        padding-right:138px;
-    }
-    .braica-larger .right-rail{
-        right: 0;
-    }
-}
-@media screen and (max-width: 1228px) {
-    .topborder .braica-container{
-        max-width: 1142px;
+@media screen and (min-width: 1348px) {
+    html{
+        font-size: 90%;
     }
     .braica-container{
-        max-width: 1166px;
-        padding-right:138px;
+        max-width: 1052px;
+        padding-right: 0;
     }
     
     .right-rail{
-        right: 0;
+        right: -138px;
     }
-
-    #close-modal{
-        top: 30px;
-        right: 148px;
-    }
-
 }
 
 @media screen and (max-width: 862px) {

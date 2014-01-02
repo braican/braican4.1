@@ -27,21 +27,23 @@ get_header(); ?>
                 
                 <div class="topborder">
                     <div class="braica-container">
-                        <div class="right-rail">
-                            <div class="logo"><span>b</span></div>
-                            <div class="nav">
-                                <ul>
-                                    <li><a href="#work">Work</a></li>
-                                    <li><a href="#about">About</a></li>
-                                    <li><a href="#contact">Contact</a></li>
-                                </ul>
+                        <div class="braica-block">
+                            <div class="right-rail">
+                                <div class="logo"><span>b</span></div>
+                                <div class="nav">
+                                    <ul>
+                                        <li><a href="#work">Work</a></li>
+                                        <li><a href="#about">About</a></li>
+                                        <li><a href="#contact">Contact</a></li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="mobile-hamburger">
-                            <div></div>
-                            <div></div>
-                            <div></div>
+                            <div class="mobile-hamburger">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -65,20 +67,22 @@ get_header(); ?>
                 
                 <div class="topborder">
                     <div class="braica-container">
-                        <div class="right-rail">
-                            <div class="nav collapsed">
-                                <ul>
-                                    <li class="active"><a href="#work">Work</a></li>
-                                    <li><a href="#about">About</a></li>
-                                    <li><a href="#contact">Contact</a></li>
-                                </ul>
+                        <div class="braica-block">
+                            <div class="right-rail">
+                                <div class="nav collapsed">
+                                    <ul>
+                                        <li class="active"><a href="#work">Work</a></li>
+                                        <li><a href="#about">About</a></li>
+                                        <li><a href="#contact">Contact</a></li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="mobile-hamburger">
-                            <div></div>
-                            <div></div>
-                            <div></div>
+                            <div class="mobile-hamburger">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -137,20 +141,22 @@ get_header(); ?>
                 
                 <div class="topborder">
                     <div class="braica-container">
-                        <div class="right-rail">
-                            <div class="nav collapsed">
-                                <ul>
-                                    <li><a href="#work">Work</a></li>
-                                    <li class="active"><a href="#about">About</a></li>
-                                    <li><a href="#contact">Contact</a></li>
-                                </ul>
+                        <div class="braica-block">
+                            <div class="right-rail">
+                                <div class="nav collapsed">
+                                    <ul>
+                                        <li><a href="#work">Work</a></li>
+                                        <li class="active"><a href="#about">About</a></li>
+                                        <li><a href="#contact">Contact</a></li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="mobile-hamburger">
-                            <div></div>
-                            <div></div>
-                            <div></div>
+                            <div class="mobile-hamburger">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -175,34 +181,39 @@ get_header(); ?>
 
             <div class="topborder">
                 <div class="braica-container">
-                    <div class="right-rail">
-                        <div class="nav collapsed">
-                            <ul>
-                                <li><a href="#work">Work</a></li>
-                                <li><a href="#about">About</a></li>
-                                <li class="active"><a href="#contact">Contact</a></li>
-                            </ul>
+                    <div class="braica-block">
+                        <div class="right-rail">
+                            <div class="nav collapsed">
+                                <ul>
+                                    <li><a href="#work">Work</a></li>
+                                    <li><a href="#about">About</a></li>
+                                    <li class="active"><a href="#contact">Contact</a></li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="mobile-hamburger">
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div class="mobile-hamburger">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
                     </div>
                 </div>
             </div>
             
             <div class="braica-container br-cf">
                 
-                <div class="col col4">
+                <div class="col col3">
                     <div class="braica-block">
                         <?php echo $content; ?>
+                        <a class="button" href="#">View the resume</a>
                     </div>
                 </div>
-                <div class="col col2">
+                <div class="col col3">
                     <div class="braica-block">
-                        <a class="button" href="#">View the resume</a>
+                        <div class="the-form">
+                            <?php echo do_shortcode('[cscf-contact-form]'); ?>      
+                        </div>
                     </div>
                 </div>
             </div>

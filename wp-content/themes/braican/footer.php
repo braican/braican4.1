@@ -23,17 +23,6 @@
 	<div id="project-content"></div>
 </div>
 
-<div id="engage">
-	<div class="braica-container br-cf">
-		<div class="braica-block">
-			<div class="tab">Engage</div>
-		</div>
-		<div class="the-form">
-			<?php echo do_shortcode('[cscf-contact-form]'); ?>		
-		</div>
-	</div>
-</div>
-
 <?php wp_footer(); ?>
 
 </body>
