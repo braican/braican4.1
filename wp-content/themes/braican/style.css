@@ -844,6 +844,7 @@ section{
     z-index: 1;
     width: 100%;
     display: none;
+    background: #f2f2ea;
 }
 
 #single-project .project-content a{
@@ -898,34 +899,15 @@ section{
 }
 
 /* loading */
-.spinner {
-  width: 30px;
-  height: 30px;
-  background-color: #333;
-
-  margin: 100px auto;
-  -webkit-animation: rotateplane 1.2s infinite ease-in-out;
-  animation: rotateplane 1.2s infinite ease-in-out;
+#loading{
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    background: url(img/loading2.gif) center center no-repeat;
+    top: 50%;
+    margin-top: -30px;
 }
 
-@-webkit-keyframes rotateplane {
-  0% { -webkit-transform: perspective(120px) }
-  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
-  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
-}
-
-@keyframes rotateplane {
-  0% { 
-    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
-    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
-  } 50% { 
-    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
-    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
-  } 100% { 
-    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-  }
-}
 /* -----------------------------------
  * --about
  * ----------------------------------- */
@@ -1140,12 +1122,6 @@ section{
    ================================================ */
 
 @media screen and (min-width: 1348px) {
-    html{
-        font-size: 90%;
-    }
-    .nav a{
-        font-size: .7em;
-    }
     .braica-container{
         max-width: 1052px;
         padding-right: 0;

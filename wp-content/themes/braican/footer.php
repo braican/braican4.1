@@ -46,11 +46,10 @@
 		</div>
 		<div class="braica-container br-cf" id="project-content"></div>
 	</div>
+
 </div>
 
-<div id="loading">
-	<div class="spinner"></div>
-</div>
+<div id="loading"></div>
 
 <?php wp_footer(); ?>
 
