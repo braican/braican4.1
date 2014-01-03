@@ -50,16 +50,19 @@
 
         $('#page').fadeOut(600, function(){
             $('#project-content').load(link + ' #project-content article', function(data, textStatus, req){
+                console.log(textStatus);
                 if(textStatus != "error"){
                     
                     setTimeout(function(){
                         $('#project-modal').fadeIn(function(){
-                            $('#loading').hide();
+                            $('#loading').removeAttr('style');
                         });
                     }, 600);
 
                     $('body').scrollTo(0, 500, {axis: 'y', easing:'swing', margin:true});
                     $('#project-content .topborder').addClass('fixed');
+                } else {
+                    $('#page').fadeIn();
                 }
             });     
         });
@@ -83,8 +86,10 @@
         
         DOCHEIGHT = $(document).height();
 
-        if(window.location.hash){
+        if(window.location.href.indexOf('/#/') != -1){
             loadpage(window.location.protocol + '//' + window.location.host + '/project' + window.location.hash.substring(1));
+        } else if(window.location.hash){
+            $('body').scrollTo(window.location.hash, 1000, {axis: 'y', easing:'swing', margin:true});
         }
 
         // $('body').addClass('initialized');
@@ -172,6 +177,8 @@
             loadpage(link);
             addListener();
 
+            $('#loading').show();
+
             history.pushState(null, null, src);
         });
 
@@ -183,13 +190,12 @@
             $('#page').fadeIn(function(){
                 history.pushState(null, null, window.location.href.replace(window.location.hash, ''));
                 $('#project-content').removeAttr('style').empty();
-                $('#project-modal, #loading').removeAttr('style');
+                $('#project-modal').removeAttr('style');
             });
         });
 
         //
         // THE AJAXED PROJECT DETAIL
-        //
         //
         $('#project-modal').on('click', '.nav li a', function(event){
             event.preventDefault();
@@ -209,19 +215,9 @@
                 $('#project-modal').fadeOut(function(){
                     $('#page').fadeIn();    
                 });
-            
-            } else {
+            } else if(window.location.href.indexOf('/#/') != -1){
                 loadpage(window.location.protocol + '//' + window.location.host + '/project' + hash.substring(1));
             }
-        });
-
-
-        // -------------------------------
-        // CONTACT
-        // -------------------------------
-        $('a[title="open-form"]').on('click', function(event){
-            event.preventDefault();
-            $('body').toggleClass('engage-activated');
         });
 
         
