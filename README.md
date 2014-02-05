@@ -7,7 +7,7 @@ The master branch is what is currently live.
 ## version 4.1
 `current development`
 
-Created using WordPress. Developing a custom, one page theme that will be my complete online profile that will consist of a portfolio, about section, and contact links. This theme will be responsive.
+Developing a custom, one page WordPress theme that will consist of a portfolio, about section, and contact links. This theme will be responsive.
 
 ## version 3.0
 `released 09/30/2011`
