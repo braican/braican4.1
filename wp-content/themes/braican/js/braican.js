@@ -131,7 +131,7 @@
             e.preventDefault();
             var id = $(this).attr('href');
             if(id.length > 1)
-                $('body').scrollTo(id, 1000, {axis: 'y', easing:'swing', margin:true});
+                $('body').scrollTo(id, 1000, {axis: 'y', easing:'swing', margin:false});
         });
 
         // -------------------------------
@@ -213,7 +213,7 @@
             
             if(!hash){
                 $('#project-modal').fadeOut(function(){
-                    $('#page').fadeIn();    
+                    $('#main').fadeIn();    
                 });
             } else if(window.location.href.indexOf('/#/') != -1){
                 loadpage(window.location.protocol + '//' + window.location.host + '/project' + hash.substring(1));

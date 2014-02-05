@@ -42,21 +42,7 @@ get_header(); ?>
             <section id="work" class="br-cf">    
 
                 <div class="braica-container br-cf">
-
-                    <!-- the navigation -->
-                    <?php $term_type = "project_categories"; ?>
-                    <?php $work_types = get_terms($term_type); ?>
-                    <?php if($work_types) : ?>
-                        <div class="categories braica-block">
-                            <ul>
-                                <?php foreach ($work_types as $t) : ?>
-                                    <li><a href="#" data-category="<?php echo $t->slug; ?>"><?php echo $t->name; ?></a></li>
-                                <?php endforeach; ?>
-                                <li><a href="#" class="showall">show all</a></li>
-                            </ul>
-                        </div>
-                    <?php endif; ?>
-
+                    
                     <!-- the project thumbs -->
                     <div class="project-group br-cf">
                         

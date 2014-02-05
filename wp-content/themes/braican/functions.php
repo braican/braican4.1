@@ -168,9 +168,9 @@ function create_taxonomies(){
 add_action( 'init', 'create_taxonomies' );
 
 
-/** -------------------------------
+/****************************
  * SOME CUSTOM FUNCTIONS
- */
+ ****************************/
 
 // get filtered content by ID 
 function the_content_by_id($content_id) {
@@ -179,4 +179,27 @@ function the_content_by_id($content_id) {
           return apply_filters('the_content',$page_data->post_content);
      return false;
 }
+
+//
+// filter_work
+//
+// renders the filter list
+//
+function filter_work(){ ?>
+	<!-- the navigation -->
+    <?php $term_type = "project_categories"; ?>
+    <?php $work_types = get_terms($term_type); ?>
+    <?php if($work_types) : ?>
+        <div class="categories braica-block">
+            <span>Filter:</span>
+            <ul>
+                <?php foreach ($work_types as $t) : ?>
+                    <li><a href="#" data-category="<?php echo $t->slug; ?>"><?php echo $t->name; ?></a></li>
+                <?php endforeach; ?>
+                <li><a href="#" class="showall">show all</a></li>
+            </ul>
+        </div>
+    <?php endif;
+}
+
 

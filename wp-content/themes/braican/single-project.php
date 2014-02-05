@@ -7,7 +7,7 @@
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<header class="project-header col">
 					<div class="braica-block">
-						<h3 class="project-title"><?php the_title(); ?></h3>
+						<h2 class="project-title"><?php the_title(); ?></h2>
 					</div>
 				</header><!-- .project-header -->
 
