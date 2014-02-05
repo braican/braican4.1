@@ -40,7 +40,8 @@ html {
 body {
     /*background: #333A3E;*/
     /*background: #606a6d;*/
-    background: #f2f2ea;
+    /*background: #f2f2ea;*/
+    background: #fff;
     zoom:1;
     position: relative;
 }
@@ -437,9 +438,6 @@ a:active {
  
   /* fix buttons height */
   line-height: 1em;
- 
-  /* you can be more comfortable with increased icons size */
-  /* font-size: 120%; */
 }
  
 .icon-cancel { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe802;&nbsp;'); }
@@ -539,72 +537,71 @@ section{
     top: 0 !important;
 }
 
-
 /* -----------------------------------
- * --nav
+ * --header
  * ----------------------------------- */
+.site-header .logo{
+    padding: 36px 0 30px 0;
+    margin-bottom: 0;
+    width: 150px;
+    float: left;
+}
+.site-header .logo span{
+    border-top: 7px solid #e47125;
+    line-height: 1.2em;
+    font-family: 'Raleway' sans-serif;
+    font-weight: 700;
+    font-size: 2.6em;
+    color: #000;
+    padding-right: 80px;
+}
 
-.nav ul {
+/* --------------------
+ * --nav
+ * -------------------- */
+.site-header .site-nav{
+    margin-left: 160px;
+    margin-bottom: 0;
+}
+.site-header .site-nav ul{
     list-style: none;
     margin: 0;
     padding: 0;
+    text-align: right;
 }
-.nav li {
-    position: relative;
+.site-header .site-nav ul li{
     margin: 0;
-    overflow: hidden;
+    display: inline-block;
+    margin-left: 20px;
 }
-
-.nav.collapsed li{
-    height: 0;
-    -webkit-transition: height .1s linear;
-    -o-transition: height .1s linear;
-    -moz-transition: height .1s linear;
-    transition: height .1s linear;
-}
-
-.nav.collapsed li.active,
-.nav.collapsed li.expanded {
-    height: 38px;
-    -webkit-transition: height .1s linear;
-    -o-transition: height .1s linear;
-    -moz-transition: height .1s linear;
-    transition: height .1s linear;
-}
-.nav a {
+.site-header .site-nav ul li a {
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
+    font-size: 1em;
     text-decoration: none;
-    font-weight: bold;
-    color: #fff;
-    font-size: .8em;
-    width: 100%;
+    color: #000;
     display: block;
-    padding: 8px 0;
-    text-align: center;
+    line-height: 125px;
     text-transform: uppercase;
+    position: relative;
+
     -webkit-transition: background .2s linear;
     -o-transition: background .2s linear;
     -moz-transition: background .2s linear;
     transition: background .2s linear;
-    position: relative;
 }
 
-.nav li a:hover {
-    background: #1A2125;
+.site-header .site-nav ul li a:hover {
 }
 
-.nav li.active span{
+.site-header .site-nav ul li.active span{
     color: #fff;
     position: absolute;
     right: 10px;
     top: 12px;
-    /*margin-right: -22px;*/
-}
-.nav li.active.expanded span:before{
-    content:"\e801";
 }
 
+/* mobile nav */
 .mobile-hamburger{
     width: 30px;
     float: right;
@@ -624,46 +621,19 @@ section{
 /* -----------------------------------
  * --home
  * ----------------------------------- */
-#above-home,
 #home{
     background: #f47c20;
-    background: rgba(244,134,32,.9);
+    background: rgba(244,134,32,.8);
     margin: 0;
-}
-#home{
     padding: 100px 0;
     z-index: 3;
-}
-#home .right-rail .nav,
-#home .mobile-hamburger > div{
-    background: #e47125;
-}
-#home .topborder .braica-block,
-#home .right-rail{
-    border-top: 10px solid #e47125;
+    border-bottom: 10px solid #e47125;
 }
 
-.logo{
-    width: 100%;
-    display: block;
-    background: #e47125;
-    margin: 0 auto;
-    padding: 10px 0;
-    text-align: center;    
-}
-.logo span{
-    border-top: 5px solid #fff;
-    display: inline-block;
-    line-height: 1.2em;
-    font-family: 'Raleway' sans-serif;
-    font-weight: 700;
-    font-size: 2.6em;
-}
 .main-bg{
     background: url(img/australia.jpg);
     -webkit-background-size: cover;
     background-size: cover;
-    background-attachment: fixed;
 }
 
 /* -----------------------------------
@@ -672,23 +642,8 @@ section{
 #work{
     z-index: 3;
     position: relative;
-    background: #f2f2ea;
+    background: #fff;
     color: #404040;
-}
-
-#work .right-rail .nav,
-#work .mobile-hamburger > div,
-#single-project .right-rail .nav,
-#single-project .logo,
-#single-project .mobile-hamburger > div{
-    background: #D9D9D1;
-}
-
-#work .topborder .braica-block,
-#work .right-rail,
-#single-project .topborder .braica-block,
-#single-project .right-rail{
-    border-top: 10px solid #D9D9D1;
 }
 .project-thumb{
     display: block;
@@ -767,12 +722,6 @@ section{
     -ms-transform: scale(1);
     -o-transform: scale(1);
     transform: scale(1);*/
-
-    -webkit-transition: -webkit-transform 0.4s;
-    -moz-transition: -moz-transform 0.4s;
-    -ms-transition: -ms-transform 0.4s;
-    -o-transition: -o-transform 0.4s;
-    transition: transform 0.4s;
 }
 
 #loader{
@@ -915,14 +864,6 @@ section{
     background: #06658e;
     background: rgba(6, 101, 142, .9);
     z-index: 3;
-}
-#about .right-rail .nav,
-#about .mobile-hamburger > div{
-    background:#004C75;
-    
-}
-#about .topborder .braica-block,
-#about .right-rail{
     border-top: 10px solid #004C75;
 }
 
@@ -930,7 +871,6 @@ section{
     background: url(img/borestone.jpg);
     -webkit-background-size: cover;
     background-size: cover;
-    background-attachment: fixed;
 }
 
 /* -----------------------------------
@@ -940,14 +880,7 @@ section{
 #contact{
     background: #c03712;
     z-index: 4;
-}
-#contact .right-rail .nav,
-#contact .mobile-hamburger > div{
-    background: #86260c;
-}
-#contact .topborder .braica-block,
-#contact .right-rail{
-    border-top: 10px solid #86260c;
+    border-top:10px solid #86260c
 }
 
 /* social */
@@ -1050,13 +983,12 @@ section{
  * --footer
  * ----------------------------------- */
 .site-footer{
-    background: #202020;
     font-size: 0.8em;
     padding: 40px 20px;
     color: #ccc;
 }
 .site-footer:hover{
-    color: #fff;
+    color: #999;
 }
 
 /* ================================================

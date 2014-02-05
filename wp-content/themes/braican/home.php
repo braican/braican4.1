@@ -10,7 +10,6 @@ get_header(); ?>
     <div id="content" class="site-content" role="main">
         
         <div class="main-bg bg-container">
-            <section id="above-home" class="br-cf"></section>
 
             <!-- home section -->
             <section id="home" class="br-cf">
@@ -24,29 +23,6 @@ get_header(); ?>
                     'orderby'          => 'rand',
                     'post_type'        => 'funfact'
                 )); ?>
-                
-                <div class="topborder">
-                    <div class="braica-container">
-                        <div class="braica-block">
-                            <div class="right-rail">
-                                <div class="logo"><span>nb</span></div>
-                                <div class="nav">
-                                    <ul>
-                                        <li><a href="#work">Work</a></li>
-                                        <li><a href="#about">About</a></li>
-                                        <li><a href="#contact">Contact</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="mobile-hamburger">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
                 <div class="braica-container br-cf parallax-it">
                     <div class="col col4">
@@ -63,30 +39,7 @@ get_header(); ?>
         <?php $args = array( 'post_type' => 'project', 'posts_per_page' => -1 ); ?>
         <?php $loop = new WP_Query( $args ); ?>
         <?php if($loop->have_posts()): ?>
-            <section id="work" class="br-cf">
-                
-                <div class="topborder">
-                    <div class="braica-container">
-                        <div class="braica-block">
-                            <div class="right-rail">
-                                <div class="nav collapsed">
-                                    <ul>
-                                        <li class="active"><a href="#work">Work <span class="icon-down-dir"></span></a></li>
-                                        <li><a href="#about">About</a></li>
-                                        <li><a href="#contact">Contact</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="mobile-hamburger">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
+            <section id="work" class="br-cf">    
 
                 <div class="braica-container br-cf">
 
@@ -138,28 +91,6 @@ get_header(); ?>
                 <?php $page = get_page($id); ?>
                 <?php $content = $page->post_content; ?>
                 <?php $content = apply_filters('the_content', $content); ?>
-                
-                <div class="topborder">
-                    <div class="braica-container">
-                        <div class="braica-block">
-                            <div class="right-rail">
-                                <div class="nav collapsed">
-                                    <ul>
-                                        <li><a href="#work">Work</a></li>
-                                        <li class="active"><a href="#about">About <span class="icon-down-dir"></span></a></li>
-                                        <li><a href="#contact">Contact</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="mobile-hamburger">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
                 <div class="braica-container br-cf">
                     <div class="col col4 right">
@@ -184,28 +115,6 @@ get_header(); ?>
             <?php $id = 11; ?>
             <?php $page = get_page($id); ?>
             <?php $content = apply_filters('the_content', $page->post_content); ?>
-
-            <div class="topborder">
-                <div class="braica-container">
-                    <div class="braica-block">
-                        <div class="right-rail">
-                            <div class="nav collapsed">
-                                <ul>
-                                    <li><a href="#work">Work</a></li>
-                                    <li><a href="#about">About</a></li>
-                                    <li class="active"><a href="#contact">Contact <span class="icon-down-dir"></span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="mobile-hamburger">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             
             <div class="braica-container br-cf">
                 
