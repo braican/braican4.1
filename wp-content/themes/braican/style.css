@@ -907,11 +907,6 @@ section{
 #cscf .control-group{
     margin-bottom: 12px;
 }
-#cscf input[type=submit]{
-    float: right;
-    clear: both;
-    margin-bottom: 40px;
-}
 
 ::-webkit-input-placeholder {
    color: #9F3B21;
