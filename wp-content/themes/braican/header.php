@@ -36,7 +36,7 @@
 <div id="page" class="hfeed site">
     <?php do_action( 'before' ); ?>
     
-    <header id="masthead" class="site-header" role="banner">
+    <div id="masthead" class="site-header" role="banner">
         <hgroup class="visuallyhidden">
             <h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
         </hgroup>
@@ -50,6 +50,6 @@
                 <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
             </nav>
         </div>
-    </header><!-- #masthead -->
+    </div><!-- #masthead -->
 
     <div id="main" class="site-main">
