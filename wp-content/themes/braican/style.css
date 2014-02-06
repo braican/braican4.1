@@ -488,8 +488,7 @@ section{
 
 .braica-container{
     width: 96%;
-    max-width: 1166px;
-    padding-right:138px;
+    max-width: 1068px;
     margin: 0 auto;
     position: relative;
     -webkit-box-sizing: border-box;
@@ -514,28 +513,6 @@ section{
 }
 .braica-container .braica-block{
     margin: 0 18px 24px;
-}
-
-.right-rail{
-    position: absolute;
-    width: 156px;
-    top: 0;
-    right: 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    padding-left: 24px;
-}
-
-.topborder{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 99;
-}
-.topborder.fixed{
-    position: fixed;
-    top: 0 !important;
 }
 
 /* -----------------------------------
@@ -1014,46 +991,26 @@ section{
    --MEDIA QUERIES
    ================================================ */
 
-@media screen and (min-width: 1348px) {
-    .braica-container{
-        max-width: 1052px;
-        padding-right: 0;
-    }
-    
-    .right-rail{
-        right: -138px;
-    }
-}
-
 @media screen and (max-width: 862px) {
-    
-    .braica-container .col.col4,
+    h1{
+        font-size: 3em;
+    }
     .braica-container .col.col2{
-        width: 100%;
+        width: 50%;
     }
 }
 
 @media screen and (max-width: 599px) {
-
     body{
         font-size: 14px;
         font-size: 1.4rem;
     }
-
-    .topborder.fixed{
-        position: absolute;
-    }
-
-    .braica-container{
-        padding-right: 0;
-    }
-    .braica-container .col.col3{
+    .braica-container .col.col4,
+    .braica-container .col.col3,
+    .braica-container .col.col2{
         width: 100%;
     }
     
-    .topborder .right-rail{
-        display: none;
-    }
     .mobile-hamburger{
         display: block;
     }
