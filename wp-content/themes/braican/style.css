@@ -571,9 +571,8 @@ section{
     text-align: right;
 }
 .site-header .site-nav ul li{
-    margin: 0;
+    margin: 47px 0 0 20px;
     display: inline-block;
-    margin-left: 20px;
 }
 .site-header .site-nav ul li a {
     font-family: 'Open Sans', sans-serif;
@@ -582,7 +581,6 @@ section{
     text-decoration: none;
     color: #000;
     display: block;
-    line-height: 125px;
     text-transform: uppercase;
     position: relative;
 
@@ -591,8 +589,27 @@ section{
     -moz-transition: background .2s linear;
     transition: background .2s linear;
 }
-
-.site-header .site-nav ul li a:hover {
+.site-header .site-nav ul li a:after{
+    position: absolute;
+    top: -14px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #f47c20;
+    content: '';
+    opacity: 0;
+    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+    -moz-transition: opacity 0.3s, -moz-transform 0.3s;
+    transition: opacity 0.3s, transform 0.3s;
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    transform: translateY(0px);
+}
+.site-header .site-nav ul li a:hover:after {
+    opacity: 1;
+    -webkit-transform: translateY(6px);
+    -moz-transform: translateY(6px);
+    transform: translateY(6px);
 }
 
 .site-header .site-nav ul li.active span{
@@ -656,10 +673,7 @@ section{
     display: block;
     position: relative;
     z-index: 8;
-    max-width: 100%;
     width: 100%;
-}
-.project-thumb:hover img{
 }
 
 .project-thumb .overlay{
@@ -671,14 +685,10 @@ section{
     left: 0;
     opacity: 0;
     
-    padding: 20px 20px 12px 20px;
-    background: #DB6307;
-    background: rgba(219,99,7,.8);
+    background: #000;
+    background: rgba(0,0,0,.8);
     opacity: 0;
     color: #fff;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
 
     -webkit-transition: opacity 0.2s;
     -moz-transition: opacity 0.2s;
@@ -688,6 +698,11 @@ section{
 }
 .project-thumb:hover .overlay{
     opacity:1;
+}
+.project-thumb .overlay h4{
+    background: #f47c20;
+    text-align: center;
+    padding: 20px;
 }
 
 #loader{
@@ -735,14 +750,7 @@ section{
     -o-transition: padding .2s linear;
     transition: padding .2s linear;
 }
-.categories ul li a:hover{
-    /*padding-top: 8px;*/
-/*    -webkit-transform: translate(0, -2px);
-    -moz-transform: translate(0, -2px);
-    -ms-transform: translate(0, -2px);
-    -o-transform: translate(0, -2px);
-    transform: translate(0, -2px);*/
-}
+.categories ul li a:hover{}
 
 .categories ul li a.active{
     background: #f47c20;
