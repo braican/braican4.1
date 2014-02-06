@@ -995,7 +995,8 @@ section{
     h1{
         font-size: 3em;
     }
-    .braica-container .col.col2{
+    .braica-container .col.col2,
+    .braica-container .col.col4{
         width: 50%;
     }
 }

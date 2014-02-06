@@ -15,7 +15,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <!--[if lt IE 9]>
-<script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.js" type="text/javascript"></script>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 <link href='http://fonts.googleapis.com/css?family=Raleway:100,700,900|Open+Sans:300,700' rel='stylesheet' type='text/css'>
 <?php wp_head(); ?>
