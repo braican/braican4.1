@@ -36,7 +36,7 @@ get_header(); ?>
         </div>
         
         <!-- PROJECTS -->
-        <?php $args = array( 'post_type' => 'project', 'posts_per_page' => -1 ); ?>
+        <?php $args = array( 'post_type' => 'project', 'posts_per_page' => -1, 'post_status' => 'publish' ); ?>
         <?php $loop = new WP_Query( $args ); ?>
         <?php if($loop->have_posts()): ?>
             <section id="work" class="br-cf">    
