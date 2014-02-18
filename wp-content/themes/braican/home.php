@@ -48,13 +48,16 @@ get_header(); ?>
                         
                         <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
                             <?php if(has_post_thumbnail()) : ?>
-                                <?php $categories = wp_get_post_terms($post->ID, $term_type); ?>
+                                <?php $categories = wp_get_post_terms($post->ID, 'project_categories'); ?>
                                 <div class="col col2<?php foreach($categories as $cat){echo " " . $cat->slug;} ?>">
                                     <div class="braica-block">
                                         <a href="<?php the_permalink(); ?>" data-project="#/<?php echo $post->post_name; ?>" class="project-thumb">
                                             <?php the_post_thumbnail(); ?>
                                             <div class="overlay">
-                                                <h4><?php the_title(); ?></h4>
+                                                <div class="overlay-content">
+                                                    <h4><?php the_title(); ?></h4>
+                                                    <p><?php the_field('braican_project_excerpt') ?></p>
+                                                </div>
                                             </div>
                                         </a>
                                     </div>
