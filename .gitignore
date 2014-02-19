@@ -1,2 +1,5 @@
 # config files
 wp-config.php
+
+# the uploads directory
+wp-content/uploads/*
