@@ -120,7 +120,7 @@ function create_post_type() {
             'description' => 'a content type for adding new projects',
             'public' => true,
             // 'has_archive' => true,
-            'supports' => array('title', 'editor', 'thumbnail')
+            'supports' => array('title', 'editor', 'thumbnail', 'page-attributes')
         )
     );
 
