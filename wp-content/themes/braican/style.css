@@ -130,45 +130,6 @@ textarea {
     z-index: 100000; /* Above WP toolbar */
 }
 
-
-/* -----------------------------------
- * --typography
- * ----------------------------------- */
-
-/* first header */
-h1{
-    font-size: 4em;
-    line-height: 1.1em;
-    margin-bottom: 30px;
-    font-family: 'Raleway', Rockwell, sans-serif;
-    font-weight: 700;
-    color: #fff;
-}
-
-/* project titles */
-h2{
-    font-size: 3em;
-    font-family: 'Raleway', sans-serif;
-    margin-bottom: 1em;
-    font-weight: 700;
-    color: #000;
-}
-
-/* main content, larger type */
-h3{
-    font-size: 1.8em;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 700;
-    margin-bottom: 1em;
-}
-h4{
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
-    font-size: 1.2em;
-    /*text-transform: uppercase;*/
-}
-h5{}
-h6{}
 hr {
     background-color: #d8d8d8;
     border: 0;
@@ -371,6 +332,46 @@ textarea {
     padding: 12px;
 }
 
+/* -----------------------------------
+ * --typography
+ * ----------------------------------- */
+
+/* first header */
+h1{
+    font-size: 4em;
+    line-height: 1.1em;
+    margin-bottom: 30px;
+    font-family: 'Raleway', Rockwell, sans-serif;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* project titles */
+h2{
+    font-size: 3em;
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: 1em;
+    font-weight: 700;
+    color: #000;
+}
+
+/* main content, larger type */
+h3{
+    font-size: 1.8em;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    margin-bottom: 1em;
+}
+h4{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.2em;
+    /*border-top: 4px solid #e47125;*/
+    /*text-transform: uppercase;*/
+}
+h5{}
+h6{}
+
 /* Links */
 a {
     color: #ccc;
@@ -389,14 +390,14 @@ a:active {
     text-decoration: underline;
 }
 
-/* icon fonts */
+/* --fontello */
 @font-face {
   font-family: 'fontello';
-  src: url('assets/fontello.eot?98874000');
-  src: url('assets/fontello.eot?98874000#iefix') format('embedded-opentype'),
-       url('assets/fontello.woff?98874000') format('woff'),
-       url('assets/fontello.ttf?98874000') format('truetype'),
-       url('assets/fontello.svg?98874000#fontello') format('svg');
+  src: url('font/fontello.eot?40269639');
+  src: url('font/fontello.eot?40269639#iefix') format('embedded-opentype'),
+       url('font/fontello.woff?40269639') format('woff'),
+       url('font/fontello.ttf?40269639') format('truetype'),
+       url('font/fontello.svg?40269639#fontello') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -406,12 +407,12 @@ a:active {
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('assets/fontello.svg?98874000#fontello') format('svg');
+    src: url('../font/fontello.svg?40269639#fontello') format('svg');
   }
 }
 */
  
-[class^="icon-"]:before, [class*=" icon-"]:before {
+ [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: "fontello";
   font-style: normal;
   font-weight: normal;
@@ -420,31 +421,35 @@ a:active {
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
+  margin-right: .2em;
   text-align: center;
   /* opacity: .8; */
  
   /* For safety - reset parent styles, that can break glyph codes*/
   font-variant: normal;
   text-transform: none;
-
+     
+  /* fix buttons height, for twitter bootstrap */
   line-height: 1em;
-}
-.icon-cancel:before { content: '\e802'; } /* '' */
-.icon-down-dir:before { content: '\e800'; } /* '' */
-.icon-left-dir:before { content: '\e801'; } /* '' */
-
-[class^="icon-"], [class*=" icon-"] {
-  font-family: 'fontello';
-  font-style: normal;
-  font-weight: normal;
  
-  /* fix buttons height */
-  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
  
-.icon-cancel { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe802;&nbsp;'); }
-.icon-down-dir { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe800;&nbsp;'); }
-.icon-left-dir { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe801;&nbsp;'); }
+.icon-cancel:before { content: '\e804'; } /* '' */
+.icon-plus:before { content: '\e803'; } /* '' */
+.icon-link:before { content: '\e805'; } /* '' */
+.icon-right:before { content: '\e806'; } /* '' */
+.icon-facebook:before { content: '\e802'; } /* '' */
+.icon-twitter-bird:before { content: '\e801'; } /* '' */
+.icon-linkedin:before { content: '\e800'; } /* '' */
 
 /* -----------------------------------
  * --alignment
@@ -662,9 +667,10 @@ section{
     bottom: 0;
     left: 0;
     opacity: 0;
+    text-align: center;
     
     background: #333;
-    background: rgba(51,51,51,.9);
+    background: rgba(51,51,51,.92);
     opacity: 0;
     color: #fff;
 
@@ -677,16 +683,38 @@ section{
 .project-thumb:hover .overlay{
     opacity:1;
 }
+.project-thumb .overlay .overlay-icon{
+    padding-top: 40px;
+    color: #e47125;
+    font-size: 20px;
 
+    -webkit-transform: translateY(30px);
+    -moz-transform: translateY(30px);
+    -ms-transform: translateY(30px);
+    -o-transform: translateY(30px);
+    transform: translateY(30px);
+    -webkit-transition: -webkit-transform .5s .1s;
+    -moz-transition: -moz-transform .5s .1s;
+    -ms-transition: -ms-transform .5s .1s;
+    -o-transition: -o-transform .5s .1s;
+    transition: transform .5s .1s;
+}
+.project-thumb:hover .overlay .overlay-icon{
+    -webkit-transform: translateY(0px) scale(1.4);
+    -moz-transform: translateY(0px) scale(1.4);
+    -ms-transform: translateY(0px) scale(1.4);
+    -o-transform: translateY(0px) scale(1.4);
+    transform: translateY(0px) scale(1.4);
+}
 .project-thumb .overlay .overlay-content{
-    padding: 20px;
+    padding: 10px 20px 0;
     opacity: 0;
 
-    -webkit-transition: opacity 0.2s .2s, -webkit-transform .5s .1s;
-    -moz-transition: opacity 0.2s .2s, -moz-transform .5s .1s;
-    -ms-transition: opacity 0.2s .2s, -ms-transform .5s .1s;
-    -o-transition: opacity 0.2s .2s, -o-transform .5s .1s;
-    transition: opacity 0.2s .2s, transform .5s .1s;
+    -webkit-transition: opacity 0.4s .2s, -webkit-transform .5s .1s;
+    -moz-transition: opacity 0.4s .2s, -moz-transform .5s .1s;
+    -ms-transition: opacity 0.4s .2s, -ms-transform .5s .1s;
+    -o-transition: opacity 0.4s .2s, -o-transform .5s .1s;
+    transition: opacity 0.4s .2s, transform .5s .1s;
 }
 .project-thumb:hover .overlay .overlay-content{
     opacity: 1;

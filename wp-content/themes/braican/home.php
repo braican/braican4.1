@@ -54,7 +54,11 @@ get_header(); ?>
                                         <a href="<?php the_permalink(); ?>" data-project="#/<?php echo $post->post_name; ?>" class="project-thumb">
                                             <?php the_post_thumbnail(); ?>
                                             <div class="overlay">
+                                                <div class="overlay-icon">
+                                                    <i class="icon-plus"></i>    
+                                                </div>
                                                 <div class="overlay-content">
+
                                                     <h4><?php the_title(); ?></h4>
                                                     <p><?php the_field('braican_project_excerpt') ?></p>
                                                 </div>
