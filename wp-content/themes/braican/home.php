@@ -117,7 +117,7 @@ get_header(); ?>
             
             <div class="braica-container br-cf">
                 
-                <div class="col col3">
+                <div class="col col4">
                     <div class="braica-block">
                         <?php echo $content; ?>
                         <div id="social">
@@ -127,7 +127,7 @@ get_header(); ?>
                         </div>
                     </div>
                 </div>
-                <div class="col col3">
+                <div class="col col2">
                     <div class="braica-block">
                         <div class="the-form">
                             <?php echo do_shortcode('[cscf-contact-form]'); ?>      

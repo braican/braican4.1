@@ -11,9 +11,10 @@
 	</div><!-- #main -->
 
 	<div id="project-modal">
-		<div id="single-project">
-			<div class="braica-container br-cf" id="project-content"></div>
+		<div class="braica-container br-cf">
+			<div id="single-project"></div>
 		</div>
+		
 	</div>
 
 	<div id="loading"></div>

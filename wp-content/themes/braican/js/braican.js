@@ -51,7 +51,7 @@
             
             $('#loading').fadeIn();
 
-            $('#project-content').load(link + ' #project-content article', function(data, textStatus, req){
+            $('#single-project').load(link + ' #single-project article', function(data, textStatus, req){
                 console.log(textStatus);
                 if(textStatus != "error"){
                     
@@ -61,8 +61,7 @@
                         });
                     }, 600);
 
-                    $('body').scrollTo(0, 500, {axis: 'y', easing:'swing', margin:true});
-                    $('#project-content .topborder').addClass('fixed');
+                    // $('body').scrollTo(0, 500, {axis: 'y', easing:'swing', margin:true});
                 } else {
                     $('#main, .site-footer').fadeIn();
                 }
@@ -86,6 +85,7 @@
     // initialize the things
     BRAICAN.init = function(){
         
+        // TODO - do i need this?
         DOCHEIGHT = $(document).height();
 
         if(window.location.href.indexOf('/#/') != -1){
@@ -98,30 +98,19 @@
 
         // -------------------------------
         // waypoints
+        // 
+        // TODO - probably dont need this
         //
-        $('#main section').waypoint(function(dir) {
-            $('#main .topborder').removeClass('fixed');
-            var $t = $(this);
-            if(dir == 'up'){
-                if($t.parent().hasClass('bg-container')){
-                    $t.parent().prev().find('.topborder').addClass('fixed');
-                } else {
-                    $t.prev().find('.topborder').addClass('fixed');
-                }
-            } else {
-                
-                $t.find('.topborder').addClass('fixed');
-            }
-        });
-
-        $('#contact').waypoint(function(dir){
-            if(dir == 'up'){
-                $('#engage').removeClass('popup');
-            } else {
-                $('#engage').addClass('popup');
-            }
-            
-        });
+        // $('#work').waypoint(function(dir) {
+        //     console.log("asdasd");
+        //     if(dir == 'up'){
+        //         $('#masthead').removeAttr('style');
+        //     } else {
+        //         $('#masthead').css({
+        //             'height': '20px'
+        //         });
+        //     }
+        // });
 
         // -------------------------------
         //
@@ -132,16 +121,6 @@
             var id = $(this).attr('href');
             if(id.length > 1)
                 $('body').scrollTo(id, 1000, {axis: 'y', easing:'swing', margin:false});
-        });
-
-        // -------------------------------
-        //
-        // expanding navigation items
-        //
-        $('.nav.collapsed').hover(function(){
-            $(this).find('li').addClass('expanded');
-        }, function(){
-            $(this).find('li').removeClass('expanded');
         });
 
 
@@ -185,24 +164,31 @@
         //
         // close the modal
         //
-        $('#project-modal').on('click', '#close-modal',function(event) {
+        $('#project-modal').on('click', '.close-modal',function(event) {
             event.preventDefault();
-            $('#page').fadeIn(function(){
+            $('#main').css({
+                'position': 'absolute',
+                'zIndex': 1000
+            }).fadeIn(function(){
                 history.pushState(null, null, window.location.href.replace(window.location.hash, ''));
-                $('#project-content').removeAttr('style').empty();
-                $('#project-modal').removeAttr('style');
+                $('#project-modal').removeAttr('style').empty();
+                $('#main').removeAttr('style');
             });
         });
 
         //
-        // THE AJAXED PROJECT DETAIL
+        // navigating to other sections from the project detail
         //
-        $('#project-modal').on('click', '.nav li a', function(event){
+        $('#menu-primary li a').on('click', function(event){
             event.preventDefault();
             var href = $(this).attr('href');
-            $('#page').fadeIn(function(){
+            $('#main').css({
+                'position': 'absolute',
+                'zIndex': 1000
+            }).fadeIn(function(){
                 history.pushState(null, null, window.location.href.substring(0, window.location.href.indexOf('#')) + href);
-                $('#project-content').removeAttr('style').empty();
+                $('#project-modal').removeAttr('style').empty();
+                $('#main').removeAttr('style');
                 $('body').scrollTo(href, 1000, {axis: 'y', easing:'swing', margin:true});
             });
         });
@@ -243,24 +229,17 @@
         }
     }
 
-    // debug a whole buncha stuff. console logs and the like
-    BRAICAN.debug = function(){
-
-    };
-
     // DOM is ready
     $(document).ready( function() {
         
-        BRAICAN.init(); 
-        
-        
-        BRAICAN.debug();
+        BRAICAN.init();
     });
 
     // when the window loads
     $(window).load(function(){});
 
     // when the window scrolls
-    $(window).scroll(function(){});
+    $(window).scroll(function(){
+    });
 
 }(window.BRAICAN = window.BRAICAN || {}, jQuery));

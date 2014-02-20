@@ -350,7 +350,7 @@ h1{
 h2{
     font-size: 3em;
     font-family: 'Raleway', sans-serif;
-    margin-bottom: 1em;
+    margin-bottom: .2em;
     font-weight: 700;
     color: #000;
 }
@@ -442,11 +442,12 @@ a:active {
   /* Uncomment for 3D effect */
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
- 
-.icon-cancel:before { content: '\e804'; } /* '' */
-.icon-plus:before { content: '\e803'; } /* '' */
-.icon-link:before { content: '\e805'; } /* '' */
-.icon-right:before { content: '\e806'; } /* '' */
+
+.icon-cancel:before { content: '\e808'; } /* '' */
+.icon-plus:before { content: '\e809'; } /* '' */
+.icon-link:before { content: '\e80a'; } /* '' */
+.icon-right:before { content: '\e80b'; } /* '' */
+.icon-menu:before { content: '\e807'; } /* '' */
 .icon-facebook:before { content: '\e802'; } /* '' */
 .icon-twitter-bird:before { content: '\e801'; } /* '' */
 .icon-linkedin:before { content: '\e800'; } /* '' */
@@ -484,6 +485,9 @@ a:active {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     z-index: 2;
+}
+#main{
+    width: 100%;
 }
 section{
     width: 100%;
@@ -525,7 +529,7 @@ section{
  * --header
  * ----------------------------------- */
 .site-header .logo{
-    padding: 36px 0 30px 0;
+    padding: 26px 0 20px 0;
     margin-bottom: 0;
     width: 150px;
     float: left;
@@ -554,7 +558,7 @@ section{
     text-align: right;
 }
 .site-header .site-nav ul li{
-    margin: 47px 0 0 20px;
+    margin: 36px 0 0 20px;
     display: inline-block;
 }
 .site-header .site-nav ul li a {
@@ -634,6 +638,7 @@ section{
     background: url(img/australia.jpg);
     -webkit-background-size: cover;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 /* -----------------------------------
@@ -816,24 +821,24 @@ section{
     display: block;
 }
 
-/* TODO - check if this needs to be here */
-#close-modal{
-    cursor:pointer;
-    z-index: 101;
-    border-top: 3px solid #fff;
-    margin: 10px 12px 0 12px;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 14px;
+.project-title{
+    position: relative;
+    padding-right: 40px;
 }
-#close-modal .icon-cancel{
+.project-title .icon-cancel{
+    cursor: pointer;
+    font-size: 26px;
+    position: absolute;
+    right: 0;
+    top: 18px;
+
     -webkit-transition: -webkit-transform .2s linear;
     -moz-transition: -moz-transform .2s linear;
     -ms-transition: -ms-transform .2s linear;
     -o-transition: -o-transform .2s linear;
     transition: transform .2s linear;
 }
-#close-modal:hover .icon-cancel{
+.project-title .icon-cancel:hover{
     moz-transform: rotate(90deg);
     -o-transform: rotate(90deg);
     -webkit-transform: rotate(90deg);
@@ -864,6 +869,7 @@ section{
     background: url(img/borestone.jpg);
     -webkit-background-size: cover;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 /* -----------------------------------
@@ -1039,18 +1045,22 @@ section{
     h1{
         font-size: 3em;
     }
+}
+@media screen and (max-width: 699px){
     .braica-container .col.col2,
     .braica-container .col.col4{
+        width: 100%;
+    }
+    #work .col.col2{
         width: 50%;
     }
 }
-
 @media screen and (max-width: 599px) {
     body{
         font-size: 14px;
         font-size: 1.4rem;
     }
-    .braica-container .col.col4,
+    
     .braica-container .col.col3,
     .braica-container .col.col2{
         width: 100%;

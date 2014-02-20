@@ -49,6 +49,7 @@
             <nav class="site-nav braica-block">
                 <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
             </nav>
+            <nav class="mobile-nav"><i class="icon-menu"></i></nav>
         </div>
     </div><!-- #masthead -->
 
