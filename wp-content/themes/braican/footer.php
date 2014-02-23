@@ -12,7 +12,7 @@
 
 	<div id="project-modal">
 		<div class="braica-container br-cf">
-			<div id="single-project"></div>
+			<div id="load-project"></div>
 		</div>
 		
 	</div>

@@ -33,8 +33,13 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+<div id="loading"></div>
+
 <div id="page" class="hfeed site">
     <?php do_action( 'before' ); ?>
+
+
     
     <div id="masthead" class="site-header" role="banner">
         <hgroup class="visuallyhidden">

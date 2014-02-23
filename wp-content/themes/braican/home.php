@@ -57,7 +57,7 @@ get_header(); ?>
                                 <?php $categories = wp_get_post_terms($post->ID, 'project_categories'); ?>
                                 <div class="col col2<?php foreach($categories as $cat){echo " " . $cat->slug;} ?>">
                                     <div class="braica-block">
-                                        <a href="<?php the_permalink(); ?>" data-project="#/<?php echo $post->post_name; ?>" class="project-thumb">
+                                        <a href="<?php the_permalink(); ?>" data-project="<?php echo $post->post_name; ?>" class="project-thumb">
                                             <?php the_post_thumbnail(); ?>
                                             <div class="overlay">
                                                 <div class="overlay-icon">
