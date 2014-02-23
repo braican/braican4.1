@@ -212,6 +212,16 @@
             backToHome(href);
         });
 
+
+
+        // ---------------------------------
+        // mobile navigation
+        //
+        $('.mobile-nav').on('click', function(event) {
+            event.preventDefault();
+            $(this).toggleClass('activated');
+            $('.site-nav').slideToggle(FADESPEED);
+        });
         
         // ---------------------------------
         // skip link focus
