@@ -795,19 +795,16 @@ section{
     background: #f5ecdf;
 }
 
-#single-project .project-content a{
+.project-content a{
     background-color: #333;
     text-decoration: none;
     padding: 6px;
     color: #fff;
 }
-#single-project .project-content a:hover{
+.project-content a:hover{
     background-color: #666;
 }
-#single-project article{
-    padding-top: 40px;
-}
-#single-project .project-content p{
+.project-content p{
     font-size: .84em;
     color: #404040;
 }

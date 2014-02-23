@@ -17,8 +17,6 @@
 		
 	</div>
 
-	<div id="loading"></div>
-
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="braica-container">
 			<div class="site-info">Copyright &copy; <?php echo date('Y'); ?> Nicholas Braica</div><!-- .site-info -->

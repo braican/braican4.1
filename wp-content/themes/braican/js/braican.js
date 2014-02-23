@@ -209,7 +209,6 @@
         $('.project-view #menu-primary li a').on('click', function(event){
             event.preventDefault();
             var href = $(this).attr('href');
-
             backToHome(href);
         });
 
