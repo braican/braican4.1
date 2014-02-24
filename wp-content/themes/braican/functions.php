@@ -91,8 +91,8 @@ function braican_scripts() {
 
 	wp_enqueue_style( 'braican-style', get_stylesheet_uri() );
 
+	wp_enqueue_script( 'modernizr-js', get_template_directory_uri() . '/js/modernizr.js', array(), '20130115', false );
 	wp_enqueue_script( 'scrollto-js', get_template_directory_uri() . '/js/jquery.scrollTo-1.4.3.1-min.js', array('jquery'), '20130115', true );
-	wp_enqueue_script( 'waypoints-js', get_template_directory_uri() . '/js/waypoints.min.js', array('jquery'), '20130115', true );
 	wp_enqueue_script( 'braican-js', get_template_directory_uri() . '/js/braican.js', array('jquery', 'scrollto-js'), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
