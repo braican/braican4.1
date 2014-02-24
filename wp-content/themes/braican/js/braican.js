@@ -18,7 +18,8 @@
     // Properties
     //
 
-    var LOAD_PREFIX = window.location.protocol + '//' + window.location.host + '/project/',
+    var LOAD_PREFIX = "http://192.168.254.99:8888/braican/braican.com/website/project/",
+        // LOAD_PREFIX = window.location.protocol + '//' + window.location.host + '/project/',
         FADESPEED = 600,
         SCROLLSPEED = 800,
         INCLUDEMARGIN = false;
@@ -66,7 +67,8 @@
             $('#project-modal').removeAttr('style').find('#load-project').empty();
             $('#main, #page, .site-footer').removeAttr('style');
 
-            if(href)
+            // conole.log(href);
+            if(href && href != '#')
                 $('body').scrollTo(href, SCROLLSPEED, {axis: 'y', easing:'swing', margin:INCLUDEMARGIN});
         });
     }
@@ -85,26 +87,29 @@
     BRAICAN.loader = function(hash){
 
         var loadUrl = LOAD_PREFIX + hash.replace('#/', '');
+        console.log("load " + loadUrl);
         $('body').addClass('project-view');
         $('.site-footer').hide();
 
         $('#main').fadeOut(FADESPEED, function(){
             
             $('#loading').fadeIn(FADESPEED);
-
-            $('#load-project').load(loadUrl + ' #single-project article', function(data, textStatus, req){
-                if(textStatus != "error"){
-                    
-                    setTimeout(function(){
-                        $('.side-footer').show();
-                        $('#project-modal').fadeIn(FADESPEED, function(){
-                            $('#loading').removeAttr('style');
-                        });
-                    }, 600);
-                } else {
-                    $('#main, .site-footer').fadeIn(FADESPEED);
-                }
-            });     
+            
+            if(loadUrl.indexOf('#') == -1){
+                $('#load-project').load(loadUrl + ' #single-project article', function(data, textStatus, req){
+                    if(textStatus != "error"){
+                        
+                        setTimeout(function(){
+                            $('.side-footer').show();
+                            $('#project-modal').fadeIn(FADESPEED, function(){
+                                $('#loading').removeAttr('style');
+                            });
+                        }, 600);
+                    } else {
+                        $('#main, .site-footer').fadeIn(FADESPEED);
+                    }
+                });
+            }
         });
     };
 
@@ -116,8 +121,10 @@
         // bind hashchange events to our router
         //
         $(window).on('hashchange', function(e) {
+            console.log("this is a hashchange");
             if(window.location.hash.indexOf('#/') > -1){
                 var newHash = window.location.hash.replace('#/', '');
+                console.log(newHash);
                 if(newHash){
                     BRAICAN.loader(newHash);
                 } else {

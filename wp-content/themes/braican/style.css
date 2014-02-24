@@ -249,6 +249,10 @@ html input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #333;
     background: rgba(0,0,0,0.3);
     padding: 8px;
     font-size: 1em;
@@ -262,12 +266,14 @@ input[type="submit"],
     -o-transition: background .2s linear;
     transition: background .2s linear;
 }
+
 button:hover,
 html input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover,
 .button:hover{
     text-decoration: none;
+    background: #000;
     background: rgba(0,0,0,.5);
 }
 button:focus,
@@ -693,8 +699,16 @@ section{
     -o-transition: opacity 0.2s;
     transition: opacity 0.2s;
 }
+.no-rgba .project-thumb .overlay,
+.no-opacity .project-thumb .overlay{
+    display: none;
+}
 .project-thumb:hover .overlay{
     opacity:1;
+}
+.no-rgba .project-thumb:hover .overlay,
+.no-opacity .project-thumb:hover .overlay{
+    display: block;
 }
 .project-thumb .overlay .overlay-icon{
     padding-top: 40px;
@@ -915,6 +929,7 @@ section{
     font-size: 24px;
     color: #333;
     margin-right: 10px;
+    text-decoration: none;
 }
 /* the form */
 #cscf > .cscfForm form{
@@ -923,9 +938,8 @@ section{
 }
 
 #cscf label{
-    background: rgba(0,0,0,0.3);
     font-size: .9em;
-    padding: 8px;
+    padding: 8px 0;
     display: none;
     width: 132px;
     -webkit-box-sizing: border-box;
@@ -934,9 +948,8 @@ section{
     vertical-align: top;
     text-align: left;
 }
-#cscf .form-left label + div{
-    margin-left: 132px;
-    vertical-align: top;
+.no-placeholder #cscf label{
+    display: block;
 }
 #cscf label + div input{
     display: block;
