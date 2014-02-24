@@ -120,11 +120,6 @@ get_header(); ?>
                 <div class="col col4">
                     <div class="braica-block">
                         <?php echo $content; ?>
-                        <div id="social">
-                            <a href="http://twitter.com/braican" target="_blank" class="twitter">Twitter</a>
-                            <a href="http://facebook.com/braica.n" target="_blank" class="facebook">Facebook</a>
-                            <a href="http://linkedin.com/in/nicholasbraica" target="_blank" class="linkedin">LinkedIn</a>
-                        </div>
                     </div>
                 </div>
                 <div class="col col2">

@@ -9,7 +9,7 @@
         <?php echo $messageNotSentView->Render(); ?>
     </div>
     <div class="cscfForm">
-        <h3>Let's talk</h3>
+        <h3>Let's chat</h3>
         <p><?php echo $message; ?></p>
         <form role="form" id="frmCSCF" name="frmCSCF" method="post">
             <?php wp_nonce_field('cscf_contact','cscf_nonce'); ?>

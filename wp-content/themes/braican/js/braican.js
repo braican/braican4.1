@@ -63,9 +63,8 @@
         }).fadeIn(FADESPEED, function(){
             $('body').removeClass('project-view');
             window.location.hash = '';
-            // history.pushState(null, null, window.location.href.replace(window.location.hash, ''));
             $('#project-modal').removeAttr('style').find('#load-project').empty();
-            $('#main, #page').removeAttr('style');
+            $('#main, #page, .site-footer').removeAttr('style');
 
             if(href)
                 $('body').scrollTo(href, SCROLLSPEED, {axis: 'y', easing:'swing', margin:INCLUDEMARGIN});
@@ -120,13 +119,15 @@
         // bind hashchange events to our router
         //
         $(window).on('hashchange', function(e) {
-            console.log("hashchange");
-            var newHash = window.location.hash.replace('/#/', '');
-            if(newHash){
-                BRAICAN.loader(newHash);
-            } else {
-                backToHome();
+            if(window.location.hash.indexOf('#/') > -1){
+                var newHash = window.location.hash.replace('#/', '');
+                if(newHash){
+                    BRAICAN.loader(newHash);
+                } else {
+                    backToHome();
+                }
             }
+            
         });
         // on page load, initialize a hashchange to get things going
         $(window).trigger('hashchange');
@@ -154,10 +155,12 @@
         // slide to nav
         //
         $('a[href*=#]').on('click', function(e){
-            e.preventDefault();
-            var id = $(this).attr('href').substring(1);
-            if(id.length > 1)
-                $('body').scrollTo(id, SCROLLSPEED, {axis: 'y', easing:'swing', margin:INCLUDEMARGIN});
+            if($('body').hasClass('home')){
+                e.preventDefault();
+                var id = $(this).attr('href').substring(1);
+                if(id.length > 1)
+                    $('body').scrollTo(id, SCROLLSPEED, {axis: 'y', easing:'swing', margin:INCLUDEMARGIN});
+            }
         });
 
 
