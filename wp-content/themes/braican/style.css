@@ -624,6 +624,13 @@ section{
    ================================================ */
 
 /* -----------------------------------
+ * --404
+ * ----------------------------------- */
+.notfound{
+    background: #f47c20;
+    padding: 40px 0;
+}
+/* -----------------------------------
  * --home
  * ----------------------------------- */
 #home{
@@ -821,6 +828,9 @@ section{
 .project-title{
     position: relative;
     padding-right: 40px;
+}
+.project-title a{
+    color: #000;
 }
 .project-title .icon-cancel{
     cursor: pointer;

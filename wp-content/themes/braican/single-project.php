@@ -7,7 +7,7 @@
 		<article id="post-<?php the_ID(); ?>" <?php post_class('br-cf'); ?>>
 			<header class="project-header col">
 				<div class="braica-block">
-					<h2 class="project-title"><?php the_title(); ?> <i class="icon-cancel close-modal"></i></h2>
+					<h2 class="project-title"><?php the_title(); ?> <a href="/" class="close-modal"><i class="icon-cancel"></i></a></h2>
 				</div>
 			</header><!-- .project-header -->
 

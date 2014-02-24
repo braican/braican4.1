@@ -155,7 +155,7 @@
         //
         $('a[href*=#]').on('click', function(e){
             e.preventDefault();
-            var id = $(this).attr('href');
+            var id = $(this).attr('href').substring(1);
             if(id.length > 1)
                 $('body').scrollTo(id, SCROLLSPEED, {axis: 'y', easing:'swing', margin:INCLUDEMARGIN});
         });
@@ -208,11 +208,9 @@
         //
         $('.project-view #menu-primary li a').on('click', function(event){
             event.preventDefault();
-            var href = $(this).attr('href');
+            var href = $(this).attr('href').substring(1);
             backToHome(href);
         });
-
-
 
         // ---------------------------------
         // mobile navigation
