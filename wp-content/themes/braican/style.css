@@ -535,7 +535,7 @@ section{
 .site-header .logo span{
     border-top: 7px solid #e47125;
     line-height: 1.2em;
-    font-family: 'Raleway' sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-weight: 700;
     font-size: 2.6em;
     color: #000;
