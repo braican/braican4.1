@@ -51,11 +51,11 @@
     // re-show the homepage and remove content from the project modal
     //
     function backToHome(href){
-        console.log("back to home");
-        
         $('#page').css({
             'min-height': window.innerHeight + 'px'
         });
+
+        $('body').removeClass('project-view');
 
         $('#main').css({
             'position': 'absolute',
@@ -88,14 +88,11 @@
         $('body').addClass('project-view');
         $('.site-footer').hide();
 
-        console.log(loadUrl);
-
         $('#main').fadeOut(FADESPEED, function(){
             
             $('#loading').fadeIn(FADESPEED);
 
             $('#load-project').load(loadUrl + ' #single-project article', function(data, textStatus, req){
-                console.log(textStatus);
                 if(textStatus != "error"){
                     
                     setTimeout(function(){
@@ -124,38 +121,26 @@
                 if(newHash){
                     BRAICAN.loader(newHash);
                 } else {
-                    backToHome();
+                    backToHome(window.location.hash);
                 }
+            } else {
+                backToHome(window.location.hash);
             }
             
         });
         // on page load, initialize a hashchange to get things going
         $(window).trigger('hashchange');
 
-        // $('body').addClass('initialized');
-
-        // -------------------------------
-        // waypoints
-        // 
-        // TODO - probably dont need this
-        //
-        // $('#work').waypoint(function(dir) {
-        //     console.log("asdasd");
-        //     if(dir == 'up'){
-        //         $('#masthead').removeAttr('style');
-        //     } else {
-        //         $('#masthead').css({
-        //             'height': '20px'
-        //         });
-        //     }
-        // });
 
         // -------------------------------
         //
         // slide to nav
         //
-        $('a[href*=#]').on('click', function(e){
-            if($('body').hasClass('home')){
+        $('a[href^="/#"]').on('click', function(e){
+            if($('body').hasClass('project-view')){
+                e.preventDefault();
+                backToHome($(this).attr('href').substring(1));
+            } else if($('body').hasClass('home')){
                 e.preventDefault();
                 var id = $(this).attr('href').substring(1);
                 if(id.length > 1)
@@ -168,24 +153,6 @@
         // the projects section
         // --------------------------------
         //
-
-        //
-        // filter the projects by category
-        //
-        $('.categories a').click(function(event) {
-            event.preventDefault();
-            
-            $('.categories a.active').removeClass('active');
-            if($(this).hasClass('showall')){
-                $('.project-group > .col').show();
-            } else {
-                $(this).addClass('active');
-                var cat = $(this).attr('data-category');
-                
-                $('.project-group > .col').hide();
-                $('.project-group > .col.' + cat).show();
-            }
-        });
 
         // 
         // AJAX the content
