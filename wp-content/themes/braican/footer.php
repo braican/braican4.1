@@ -19,10 +19,6 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="braica-container">
-			<div class="site-info">
-				Copyright &copy; <?php echo date('Y'); ?> Nicholas Braica
-			</div><!-- .site-info -->
-			
 			<div class="the-braica">
 				<img  src="<?php echo get_template_directory_uri() . '/img/ski-circle.png'; ?>" alt="">
 				<div id="social">
@@ -32,6 +28,12 @@
 				    <a href="https://plus.google.com/+NicholasBraica/" target="_blank"><i class="icon-gplus"></i></a>
 				</div>
 			</div>
+			
+			<div class="site-info">
+				Copyright &copy; <?php echo date('Y'); ?> Nicholas Braica
+			</div><!-- .site-info -->
+			
+			
 
 		</div>
 

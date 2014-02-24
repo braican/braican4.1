@@ -1084,6 +1084,9 @@ section{
     h1{
         font-size: 3em;
     }
+    .the-braica{
+        text-align: right;
+    }
 }
 @media screen and (max-width: 700px){
     .braica-container .col.col2,
@@ -1146,6 +1149,20 @@ section{
 @media screen and (max-width: 460px) {
     #work .col.col2{
         width: 100%;
+    }
+    
+    .site-footer{
+        height: auto;
+    }
+    .the-braica{
+        text-align: center;
+        position: relative;
+        margin-top: -90px;
+        top: 0;
+    }
+    .site-info{
+        padding: 60px 0 20px 0;
+        text-align: center;
     }
 }
 
