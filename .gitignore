@@ -3,3 +3,4 @@ wp-config.php
 
 # the uploads directory
 wp-content/uploads/*
+!wp-content/uploads/docs

@@ -150,7 +150,7 @@
             e.preventDefault();
             var id = $(this).attr('href').substring(1);
             if($('body').hasClass('project-view')){
-                backToHome(id);
+                backToHome();
             } else if(id.length > 1){
                 $('body').scrollTo(id, SCROLLSPEED, {axis: 'y', easing:'swing', margin:INCLUDEMARGIN});
             }
@@ -180,15 +180,6 @@
             event.preventDefault();
             backToHome();
         });
-
-        // //
-        // // navigating to other sections from the project detail
-        // //
-        // $('.project-view #menu-primary li a').on('click', function(event){
-        //     event.preventDefault();
-        //     var href = $(this).attr('href').substring(1);
-        //     backToHome(href);
-        // });
 
         // ---------------------------------
         // mobile navigation

@@ -16,7 +16,7 @@
 					<?php the_field('braican_project_text'); ?>
 					<?php if($link = get_field('braican_project_link')) : ?>
 						<div>
-							<a href="<?php echo $link ?>" target="_blank">Visit project</a>
+							<a href="<?php echo $link ?>" target="_blank"><?php the_field('braican_project_link_text'); ?></a>
 						</div>
 					<?php endif; ?>
 				</div>

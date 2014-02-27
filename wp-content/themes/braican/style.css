@@ -816,7 +816,7 @@ section:focus{
     width: 100%;
     display: none;
     background: #f5ecdf;
-    padding-top: 40px;
+    padding: 40px 0 60px;
 }
 
 .project-content a{
