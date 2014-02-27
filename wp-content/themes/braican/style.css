@@ -1003,6 +1003,7 @@ section:focus{
     padding: 40px 20px;
     color: #ccc;
     position: relative;
+    z-index: 100;
     border-top: 10px solid #fff;
 }
 .site-footer:hover{

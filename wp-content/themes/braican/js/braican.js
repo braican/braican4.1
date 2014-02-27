@@ -147,15 +147,12 @@
         // slide to nav
         //
         $('a[href^="/#"]').on('click', function(e){
+            e.preventDefault();
+            var id = $(this).attr('href').substring(1);
             if($('body').hasClass('project-view')){
-                e.preventDefault();
-                backToHome($(this).attr('href').substring(1));
-            } else if($('body').hasClass('home')){
-                e.preventDefault();
-                var id = $(this).attr('href').substring(1);
-                if(id.length > 1){
-                    $('body').scrollTo(id, SCROLLSPEED, {axis: 'y', easing:'swing', margin:INCLUDEMARGIN});
-                }
+                backToHome(id);
+            } else if(id.length > 1){
+                $('body').scrollTo(id, SCROLLSPEED, {axis: 'y', easing:'swing', margin:INCLUDEMARGIN});
             }
         });
 
@@ -184,14 +181,14 @@
             backToHome();
         });
 
-        //
-        // navigating to other sections from the project detail
-        //
-        $('.project-view #menu-primary li a').on('click', function(event){
-            event.preventDefault();
-            var href = $(this).attr('href').substring(1);
-            backToHome(href);
-        });
+        // //
+        // // navigating to other sections from the project detail
+        // //
+        // $('.project-view #menu-primary li a').on('click', function(event){
+        //     event.preventDefault();
+        //     var href = $(this).attr('href').substring(1);
+        //     backToHome(href);
+        // });
 
         // ---------------------------------
         // mobile navigation
