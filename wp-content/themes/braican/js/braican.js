@@ -18,11 +18,12 @@
     // Properties
     //
 
-    var LOAD_PREFIX = "http://192.168.254.99:8888/braican/braican.com/website/project/",
-        // LOAD_PREFIX = window.location.protocol + '//' + window.location.host + '/project/',
-        FADESPEED = 600,
+    var FADESPEED = 600,
         SCROLLSPEED = 800,
-        INCLUDEMARGIN = false;
+        INCLUDEMARGIN = false,
+        // LOAD_PREFIX = "http://192.168.254.99:8888/braican/braican.com/website/project/";
+        LOAD_PREFIX = window.location.protocol + '//' + window.location.host + '/project/';
+        
     
 
     // -----------------------------------------
