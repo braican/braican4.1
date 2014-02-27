@@ -69,8 +69,9 @@
             $('#main, #page, .site-footer').removeAttr('style');
 
             // conole.log(href);
-            if(href && href != '#')
+            if(href && href != '#'){
                 $('body').scrollTo(href, SCROLLSPEED, {axis: 'y', easing:'swing', margin:INCLUDEMARGIN});
+            }
         });
     }
 
@@ -105,6 +106,7 @@
                             $('#project-modal').fadeIn(FADESPEED, function(){
                                 $('#loading').removeAttr('style');
                             });
+                            $('.site-footer').removeAttr('style');
                         }, 600);
                     } else {
                         $('#main, .site-footer').fadeIn(FADESPEED);
@@ -151,8 +153,9 @@
             } else if($('body').hasClass('home')){
                 e.preventDefault();
                 var id = $(this).attr('href').substring(1);
-                if(id.length > 1)
+                if(id.length > 1){
                     $('body').scrollTo(id, SCROLLSPEED, {axis: 'y', easing:'swing', margin:INCLUDEMARGIN});
+                }
             }
         });
 

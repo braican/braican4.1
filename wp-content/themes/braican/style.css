@@ -38,9 +38,6 @@ html {
     -ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
 body {
-    /*background: #333A3E;*/
-    /*background: #606a6d;*/
-    /*background: #f2f2ea;*/
     background: #fff;
     zoom:1;
     position: relative;
@@ -500,7 +497,9 @@ section{
     position: relative;
     padding: 60px 0;
 }
-
+section:focus{
+    outline:0;
+}
 .braica-container{
     width: 96%;
     max-width: 1068px;
