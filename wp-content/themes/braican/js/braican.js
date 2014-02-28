@@ -150,7 +150,7 @@
             e.preventDefault();
             var id = $(this).attr('href').substring(1);
             if($('body').hasClass('project-view')){
-                backToHome();
+                backToHome(id);
             } else if(id.length > 1){
                 $('body').scrollTo(id, SCROLLSPEED, {axis: 'y', easing:'swing', margin:INCLUDEMARGIN});
             }
