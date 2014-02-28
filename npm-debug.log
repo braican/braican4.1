@@ -1,0 +1,70 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/node/0.10.12/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'grunt-contrib-concat',
+1 verbose cli   '--save-dev' ]
+2 info using npm@1.2.32
+3 info using node@v0.10.12
+4 verbose read json /Users/nbraica/Documents/braican/braican.com/website/package.json
+5 warn package.json braican.com@4.1.0 No repository field.
+6 verbose read json /Users/nbraica/Documents/braican/braican.com/website/node_modules/grunt/package.json
+7 verbose from cache /Users/nbraica/Documents/braican/braican.com/website/package.json
+8 verbose readDependencies using package.json deps
+9 verbose cache add [ 'grunt-contrib-concat', null ]
+10 verbose cache add name=undefined spec="grunt-contrib-concat" args=["grunt-contrib-concat",null]
+11 verbose parsed url { protocol: null,
+11 verbose parsed url   slashes: null,
+11 verbose parsed url   auth: null,
+11 verbose parsed url   host: null,
+11 verbose parsed url   port: null,
+11 verbose parsed url   hostname: null,
+11 verbose parsed url   hash: null,
+11 verbose parsed url   search: null,
+11 verbose parsed url   query: null,
+11 verbose parsed url   pathname: 'grunt-contrib-concat',
+11 verbose parsed url   path: 'grunt-contrib-concat',
+11 verbose parsed url   href: 'grunt-contrib-concat' }
+12 silly lockFile 2cb61a47-grunt-contrib-concat grunt-contrib-concat
+13 verbose lock grunt-contrib-concat /Users/nbraica/.npm/2cb61a47-grunt-contrib-concat.lock
+14 silly lockFile 2cb61a47-grunt-contrib-concat grunt-contrib-concat
+15 silly lockFile 2cb61a47-grunt-contrib-concat grunt-contrib-concat
+16 verbose addNamed [ 'grunt-contrib-concat', '' ]
+17 verbose addNamed [ null, '' ]
+18 silly lockFile 9f2aab3b-grunt-contrib-concat grunt-contrib-concat@
+19 verbose lock grunt-contrib-concat@ /Users/nbraica/.npm/9f2aab3b-grunt-contrib-concat.lock
+20 silly addNameRange { name: 'grunt-contrib-concat', range: '', hasData: false }
+21 verbose url raw grunt-contrib-concat
+22 verbose url resolving [ 'https://registry.npmjs.org/', './grunt-contrib-concat' ]
+23 verbose url resolved https://registry.npmjs.org/grunt-contrib-concat
+24 info trying registry request attempt 1 at 12:50:28
+25 http GET https://registry.npmjs.org/grunt-contrib-concat
+26 info retry will retry, error on last attempt: Error: SELF_SIGNED_CERT_IN_CHAIN
+27 info trying registry request attempt 2 at 12:50:39
+28 http GET https://registry.npmjs.org/grunt-contrib-concat
+29 info retry will retry, error on last attempt: Error: SELF_SIGNED_CERT_IN_CHAIN
+30 info trying registry request attempt 3 at 12:51:39
+31 http GET https://registry.npmjs.org/grunt-contrib-concat
+32 silly lockFile 9f2aab3b-grunt-contrib-concat grunt-contrib-concat@
+33 silly lockFile 9f2aab3b-grunt-contrib-concat grunt-contrib-concat@
+34 error Error: SELF_SIGNED_CERT_IN_CHAIN
+34 error     at SecurePair.<anonymous> (tls.js:1346:32)
+34 error     at SecurePair.EventEmitter.emit (events.js:92:17)
+34 error     at SecurePair.maybeInitFinished (tls.js:959:10)
+34 error     at CleartextStream.read [as _read] (tls.js:463:15)
+34 error     at CleartextStream.Readable.read (_stream_readable.js:320:10)
+34 error     at EncryptedStream.write [as _write] (tls.js:366:25)
+34 error     at doWrite (_stream_writable.js:219:10)
+34 error     at writeOrBuffer (_stream_writable.js:209:5)
+34 error     at EncryptedStream.Writable.write (_stream_writable.js:180:11)
+34 error     at write (_stream_readable.js:573:24)
+35 error If you need help, you may report this log at:
+35 error     <http://github.com/isaacs/npm/issues>
+35 error or email it to:
+35 error     <npm-@googlegroups.com>
+36 error System Darwin 12.4.0
+37 error command "/usr/local/Cellar/node/0.10.12/bin/node" "/usr/local/bin/npm" "install" "grunt-contrib-concat" "--save-dev"
+38 error cwd /Users/nbraica/Documents/braican/braican.com/website
+39 error node -v v0.10.12
+40 error npm -v 1.2.32
+41 verbose exit [ 1, true ]

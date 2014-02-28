@@ -89,7 +89,6 @@
     BRAICAN.loader = function(hash){
 
         var loadUrl = LOAD_PREFIX + hash.replace('#/', '');
-        console.log("load " + loadUrl);
         $('body').addClass('project-view');
         $('.site-footer').hide();
 
@@ -124,10 +123,8 @@
         // bind hashchange events to our router
         //
         $(window).on('hashchange', function(e) {
-            console.log("this is a hashchange");
             if(window.location.hash.indexOf('#/') > -1){
                 var newHash = window.location.hash.replace('#/', '');
-                console.log(newHash);
                 if(newHash){
                     BRAICAN.loader(newHash);
                 } else {
@@ -165,8 +162,6 @@
             var $t = $(this),
                 dir = $t.attr('class');
                 scrollToSection = dir === "icon-angle-up" ? $t.parents('.section').prev().data('section') : $t.parents('.section').next().data('section');
-
-            console.log(scrollToSection);
 
             $('body').scrollTo('#' + scrollToSection, SCROLLSPEED, {axis: 'y', easing:'swing', margin:INCLUDEMARGIN});
         });

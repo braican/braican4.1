@@ -9,7 +9,7 @@ get_header(); ?>
 
     <div id="content" class="site-content" role="main">
         
-        <div class="main-bg bg-container section" data-section="home">
+        <div class="main-bg bg-container section" data-section="page">
 
             <!-- home section -->
             <section id="home" class="br-cf">
@@ -49,8 +49,8 @@ get_header(); ?>
 
                 <div class="braica-container br-cf">
                     <div class="mobile-section-navigation">
-                        <i class="icon-angle-down"></i>
                         <i class="icon-angle-up"></i>
+                        <i class="icon-angle-down"></i>
                     </div>
                     
                     <!-- the project thumbs -->
@@ -97,8 +97,8 @@ get_header(); ?>
 
                 <div class="braica-container br-cf">
                     <div class="mobile-section-navigation">
-                        <i class="icon-angle-down"></i>
                         <i class="icon-angle-up"></i>
+                        <i class="icon-angle-down"></i>
                     </div>
 
                     <div class="col col4 right">

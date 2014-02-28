@@ -1,0 +1,7 @@
+{
+  "name": "braican.com",
+  "version": "4.1.0",
+  "devDependencies": {
+    "grunt": "~0.4.1"
+  }
+}
