@@ -9,7 +9,7 @@ get_header(); ?>
 
     <div id="content" class="site-content" role="main">
         
-        <div class="main-bg bg-container">
+        <div class="main-bg bg-container section" data-section="home">
 
             <!-- home section -->
             <section id="home" class="br-cf">
@@ -45,9 +45,13 @@ get_header(); ?>
             'order' => 'ASC'
         )); ?>
         <?php if($loop->have_posts()): ?>
-            <section id="work" class="br-cf">    
+            <section id="work" class="br-cf section" data-section="work">
 
                 <div class="braica-container br-cf">
+                    <div class="mobile-section-navigation">
+                        <i class="icon-angle-down"></i>
+                        <i class="icon-angle-up"></i>
+                    </div>
                     
                     <!-- the project thumbs -->
                     <div class="project-group br-cf">
@@ -83,7 +87,7 @@ get_header(); ?>
         <?php endif; ?>
         
         <!-- ABOUT -->
-        <div class="about-bg bg-container">
+        <div class="about-bg bg-container section" data-section="about">
             <section id="about" class="br-cf">
                 
                 <?php $id = 10; ?>
@@ -92,6 +96,11 @@ get_header(); ?>
                 <?php $content = apply_filters('the_content', $content); ?>
 
                 <div class="braica-container br-cf">
+                    <div class="mobile-section-navigation">
+                        <i class="icon-angle-down"></i>
+                        <i class="icon-angle-up"></i>
+                    </div>
+
                     <div class="col col4 right">
                         <div class="braica-block">
                             <?php echo $content; ?>
@@ -110,12 +119,16 @@ get_header(); ?>
 
 
         <!-- CONTACT -->
-        <section id="contact" class="br-cf">
+        <section id="contact" class="br-cf section" data-section="contact">
             <?php $id = 11; ?>
             <?php $page = get_page($id); ?>
             <?php $content = apply_filters('the_content', $page->post_content); ?>
             
             <div class="braica-container br-cf">
+
+                <div class="mobile-section-navigation">
+                    <i class="icon-angle-up"></i>
+                </div>
                 
                 <div class="col col4">
                     <div class="braica-block">

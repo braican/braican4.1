@@ -154,6 +154,21 @@
             } else if(id.length > 1){
                 $('body').scrollTo(id, SCROLLSPEED, {axis: 'y', easing:'swing', margin:INCLUDEMARGIN});
             }
+            if($(window).width() < 600){
+                $('.mobile-nav').click();
+            }
+        });
+
+        // mobile
+        $('.mobile-section-navigation i').on('click', function(event){
+            event.preventDefault();
+            var $t = $(this),
+                dir = $t.attr('class');
+                scrollToSection = dir === "icon-angle-up" ? $t.parents('.section').prev().data('section') : $t.parents('.section').next().data('section');
+
+            console.log(scrollToSection);
+
+            $('body').scrollTo('#' + scrollToSection, SCROLLSPEED, {axis: 'y', easing:'swing', margin:INCLUDEMARGIN});
         });
 
 

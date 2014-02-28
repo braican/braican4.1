@@ -369,8 +369,6 @@ h4{
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
     font-size: 1.2em;
-    /*border-top: 4px solid #e47125;*/
-    /*text-transform: uppercase;*/
 }
 h5{}
 h6{}
@@ -379,13 +377,8 @@ h6{}
 a {
     color: #ccc;
     text-decoration: underline;
-    -webkit-transition: color .2s linear;
-    -o-transition: color .2s linear;
-    -moz-transition: color .2s linear;
-    transition: color .2s linear;
 }
-a:visited {
-}
+a:visited {}
 a:hover,
 a:focus,
 a:active {
@@ -447,14 +440,16 @@ a:active {
 }
 
 .icon-cancel:before { content: '\e800'; }
-.icon-plus:before { content: '\e801'; }
+.icon-angle-down:before { content: '\e80a'; }
 .icon-link:before { content: '\e802'; }
-.icon-right:before { content: '\e805'; }
+.icon-right:before { content: '\e803'; }
 .icon-menu:before { content: '\e804'; }
-.icon-facebook:before { content: '\e806'; }
-.icon-twitter-bird:before { content: '\e807'; }
-.icon-linkedin:before { content: '\e808'; }
-.icon-gplus:before { content: '\e803'; }
+.icon-plus:before { content: '\e801'; }
+.icon-twitter-bird:before { content: '\e806'; }
+.icon-linkedin:before { content: '\e807'; }
+.icon-gplus:before { content: '\e808'; }
+.icon-angle-up:before { content: '\e809'; }
+.icon-facebook:before { content: '\e805'; }
 
 /* -----------------------------------
  * --alignment
@@ -624,6 +619,17 @@ section:focus{
     color: #f47c20;
 }
 
+.mobile-section-navigation{
+    text-align: right;
+    padding: 14px 20px 20px 20px;
+    color: #fff;
+}
+.mobile-section-navigation i{
+    margin: 0 -4px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
 
 /* ================================================
    --SPECIFICS
@@ -663,6 +669,9 @@ section:focus{
     background: #fff;
     color: #404040;
     border-top: 10px solid #bc5200;
+}
+#work .mobile-section-navigation{
+    color: #404040;
 }
 .project-thumb{
     display: block;
@@ -1102,6 +1111,9 @@ section:focus{
         font-size: 14px;
         font-size: 1.4rem;
     }
+    #home{
+        padding: 50px 0;
+    }
     
     .braica-container .col.col3,
     .braica-container .col.col2{
@@ -1124,19 +1136,17 @@ section:focus{
         margin-left: 20px;
     }
     .site-header .site-nav .menu-primary-container{
-        display: table;
         width: 100%;
         padding: 10px 0;
     }
     .site-header .site-nav ul{
-        display: table-row;
+        text-align: center;
     }
     .site-header .site-nav ul li{
-        display: table-cell;
         margin: 0 0 10px 0;
         text-align: center;
-        padding-left: 6px;
-        padding-right: 6px;
+        padding-left: 12px;
+        padding-right: 12px;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
@@ -1149,6 +1159,10 @@ section:focus{
 @media screen and (max-width: 460px) {
     #work .col.col2{
         width: 100%;
+    }
+
+    section{
+        padding-top: 0;
     }
     
     .site-footer{
