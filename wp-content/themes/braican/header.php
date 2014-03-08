@@ -48,7 +48,7 @@
 
         <div class="braica-container br-cf">
             <div class="logo braica-block">
-                <span>nb</span>
+                <a href="/#"><span>nb</span></a>
             </div>
 
             <nav class="site-nav braica-block">

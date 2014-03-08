@@ -151,7 +151,7 @@
             } else if(id.length > 1){
                 $('body').scrollTo(id, SCROLLSPEED, {axis: 'y', easing:'swing', margin:INCLUDEMARGIN});
             }
-            if($(window).width() < 600){
+            if($(window).width() < 600 && !$(this).parent().hasClass('logo')){
                 $('.mobile-nav').click();
             }
         });
@@ -224,15 +224,7 @@
 
     // DOM is ready
     $(document).ready( function() {
-        
         BRAICAN.init();
-    });
-
-    // when the window loads
-    $(window).load(function(){});
-
-    // when the window scrolls
-    $(window).scroll(function(){
     });
 
 }(window.BRAICAN = window.BRAICAN || {}, jQuery));

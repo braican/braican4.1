@@ -377,7 +377,7 @@ h3{
 h4{
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 h5{}
 h6{}
@@ -529,6 +529,9 @@ section:focus{
     margin-bottom: 0;
     width: 150px;
     float: left;
+}
+.site-header .logo a{
+    text-decoration: none;
 }
 .site-header .logo span{
     border-top: 7px solid #e47125;
@@ -719,7 +722,7 @@ section:focus{
     display: block;
 }
 .project-thumb .overlay .overlay-icon{
-    padding-top: 40px;
+    padding-top: 20px;
     color: #e47125;
     font-size: 20px;
 
@@ -742,7 +745,7 @@ section:focus{
     transform: translateY(0px) scale(1.4);
 }
 .project-thumb .overlay .overlay-content{
-    padding: 10px 20px 0;
+    padding: 0 20px 0;
     opacity: 0;
 
     -webkit-transition: opacity 0.4s .2s, -webkit-transform .5s .1s;
@@ -1062,7 +1065,27 @@ section:focus{
         font-size: 14px;
     }
 }
-
+@media screen and (min-width: 461px) and (max-width: 580px){
+    .overlay-content p{
+        display: none;
+    }
+}
+@media screen and (min-width: 701px) and (max-width: 872px){
+    .overlay-content p{
+        display: none;
+    }
+}
+@media screen and (min-width: 1080px){
+    h4{
+        font-size: 1.2em;
+    }
+    .project-thumb .overlay .overlay-icon{
+        padding-top: 40px;
+    }
+    .project-thumb .overlay .overlay-content{
+        padding-top: 10px;
+    }
+}
 @media screen and (max-width: 460px) {
     #work .col.col2{
         width: 100%;
