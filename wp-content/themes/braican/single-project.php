@@ -16,7 +16,7 @@
 						<?php the_field('braican_project_text'); ?>
 						<?php if($link = get_field('braican_project_link')) : ?>
 							<div class="braica-cta">
-								<a href="<?php echo $link ?>" target="_blank"><?php the_field('braican_project_link_text'); ?>Go to link <i class="icon-angle-right"></i></a>
+								<a href="<?php echo $link ?>" target="_blank"><?php the_field('braican_project_link_text'); ?><i class="icon-angle-right"></i></a>
 							</div>
 						<?php endif; ?>
 					</div>
