@@ -398,9 +398,8 @@ a:active {
 .braica-cta a{
     background-color: #333;
     text-decoration: none;
-    padding: 6px;
+    padding: 6px 28px 6px 6px;
     color: #fff;
-    padding-right: 36px;
     position: relative;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -413,7 +412,7 @@ a:active {
 }
 .braica-cta a i{
     position: absolute;
-    right: 3px;
+    right: 0;
 }
 .braica-cta a:hover{
     background-color: #444;   
@@ -906,25 +905,13 @@ section:focus{
 /* -----------------------------------
  * --footer
  * ----------------------------------- */
-
-.the-braican{
-    background: url(img/ski.jpg);
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-position: top center;
-    height: 350px;
-}
 .site-footer{
     height: 160px;
     font-size: 0.8em;
     padding: 40px 20px;
-    color: #ccc;
+    color: #888;
     position: relative;
     z-index: 100;
-    border-top: 10px solid #fff;
-}
-.site-footer:hover{
-    color: #999;
 }
 
 .the-braica{
