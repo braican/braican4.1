@@ -151,7 +151,7 @@
             event.preventDefault();
             var $t = $(this),
                 dir = $t.attr('class');
-                scrollToSection = dir === "icon-angle-up" ? $t.parents('.section').prev().data('section') : $t.parents('.section').next().data('section');
+                scrollToSection = dir === "icon-angle-up" ? $t.parents('section').prev().data('section') : $t.parents('section').next().data('section');
 
             $('body').scrollTo('#' + scrollToSection, SCROLLSPEED, {axis: 'y', easing:'swing', margin:INCLUDEMARGIN});
         });

@@ -635,12 +635,6 @@ section:focus{
 /* ================================================
    --SPECIFICS
    ================================================ */
-
-.bg-container{
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-attachment: fixed;
-}
 /* -----------------------------------
  * --404
  * ----------------------------------- */
@@ -652,15 +646,14 @@ section:focus{
  * --home
  * ----------------------------------- */
 #home{
-    background: #f47c20;
-    background: rgba(244,134,32,.7);
+    background: #f47c20 url(img/australia-orange.jpg) top left fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
     margin: 0;
     padding: 100px 0;
     z-index: 3;
 }
-.main-bg{
-    background-image: url(img/australia.jpg);
-}
+
 
 /* -----------------------------------
  * --work
@@ -842,14 +835,11 @@ section:focus{
  * --about
  * ----------------------------------- */
 #about{
-    background: #06658e;
-    background: rgba(6, 101, 142, .7);
+    background: #06658e url(img/borestone-blue.jpg) top center fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
     z-index: 3;
     border-top: 10px solid #004C75;
-}
-
-.about-bg{
-    background-image: url(img/borestone.jpg);
 }
 
 /* -----------------------------------
