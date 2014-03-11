@@ -97,22 +97,23 @@
             $('#loading').fadeIn(FADESPEED);
             
             if(loadUrl.indexOf('#') == -1){
-                $('#load-project').load(loadUrl + ' #single-project article', function(data, textStatus, req){
-                    if(textStatus != "error"){
-                        
-                        setTimeout(function(){
-                            $('.side-footer').show();
-                            $('#project-modal').fadeIn(FADESPEED, function(){
-                                $('#loading').removeAttr('style');
-                            });
-                            $('.site-footer').removeAttr('style');
-                        }, 600);
-                    } else {
-                        $('#main, .site-footer').fadeIn(FADESPEED);
-                    }
+                $.post(braican_ajax.ajaxurl, {
+                    action: 'ajax_action',
+                    post_id: 36
+                }, function(data) {
+                    console.log(data); // alerts 'ajax submitted'
+                    $('#load-project').html(data);
+
+                    $('.side-footer').show();
+                    $('#project-modal').fadeIn(FADESPEED, function(){
+                        $('#loading').removeAttr('style');
+                    });
+                    $('.site-footer').removeAttr('style');
+
                 });
             }
         });
+
     };
 
 
