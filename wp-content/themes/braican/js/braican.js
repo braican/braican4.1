@@ -96,14 +96,12 @@
                     backToHome();
                 } else {
                     $('#load-project').html(data);
-
-                    setTimeout(function(){
-                        $('.side-footer').show();
-                        $('#project-modal').fadeIn(FADESPEED, function(){
-                            $('#loading').removeAttr('style');
-                        });
-                        $('.site-footer').removeAttr('style');
-                    }, 600);
+                    
+                    $('.side-footer').show();
+                    $('#project-modal').fadeIn(FADESPEED, function(){
+                        $('#loading').removeAttr('style');
+                    });
+                    $('.site-footer').removeAttr('style');
                 }
             });   
         }
