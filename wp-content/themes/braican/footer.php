@@ -33,8 +33,6 @@
 				Copyright &copy; <?php echo date('Y'); ?> Nicholas Braica
 			</div><!-- .site-info -->
 			
-			
-
 		</div>
 
 	</footer><!-- #colophon -->

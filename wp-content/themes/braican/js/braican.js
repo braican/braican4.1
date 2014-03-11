@@ -5,14 +5,6 @@
 (function(BRAICAN, $, undefined){
 
     // -----------------------------------------
-    // PUBLIC
-    //
-    // Properties
-    //
-    BRAICAN.property = '';
-
-
-    // -----------------------------------------
     // PRIVATE
     //
     // Properties
@@ -20,12 +12,8 @@
 
     var FADESPEED = 600,
         SCROLLSPEED = 800,
-        INCLUDEMARGIN = false,
-        // LOAD_PREFIX = "http://192.168.254.99:8888/braican/braican.com/website/project/";
-        LOAD_PREFIX = window.location.protocol + '//' + window.location.host + '/project/';
+        INCLUDEMARGIN = false;
         
-    
-
     // -----------------------------------------
     // PRIVATE
     //
@@ -88,7 +76,9 @@
     //
     BRAICAN.loader = function(hash){
 
-        var loadUrl = LOAD_PREFIX + hash.replace('#/', '');
+        var projectSlug = hash.replace('#/', ''),
+            projectID = $('.project-group a[data-project="' + projectSlug + '"]').data('id');
+
         $('body').addClass('project-view');
         $('.site-footer').hide();
 
@@ -96,21 +86,28 @@
             
             $('#loading').fadeIn(FADESPEED);
             
-            if(loadUrl.indexOf('#') == -1){
+            if(projectID){
                 $.post(braican_ajax.ajaxurl, {
                     action: 'ajax_action',
-                    post_id: 36
+                    post_id: projectID
                 }, function(data) {
-                    console.log(data); // alerts 'ajax submitted'
-                    $('#load-project').html(data);
+                    if(data == 1){
+                        console.log("Uh oh. Looks like there's no project with that ID");
+                        backToHome();
+                    } else {
+                        $('#load-project').html(data);
 
-                    $('.side-footer').show();
-                    $('#project-modal').fadeIn(FADESPEED, function(){
-                        $('#loading').removeAttr('style');
-                    });
-                    $('.site-footer').removeAttr('style');
-
+                        setTimeout(function(){
+                            $('.side-footer').show();
+                            $('#project-modal').fadeIn(FADESPEED, function(){
+                                $('#loading').removeAttr('style');
+                            });
+                            $('.site-footer').removeAttr('style');
+                        }, 600);
+                    }
                 });
+            } else {
+                backToHome();
             }
         });
 

@@ -210,43 +210,48 @@ function filter_work(){ ?>
 //
 function braican_ajax_post(){
 	$post_id = $_POST['post_id'];
-	$post = get_post($post_id); ?>
+	$post = get_post($post_id);
 
-	<article <?php post_class('br-cf'); ?>>
-		<header class="project-header col">
-			<div class="braica-block">
-				<h2 class="project-title"><?php echo get_the_title($post_id); ?> <a href="/" class="close-modal"><i class="icon-cancel"></i></a></h2>
-			</div>
-		</header><!-- .project-header -->
+    if($post) : ?>
 
-		<div class="project-content col col2">
-			<div class="braica-block">
-				<?php the_field('braican_project_text', $post_id); ?>
-				<?php if($link = get_field('braican_project_link', $post_id)) : ?>
-					<div class="braica-cta">
-						<a href="<?php echo $link ?>" target="_blank"><?php the_field('braican_project_link_text', $post_id); ?><i class="icon-angle-right"></i></a>
-					</div>
-				<?php endif; ?>
-			</div>
-		</div><!-- .project-content -->
-		
-		<div class="project-gallery col col4">
-			<div class="braica-block">
-				<?php if(get_field('braican_project_media', $post_id)) : ?>
-					<?php print(get_field('braican_project_media', $post_id)); ?>
-				<?php endif; ?>
-				<?php if(has_shortcode($post->post_content, 'gallery')) : ?>
-					<?php $gallery = get_post_gallery_images( $post ); ?>
-					<?php foreach($gallery as $img) : ?>
-						<div class="img-container">
-							<img src="<?php echo $img; ?>" alt="">
-						</div>
-					<?php endforeach; ?>
-				<?php endif; ?>
-			</div>
-		</div>
-	</article><!-- #post-## -->
-	<?php
+        <article <?php post_class('br-cf'); ?>>
+        	<header class="project-header col">
+        		<div class="braica-block">
+        			<h2 class="project-title"><?php echo get_the_title($post_id); ?> <a href="/" class="close-modal"><i class="icon-cancel"></i></a></h2>
+        		</div>
+        	</header><!-- .project-header -->
+
+        	<div class="project-content col col2">
+        		<div class="braica-block">
+        			<?php the_field('braican_project_text', $post_id); ?>
+        			<?php if($link = get_field('braican_project_link', $post_id)) : ?>
+        				<div class="braica-cta">
+        					<a href="<?php echo $link ?>" target="_blank"><?php the_field('braican_project_link_text', $post_id); ?><i class="icon-angle-right"></i></a>
+        				</div>
+        			<?php endif; ?>
+        		</div>
+        	</div><!-- .project-content -->
+        	
+        	<div class="project-gallery col col4">
+        		<div class="braica-block">
+        			<?php if(get_field('braican_project_media', $post_id)) : ?>
+        				<?php print(get_field('braican_project_media', $post_id)); ?>
+        			<?php endif; ?>
+        			<?php if(has_shortcode($post->post_content, 'gallery')) : ?>
+        				<?php $gallery = get_post_gallery_images( $post ); ?>
+        				<?php foreach($gallery as $img) : ?>
+        					<div class="img-container">
+        						<img src="<?php echo $img; ?>" alt="">
+        					</div>
+        				<?php endforeach; ?>
+        			<?php endif; ?>
+        		</div>
+        	</div>
+        </article><!-- #post-## -->
+	<?php else :
+        echo 1;
+    endif;
+
 	die();
 }
 add_action( 'wp_ajax_ajax_action', 'braican_ajax_post' ); // ajax for logged in users
