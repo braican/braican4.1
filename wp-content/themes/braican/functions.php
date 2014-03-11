@@ -102,6 +102,8 @@ function braican_scripts() {
 	if ( is_singular() && wp_attachment_is_image() ) {
 		wp_enqueue_script( 'braican-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
+
+	wp_localize_script('braican-js', 'braican_ajax', array('ajaxurl' => admin_url('admin-ajax.php') ) );
 }
 add_action( 'wp_enqueue_scripts', 'braican_scripts' );
 
@@ -203,3 +205,11 @@ function filter_work(){ ?>
 }
 
 
+//
+// braican_ajax_post
+//
+function braican_ajax_post(){
+	echo 'this worked';
+	die();
+}
+add_action("wp_ajax_nopriv_braican_ajax_post", "braican_ajax_post");
