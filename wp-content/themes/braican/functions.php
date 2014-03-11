@@ -105,7 +105,7 @@ function braican_scripts() {
 
 	wp_localize_script('braican-js', 'braican_ajax', array('ajaxurl' => admin_url('admin-ajax.php') ) );
 }
-add_action( 'init', 'braican_scripts' );
+add_action( 'wp_enqueue_scripts', 'braican_scripts' );
 
 /**
  * REGISTER POST TYPES
