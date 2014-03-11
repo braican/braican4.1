@@ -84,7 +84,7 @@
 
         if(projectID){
             $.when(
-                $.post(braican_ajax.ajaxurl, {
+                $.get(braican_ajax.ajaxurl, {
                     action: 'ajax_action',
                     post_id: projectID
                 }),

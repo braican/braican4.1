@@ -209,7 +209,7 @@ function filter_work(){ ?>
 // braican_ajax_post
 //
 function braican_ajax_post(){
-	$post_id = $_POST['post_id'];
+	$post_id = $_GET['post_id'];
 	$post = get_post($post_id);
 
     if($post) : ?>
