@@ -82,35 +82,31 @@
         $('body').addClass('project-view');
         $('.site-footer').hide();
 
-        $('#main').fadeOut(FADESPEED, function(){
-            
-            $('#loading').fadeIn(FADESPEED);
-            
-            if(projectID){
+        if(projectID){
+            $.when(
                 $.post(braican_ajax.ajaxurl, {
                     action: 'ajax_action',
                     post_id: projectID
-                }, function(data) {
-                    if(data == 1){
-                        console.log("Uh oh. Looks like there's no project with that ID");
-                        backToHome();
-                    } else {
-                        $('#load-project').html(data);
+                }),
 
-                        setTimeout(function(){
-                            $('.side-footer').show();
-                            $('#project-modal').fadeIn(FADESPEED, function(){
-                                $('#loading').removeAttr('style');
-                            });
-                            $('.site-footer').removeAttr('style');
-                        }, 600);
-                    }
-                });
-            } else {
-                backToHome();
-            }
-        });
+                $('#main').fadeOut(FADESPEED, function(){$('#loading').fadeIn(FADESPEED);})
+            ).then(function(data){
+                if(data == 1){
+                    console.log("Uh oh. Looks like there's no project with that ID");
+                    backToHome();
+                } else {
+                    $('#load-project').html(data);
 
+                    setTimeout(function(){
+                        $('.side-footer').show();
+                        $('#project-modal').fadeIn(FADESPEED, function(){
+                            $('#loading').removeAttr('style');
+                        });
+                        $('.site-footer').removeAttr('style');
+                    }, 600);
+                }
+            });   
+        }
     };
 
 
