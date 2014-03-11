@@ -248,7 +248,8 @@ function braican_ajax_post(){
         		</div>
         	</div>
         </article><!-- #post-## -->
-	<?php else :
+<?php
+    else :
         echo 1;
     endif;
 

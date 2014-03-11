@@ -82,7 +82,7 @@
         if(projectID){
             $('body').addClass('project-view');
             $('.site-footer').hide();
-            
+
             $.when(
                 $.get(braican_ajax.ajaxurl, {
                     action: 'ajax_action',
@@ -91,11 +91,11 @@
 
                 $('#main').fadeOut(FADESPEED, function(){$('#loading').fadeIn(FADESPEED);})
             ).then(function(data){
-                if(data == 1){
+                if(data[0] == 1){
                     console.log("Uh oh. Looks like there's no project with that ID");
                     backToHome();
                 } else {
-                    $('#load-project').html(data);
+                    $('#load-project').html(data[0]);
                     
                     $('#project-modal').fadeIn(FADESPEED, function(){
                         $('#loading, .site-footer').removeAttr('style');
