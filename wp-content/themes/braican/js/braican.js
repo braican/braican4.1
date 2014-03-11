@@ -79,10 +79,10 @@
         var projectSlug = hash.replace('#/', ''),
             projectID = $('.project-group a[data-project="' + projectSlug + '"]').data('id');
 
-        $('body').addClass('project-view');
-        $('.site-footer').hide();
-
         if(projectID){
+            $('body').addClass('project-view');
+            $('.site-footer').hide();
+            
             $.when(
                 $.get(braican_ajax.ajaxurl, {
                     action: 'ajax_action',
@@ -97,11 +97,9 @@
                 } else {
                     $('#load-project').html(data);
                     
-                    $('.side-footer').show();
                     $('#project-modal').fadeIn(FADESPEED, function(){
-                        $('#loading').removeAttr('style');
+                        $('#loading, .site-footer').removeAttr('style');
                     });
-                    $('.site-footer').removeAttr('style');
                 }
             });   
         }
