@@ -41,6 +41,9 @@
     // re-show the homepage and remove content from the project modal
     //
     function backToHome(href){
+        BRAICAN.backToHome(href);
+    }
+    BRAICAN.backToHome = function(href){
         $('#page').css({
             'min-height': window.innerHeight + 'px'
         });
@@ -49,7 +52,7 @@
 
         $('#main').css({
             'position': 'absolute',
-            'top':'105px',
+            'top':'0',
             'zIndex': 1000
         }).fadeIn(FADESPEED, function(){
             $('body').removeClass('project-view');
@@ -109,6 +112,10 @@
 
     // initialize the things
     BRAICAN.init = function(){
+
+        // set the fixed bg height to their appropriate heights
+        $('#home').height($('#home').height());
+        $('#about').height($('#about').height());
 
         //
         // bind hashchange events to our router
