@@ -379,20 +379,30 @@ h4{
     font-weight: 700;
     font-size: 1em;
 }
-h5{}
-h6{}
+
+@media screen and (min-width: 1080px){
+    h4{
+        font-size: 1.2em;
+    }
+}
+@media screen and (max-width: 862px) {
+    h1{
+        font-size: 3em;
+    }
+    h2{
+        font-size: 2.2em;
+    }
+}
 
 /* Links */
 a {
-    color: #ccc;
+    color: #fff;
     text-decoration: underline;
 }
-a:visited {}
 a:hover,
 a:focus,
 a:active {
-    color: #fff;
-    text-decoration: underline;
+    color: #ccc;
 }
 
 .braica-cta a{
@@ -522,6 +532,36 @@ section:focus{
     margin: 0 18px 24px;
 }
 
+@media screen and (max-width: 700px){
+    .braica-container .col.col2,
+    .braica-container .col.col4{
+        width: 100%;
+    }
+    #work .col.col2{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body{
+        font-size: 14px;
+        font-size: 1.4rem;
+    }
+    section{
+        padding-top: 0;
+    }
+
+    .braica-container .col.col3,
+    .braica-container .col.col2{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 460px) {
+    #work .col.col2{
+        width: 100%;
+    }
+}
+
 /* -----------------------------------
  * --header
  * ----------------------------------- */
@@ -564,33 +604,25 @@ section:focus{
 .site-header .site-nav ul li a {
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
-    font-size: 1em;
     text-decoration: none;
     color: #000;
     display: block;
     text-transform: uppercase;
     position: relative;
-
-    -webkit-transition: background .2s linear;
-    -o-transition: background .2s linear;
-    -moz-transition: background .2s linear;
-    transition: background .2s linear;
 }
 .site-header .site-nav ul li a:after{
+    content: '';
     position: absolute;
     top: -14px;
     left: 0;
     width: 100%;
     height: 4px;
     background: #f47c20;
-    content: '';
     opacity: 0;
+    
     -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
     -moz-transition: opacity 0.3s, -moz-transform 0.3s;
     transition: opacity 0.3s, transform 0.3s;
-    -webkit-transform: translateY(0px);
-    -moz-transform: translateY(0px);
-    transform: translateY(0px);
 }
 .site-header .site-nav ul li a:hover:after {
     opacity: 1;
@@ -632,6 +664,43 @@ section:focus{
     font-size: 30px;
 }
 
+@media screen and (max-width: 600px) {
+    .site-header .logo{
+        float: none;
+        width: auto;
+    }
+
+    .mobile-nav,
+    .mobile-section-navigation {
+        display: block;
+    }
+
+    .site-header .site-nav{
+        display: none;
+        margin-left: 20px;
+    }
+
+    .site-header .site-nav .menu-primary-container{
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .site-header .site-nav ul{
+        text-align: center;
+    }
+    .site-header .site-nav ul li{
+        margin: 0 0 10px 0;
+        text-align: center;
+        padding-left: 12px;
+        padding-right: 12px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .site-header .site-nav ul li a{
+        font-size: 14px;
+    }
+}
 
 /* ================================================
    --SPECIFICS
@@ -647,12 +716,19 @@ section:focus{
  * --home
  * ----------------------------------- */
 #home{
+    position: static;
     background: #f47c20 url(img/australia-orange.jpg) top left fixed;
     -webkit-background-size: cover;
     background-size: cover;
     margin: 0;
     padding: 100px 0;
     z-index: 3;
+}
+
+@media screen and (max-width: 600px) {
+    #home{
+        padding: 50px 0;
+    }
 }
 
 /* -----------------------------------
@@ -757,6 +833,26 @@ section:focus{
     transform: translateY(10px);
 }
 
+@media screen and (min-width: 461px) and (max-width: 580px){
+    .overlay-content p{
+        display: none;
+    }
+}
+@media screen and (min-width: 701px) and (max-width: 872px){
+    .overlay-content p{
+        display: none;
+    }
+}
+@media screen and (min-width: 1080px){
+    .project-thumb .overlay .overlay-icon{
+        padding-top: 40px;
+    }
+    .project-thumb .overlay .overlay-content{
+        padding-top: 10px;
+    }
+}
+
+/* loader */
 #loader{
     position: absolute;
     left: 50%;
@@ -907,6 +1003,7 @@ section:focus{
     top: -90px;
     z-index: 10;
 }
+
 /* social */
 #social{
     margin-top: 20px;
@@ -916,6 +1013,27 @@ section:focus{
     color: #333;
     margin-right: 10px;
     text-decoration: none;
+}
+
+@media screen and (max-width: 862px) {
+    .the-braica{
+        text-align: right;
+    }
+}
+@media screen and (max-width: 460px){
+    .site-footer{
+        height: auto;
+    }
+    .the-braica{
+        text-align: center;
+        position: relative;
+        margin-top: -90px;
+        top: 0;
+    }
+    .site-info{
+        padding: 60px 0 20px 0;
+        text-align: center;
+    }
 }
 
 /* ================================================
@@ -974,120 +1092,5 @@ section:focus{
     clip: rect(0 0 0 0); 
     height: 1px; width: 1px; 
     margin: -1px; padding: 0; border: 0; 
-}
-
-/* ================================================
-   --MEDIA QUERIES
-   ================================================ */
-
-@media screen and (max-width: 862px) {
-    h1{
-        font-size: 3em;
-    }
-    h2{
-        font-size: 2.2em;
-    }
-    .the-braica{
-        text-align: right;
-    }
-}
-@media screen and (max-width: 700px){
-    .braica-container .col.col2,
-    .braica-container .col.col4{
-        width: 100%;
-    }
-    #work .col.col2{
-        width: 50%;
-    }
-}
-@media screen and (max-width: 600px) {
-    body{
-        font-size: 14px;
-        font-size: 1.4rem;
-    }
-    #home{
-        padding: 50px 0;
-    }
-    section{
-        padding-top: 0;
-    }
-    .mobile-section-navigation{
-        display: block;
-    }
-    
-    .braica-container .col.col3,
-    .braica-container .col.col2{
-        width: 100%;
-    }
-    
-    .site-header .logo{
-        float: none;
-        width: auto;
-    }
-    .mobile-nav{
-        display: block;
-    }
-    .site-header .site-nav{
-        display: none;
-        margin-left: 20px;
-    }
-    .site-header .site-nav .menu-primary-container{
-        width: 100%;
-        padding: 10px 0;
-    }
-    .site-header .site-nav ul{
-        text-align: center;
-    }
-    .site-header .site-nav ul li{
-        margin: 0 0 10px 0;
-        text-align: center;
-        padding-left: 12px;
-        padding-right: 12px;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-    }
-    .site-header .site-nav ul li a{
-        font-size: 14px;
-    }
-}
-@media screen and (min-width: 461px) and (max-width: 580px){
-    .overlay-content p{
-        display: none;
-    }
-}
-@media screen and (min-width: 701px) and (max-width: 872px){
-    .overlay-content p{
-        display: none;
-    }
-}
-@media screen and (min-width: 1080px){
-    h4{
-        font-size: 1.2em;
-    }
-    .project-thumb .overlay .overlay-icon{
-        padding-top: 40px;
-    }
-    .project-thumb .overlay .overlay-content{
-        padding-top: 10px;
-    }
-}
-@media screen and (max-width: 460px) {
-    #work .col.col2{
-        width: 100%;
-    }
-    .site-footer{
-        height: auto;
-    }
-    .the-braica{
-        text-align: center;
-        position: relative;
-        margin-top: -90px;
-        top: 0;
-    }
-    .site-info{
-        padding: 60px 0 20px 0;
-        text-align: center;
-    }
 }
 
