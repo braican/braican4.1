@@ -655,7 +655,6 @@ section:focus{
     z-index: 3;
 }
 
-
 /* -----------------------------------
  * --work
  * ----------------------------------- */
@@ -841,6 +840,7 @@ section:focus{
     background-size: cover;
     z-index: 3;
     border-top: 10px solid #004C75;
+    position: static;
 }
 
 /* -----------------------------------
@@ -888,14 +888,6 @@ section:focus{
     margin-bottom: 12px;
 }
 
-::-webkit-input-placeholder,
-:-moz-placeholder,
-::-moz-placeholder,
-:-ms-input-placeholder { /* Firefox 18- */
-   color: #9F3B21;
-   text-transform: uppercase;
-   font-weight: 700;
-}
 /* -----------------------------------
  * --footer
  * ----------------------------------- */
