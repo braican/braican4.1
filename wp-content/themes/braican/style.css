@@ -485,12 +485,6 @@ a:active {
  * ----------------------------------- */
 #page{
     position: relative;
-    overflow-y: auto;
-    overflow-x: hidden;
-    height: 100%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
     z-index: 2;
 }
 #main{
@@ -573,6 +567,8 @@ section:focus{
     position: absolute;
     top: 0;
     width: 100%;
+    background: #fff;
+    z-index: 6;
 }
 .site-header .logo{
     padding: 26px 0 20px 0;
@@ -885,8 +881,7 @@ section:focus{
     width: 100%;
     display: none;
     background: #f5ecdf;
-    padding: 40px 0 60px;
-    margin-top: 105px;
+    padding: 145px 0 60px;
 }
 .project-content p{
     font-size: .84em;

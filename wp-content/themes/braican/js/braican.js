@@ -95,6 +95,7 @@
 
                 $('#main').fadeOut(FADESPEED, function(){$('#loading').fadeIn(FADESPEED);})
             ).then(function(data){
+                
                 if(data[0] == 1){
                     console.log("Uh oh. Looks like there's no project with that ID");
                     backToHome();
@@ -104,7 +105,9 @@
                     $('#project-modal').fadeIn(FADESPEED, function(){
                         $('#loading, .site-footer').removeAttr('style');
                     });
-                }
+                }    
+                
+                
             });   
         }
     };
