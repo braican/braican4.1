@@ -49,7 +49,7 @@
 
         $('#main').css({
             'position': 'absolute',
-            'top':'0',
+            'top':'105px',
             'zIndex': 1000
         }).fadeIn(FADESPEED, function(){
             $('body').removeClass('project-view');
