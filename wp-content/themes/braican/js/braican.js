@@ -93,15 +93,16 @@
                     post_id: projectID
                 }),
 
-                $('#main').fadeOut(FADESPEED, function(){$('#loading').fadeIn(FADESPEED);})
+                $('#main').fadeOut(FADESPEED, function(){
+                    $('#loading').fadeIn(FADESPEED);
+                })
             ).then(function(data){
-                
                 if(data[0] == 1){
                     console.log("Uh oh. Looks like there's no project with that ID");
                     backToHome();
                 } else {
                     $('#load-project').html(data[0]);
-                    
+                    $('body').scrollTo(0);
                     $('#project-modal').fadeIn(FADESPEED, function(){
                         $('#loading, .site-footer').removeAttr('style');
                     });
