@@ -105,7 +105,7 @@ get_header(); ?>
 
                 <div class="col col2 left">
                     <div class="braica-block">
-                        <a class="button" href="/wp-content/uploads/docs/NickBraica-resume-2014.02.28.pdf">View the resume</a>
+                        <a class="button" href="/wp-content/uploads/docs/NickBraica-resume-2014.02.28.pdf" target="_blank">View the resume</a>
                     </div>
                 </div>
             </div>

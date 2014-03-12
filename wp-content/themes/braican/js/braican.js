@@ -58,7 +58,9 @@
             $('body').removeClass('project-view');
             window.location.hash = '';
             $('#project-modal').removeAttr('style').find('#load-project').empty();
-            $('#main, #page, .site-footer').removeAttr('style');
+            $('#main, #page').removeAttr('style');
+
+            $('.site-footer').fadeIn(FADESPEED);
 
             // conole.log(href);
             if(href && href != '#'){
@@ -104,7 +106,8 @@
                     $('#load-project').html(data[0]);
                     $('body').scrollTo(0);
                     $('#project-modal').fadeIn(FADESPEED, function(){
-                        $('#loading, .site-footer').removeAttr('style');
+                        $('#loading').fadeOut(FADESPEED);
+                        $('.site-footer').fadeIn(FADESPEED);
                     });
                 }    
                 
@@ -116,11 +119,6 @@
 
     // initialize the things
     BRAICAN.init = function(){
-
-        // set the fixed bg height to their appropriate heights
-        $('#home').height($('#home').height());
-        $('#about').height($('#about').height());
-
         //
         // bind hashchange events to our router
         //

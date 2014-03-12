@@ -30,7 +30,8 @@
 			</div>
 			
 			<div class="site-info">
-				Copyright &copy; <?php echo date('Y'); ?> Nicholas Braica
+				<p>Copyright &copy; <?php echo date('Y'); ?> Nicholas Braica</p>
+				<p>860.849.0791 &bull; nick.braica[at]gmail.com</p>
 			</div><!-- .site-info -->
 			
 		</div>
