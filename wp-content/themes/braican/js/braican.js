@@ -5,14 +5,6 @@
 (function(BRAICAN, $, undefined){
 
     // -----------------------------------------
-    // PUBLIC
-    //
-    // Properties
-    //
-    BRAICAN.property = '';
-
-
-    // -----------------------------------------
     // PRIVATE
     //
     // Properties
@@ -20,12 +12,8 @@
 
     var FADESPEED = 600,
         SCROLLSPEED = 800,
-        INCLUDEMARGIN = false,
-        // LOAD_PREFIX = "http://192.168.254.99:8888/braican/braican.com/website/project/";
-        LOAD_PREFIX = window.location.protocol + '//' + window.location.host + '/project/';
+        INCLUDEMARGIN = false;
         
-    
-
     // -----------------------------------------
     // PRIVATE
     //
@@ -61,6 +49,7 @@
 
         $('#main').css({
             'position': 'absolute',
+            'top':'0',
             'zIndex': 1000
         }).fadeIn(FADESPEED, function(){
             $('body').removeClass('project-view');
@@ -88,31 +77,33 @@
     //
     BRAICAN.loader = function(hash){
 
-        var loadUrl = LOAD_PREFIX + hash.replace('#/', '');
-        $('body').addClass('project-view');
-        $('.site-footer').hide();
+        var projectSlug = hash.replace('#/', ''),
+            projectID = $('.project-group a[data-project="' + projectSlug + '"]').data('id');
 
-        $('#main').fadeOut(FADESPEED, function(){
-            
-            $('#loading').fadeIn(FADESPEED);
-            
-            if(loadUrl.indexOf('#') == -1){
-                $('#load-project').load(loadUrl + ' #single-project article', function(data, textStatus, req){
-                    if(textStatus != "error"){
-                        
-                        setTimeout(function(){
-                            $('.side-footer').show();
-                            $('#project-modal').fadeIn(FADESPEED, function(){
-                                $('#loading').removeAttr('style');
-                            });
-                            $('.site-footer').removeAttr('style');
-                        }, 600);
-                    } else {
-                        $('#main, .site-footer').fadeIn(FADESPEED);
-                    }
-                });
-            }
-        });
+        if(projectID){
+            $('body').addClass('project-view');
+            $('.site-footer').hide();
+
+            $.when(
+                $.get(braican_ajax.ajaxurl, {
+                    action: 'ajax_action',
+                    post_id: projectID
+                }),
+
+                $('#main').fadeOut(FADESPEED, function(){$('#loading').fadeIn(FADESPEED);})
+            ).then(function(data){
+                if(data[0] == 1){
+                    console.log("Uh oh. Looks like there's no project with that ID");
+                    backToHome();
+                } else {
+                    $('#load-project').html(data[0]);
+                    
+                    $('#project-modal').fadeIn(FADESPEED, function(){
+                        $('#loading, .site-footer').removeAttr('style');
+                    });
+                }
+            });   
+        }
     };
 
 
@@ -161,7 +152,7 @@
             event.preventDefault();
             var $t = $(this),
                 dir = $t.attr('class');
-                scrollToSection = dir === "icon-angle-up" ? $t.parents('.section').prev().data('section') : $t.parents('.section').next().data('section');
+                scrollToSection = dir === "icon-angle-up" ? $t.parents('section').prev().data('section') : $t.parents('section').next().data('section');
 
             $('body').scrollTo('#' + scrollToSection, SCROLLSPEED, {axis: 'y', easing:'swing', margin:INCLUDEMARGIN});
         });
