@@ -232,7 +232,7 @@ function braican_ajax_post(){
         		</div>
         	</div><!-- .project-content -->
         	
-        	<div class="project-gallery col col4">
+        	<div class="project-gallery col col4 right">
         		<div class="braica-block">
         			<?php if(get_field('braican_project_media', $post_id)) : ?>
         				<?php print(get_field('braican_project_media', $post_id)); ?>

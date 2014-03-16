@@ -10,15 +10,44 @@
     // Properties
     //
 
-    var FADESPEED = 600,
+    var FADESPEED = 4600,
         SCROLLSPEED = 800,
-        INCLUDEMARGIN = false;
+        INCLUDEMARGIN = false,
+        sidebarEl = '#project-modal .project-content',
+        sidebarOffset = $(sidebarEl).length > 0 ? $(sidebarEl).offset().top - 20 : null;
         
     // -----------------------------------------
     // PRIVATE
     //
     // Methods
     //
+
+    // "Media Query" Functions
+    // ===============================
+    // "Media queries" that correspond with css
+    
+    function jmediaQuery() {
+        var width = $(document).width();
+        var result;
+    
+        if (width <= 730) {
+            result = "mobile";
+        } else if ((width >= 730) && (width <=972)) {
+            result = "tablet";
+        } else {
+            result = "desktop";
+        }
+        return result;
+    }
+    
+    // Either it's mobile or it ain't
+    function binaryMobile() {
+        if (jmediaQuery() == "mobile") {
+            return "mobile";
+        } else {
+            return "notMobile";
+        }
+    }
 
     //
     // getUrlParam
@@ -41,9 +70,6 @@
     // re-show the homepage and remove content from the project modal
     //
     function backToHome(href){
-        BRAICAN.backToHome(href);
-    }
-    BRAICAN.backToHome = function(href){
         $('#page').css({
             'min-height': window.innerHeight + 'px'
         });
@@ -105,9 +131,11 @@
                 } else {
                     $('#load-project').html(data[0]);
                     $('body').scrollTo(0);
+                    $('#load-project .project-content').removeAttr('style').removeClass('fixed-sidebar');
                     $('#project-modal').fadeIn(FADESPEED, function(){
                         $('#loading').fadeOut(FADESPEED);
                         $('.site-footer').fadeIn(FADESPEED);
+                        sidebarOffset = $(sidebarEl).length > 0 ? $(sidebarEl).offset().top - 20 : null
                     });
                 }    
                 
@@ -246,6 +274,26 @@
     // DOM is ready
     $(document).ready( function() {
         BRAICAN.init();
+    });
+
+    //
+    // scroll bound events
+    //
+    $(window).scroll(function() {
+        // fixed sidebar
+        var $content = $('#project-modal .project-content');
+        if (binaryMobile() == "notMobile" && $content.length > 0) {
+            if ($(window).scrollTop() >= sidebarOffset && $(window).height() > $content.height()) {
+               // fix the sidebar
+               $content.width($content.width()).addClass('fixed-sidebar');
+           } else {
+               // unfix sidebar
+               $content.removeClass('fixed-sidebar').removeAttr('style');
+           }
+        } else {
+            // unfix sidebar
+            $content.removeClass('fixed-sidebar').removeAttr('style');
+        }
     });
 
 }(window.BRAICAN = window.BRAICAN || {}, jQuery));
