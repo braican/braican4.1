@@ -30,9 +30,9 @@
         var width = $(document).width();
         var result;
     
-        if (width <= 730) {
+        if (width <= 700) {
             result = "mobile";
-        } else if ((width >= 730) && (width <=972)) {
+        } else if ((width >= 700) && (width <=972)) {
             result = "tablet";
         } else {
             result = "desktop";
