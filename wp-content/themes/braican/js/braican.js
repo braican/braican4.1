@@ -10,7 +10,7 @@
     // Properties
     //
 
-    var FADESPEED = 4600,
+    var FADESPEED = 600,
         SCROLLSPEED = 800,
         INCLUDEMARGIN = false,
         sidebarEl = '#project-modal .project-content',
