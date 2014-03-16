@@ -140,8 +140,8 @@
 
 
         // -------------------------------
-        //
         // slide to nav
+        // -------------------------------
         //
         $('a[href^="/#"]').on('click', function(e){
             e.preventDefault();
@@ -199,7 +199,28 @@
             $(this).toggleClass('activated');
             $('.site-nav').slideToggle(FADESPEED);
         });
+
+        // ---------------------------------
+        // miscellaneous stuff
+        // ---------------------------------
         
+        //
+        // contact form variable width
+        //
+        $('#contact textarea').on({
+            focus: function(event) {
+                $('#contact').height($('#contact').height()).addClass('swap-widths');
+            }, blur: function(event){
+                $('#contact').removeClass('swap-widths');
+                // since we're running a css transition, remove the style
+                //  after the transition completes
+                setTimeout(function(){
+                    $('#contact').removeAttr('style');
+                }, 400);
+            }
+
+        });
+
         // ---------------------------------
         // skip link focus
         //

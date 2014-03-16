@@ -124,12 +124,12 @@ get_header(); ?>
                     <i class="icon-angle-up"></i>
                 </div>
                 
-                <div class="col col4">
+                <div class="col col4 variable-width">
                     <div class="braica-block">
                         <?php echo $content; ?>
                     </div>
                 </div>
-                <div class="col col2">
+                <div class="col col2 variable-width">
                     <div class="braica-block">
                         <div class="the-form">
                             <?php echo do_shortcode('[cscf-contact-form]'); ?>      
