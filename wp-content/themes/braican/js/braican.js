@@ -271,7 +271,7 @@
             sidebarOffset = $(sidebarEl).length > 0 ? $('#project-modal .project-gallery').offset().top - 20 : null;
         
         if (binaryMobile() == "notMobile" && $content.length > 0) {
-            if ($(window).scrollTop() >= sidebarOffset && windowHeight > $content.height() && ( windowHeight - $content.height() > 320) ) {
+            if ($(window).scrollTop() >= sidebarOffset && windowHeight > $content.height() && ( windowHeight - $content.height() > 260) ) {
                // fix the sidebar
                $content.width($content.width()).addClass('fixed-sidebar');
            } else {
