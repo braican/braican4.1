@@ -13,8 +13,7 @@
     var FADESPEED = 600,
         SCROLLSPEED = 800,
         INCLUDEMARGIN = false,
-        sidebarEl = '#project-modal .project-content',
-        sidebarOffset = $(sidebarEl).length > 0 ? $(sidebarEl).offset().top - 20 : null;
+        sidebarEl = '#project-modal .project-content';
         
     // -----------------------------------------
     // PRIVATE
@@ -22,27 +21,15 @@
     // Methods
     //
 
+    //
     // "Media Query" Functions
-    // ===============================
-    // "Media queries" that correspond with css
-    
-    function jmediaQuery() {
-        var width = $(document).width();
-        var result;
-    
-        if (width <= 700) {
-            result = "mobile";
-        } else if ((width >= 700) && (width <=972)) {
-            result = "tablet";
-        } else {
-            result = "desktop";
-        }
-        return result;
-    }
+    //
     
     // Either it's mobile or it ain't
     function binaryMobile() {
-        if (jmediaQuery() == "mobile") {
+        var width = $(document).width();
+
+        if (width <= 700) {
             return "mobile";
         } else {
             return "notMobile";
@@ -88,7 +75,6 @@
 
             $('.site-footer').fadeIn(FADESPEED);
 
-            // conole.log(href);
             if(href && href != '#'){
                 $('body').scrollTo(href, SCROLLSPEED, {axis: 'y', easing:'swing', margin:INCLUDEMARGIN});
             }
@@ -135,7 +121,6 @@
                     $('#project-modal').fadeIn(FADESPEED, function(){
                         $('#loading').fadeOut(FADESPEED);
                         $('.site-footer').fadeIn(FADESPEED);
-                        sidebarOffset = $(sidebarEl).length > 0 ? $(sidebarEl).offset().top - 20 : null
                     });
                 }    
                 
@@ -281,14 +266,17 @@
     //
     $(window).scroll(function() {
         // fixed sidebar
-        var $content = $('#project-modal .project-content');
+        var $content = $(sidebarEl),
+            windowHeight = $(window).height(),
+            sidebarOffset = $(sidebarEl).length > 0 ? $('#project-modal .project-gallery').offset().top - 20 : null;
+        
         if (binaryMobile() == "notMobile" && $content.length > 0) {
-            if ($(window).scrollTop() >= sidebarOffset && $(window).height() > $content.height()) {
+            if ($(window).scrollTop() >= sidebarOffset && windowHeight > $content.height() && ( windowHeight - $content.height() > 320) ) {
                // fix the sidebar
                $content.width($content.width()).addClass('fixed-sidebar');
            } else {
-               // unfix sidebar
-               $content.removeClass('fixed-sidebar').removeAttr('style');
+                // unfix sidebar
+                $content.removeClass('fixed-sidebar').removeAttr('style');
            }
         } else {
             // unfix sidebar
@@ -297,3 +285,4 @@
     });
 
 }(window.BRAICAN = window.BRAICAN || {}, jQuery));
+
