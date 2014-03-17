@@ -143,6 +143,73 @@ function create_post_type() {
 }
 add_action( 'init', 'create_post_type' );
 
+
+
+// On an early action hook, check if the hook is scheduled - if not, schedule it.
+function braican_schedule_getting_last_beer() {
+    if ( ! wp_next_scheduled( 'braican_get_last_beer' ) ) {
+        wp_schedule_event( time(), 'hourly', 'braican_get_last_beer');
+    }
+}
+add_action( 'wp', 'braican_schedule_getting_last_beer' );
+
+// On the scheduled action hook, run a function.
+function prefix_do_this_hourly() {
+    $client_secret = '8EB0A20DDC4D23AA58BD8A0EC6EF2AB9F5A75BE4';
+    $client_id = '94284E70E3EC9ED86411018A5ABADFC8160A15F9';
+    $username = 'braican';
+    $url = "http://api.untappd.com/v4/user/beers/$username?client_id=$client_id&client_secret=$client_secret&limit=1";
+    $response = json_decode(wp_remote_retrieve_body(wp_remote_get($url)));
+
+    if($response->meta->code == "200"){
+        $checkin = $response->response->beers->items[0];
+        $beer = $checkin->beer->beer_name;
+        $brewery = $checkin->brewery->brewery_name;
+        $rating = $checkin->rating_score;
+
+        switch ($rating) {
+            case '5':
+                $rating_text = "I thought it was one of the best beers I've ever had.";
+                break;
+            case '4.5':
+                $rating_text = "I thought it was ridiculously amazing.";
+                break;
+            case '4':
+                $rating_text = "I thought it was awesome.";
+                break;
+            case '3.5':
+                $rating_text = "I thought it was pretty good.";
+                break;
+            case '3':
+                $rating_text = "I thought it was good.";
+                break;
+            case '2.5':
+                $rating_text = "I thought it was alright.";
+                break;
+            case '2':
+                $rating_text = "I didn't think it was great.";
+                break;
+            case '1.5':
+                $rating_text = "I thought it was pretty bad.";
+                break;
+            case '1':
+                $rating_text = "I thought it was really bad.";
+                break;
+            case '0.5':
+                $rating_text = "I thought it was absolutely awful.";
+                break;
+            default:
+                $rating_text = "";
+                break;
+        }
+        
+        $text = "<p>$beer</p><p>by $brewery</p><p>$rating_text</p>";
+        update_option( 'last_beer', $text );
+    }
+}
+add_action( 'braican_get_last_beer', 'prefix_do_this_hourly' );
+
+
 /**
  * REGISTER TAXONOMIES
  */

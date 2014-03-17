@@ -107,11 +107,15 @@ get_header(); ?>
                     <div class="braica-block">
                         
                         <!-- <a class="button" href="/wp-content/uploads/docs/NickBraica-resume-2014.02.28.pdf" target="_blank">View the resume</a> -->
+                        <?php echo get_option('last_beer'); ?>
+
+                        
                     </div>
                 </div>
             </div>
             
         </section><!-- #about -->
+
 
         <!-- CONTACT -->
         <section id="contact" class="br-cf section" data-section="contact">
