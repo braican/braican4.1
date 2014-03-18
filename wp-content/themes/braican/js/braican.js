@@ -230,9 +230,10 @@
 
 
         // ---------------------------------
-        // miscellaneous stuff
+        // form stuff
         // ---------------------------------
-        
+        //
+
         //
         // contact form variable width
         //
@@ -249,6 +250,23 @@
             }
 
         });
+
+        // 
+        // submit spinning graphic
+        //
+        $('#cscf .submit:not(.in-process)').on('click', function(event){
+            if($(this).parent().valid()){
+                $(this).addClass('in-process').animate({
+                    'paddingRight': '36px'
+                }, 200, 'swing',  function(){
+                    $(this).removeAttr('style').append('<i class="icon-spin2 animate-spin"></i>');
+                });
+            }
+        });
+
+        //
+        // end form stuff
+        // --------------------------------
 
         // ---------------------------------
         // skip link focus

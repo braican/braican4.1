@@ -125,7 +125,9 @@
             <?php } ?>
 
             
-            <input type="submit" class="btn btn-default" value="<?php _e('Start a conversation','cleanandsimple');?>"/>
+            <button class="btn btn-default submit">
+                <?php _e('Start a conversation','cleanandsimple');?>
+            </button>
             
         </form>
     </div>
