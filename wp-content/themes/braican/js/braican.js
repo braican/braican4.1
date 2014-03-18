@@ -295,6 +295,10 @@
         BRAICAN.init();
     });
 
+    $(window).resize(function(){
+        $(sidebarEl).removeClass('fixed-sidebar').removeAttr('style');
+    });
+
     //
     // scroll bound events
     //
