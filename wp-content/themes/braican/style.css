@@ -57,6 +57,8 @@ section {
 }
 ol, ul {
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 table { /* tables still need 'cellspacing="0"' in the markup */
     border-collapse: separate;
@@ -138,15 +140,6 @@ hr {
 p {
     margin-bottom: 1.5em;
 }
-ul, ol {
-    margin: 0 0 1.5em 3em;
-}
-ul {
-    list-style: disc;
-}
-ol {
-    list-style: decimal;
-}
 li > ul,
 li > ol {
     margin-bottom: 0;
@@ -160,7 +153,6 @@ dd {
 }
 b, strong {
     font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
 }
 dfn, cite, em, i {
     font-style: italic;
@@ -376,10 +368,22 @@ h3{
     margin-bottom: 1em;
     line-height: 1.2em;
 }
+/* the project titles */
 h4{
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
     font-size: 1em;
+}
+
+/* aside headers */
+h5{
+    font-size: 1.2em;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    margin-bottom: .6em;
+    line-height: 1.2em;
+    position: relative;
+    padding-left: 22px;
 }
 
 @media screen and (min-width: 1080px){
@@ -476,16 +480,19 @@ a:active {
   margin-left: .2em;
 }
 
-.icon-cancel:before { content: '\e800'; } /* '' */
-.icon-plus:before { content: '\e801'; } /* '' */
-.icon-menu:before { content: '\e804'; } /* '' */
-.icon-facebook:before { content: '\e805'; } /* '' */
-.icon-twitter-bird:before { content: '\e806'; } /* '' */
-.icon-linkedin:before { content: '\e807'; } /* '' */
-.icon-gplus:before { content: '\e808'; } /* '' */
-.icon-angle-right:before { content: '\e80b'; } /* '' */
-.icon-angle-up:before { content: '\e809'; } /* '' */
-.icon-angle-down:before { content: '\e80a'; } /* '' */
+.icon-cancel:before { content: '\e80a'; }
+.icon-mail:before { content: '\e80b'; }
+.icon-menu:before { content: '\e808'; }
+.icon-facebook:before { content: '\e807'; }
+.icon-twitter-bird:before { content: '\e806'; }
+.icon-linkedin:before { content: '\e805'; }
+.icon-plus:before { content: '\e809'; }
+.icon-angle-right:before { content: '\e803'; }
+.icon-angle-up:before { content: '\e802'; }
+.icon-angle-down:before { content: '\e801'; }
+.icon-bottle:before { content: '\e800'; }
+.icon-rocket:before { content: '\e80c'; }
+.icon-gplus:before { content: '\e804'; }
 
 /* -----------------------------------
  * --layout
@@ -507,6 +514,24 @@ section{
 }
 section:focus{
     outline:0;
+}
+aside{
+    font-size: .9em;
+    margin-bottom: 40px;
+}
+aside:last-child{
+    margin-bottom: 0;
+}
+aside p{
+    margin-bottom: .6em;
+}
+aside i{
+    position: absolute;
+    left: 0;
+}
+aside .quoted-content{
+    padding-left: 20px;
+    border-left: 2px solid #fff;
 }
 .braica-container{
     width: 96%;
@@ -544,11 +569,13 @@ section:focus{
     -o-transition: width .3s;
     transition: width .3s;
 }
-.swap-widths .col.variable-width.col2{
-    width: 50%;
-}
-.swap-widths .col.variable-width.col4{
-    width: 50%;
+@media screen and (min-width: 701px){
+    .swap-widths .col.variable-width.col2{
+        width: 50%;
+    }
+    .swap-widths .col.variable-width.col4{
+        width: 50%;
+    }    
 }
 
 @media screen and (max-width: 700px){
@@ -558,6 +585,10 @@ section:focus{
     }
     #work .col.col2{
         width: 50%;
+    }
+    aside{
+        padding-top: 40px;
+        margin-bottom: 0;
     }
 }
 
@@ -968,6 +999,17 @@ section:focus{
     border-top: 10px solid #0d3e50;
     position: static;
 }
+#about aside i{
+    left: -19px;
+}
+.last-beer .icon-bottle{
+    font-size: 35px;
+    top: -10px;
+    margin: 0 -4px;
+}
+.last-tweet .tweet-text{
+    margin-bottom: 0;
+}
 
 /* -----------------------------------
  * --contact
@@ -978,8 +1020,8 @@ section:focus{
     z-index: 4;
     border-top:10px solid #86260c
 }
-#contact h3{
-    margin-bottom: 0;
+#contact h5{
+    padding-left: 40px;
 }
 
 /* the form */

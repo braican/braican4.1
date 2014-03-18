@@ -169,22 +169,22 @@ function prefix_do_this_hourly() {
 
         switch ($rating) {
             case '5':
-                $rating_text = "I thought it was one of the best beers I've ever had.";
+                $rating_text = "It was one of the best beers I've ever had.";
                 break;
             case '4.5':
-                $rating_text = "I thought it was ridiculously amazing.";
+                $rating_text = "I though it was pretty amazing.";
                 break;
             case '4':
                 $rating_text = "I thought it was awesome.";
                 break;
             case '3.5':
-                $rating_text = "I thought it was pretty good.";
+                $rating_text = "It was pretty good.";
                 break;
             case '3':
-                $rating_text = "I thought it was good.";
+                $rating_text = "I thought it was ok.";
                 break;
             case '2.5':
-                $rating_text = "I thought it was alright.";
+                $rating_text = "It was alright.";
                 break;
             case '2':
                 $rating_text = "I didn't think it was great.";
@@ -196,14 +196,14 @@ function prefix_do_this_hourly() {
                 $rating_text = "I thought it was really bad.";
                 break;
             case '0.5':
-                $rating_text = "I thought it was absolutely awful.";
+                $rating_text = "It was absolutely awful.";
                 break;
             default:
                 $rating_text = "";
                 break;
         }
         
-        $text = "<p>$beer</p><p>by $brewery</p><p>$rating_text</p>";
+        $text = "<p>$beer by <strong>$brewery</strong></p><p>$rating_text</p>";
         update_option( 'last_beer', $text );
     }
 }

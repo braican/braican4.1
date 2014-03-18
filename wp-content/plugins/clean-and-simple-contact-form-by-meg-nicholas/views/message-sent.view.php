@@ -1,2 +1,2 @@
-<h3><?php echo $heading; ?></h3>
+<h5><i class="icon-rocket"></i> <?php echo $heading; ?></h5>
 <p><?php echo $message; ?> </p>

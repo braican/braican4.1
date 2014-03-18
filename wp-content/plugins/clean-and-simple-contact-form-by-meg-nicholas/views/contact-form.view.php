@@ -9,7 +9,7 @@
         <?php echo $messageNotSentView->Render(); ?>
     </div>
     <div class="cscfForm">
-        <h3>Let's chat</h3>
+        <h5><i class="icon-mail"></i>Let's chat</h5>
         <p><?php echo $message; ?></p>
         <form role="form" id="frmCSCF" name="frmCSCF" method="post">
             <?php wp_nonce_field('cscf_contact','cscf_nonce'); ?>
@@ -30,7 +30,7 @@
                     <?php } ?>
                     <input class="form-control input-xlarge"
                        data-rule-required="true"
-                       data-msg-required="<?php _e('Please give your name.','cleanandsimple');?>"
+                       data-msg-required="<?php _e('Wait, what do I call you?','cleanandsimple');?>"
                        type="text" id="cscf_name" name="cscf[name]" 
                        value="<?php echo $contact->Name; ?>" 
                        placeholder="<?php _e('Your name','cleanandsimple');?>"
@@ -51,7 +51,7 @@
                     <input class="form-control input-xlarge"
                         data-rule-required="true"
                         data-rule-email="true"
-                        data-msg-required="<?php _e('Please give your email address.','cleanandsimple');?>"
+                        data-msg-required="<?php _e('But how will I get back to you?!','cleanandsimple');?>"
                         data-msg-email="<?php _e('Please enter a valid email address.','cleanandsimple');?>"
                         type="email" id="cscf_email" name="cscf[email]" 
                         value="<?php echo $contact->Email; ?>" 
@@ -98,7 +98,7 @@
                     <?php } ?>
                     <textarea class="form-control input-xlarge"
                         data-rule-required="true"
-                        data-msg-required="<?php _e('Please give a message.','cleanandsimple');?>"
+                        data-msg-required="<?php _e('Don\'t you want to say something?','cleanandsimple');?>"
                         id="cscf_message" name="cscf[message]" rows="4" 
                         placeholder="<?php _e('What\'s up?','cleanandsimple');?>"><?php echo $contact->Message; ?></textarea>
                 </div>

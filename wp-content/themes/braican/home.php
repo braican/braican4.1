@@ -100,14 +100,32 @@ get_header(); ?>
                 <div class="col col4 right">
                     <div class="braica-block">
                         <?php echo $content; ?>
+                        <p><a class="button" href="/wp-content/uploads/docs/NickBraica-resume-2014.02.28.pdf" target="_blank">Check out the resume</a></p>
                     </div>
                 </div>
 
                 <div class="col col2 left">
                     <div class="braica-block">
-                        
-                        <!-- <a class="button" href="/wp-content/uploads/docs/NickBraica-resume-2014.02.28.pdf" target="_blank">View the resume</a> -->
-                        <?php echo get_option('last_beer'); ?>
+                        <aside class="last-beer">
+                            <h5><i class="icon-bottle"></i> The last beer I had</h5>
+                            <div class="quoted-content">
+                                <?php echo get_option('last_beer'); ?>
+                                <p><a href="https://untappd.com/user/braican">via Untappd</a></p>
+                            </div>
+                        </aside>
+
+                        <aside class="last-tweet">
+                            <h5><i class="icon-twitter-bird"></i> The last thought I tweeted</h5>
+                            <div class="quoted-content">
+                                <?php the_widget( 'Latest_Tweets_Widget', array(
+                                    'title' => '',
+                                    'num' => 1,
+                                    'rts' => 1,
+                                    'ats' => 1
+                                )); ?>
+                                <a href="http://twitter.com/braican">@braican</a>
+                            </div>
+                        </aside>
 
                         
                     </div>
@@ -136,9 +154,9 @@ get_header(); ?>
                 </div>
                 <div class="col col2 variable-width">
                     <div class="braica-block">
-                        <div class="the-form">
+                        <aside class="the-form">
                             <?php echo do_shortcode('[cscf-contact-form]'); ?>      
-                        </div>
+                        </aside>
                     </div>
                 </div>
             </div>
