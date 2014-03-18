@@ -122,9 +122,7 @@
                         $('#loading').fadeOut(FADESPEED);
                         $('.site-footer').fadeIn(FADESPEED);
                     });
-                }    
-                
-                
+                }
             });   
         }
     };
@@ -151,10 +149,8 @@
         // on page load, initialize a hashchange to get things going
         $(window).trigger('hashchange');
 
-
-        // -------------------------------
+        //
         // slide to nav
-        // -------------------------------
         //
         $('a[href^="/#"]').on('click', function(e){
             e.preventDefault();
@@ -169,7 +165,9 @@
             }
         });
 
-        // mobile
+        //
+        // mobile scroll up and down
+        //
         $('.mobile-section-navigation i').on('click', function(event){
             event.preventDefault();
             var $t = $(this),
@@ -179,6 +177,28 @@
             $('body').scrollTo('#' + scrollToSection, SCROLLSPEED, {axis: 'y', easing:'swing', margin:INCLUDEMARGIN});
         });
 
+        //
+        // toggle mobile navigation
+        //
+        $('.mobile-nav').on('click', function(event) {
+            event.preventDefault();
+            $(this).toggleClass('activated');
+            $('.site-nav').slideToggle(FADESPEED);
+        });
+
+        //
+        // more facts
+        //
+        $('#fact').on('click', '.more-facts', function(event){
+            event.preventDefault();
+            $.get(braican_ajax.ajaxurl, {
+                action: 'ajax_facts',
+                die: true
+            }, function(data){
+                console.log(data);
+                $('#fact').html(data);
+            });
+        });
 
         // --------------------------------
         // the projects section
@@ -204,14 +224,10 @@
             backToHome();
         });
 
-        // ---------------------------------
-        // mobile navigation
         //
-        $('.mobile-nav').on('click', function(event) {
-            event.preventDefault();
-            $(this).toggleClass('activated');
-            $('.site-nav').slideToggle(FADESPEED);
-        });
+        // end projects section
+        // --------------------------------
+
 
         // ---------------------------------
         // miscellaneous stuff

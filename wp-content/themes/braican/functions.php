@@ -271,6 +271,29 @@ function filter_work(){ ?>
     <?php endif;
 }
 
+//
+// braican_new_fact
+//
+function braican_new_fact(){
+    $fact = get_posts(array(
+        'posts_per_page'   => 1,
+        'orderby'          => 'rand',
+        'post_type'        => 'funfact'
+    )); ?>
+    
+    <?php if($fact) : ?>
+        <p>I also <?php print_r($fact[0]->post_title); ?>, but that's probably less important. <a href="#" class="more-facts"><i class="icon-arrows-ccw"></i></a></p>
+    <?php else : ?>
+        <?php echo 1; ?>
+    <?php endif;
+
+    if(isset($_GET['die'])){
+        die();
+    }
+}
+add_action( 'wp_ajax_ajax_facts', 'braican_new_fact' ); // ajax for logged in users
+add_action( 'wp_ajax_nopriv_ajax_facts', 'braican_new_fact' ); // ajax for not logged in users
+
 
 //
 // braican_ajax_post

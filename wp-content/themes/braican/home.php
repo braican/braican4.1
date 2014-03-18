@@ -15,18 +15,16 @@ get_header(); ?>
             $id = 8;
             $page = get_page($id);
             $content = $page->post_content;
-            $content = apply_filters('the_content', $content);
-            $fact = get_posts(array(
-                'posts_per_page'   => 1,
-                'orderby'          => 'rand',
-                'post_type'        => 'funfact'
-            )); ?>
+            $content = apply_filters('the_content', $content); ?>
 
             <div class="braica-container br-cf parallax-it">
                 <div class="col col4">
                     <div class="braica-block">
                         <?php echo $content; ?>
-                        <p>I also <?php print_r($fact[0]->post_title); ?>, but that's probably less important.</p>
+
+                        <div id="fact">
+                            <?php echo braican_new_fact(); ?>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -126,8 +124,6 @@ get_header(); ?>
                                 <a href="http://twitter.com/braican">@braican</a>
                             </div>
                         </aside>
-
-                        
                     </div>
                 </div>
             </div>

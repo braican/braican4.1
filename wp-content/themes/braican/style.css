@@ -486,13 +486,14 @@ a:active {
 .icon-facebook:before { content: '\e807'; }
 .icon-twitter-bird:before { content: '\e806'; }
 .icon-linkedin:before { content: '\e805'; }
+.icon-gplus:before { content: '\e804'; }
 .icon-plus:before { content: '\e809'; }
-.icon-angle-right:before { content: '\e803'; }
 .icon-angle-up:before { content: '\e802'; }
 .icon-angle-down:before { content: '\e801'; }
 .icon-bottle:before { content: '\e800'; }
+.icon-arrows-ccw:before { content: '\e80d'; }
 .icon-rocket:before { content: '\e80c'; }
-.icon-gplus:before { content: '\e804'; }
+.icon-angle-right:before { content: '\e803'; }
 
 /* -----------------------------------
  * --layout
