@@ -105,7 +105,7 @@ get_header(); ?>
                 <div class="col col2 left">
                     <div class="braica-block">
                         <aside class="last-beer">
-                            <h5><i class="icon-bottle"></i> The last beer I had</h5>
+                            <h5><i class="icon-bottle"></i> <span>The last beer I had</span></h5>
                             <div class="quoted-content">
                                 <?php echo get_option('last_beer'); ?>
                                 <p><a href="https://untappd.com/user/braican">via Untappd</a></p>
@@ -113,7 +113,7 @@ get_header(); ?>
                         </aside>
 
                         <aside class="last-tweet">
-                            <h5><i class="icon-twitter-bird"></i> The last thought I tweeted</h5>
+                            <h5><i class="icon-twitter-bird"></i> <span>The last thought I tweeted</span></h5>
                             <div class="quoted-content">
                                 <?php the_widget( 'Latest_Tweets_Widget', array(
                                     'title' => '',
@@ -121,7 +121,7 @@ get_header(); ?>
                                     'rts' => 1,
                                     'ats' => 1
                                 )); ?>
-                                <a href="http://twitter.com/braican">@braican</a>
+                                <p><a href="http://twitter.com/braican">@braican</a></p>
                             </div>
                         </aside>
                     </div>

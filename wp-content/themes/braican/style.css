@@ -75,13 +75,6 @@ q:before, q:after {
 blockquote, q {
     quotes: "" "";
 }
-a:focus {
-    outline: thin dotted;
-}
-a:hover,
-a:active { /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
-    outline: 0;
-}
 a img {
     border: 0;
 }
@@ -268,6 +261,7 @@ input[type="submit"]:hover,
     background: #000;
     background: rgba(0,0,0,.5);
     color: #fff;
+    opacity: 1;
 }
 button:focus,
 html input[type="button"]:focus,
@@ -365,7 +359,7 @@ h3{
     font-size: 1.8em;
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
-    margin-bottom: 1em;
+    margin:-6px 0 1em;
     line-height: 1.2em;
 }
 /* the project titles */
@@ -377,16 +371,13 @@ h4{
 
 /* aside headers */
 h5{
-    font-size: 1.2em;
+    font-size: 19px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
     margin-bottom: .6em;
     line-height: 1.2em;
     position: relative;
-    
-    padding-left: 22px;
-
-    /*padding-left: 40px;*/
+    padding-left: 10px;
 }
 
 @media screen and (min-width: 1080px){
@@ -415,7 +406,11 @@ a {
 a:hover,
 a:focus,
 a:active {
-    color: #ccc;
+    outline: none;
+    /*opacity: .8;*/
+}
+p a:hover{
+    opacity: .8;
 }
 
 .braica-cta a{
@@ -441,7 +436,7 @@ a:active {
 .braica-cta a:hover{
     background-color: #444;   
     padding-right: 36px;
-
+    opacity: 1;
 }
 
 /* --fontello */
@@ -455,16 +450,6 @@ a:active {
   font-weight: normal;
   font-style: normal;
 }
-/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
-/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
-/*
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  @font-face {
-    font-family: 'fontello';
-    src: url('../font/fontello.svg?40269639#fontello') format('svg');
-  }
-}
-*/
  
 [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: "fontello";
@@ -606,7 +591,7 @@ section:focus{
     outline:0;
 }
 aside{
-    font-size: .9em;
+    font-size: 15px;
     margin-bottom: 40px;
 }
 aside:last-child{
@@ -618,6 +603,9 @@ aside p{
 aside h5 i{
     position: absolute;
     left: 0;
+}
+aside .quoted-content{
+    padding-left: 10px;
 }
 
 .braica-container{
@@ -674,7 +662,7 @@ aside h5 i{
         width: 50%;
     }
     aside{
-        padding-top: 40px;
+        padding-top: 26px;
         margin-bottom: 0;
     }
 }
@@ -799,7 +787,7 @@ aside h5 i{
 .mobile-section-navigation{
     display: none;
     text-align: right;
-    padding: 14px 20px 20px 20px;
+    padding: 8px 20px 10px;
     color: #fff;
 }
 .mobile-section-navigation i{
@@ -1093,26 +1081,29 @@ aside h5 i{
     border-top: 10px solid #0d3e50;
     position: static;
 }
-#about aside i{
-    left: -19px;
-
-    /*left: -1px;*/
+#about aside .quoted-content{
+    color: #cfdde2;
 }
-aside .quoted-content{
-    padding-left: 20px;
-    border-left: 2px solid #fff;
-    
-    /*background: rgba(0,0,0,.3);*/
-    /*border-radius: 4px;*/
-    /*padding: 10px;*/
+#about aside i{
+    left: -28px;
 }
 .last-beer .icon-bottle{
     font-size: 35px;
-    top: -10px;
+    top: -8px;
     margin: 0 -4px;
 }
 .last-tweet .tweet-text{
     margin-bottom: 0;
+}
+
+@media screen and (max-width: 700px) {
+    #about aside i{
+        left: -9px;
+    }
+    #about aside h5,
+    #about aside .quoted-content{
+        padding-left: 35px;
+    }
 }
 
 /* -----------------------------------
@@ -1125,7 +1116,7 @@ aside .quoted-content{
     border-top:10px solid #86260c
 }
 #contact h5{
-    padding-left: 40px;
+    padding-left: 35px;
 }
 
 /* the form */
@@ -1201,11 +1192,8 @@ aside .quoted-content{
     width: 100%;
     top: -90px;
     z-index: 10;
-
-
 }
 .the-braica img{
-
     -webkit-transition: transform .5s;
     -moz-transition: transform .5s;
     -ms-transition: transform .5s;
@@ -1219,7 +1207,9 @@ aside .quoted-content{
     -o-transform: scale(.96);
     transform: scale(.96)
 }
-.the-braica img:hover{
+
+.site-info p{
+    margin-bottom: .68em;
 }
 
 /* social */
@@ -1250,7 +1240,7 @@ aside .quoted-content{
         top: 0;
     }
     .site-info{
-        padding: 60px 0 20px 0;
+        padding: 40px 0 20px;
         text-align: center;
     }
 }
