@@ -26,6 +26,7 @@
 				    <a href="http://facebook.com/braica.n" target="_blank"><i class="icon-facebook"></i></a>
 				    <a href="http://linkedin.com/in/nicholasbraica" target="_blank"><i class="icon-linkedin"></i></a>
 				    <a href="https://plus.google.com/+NicholasBraica/" target="_blank"><i class="icon-gplus"></i></a>
+				    <a href="https://github.com/braican" target="_blank"><i class="icon-github"></i></a>
 				</div>
 			</div>
 			
