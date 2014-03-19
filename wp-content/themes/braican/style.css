@@ -854,7 +854,7 @@ aside h5 i{
  * ----------------------------------- */
 .crazy-air{
     position: static;
-    background: #f47c20 url(img/crazy-air.jpg) top center fixed;
+    background: #f47c20 url(img/build/crazy-air.jpg) top center fixed;
     -webkit-background-size: cover;
     background-size: cover;
 }
@@ -869,6 +869,9 @@ aside h5 i{
     margin: 0;
     padding: 100px 0;
     z-index: 3;
+}
+.easter-egg #home{
+    background-image: url(img/build/crazy-air.jpg);
 }
 #more-facts{
     text-decoration: none;
@@ -1198,11 +1201,31 @@ aside .quoted-content{
     width: 100%;
     top: -90px;
     z-index: 10;
+
+
+}
+.the-braica img{
+
+    -webkit-transition: transform .5s;
+    -moz-transition: transform .5s;
+    -ms-transition: transform .5s;
+    -o-transition: transform .5s;
+    transition: transform .5s;
+}
+.the-braica img.active{
+    -webkit-transform: scale(.96);
+    -moz-transform: scale(.96);
+    -ms-transform: scale(.96);
+    -o-transform: scale(.96);
+    transform: scale(.96)
+}
+.the-braica img:hover{
 }
 
 /* social */
 #social{
     margin-top: 20px;
+    clear: both;
 }
 #social > a {
     font-size: 24px;

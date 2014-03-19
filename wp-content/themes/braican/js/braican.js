@@ -260,6 +260,24 @@
         // end form stuff
         // --------------------------------
 
+
+        // ---------------------------------
+        // easter eggs
+        // ---------------------------------
+        //
+
+        $('.the-braica img').on({
+            click: function(event) {
+                event.preventDefault();
+                $('body').toggleClass('easter-egg');
+            }, mousedown: function(event){
+                $(this).addClass('active');
+            }, mouseup: function(event){
+                $(this).removeClass('active');
+            }
+        });
+
+
         // ---------------------------------
         // skip link focus
         //
