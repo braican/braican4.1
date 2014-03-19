@@ -20,7 +20,7 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="braica-container">
 			<div class="the-braica">
-				<img  src="<?php echo get_template_directory_uri() . '/img/ski-circle.png'; ?>" alt="">
+				<img  src="<?php echo get_template_directory_uri() . '/img/build/ski-circle.png'; ?>" alt="">
 				<div id="social">
 				    <a href="http://twitter.com/braican" target="_blank"><i class="icon-twitter-bird"></i></a>
 				    <a href="http://facebook.com/braica.n" target="_blank"><i class="icon-facebook"></i></a>

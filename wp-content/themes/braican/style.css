@@ -861,7 +861,7 @@ aside .quoted-content{
  * ----------------------------------- */
 #home{
     position: static;
-    background: #f47c20 url(img/australia-orange.jpg) top left fixed;
+    background: #f47c20 url(img/build/australia-orange.jpg) top left fixed;
     -webkit-background-size: cover;
     background-size: cover;
     margin: 0;
@@ -1081,7 +1081,7 @@ aside .quoted-content{
  * --about
  * ----------------------------------- */
 #about{
-    background: #06658e url(img/borestone-blue.jpg) top center fixed;
+    background: #06658e url(img/build/borestone-blue.jpg) top center fixed;
     -webkit-background-size: cover;
     background-size: cover;
     z-index: 3;
