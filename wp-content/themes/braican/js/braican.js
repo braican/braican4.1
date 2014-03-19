@@ -131,6 +131,8 @@
             } else {
                 backToHome(window.location.hash);
             }
+
+            ga('send', 'event', 'window', 'hashchange', 'nav-buttons', window.location.hash);
             
         });
         // on page load, initialize a hashchange to get things going
