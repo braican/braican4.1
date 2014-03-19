@@ -591,13 +591,13 @@ section:focus{
     outline:0;
 }
 aside{
-    font-size: 15px;
     margin-bottom: 40px;
 }
 aside:last-child{
     margin-bottom: 0;
 }
 aside p{
+    font-size: 15px;
     margin-bottom: .6em;
 }
 aside h5 i{
@@ -1124,7 +1124,10 @@ aside .quoted-content{
     padding: 0;
     margin: 0;
 }
-
+#cscf > .cscfForm form input,
+#cscf > .cscfForm form textarea{
+    font-size: .85em;
+}
 #cscf label{
     font-size: .9em;
     padding: 8px 0;
