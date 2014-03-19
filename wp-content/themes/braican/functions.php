@@ -121,7 +121,7 @@ function create_post_type() {
             ),
             'description' => 'a content type for adding new projects',
             'public' => true,
-            // 'has_archive' => true,
+            'has_archive' => false,
             'supports' => array('title', 'editor', 'thumbnail', 'page-attributes')
         )
     );
@@ -143,7 +143,36 @@ function create_post_type() {
 }
 add_action( 'init', 'create_post_type' );
 
+/**
+ * REGISTER TAXONOMIES
+ */
 
+function create_taxonomies(){
+    // project categories
+    register_taxonomy('project_categories', 'project',
+        array(
+            'labels' => array(
+                    'name' => 'Project Category'
+                ),
+            'hierarchical' => 'true'
+            )
+    );
+
+    // project tags
+    register_taxonomy('project_tags', 'project',
+        array(
+            'labels' => array(
+                    'name' => 'Project Tags'
+                )
+            )
+    );
+}
+add_action( 'init', 'create_taxonomies' );
+
+
+/****************************
+ * SOME CUSTOM FUNCTIONS
+ ****************************/
 
 // On an early action hook, check if the hook is scheduled - if not, schedule it.
 function braican_schedule_getting_last_beer() {
@@ -208,38 +237,6 @@ function prefix_do_this_hourly() {
     }
 }
 add_action( 'braican_get_last_beer', 'prefix_do_this_hourly' );
-
-
-/**
- * REGISTER TAXONOMIES
- */
-
-function create_taxonomies(){
-	// project categories
-	register_taxonomy('project_categories', 'project',
-		array(
-			'labels' => array(
-					'name' => 'Project Category'
-				),
-			'hierarchical' => 'true'
-			)
-	);
-
-	// project tags
-	register_taxonomy('project_tags', 'project',
-		array(
-			'labels' => array(
-					'name' => 'Project Tags'
-				)
-			)
-	);
-}
-add_action( 'init', 'create_taxonomies' );
-
-
-/****************************
- * SOME CUSTOM FUNCTIONS
- ****************************/
 
 // get filtered content by ID 
 function the_content_by_id($content_id) {

@@ -37,19 +37,6 @@
     }
 
     //
-    // getUrlParam
-    //
-    // Utility function to snag a query string value when passed the parameter
-    //
-    function getUrlParam(name) {
-        var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
-        if (!results) {
-            return 0;
-        }
-        return results[1] || 0;
-    }
-
-    //
     // backToHome
     //
     // @param href = where should the page navigate to after reloading the homepage
@@ -153,15 +140,17 @@
         // slide to nav
         //
         $('a[href^="/#"]').on('click', function(e){
-            e.preventDefault();
-            var id = $(this).attr('href').substring(1);
-            if($('body').hasClass('project-view')){
-                backToHome(id);
-            } else if(id.length > 1){
-                $('body').scrollTo(id, SCROLLSPEED, {axis: 'y', easing:'swing', margin:INCLUDEMARGIN});
-            }
-            if($(window).width() < 600 && !$(this).parent().hasClass('logo')){
-                $('.mobile-nav').click();
+            if($('body').hasClass('home')){
+                e.preventDefault();
+                var id = $(this).attr('href').substring(1);
+                if($('body').hasClass('project-view')){
+                    backToHome(id);
+                } else if(id.length > 1){
+                    $('body').scrollTo(id, SCROLLSPEED, {axis: 'y', easing:'swing', margin:INCLUDEMARGIN});
+                }
+                if($(window).width() < 600 && !$(this).parent().hasClass('logo')){
+                    $('.mobile-nav').click();
+                }
             }
         });
 

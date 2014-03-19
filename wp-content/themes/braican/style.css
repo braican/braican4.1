@@ -868,7 +868,9 @@ aside .quoted-content{
     padding: 100px 0;
     z-index: 3;
 }
-
+#more-facts{
+    text-decoration: none;
+}
 @media screen and (max-width: 600px) {
     #home{
         padding: 50px 0;
@@ -1145,6 +1147,25 @@ aside .quoted-content{
 
 #cscf input[type="submit"]:after{
     content: "sadh";
+}
+
+/* -----------------------------------
+ * --miscellaneous pages
+ * ----------------------------------- */
+.colored-background,
+.colored-background h1,
+.colored-background a{
+    background: #f5ecdf;
+    color: #222;
+}
+
+#secondary h1{
+    font-size: 2em;
+}
+#secondary .latest-tweets li{
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #DCD3C6;
 }
 
 /* -----------------------------------

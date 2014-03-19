@@ -9,8 +9,8 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
+	<section id="primary" class="content-area colored-background">
+		<div id="content" class="site-content braica-container" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -59,6 +59,16 @@ get_header(); ?>
 						elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
 							_e( 'Links', 'braican' );
 
+						elseif ( is_tax( 'project_categories' ) || is_tax('project_tags') ) :
+							$queried_object = get_queried_object();  
+							$term_id = $queried_object->name;
+							if(is_tax( 'project_categories' )) {
+								echo "$term_id Projects";
+							} else {
+								echo "Projects utilizing $term_id";
+							}
+							
+
 						else :
 							_e( 'Archives', 'braican' );
 
@@ -97,16 +107,16 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php braican_content_nav( 'nav-below' ); ?>
-
 		<?php else : ?>
 
-			<?php get_template_part( 'no-results', 'archive' ); ?>
+			<header class="entry-header">
+				<h1 class="entry-title"><?php _e( 'There\'s nothing here' , 'braican' ); ?></h1>
+				<h3>Go <a href="/">home</a></h3>
+			</header><!-- .entry-header -->
 
 		<?php endif; ?>
 
 		</div><!-- #content -->
 	</section><!-- #primary -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
