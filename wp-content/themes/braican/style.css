@@ -861,7 +861,7 @@ aside .quoted-content{
 .easter-egg #home{
     background-image: url(img/build/crazy-air.jpg);
 }
-#more-facts{
+.more-facts{
     text-decoration: none;
 }
 @media screen and (max-width: 600px) {
