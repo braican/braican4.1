@@ -27,7 +27,9 @@
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
     ga('create', 'UA-20596099-3', 'braican.com');
-    ga('send', 'pageview');
+    ga('send', 'pageview', {
+        'page': location.pathname + location.search  + location.hash
+    });
 
 </script>
 </head>
