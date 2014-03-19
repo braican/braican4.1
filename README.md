@@ -3,7 +3,7 @@ braican.com
 Public repository of [braican.com](http://braican.com), [Nick Braica's](http://twitter.com/braican) portfolio site. 
 
 ## version 4.1
-`current development`
+`released 03/19/2014`
 
 A custom, one page WordPress theme that consists of sections for my work, about me, and contact links. This theme will be responsive, and it's got some sweet ajax magic to bring in the portfolio items.
 
