@@ -180,6 +180,8 @@
         //
         $('#fact').on('click', '.more-facts', function(event){
             event.preventDefault();
+            $(this).addClass('animate-spin');
+
             $.get(braican_ajax.ajaxurl, {
                 action: 'ajax_facts',
                 die: true
@@ -187,6 +189,7 @@
                 console.log(data);
                 $('#fact').html(data);
             });
+            
         });
 
         // --------------------------------
