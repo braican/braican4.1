@@ -852,9 +852,11 @@ aside .quoted-content{
 /* -----------------------------------
  * --404
  * ----------------------------------- */
-.notfound{
-    background: #f47c20;
-    padding: 40px 0;
+.crazy-air{
+    position: static;
+    background: #f47c20 url(img/crazy-air.jpg) top center fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
 }
 /* -----------------------------------
  * --home
