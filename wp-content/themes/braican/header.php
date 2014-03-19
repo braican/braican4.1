@@ -20,6 +20,11 @@
 <link href='http://fonts.googleapis.com/css?family=Raleway:100,700,900|Open+Sans:300,700' rel='stylesheet' type='text/css'>
 <?php wp_head(); ?>
 
+<meta property="og:image" content="http://braican.com/logo.jpg" />
+<meta property="og:url" content="http://braican.com" />
+<meta property="og:title" content="braican.com" />
+<meta property="og:description" content="Portfolio site of Nick Braica" />
+
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
