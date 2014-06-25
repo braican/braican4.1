@@ -2,6 +2,12 @@ braican.com
 ===========
 Public repository of [braican.com](http://braican.com), [Nick Braica's](http://twitter.com/braican) portfolio site. 
 
+I like to build websites.
+
+The master branch is the currently live stuff.
+
+Each iteration of braican.com was pretty much a ground-up build. In other words, there was no code sharing between one version and another. Despite this, I've still decided to keep all development (i.e. versions 2, 3, 4, future development, etc.) in the same repo. If there's a good reason for not doing this, I hope someone will tell me. Otherwise, I'm gonna keep doing what I'm doing.
+
 ## version 4.1
 `released 03/19/2014`
 
