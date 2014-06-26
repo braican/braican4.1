@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="css/master.css"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Video Work | Nicholas V. Braica</title>
+<script type="text/javascript" src="js/highslide-with-html.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/swfobject/2.1/swfobject.js"></script>
+<link rel="stylesheet" type="text/css" href="css/highslide.css" />
+
+<!--
+	2) Optionally override the settings defined at the top
+	of the highslide.js file. The parameter hs.graphicsDir is important!
+-->
+
+<script type="text/javascript"> 
+// Apply the Highslide settings
+hs.graphicsDir = 'assets/highslide/';
+hs.outlineType = 'rounded-white';
+hs.outlineWhileAnimating = true;
+hs.allowSizeReduction = false;
+// always use this with flash, else the movie will be stopped on close:
+hs.preserveContent = false;
+hs.wrapperClassName = 'draggable-header no-footer';
+ 
+ 
+// create a shorthand function so we don't need to put all this in the opener's onclick
+function openYouTube(opener) {
+	var returnValue;
+	
+	// Safari Mobile doesn't have Flash, so we just let the device use the built-in 
+	// YouTube viewer.
+	if (/(iPhone|iPod|iPad)/.test(navigator.userAgent)) returnValue = true;
+ 
+	else returnValue = hs.htmlExpand(opener, { 
+		objectType: 'swf', 
+		objectWidth: 480, 
+		objectHeight: 385, 
+		width: 480, 
+		swfOptions: { 
+			params: { 
+				allowfullscreen: 'true' 
+			}
+		}, 
+		maincontentText: 'You need to upgrade your Flash player' 
+	});
+	
+	return returnValue;
+}  
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-20596099-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+
+<body>
+<!-- #BeginLibraryItem "/Library/social_side.lbi" -->
+<ul class="side_content">
+  <li id="facebook"><a href="http://www.facebook.com/profile.php?id=620290491" title="Connect on Facebook" target="_blank"></a></li>
+  <li id="linkedin"> <a href="http://www.linkedin.com/in/nicholasbraica" title="Connect on LinkedIn" target="_blank"></a></li>
+  <li id="youtube"><a href="http://www.youtube.com/user/nvbraica8" title="View my videos on YouTube" target="_blank"></a></li>
+  <li id="flickr"><a href="http://www.flickr.com/photos/braican/" title="View my photos on Flickr" target="_blank"></a></li>
+  <li id="email"> <a href="mailto:nvbraica8@gmail.com" title="Email Me"></a></li>
+  <li><img src="assets/get_in_touch.png" /></li>
+</ul>
+<!-- #EndLibraryItem -->
+<div id="content">
+  <div id="header">
+    <div id="navbar"> <a href="index.php"> <img src="assets/logos/braican3_small.png" width="271" height="95" border="0" /></a>
+      <ul id="top_menu">
+        <li><a href="portfolio.html" class="active">CREATIVE WORK</a></li>
+        |
+        <li><a href="blog/">BLOG</a></li>
+        |
+        <li><a href="contact.html">CONTACT</a></li>
+        |
+        <li><a href="about.html">ABOUT</a></li>
+        |
+        <li><a href="resume.html">RESUME</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="main-content">
+    <ul class="portfolio_categories">
+      <li><a href="drawing.html">Traditional Artwork</a></li>
+      <li><a href="graphic_design.html">Graphic Design</a></li>
+      <li><a href="website_design.html">Website Design</a></li>
+      <li><a href="flash.html">Flash Media</a></li>
+      <li><a href="video.html" class="active">Video</a></li>
+      <li><a href="music.html">Music</a></li>
+    </ul>
+    <div id="main2">
+      <h1>Movies and motion media</h1>
+      <p>Everyone loves movies. And I think it's always fun to see yourself on camera. I've always enjoyed the process of creating video, from filming to editing, and also enjoy animation and what that has to offer to time-based media. Currently, the majority of my video work is of animated shorts, however I have been involved in a few real-life productions, a few of which are online somewhere...</p>
+    </div>
+    <div id="main2">
+      <h1>Incoming</h1>
+      <p> <a href="http://www.youtube.com/v/wJtAMllIq8k&hl=en_US&fs=1&" onclick="return openYouTube(this)" class="highslide"> <img src="http://i4.ytimg.com/vi/wJtAMllIq8k/default.jpg" class="web_pics" /> </a> This animation was done in my Junior year in High School in a Computer Animation class. Using Adobe Flash, we were tasked with creating an epic battle between two planets in the solar system. Only one wins. </p>
+      <p>&nbsp;</p>
+    </div>
+    <div id="main2">
+      <h1>Sky Driving</h1>
+      <p> <a href="http://www.youtube.com/v/6Y709RFPi1U&hl=en_US&fs=1&" onclick="return openYouTube(this)" class="highslide"> <img src="http://i3.ytimg.com/vi/6Y709RFPi1U/default.jpg" class="web_pics" /> </a> Sky Driving was the final project for that Computer Animation class in my Junior year of High School. We were free to do anything we wanted, so I decided to go with this short little film about a road that just ends in the middle of the sky. Interesting how the mind works sometimes. </p>
+      <p>&nbsp;</p>
+    </div>
+    <div id="main2">
+      <h1>Running Letters</h1>
+      <p> <a href="http://www.youtube.com/v/sEZXXuR_7HQ&hl=en_US&fs=1&" onclick="return openYouTube(this)" class="highslide"> <img src="http://i4.ytimg.com/vi/sEZXXuR_7HQ/default.jpg" class="web_pics" /> </a> This project was done in my 4D Foundations class in the fall of 2009. The assignment was to choose a word to describe ourselves, and then animate the letters in our name to perform an action that describes that word. I chose the word "competitive". As you can see, the letters that spell out "Nick" are beating out the letters that spell the name "Drew" in this animated race. Drew was my roommate sophomore year, just to clear that up. The video was created using Adobe AfterEffects. </p>
+      <p>&nbsp;</p>
+    </div>
+    <div id="main2">
+      <h1>Based on a True Story</h1>
+      <p> <a href="http://www.youtube.com/v/LDkdo_WT5ek&hl=en_US&fs=1&" onclick="return openYouTube(this)" class="highslide"> <img src="http://i1.ytimg.com/vi/LDkdo_WT5ek/default.jpg" class="web_pics" /> </a> Also done in 4D Foundations, this was the only project that I needed to act for. I think I did a pretty good job. The assignment was to take a true story in my life and to extract the specific emotions of that story, creating an entire new video. The video was not supposed to have anything to do with the actual events, but needed to deal entirely with the emotion felt during the story. My true story was that of my High School baseball team during my senior year, when we made it to the State tournament, but lost in a game that we should have won. My specific emotions were disappointment, and the idea of coming close to your goals only to have them taken away in one swift moment. I personally filmed and edited the entire video, using Adobe Premiere Pro. </p>
+      <p>&nbsp;</p>
+    </div>
+    <div id="main2">
+      <h1>The Whole Story</h1>
+      <p> <a href="http://www.youtube.com/v/OTk-BCR6D6g&hl=en_US&fs=1&" onclick="return openYouTube(this)" class="highslide"> <img src="http://i4.ytimg.com/vi/OTk-BCR6D6g/default.jpg" class="web_pics" /> </a> This video was a project done in my 4D Foundations class in the fall of 2009. The assignment was to animate a story about our lives using Adobe AfterEffects. I chose to animate the story of me breaking off my front tooth four different times since I was 8. And yes, it's all true. </p>
+      <p>&nbsp;</p>
+    </div>
+    <div id="main2">
+      <h1>Launched</h1>
+      <p> <a href="http://www.youtube.com/v/jkjI5Y7Qujo&hl=en_US&fs=1&" onclick="return openYouTube(this)" class="highslide"> <img src="http://i3.ytimg.com/vi/jkjI5Y7Qujo/default.jpg" class="web_pics" /> </a> This is an animation I created just for fun, using frame by frame animation in Adobe Flash. It follows a stick figure as he walks along in a two-dimensional world that is not kind to him. It is a project that I will add to from time to time, making it a work in progress that may never end. </p>
+      <p>&nbsp;</p>
+    </div>
+  </div><!-- #BeginLibraryItem "/Library/copyright.lbi" --><div id="copyright">
+    <p>&copy; braican.com 2010. Designed by Nicholas V. Braica <br />
+Blog powered by <a href="http://wordpress.org/" target="_blank">WordPress</a></p>
+    </div><!-- #EndLibraryItem --></div>
+</body>
+</html>

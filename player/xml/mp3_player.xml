@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<featureset>
+
+    <album name="Unnamed Album" author="Nick Braica" imageUrl="images/capemay.jpg">
+    	<song name="Big Mess" duration="3 : 34" buy="false" download="true" downloadSource="player/songs/big_mess.mp3">songs/big_mess.mp3</song>
+		<song name="Suspended Motion" duration="4 : 03" buy="false" download="true" downloadSource="player/songs/suspended_motion.mp3">songs/suspended_motion.mp3</song>
+    	<song name="Blurriness" duration="2 : 21" buy="false" download="true" downloadSource="player/songs/blurriness.mp3">songs/blurriness.mp3</song>
+    	<song name="Fallout" duration="2 : 22" buy="false" download="true" downloadSource="player/songs/fallout.mp3">songs/fallout.mp3</song>
+    	
+		
+	</album>
+
+</featureset>
+
+
+
+
+
+
