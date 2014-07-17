@@ -88,9 +88,9 @@ input,
 select,
 textarea {
     color: #fff;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 1.6rem;
     line-height: 1.5;
 }
@@ -364,7 +364,7 @@ h3{
 }
 /* the project titles */
 h4{
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-weight: 700;
     font-size: 1em;
 }
@@ -372,7 +372,7 @@ h4{
 /* aside headers */
 h5{
     font-size: 19px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-weight: 700;
     margin-bottom: .6em;
     line-height: 1.2em;
@@ -733,7 +733,7 @@ aside .quoted-content{
     display: inline-block;
 }
 .site-header .site-nav ul li a {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-weight: 700;
     text-decoration: none;
     color: #000;

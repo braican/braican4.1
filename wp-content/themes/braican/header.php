@@ -34,7 +34,7 @@
 <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-<link href='http://fonts.googleapis.com/css?family=Raleway:100,700,900|Open+Sans:300,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Raleway:100,700,900|Noto+Sans:400,700' rel='stylesheet' type='text/css'>
 <?php wp_head(); ?>
 
 <meta property="og:image" content="http://braican.com/logo.jpg" />
