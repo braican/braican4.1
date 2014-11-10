@@ -133,6 +133,10 @@
             }
 
             ga('send', 'event', 'project', window.location.hash);
+
+            ga('send', 'pageview', {
+             'page': location.pathname + location.search  + location.hash
+            });
             
         });
         // on page load, initialize a hashchange to get things going
