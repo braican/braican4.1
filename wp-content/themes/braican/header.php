@@ -15,6 +15,10 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
+<link rel="canonical" href="http://braican.com" />
+<link rel="shortlink" href="http://braican.com" />
+<meta name="description" content="Nick Braica is a web developer based in Boston. He also likes the Red Sox, homebrewing, and eating." />
+
 <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
 <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
