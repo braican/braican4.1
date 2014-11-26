@@ -8,3 +8,5 @@ wp-content/uploads/*
 node_modules/*
 Gruntfile.js
 package.json
+
+error_log
