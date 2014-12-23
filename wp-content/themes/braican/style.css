@@ -1013,7 +1013,6 @@ aside .quoted-content{
     z-index: 1;
     width: 100%;
     display: none;
-    background: #f5ecdf;
     padding: 145px 0 60px;
 }
 .project-content.fixed-sidebar{
