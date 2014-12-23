@@ -151,6 +151,7 @@ get_header(); ?>
                 <div class="col col2 variable-width">
                     <div class="braica-block">
                         <aside class="the-form">
+                            <h5><i class="icon-mail"></i>Let's chat</h5>
                             <?php echo do_shortcode('[cscf-contact-form]'); ?>      
                         </aside>
                     </div>

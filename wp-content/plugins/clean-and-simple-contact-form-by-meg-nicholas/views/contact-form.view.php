@@ -55,7 +55,7 @@
                         data-msg-email="<?php _e('Please enter a valid email address.','cleanandsimple');?>"
                         type="email" id="cscf_email" name="cscf[email]" 
                         value="<?php echo esc_attr($contact->Email); ?>"
-                        placeholder="<?php _e('Your Email Address','cleanandsimple');?>"
+                        placeholder="<?php _e('Your Email','cleanandsimple');?>"
                     />
                 </div>
                 <span for="cscf_email" class="help-inline help-block error" style="display:<?php echo isset($contact->Errors['email']) ? 'block' : 'none'; ?>;">
@@ -98,10 +98,11 @@
                         <span class="input-group-addon"><span class="glyphicon glyphicon-comment"></span></span>
                     <?php } ?>
                     <textarea class="form-control input-xlarge"
+                        rows="4"
                         data-rule-required="true"
                         data-msg-required="<?php _e('Please give a message.','cleanandsimple');?>"
                         id="cscf_message" name="cscf[message]" rows="10" 
-                        placeholder="<?php _e('Your Message','cleanandsimple');?>"><?php echo esc_textarea($contact->Message); ?></textarea>
+                        placeholder="<?php _e('What\'s up?','cleanandsimple');?>"><?php echo esc_textarea($contact->Message); ?></textarea>
                 </div>
                 <span for="cscf_message" class="help-inline help-block error" style="display:<?php echo isset($contact->Errors['message']) ? 'block' : 'none'; ?>;">
                     <?php if (isset($contact->Errors['message'])) echo $contact->Errors['message']; ?>

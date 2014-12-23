@@ -46,6 +46,7 @@ if ( ! function_exists( 'braican_setup' ) ) :
 
 		// Enable support for Post Thumbnails
 		add_theme_support( 'post-thumbnails' );
+        set_post_thumbnail_size( 400, 294, true );
 
 		//This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
