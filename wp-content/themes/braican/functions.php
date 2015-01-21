@@ -184,7 +184,7 @@ function prefix_do_this_hourly() {
     $client_secret = '8EB0A20DDC4D23AA58BD8A0EC6EF2AB9F5A75BE4';
     $client_id = '94284E70E3EC9ED86411018A5ABADFC8160A15F9';
     $username = 'braican';
-    $url = "http://api.untappd.com/v4/user/beers/$username?client_id=$client_id&client_secret=$client_secret&limit=1";
+    $url = "https://api.untappd.com/v4/user/beers/$username?client_id=$client_id&client_secret=$client_secret&limit=1";
     $response = json_decode(wp_remote_retrieve_body(wp_remote_get($url)));
 
     if($response->meta->code == "200"){
