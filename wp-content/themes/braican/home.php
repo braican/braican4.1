@@ -98,7 +98,7 @@ get_header(); ?>
                 <div class="col col4 right">
                     <div class="braica-block">
                         <?php echo $content; ?>
-                        <p><a class="button" href="/wp-content/uploads/docs/NickBraica-resume-2014.02.28.pdf" target="_blank">Check out the resume</a></p>
+                        <p><a class="button" href="/wp-content/uploads/docs/NickBraica-resume.pdf" target="_blank">Check out the resume</a></p>
                     </div>
                 </div>
 
