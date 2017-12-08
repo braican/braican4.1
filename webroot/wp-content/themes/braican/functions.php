@@ -1,10 +1,10 @@
 <?php
 /**
- * _s functions and definitions
+ * braican functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package _s
+ * @package braican
  */
 
 if ( ! function_exists( 'braican_setup' ) ) :
@@ -19,10 +19,10 @@ function braican_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on _s, use a find and replace
-	 * to change '_s' to the name of your theme in all the template files.
+	 * If you're building a theme based on braican, use a find and replace
+	 * to change 'braican' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( '_s', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'braican', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -47,7 +47,7 @@ function braican_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Primary', '_s' ),
+		'menu-1' => esc_html__( 'Primary', 'braican' ),
 	) );
 
 	/*
@@ -123,24 +123,28 @@ remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 
+//
+// Custom post types
+//
+require get_template_directory() . '/inc/content-types.php';
 
-/**
- * Custom template tags for this theme.
- */
+//
+// Custom template tags for this theme.
+//
 require get_template_directory() . '/inc/template-tags.php';
 
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
+//
+// Functions which enhance the theme by hooking into WordPress.
+//
 require get_template_directory() . '/inc/template-functions.php';
 
-/**
- * Customizer additions.
- */
+//
+// Customizer additions.
+//
 require get_template_directory() . '/inc/customizer.php';
 
-/**
- * API
- */
+//
+// API
+//
 require get_template_directory() . '/api/api.php';
 
