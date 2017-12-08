@@ -1,5 +1,7 @@
 
+# cpu system
 .DS_Store
+error_log
 
 # config files
 wp-config.php
@@ -7,11 +9,7 @@ wp-config.php
 # the uploads directory
 webroot/wp-content/uploads/*
 wp-content/uploads/*
-!wp-content/uploads/docs
 
-
+# npm
 node_modules/*
-Gruntfile.js
-package.json
 
-error_log
