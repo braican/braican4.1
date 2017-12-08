@@ -4,7 +4,7 @@
 //
 
 
-if(!function_exists('sk_include_svg')) :
+if(!function_exists('include_svg')) :
 /**
  * include svgs inline
  * @param {string} $svg // the svg to include
