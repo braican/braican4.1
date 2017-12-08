@@ -1,45 +1,31 @@
 <?php
 /**
- * The template for displaying the footer.
+ * The template for displaying the footer
  *
- * Contains the closing of the id=main div and all content after
+ * Contains the closing of the #content div and all content after.
  *
- * @package braican
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package _s
  */
+
 ?>
 
-	</div><!-- #main -->
+	</div><!-- #content -->
 
-	<div id="project-modal">
-		<div class="braica-container br-cf">
-			<div id="load-project"></div>
-		</div>
-		
-	</div>
-
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="braica-container">
-			<div class="the-braica">
-				<img  src="<?php echo get_template_directory_uri() . '/img/build/ski-circle.png'; ?>" alt="">
-				<div id="social">
-				    <a href="http://twitter.com/braican" target="_blank"><i class="icon-twitter-bird"></i></a>
-				    <a href="http://facebook.com/braica.n" target="_blank"><i class="icon-facebook"></i></a>
-				    <a href="http://linkedin.com/in/nicholasbraica" target="_blank"><i class="icon-linkedin"></i></a>
-				    <a href="https://plus.google.com/+NicholasBraica/" target="_blank"><i class="icon-gplus"></i></a>
-				    <a href="https://github.com/braican" target="_blank"><i class="icon-github"></i></a>
-				</div>
-			</div>
-			
-			<div class="site-info">
-				<p>Copyright &copy; <?php echo date('Y'); ?> Nicholas Braica</p>
-				<p>860.849.0791 &bull; nick.braica[at]gmail.com</p>
-			</div><!-- .site-info -->
-			
-		</div>
-
+	<footer id="colophon" class="site-footer">
+		<div class="site-info">
+			<a href="<?php echo esc_url( __( 'https://wordpress.org/', '_s' ) ); ?>"><?php
+				/* translators: %s: CMS name, i.e. WordPress. */
+				printf( esc_html__( 'Proudly powered by %s', '_s' ), 'WordPress' );
+			?></a>
+			<span class="sep"> | </span>
+			<?php
+				/* translators: 1: Theme name, 2: Theme author. */
+				printf( esc_html__( 'Theme: %1$s by %2$s.', '_s' ), '_s', '<a href="https://automattic.com/">Automattic</a>' );
+			?>
+		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
-
-	
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
