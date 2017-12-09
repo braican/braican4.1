@@ -57,7 +57,7 @@ config.babelify = {
 // File system
 //
 
-const themeDir = 'webroot/wp-content/themes/sherman';
+const themeDir = 'webroot/wp-content/themes/braican';
 
 const files = {};
 

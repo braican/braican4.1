@@ -148,3 +148,13 @@ require get_template_directory() . '/inc/customizer.php';
 //
 require get_template_directory() . '/api/api.php';
 
+
+//
+// server settings
+//
+
+function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');

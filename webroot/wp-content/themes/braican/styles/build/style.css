@@ -19,6 +19,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed,300");
 *, *:before, *:after {
   -webkit-box-sizing: inherit;
           box-sizing: inherit; }
@@ -181,6 +182,9 @@ object {
  *  - util layout styles (prefixed with "l-")
  *
  * ============================================================== */
+body {
+  padding: 20px; }
+
 .l-container {
   margin: 0 auto;
   width: 100%;
@@ -207,14 +211,26 @@ object {
 .col-right {
   float: right; }
 
-.test {
-  color: red; }
+/* ------------------------------------
+ * --content
+ * ------------------------------------*/
+.site-content {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  max-width: 680px; }
+
+.entry-content {
+  font-size: 2rem;
+  -webkit-font-smoothing: antialiased; }
 
 /* ==============================================================
  *
  * Typography
  *
  * ============================================================== */
+/* ------------------------------------
+ * --font
+ * ------------------------------------*/
 /* ------------------------------------------
  * --vars
  * ------------------------------------------ */
@@ -226,9 +242,10 @@ button,
 input,
 select,
 textarea {
-  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 300;
   color: #404040;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.4; }
 
 /* --------------------------------------------
@@ -260,6 +277,11 @@ textarea {
 /* ------------------------------------------
  * --icons
  * ------------------------------------------ */
+.site-branding {
+  width: 80px; }
+  .site-branding svg {
+    width: 100%; }
+
 /* ==============================================================
  *
  * Navigation

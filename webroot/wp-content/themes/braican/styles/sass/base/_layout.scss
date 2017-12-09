@@ -5,6 +5,10 @@
  *
  * ============================================================== */
 
+body{
+    padding: 20px;
+}
+
 .l-container{
     margin: 0 auto;
     width: 100%;
@@ -38,6 +42,21 @@
     float: right;
 }
 
-.test{
-    color: red;
+
+
+/* ------------------------------------
+ * --content
+ * ------------------------------------*/
+
+.site-content{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    max-width: 680px;
+}
+
+
+
+.entry-content{
+    font-size: 2rem;
+    -webkit-font-smoothing: antialiased;
 }

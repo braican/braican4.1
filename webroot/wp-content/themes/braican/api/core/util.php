@@ -11,16 +11,17 @@ if(!function_exists('include_svg')) :
  * @param {boolean} $return // whether to return the svg as a string or simply include the svg
  */
 function include_svg( $svg, $return = false ){
-    $svg_path = get_template_directory() . '/svg/build/' . $svg . '.svg';
+    $templateDir = get_template_directory();
+    $svgPath = "$templateDir/svg/$svg.svg";
 
-    if(!file_exists($svg_path)){
+    if(!file_exists($svgPath)){
         return false;
     }
 
     if($return){
-        return file_get_contents($svg_path);
+        return file_get_contents($svgPath);
     }
 
-    include( $svg_path );
+    include($svgPath);
 }
 endif;
