@@ -5,9 +5,7 @@
  *
  * ============================================================== */
 
-body{
-    padding: 20px;
-}
+$padding: 20px;
 
 .l-container{
     margin: 0 auto;
@@ -48,15 +46,14 @@ body{
  * --content
  * ------------------------------------*/
 
-.site-content{
-    padding-top: 60px;
-    padding-bottom: 60px;
+.site-main{
+    padding: 60px $padding;
     max-width: 680px;
 }
-
 
 
 .entry-content{
     font-size: 2rem;
     -webkit-font-smoothing: antialiased;
 }
+

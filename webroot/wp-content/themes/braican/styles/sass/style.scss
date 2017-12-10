@@ -4,6 +4,9 @@
  *
  * ============================================================== */
 
+// vars
+@import 'vars/colors';
+
 // base
 @import 'base/media-queries';
 @import 'base/base';
@@ -14,4 +17,7 @@
 // components
 @import 'components/header';
 @import 'components/nav';
+@import 'components/projectgallery';
+@import 'components/singleproject';
+@import 'components/footer';
 
