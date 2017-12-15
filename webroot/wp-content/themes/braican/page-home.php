@@ -40,9 +40,13 @@ get_header(); ?>
 				<?php while($projectQuery->have_posts()) : $projectQuery->the_post() ?>
 					<?php if(has_post_thumbnail()) : ?>
 						<div class="projectgallery__thumb">
-							<a class="projectgallery__link" href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-								<?php the_post_thumbnail('full'); ?>
-							</a>
+							<a
+								class="projectgallery__link"
+								href="<?php the_permalink() ?>"
+								title="<?php the_title(); ?>"
+								style="background-image:url(<?php echo get_the_post_thumbnail_url() ?>)"
+							></a>
+
 							<a class="projectgallery__details" href="<?php the_permalink(); ?>">
 								<?php the_title('<h3 class="projectgallery__title">', '</h3>'); ?>
 								<?php sk_the_field('braican_project_excerpt', array('before' => '<div class="projectgallery__excerpt">', 'after' => '</div>')); ?>
