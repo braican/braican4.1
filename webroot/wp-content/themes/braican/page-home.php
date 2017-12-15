@@ -48,8 +48,10 @@ get_header(); ?>
 							></a>
 
 							<a class="projectgallery__details" href="<?php the_permalink(); ?>">
-								<?php the_title('<h3 class="projectgallery__title">', '</h3>'); ?>
-								<?php sk_the_field('braican_project_excerpt', array('before' => '<div class="projectgallery__excerpt">', 'after' => '</div>')); ?>
+								<div class="projectgallery__wrap">
+									<?php the_title('<h3 class="projectgallery__title">', '</h3>'); ?>
+									<?php sk_the_field('braican_project_excerpt', array('before' => '<div class="projectgallery__excerpt">', 'after' => '</div>')); ?>
+								</div>
 							</a>
 						</div>
 					<?php endif; ?>

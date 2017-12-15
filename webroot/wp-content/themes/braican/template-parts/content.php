@@ -26,12 +26,9 @@
 		endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php
-		sk_the_field('braican_project_text', array(
-			'before' => '<div class="entry-content">',
-			'after'  => '</div>',
-		));
-	?>
+	<div class="entry-content">
+		<?php the_content(); ?>
+	</div>
 
 	<footer class="entry-footer">
 		<?php braican_entry_footer(); ?>

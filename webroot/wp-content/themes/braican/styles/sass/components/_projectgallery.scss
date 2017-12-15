@@ -26,19 +26,32 @@
 
 .projectgallery__details{
     display: block;
-    padding: 20px;
+    padding: 40px;
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     width: 100%;
-    transition: all .2s;
-    background-color: rgba($text-color, .9);
-    transform: translateX(-100%);
+    background-color: rgba(#000, .8);
     text-decoration: none;
+    opacity: 0;
+    // transform: translateX(-100%);
+    transition: all .2s;
 
     .projectgallery__thumb:hover &{
-        transform: translateX(0);
+        opacity: 1;
+        // transform: translateX(0);
+    }
+}
+
+.projectgallery__wrap{
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all .2s .1s;
+
+    .projectgallery__thumb:hover &{
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 

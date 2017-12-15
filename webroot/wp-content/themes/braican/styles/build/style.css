@@ -355,21 +355,30 @@ textarea {
 
 .projectgallery__details {
   display: block;
-  padding: 20px;
+  padding: 40px;
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  text-decoration: none;
+  opacity: 0;
   -webkit-transition: all .2s;
-  transition: all .2s;
-  background-color: rgba(64, 64, 64, 0.9);
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
-  text-decoration: none; }
+  transition: all .2s; }
   .projectgallery__thumb:hover .projectgallery__details {
-    -webkit-transform: translateX(0);
-            transform: translateX(0); }
+    opacity: 1; }
+
+.projectgallery__wrap {
+  opacity: 0;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+  -webkit-transition: all .2s .1s;
+  transition: all .2s .1s; }
+  .projectgallery__thumb:hover .projectgallery__wrap {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0); }
 
 .projectgallery__title {
   color: #fff;
