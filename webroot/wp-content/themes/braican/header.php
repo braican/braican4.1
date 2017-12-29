@@ -25,7 +25,7 @@
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
-			<?php include_svg('logo'); ?>
+			<a href="/"><?php include_svg('logo'); ?></a>
 		</div><!-- .site-branding -->
 	</header><!-- #masthead -->
 

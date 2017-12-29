@@ -93,7 +93,7 @@ if ( ! function_exists( 'braican_entry_footer' ) ) :
 				),
 				get_the_title()
 			),
-			'<span class="edit-link">',
+			'<br><span class="edit-link">',
 			'</span>'
 		);
 	}

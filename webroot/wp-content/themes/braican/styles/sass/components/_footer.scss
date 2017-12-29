@@ -1,3 +1,45 @@
 .site-footer{
-    padding: $padding;
+    padding: 60px $padding;
+    max-width: $contentContainer;
 }
+
+.site-info{
+    padding-top: 120px;
+}
+
+
+/* ------------------------------------
+ * --footer contact
+ * ------------------------------------*/
+
+.footer__contact{
+    padding-top: 40px;
+    font-size: 2rem;
+    line-height: 1.8;
+
+    p ~ p{
+        margin-top: 1em;
+    }
+}
+.contact__textarea{
+    margin-top: 0.2em;
+    max-width: 520px;
+}
+
+.wpcf7-form-control-wrap.sender_name,
+.wpcf7-form-control-wrap.sender_email{
+    display: inline-block;
+    width: 340px;
+
+    input{
+        max-width: 100%;
+    }
+}
+
+div.wpcf7-mail-sent-ok{
+    border: 0;
+    color: $orange;
+    margin: 1em 0 0 0;
+    padding: 0;
+}
+

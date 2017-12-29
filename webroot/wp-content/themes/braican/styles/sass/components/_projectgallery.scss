@@ -8,13 +8,17 @@ $hoverDuration: .2s;
     margin-bottom: 60px;
 }
 .projectgallery__thumb{
-    flex: 1 0 33.333333333%;
-    min-width: 360px;
     overflow: hidden;
+    width: 100%;
+
+    @include gt-mobile{
+        flex: 1 0 33.333333333%;
+        min-width: 340px;
+    }
 
     @include gt-desktop{
         max-width: 50%;
-    }
+    }    
 
     img{
         position: absolute;

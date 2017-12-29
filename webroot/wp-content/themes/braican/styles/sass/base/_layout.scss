@@ -6,6 +6,7 @@
  * ============================================================== */
 
 $padding: 20px;
+$contentContainer: 680px;
 
 .l-container{
     margin: 0 auto;
@@ -46,14 +47,32 @@ $padding: 20px;
  * --content
  * ------------------------------------*/
 
-.site-main{
-    padding: 60px $padding;
-    max-width: 680px;
+.site{
+    padding-top: 20vh;
+
+    .home &{
+        padding-top: 0;
+    }
 }
 
+.site-main{
+    padding: 0 $padding 60px;
+}
 
-.entry-content{
+.article__intro{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.article__introtext{
+    font-size: 8vw;
+    line-height: 1.2;
+}
+
+.article__content{
     font-size: 2rem;
     -webkit-font-smoothing: antialiased;
+    max-width: $contentContainer;
 }
+
 

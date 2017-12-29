@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('article__content'); ?>>
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :
@@ -31,6 +31,14 @@
 	</div>
 
 	<footer class="entry-footer">
+
+		<?php if ($projectLink = get_field('braican_project_link')) : ?>
+			<?php if ($projectLink['url']) : ?>
+				<?php $linkText = $projectLink['title'] ? $projectLink['title'] : 'Learn more'; ?>
+				<?php echo "<a href=\"{$projectLink['url']}\" target=\"_blank\" class=\"a-cta\">$linkText</a>"; ?>
+			<?php endif; ?>
+		<?php endif; ?>
+
 		<?php braican_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

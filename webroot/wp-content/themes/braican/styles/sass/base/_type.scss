@@ -66,16 +66,26 @@ p + p{
 }
 a {
     color: $link-color;
-
 }
 
-.entry-content a{
+button,
+input[type="submit"]{
+    border: 0;
+    background-color: transparent;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+.a-cta,
+.article__content a{
     position: relative;
     display: inline-block;
     overflow: hidden;
     text-decoration: none;
     transition: all .2s;
     vertical-align: bottom;
+    padding-left: 2px;
+    padding-right: 2px;
     &:after{
         content:"";
         position: absolute;
@@ -97,22 +107,38 @@ a {
     }
 }
 
-/* --------------------------------------------
- * --forms
- * -------------------------------------------- */
+/* ------------------------------------
+ * --cta
+ * ------------------------------------*/
 
-button,
-input,
-select,
-textarea {
-    font-size: 100%; /* Corrects font size not being inherited in all browsers */
-    margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
-    vertical-align: baseline; /* Improves appearance and consistency in all browsers */
+.a-btn,
+input.a-btn{
+    background-color: $orange;
+    padding: 10px 1.25em;
+    color: $white;
+    text-decoration: none;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    position: relative;
+    transition: all .2s;
+    overflow: hidden;
+    z-index: 3;
+
+    &:after{
+        content:"";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        transform: translateY(100%);
+        transition: all .2s;
+        background-color: $link-color;
+        z-index: -1;
+    }
+    &:hover:after{
+        transform: translateY(0);
+    }
 }
-
-
-
-/* ------------------------------------------
- * --icons
- * ------------------------------------------ */
 

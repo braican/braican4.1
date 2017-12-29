@@ -16,13 +16,19 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-			<?php
-			while ( have_posts() ) : the_post();
+			<article id="post-8" class="post-8 page type-page status-publish hentry">
+				<?php
+					sk_the_field('braican_intro_copy', array(
+						'before' => '<div class="article__intro"><p class="article__introtext">',
+						'after'  => '</p></div>',
+					));
 
-				get_template_part( 'template-parts/content', 'page' );
-
-			endwhile; // End of the loop.
-			?>
+					sk_the_field('braican_main_copy', array(
+						'before' => '<div class="article__content">',
+						'after'  => '</div>',
+					));
+				?>
+			</article>
 
 		</main><!-- #main -->
 
@@ -53,13 +59,22 @@ get_header(); ?>
 						</a>
 					<?php endif; ?>
 				<?php endwhile; ?>
-				<a href="#" class="projectgallery__thumb projectgallery__thumb--promo">
+				<a href="#colophon" class="projectgallery__thumb projectgallery__thumb--promo">
 					<div class="projectgallery__wrapper">
 						<p class="projectgallery__promo">Let's get going on your project</p>
 					</div>
 				</a>
 			</section>
 		<?php endif; ?>
+		<?php wp_reset_postdata(); ?>
+		
+		<?php
+			sk_the_field('braican_lifestyle_image', array(
+				'before' => '<section class="lifestyleshot">',
+				'after'  => '</section>',
+				'filter' => 'sk_image_markup',
+			));
+		?>
 	</div><!-- #primary -->
 
 <?php
