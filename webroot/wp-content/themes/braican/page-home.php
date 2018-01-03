@@ -24,7 +24,7 @@ get_header(); ?>
 					));
 
 					sk_the_field('braican_main_copy', array(
-						'before' => '<div class="article__content">',
+						'before' => '<div class="article__content content__main l-container">',
 						'after'  => '</div>',
 					));
 				?>

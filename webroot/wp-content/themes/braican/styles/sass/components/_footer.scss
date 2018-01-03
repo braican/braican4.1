@@ -1,6 +1,5 @@
 .site-footer{
-    padding: 60px $padding;
-    max-width: $contentContainer;
+    padding-bottom: 120px;
 }
 
 .site-info{
@@ -14,7 +13,6 @@
 
 .footer__contact{
     padding-top: 40px;
-    font-size: 2rem;
     line-height: 1.8;
 
     p ~ p{
@@ -22,17 +20,17 @@
     }
 }
 .contact__textarea{
-    margin-top: 0.2em;
     max-width: 520px;
 }
 
 .wpcf7-form-control-wrap.sender_name,
 .wpcf7-form-control-wrap.sender_email{
     display: inline-block;
-    width: 340px;
+    width: 280px;
 
     input{
         max-width: 100%;
+        font-size: 0.8em;
     }
 }
 

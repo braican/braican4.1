@@ -11,11 +11,25 @@ $contentContainer: 680px;
 .l-container{
     margin: 0 auto;
     width: 100%;
-    max-width: 1000px;
+    max-width: $contentContainer;
     padding-left: 20px;
     padding-right: 20px;
+
+    @include gt-tablet{
+        padding-left: 40px;
+        padding-right: 40px;
+    }
 }
 
+.l-pad{
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @include gt-tablet{
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
 
 
 /**
@@ -48,31 +62,30 @@ $contentContainer: 680px;
  * ------------------------------------*/
 
 .site{
-    padding-top: 20vh;
+    padding-top: 15vh;
 
     .home &{
         padding-top: 0;
     }
 }
 
-.site-main{
-    padding: 0 $padding 60px;
-}
-
 .article__intro{
     height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 .article__introtext{
     font-size: 8vw;
     line-height: 1.2;
 }
 
-.article__content{
-    font-size: 2rem;
+.content__main{
+    font-size: 1.4rem;
     -webkit-font-smoothing: antialiased;
-    max-width: $contentContainer;
-}
 
+    @include gt-desktop{
+        font-size: 2rem;
+    }
+}
 
