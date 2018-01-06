@@ -36,6 +36,12 @@ $bold: 700;
  * --base
  * ------------------------------------------ */
 
+html{
+    font-size: $font-size;
+    @include lt-mobile{
+        font-size: $font-size - 2;
+    }
+}
 body,
 button,
 input,
@@ -113,18 +119,20 @@ input[type="submit"]{
 
 .a-btn,
 input.a-btn{
+    display: inline-block;
     background-color: $orange;
     padding: .5em 1.5em;
     color: $white;
     text-decoration: none;
-    font-size: 0.75em;
+    font-size: 0.65em;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     position: relative;
     transition: all .2s;
     overflow: hidden;
     z-index: 3;
-    border-radius: 2em;
+    transition: padding-left .2s;
 
     &:after{
         content:"";
@@ -133,13 +141,16 @@ input.a-btn{
         top: 0;
         width: 100%;
         height: 100%;
-        transform: translateY(100%);
+        transform: translateX(-100%);
         transition: all .2s;
         background-color: $link-color;
         z-index: -1;
     }
-    &:hover:after{
-        transform: translateY(0);
+    &:hover{
+        padding-left: 1.75em;
+        &:after{
+            transform: translateX(0);
+        }
     }
 }
 

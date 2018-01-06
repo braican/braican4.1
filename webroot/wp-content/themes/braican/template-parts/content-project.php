@@ -7,9 +7,12 @@
  * @package braican
  */
 
+$assets = have_rows('braican_project_assets');
+
+$additionalPostClasses = $assets ? '' : 'l-container';
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('article__content'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class($additionalPostClasses); ?>>
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :
@@ -28,7 +31,7 @@
 
 	<div class="project__wrapper">
 
-		<div class="project__main content__main">
+		<div class="content__main<?php echo $assets ? ' project__main' : ''; ?>">
 
 			<div class="entry-content">
 				<?php the_content(); ?>
@@ -39,7 +42,7 @@
 				<?php if ($projectLink = get_field('braican_project_link')) : ?>
 					<?php if ($projectLink['url']) : ?>
 						<?php $linkText = $projectLink['title'] ? $projectLink['title'] : 'Learn more'; ?>
-						<?php echo "<a href=\"{$projectLink['url']}\" target=\"_blank\" class=\"a-cta\">$linkText</a>"; ?>
+						<?php echo "<a href=\"{$projectLink['url']}\" target=\"_blank\" class=\"a-btn\">$linkText</a>"; ?>
 					<?php endif; ?>
 				<?php endif; ?>
 
@@ -47,7 +50,7 @@
 			</footer><!-- .entry-footer -->
 		</div>
 
-		<?php if(have_rows('braican_project_assets')) : ?>
+		<?php if($assets) : ?>
 			<aside class="project__media">
 				<ul>
 					<?php while (have_rows('braican_project_assets')) : the_row(); ?>

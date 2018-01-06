@@ -5,6 +5,7 @@
 .entry-title{
     font-size: 4rem;
     font-weight: $bold;
+    line-height: 1.2;
 }
 
 .entry-footer{
@@ -26,12 +27,17 @@
     }
 }
 .project__media{
-    margin-top: 80px;
+    margin-top: 60px;
 
     @include gt-tablet{
         flex: 1;
         padding-left: 40px;
         margin-top: 0;
+    }
+
+    @include lt-mobile{
+        margin-left: -15px;
+        margin-right: -15px;
     }
 
     img{

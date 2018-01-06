@@ -28,6 +28,10 @@
     display: inline-block;
     width: 280px;
 
+    @include lt-mobile{
+        width: 240px;
+    }
+
     input{
         max-width: 100%;
         font-size: 0.8em;

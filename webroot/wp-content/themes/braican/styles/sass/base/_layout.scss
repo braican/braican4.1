@@ -70,11 +70,17 @@ $contentContainer: 680px;
 }
 
 .article__intro{
-    height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
     line-height: 1;
+    padding-top: 180px;
+    padding-bottom: 180px;
+
+    @include gt-mobile{
+        height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 .article__introtext{
     font-size: 8vw;
