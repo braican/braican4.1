@@ -672,11 +672,23 @@ textarea {
   .wpcf7-form-control-wrap.sender_email input {
     max-width: 100%;
     font-size: 0.8em; }
+  .wpcf7-form-control-wrap.sender_name .wpcf7-not-valid,
+  .wpcf7-form-control-wrap.sender_email .wpcf7-not-valid {
+    border: 1px solid #c00; }
 
-div.wpcf7-mail-sent-ok {
+div.wpcf7-mail-sent-ok,
+div.wpcf7-validation-errors {
   border: 0;
-  color: #c60;
   margin: 1em 0 0 0;
   padding: 0; }
+
+div.wpcf7-mail-sent-ok {
+  color: #c60; }
+
+div.wpcf7-validation-errors {
+  color: #c00; }
+
+span.wpcf7-not-valid-tip {
+  display: none; }
 
 /*# sourceMappingURL=style.css.map */

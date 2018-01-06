@@ -36,12 +36,26 @@
         max-width: 100%;
         font-size: 0.8em;
     }
+
+    .wpcf7-not-valid{
+        border: 1px solid $red;
+    }
 }
 
-div.wpcf7-mail-sent-ok{
+div.wpcf7-mail-sent-ok,
+div.wpcf7-validation-errors{
     border: 0;
-    color: $orange;
     margin: 1em 0 0 0;
     padding: 0;
+}
+div.wpcf7-mail-sent-ok{
+    color: $orange;
+}
+div.wpcf7-validation-errors{
+    color: $red;
+}
+
+span.wpcf7-not-valid-tip{
+    display: none;
 }
 

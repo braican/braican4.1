@@ -1,16 +1,15 @@
 //
 // Imports
-//  - to enable a module from the arsenal, uncomment it below.
 //
 
-// import Modal from '../arsenal/modal';
-// import Slider from '../arsenal/slider';
+import scrollto from '../modules/scrollto';
+
 
 //
 // namespace - SK
 //
 
-(function (SK, $) {
+(function (SK) {
     /* --------------------------------------------
      * --public
      * -------------------------------------------- */
@@ -18,13 +17,14 @@
     //
     // init the things
     //
-    SK.init = function () {};
+    const init = function () {
+        scrollto();
+    };
 
 
-    // -------------------------------
-    // DOM ready
+    // ------------------------------------
+    // DOM should be ready, since js is
+    //  getting loaded at the bottom
     //
-    $(document).ready(() => {
-        SK.init();
-    });
-}(window.SK = window.SK || {}, jQuery));
+    init();
+}(window.SK = window.SK || {}));
