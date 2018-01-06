@@ -10,7 +10,7 @@ Each iteration of braican.com was pretty much a ground-up build. In other words,
 ## version 5
 `released 01/06/2018`
 
-We're still in development here. Started Friday, December 8, 2017. Not entirely sure that there's a solid plan, but here we go.
+Started Friday, December 8, 2017. Simple site with goofy intro and a list of projects.
 
 ## version 4
 `released 03/19/2014`
