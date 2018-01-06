@@ -8,7 +8,7 @@ This is the public repository of [braican.com](http://braican.com), [Nick Braica
 Each iteration of braican.com was pretty much a ground-up build. In other words, there was no code sharing between one version and another. Despite this, I've still decided to keep all development (i.e. versions 2, 3, 4, future development, etc.) in the same repo. If there's a good reason for not doing this, I hope someone will tell me. Otherwise, I'm gonna keep doing what I'm doing because I like the idea of having everything in one place.
 
 ## version 5
-`released XX/XX/XXXX`
+`released 01/06/2018`
 
 We're still in development here. Started Friday, December 8, 2017. Not entirely sure that there's a solid plan, but here we go.
 
