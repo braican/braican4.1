@@ -33,6 +33,7 @@ const config = {};
 
 config.sass = {
     errLogToConsole : true,
+    outputStyle     : 'compressed',
 };
 
 
@@ -109,7 +110,7 @@ function compileJs(watchIt) {
 
 gulp.task('build', 'Build the Javascript and compile down to ES5', () => compileJs());
 
-gulp.task('minify', 'Minify the compiled Javascript', ['build'], () => gulp.src(files.js.build)
+gulp.task('minify', 'Minify the compiled Javascript', ['build'], () => gulp.src(`${themeDir}/js/build/production.js`)
     .pipe(uglify())
     .pipe(rename({ extname : '.min.js' }))
     .pipe(gulp.dest(files.js.build)));

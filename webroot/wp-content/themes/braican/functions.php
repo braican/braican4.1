@@ -109,7 +109,7 @@ function braican_scripts() {
 	wp_deregister_script('jquery');
 
 	// and also load up our styles and scripts
-	wp_enqueue_script( 'braican_script_main', get_template_directory_uri() . '/js/build/production.js', array(), false, true );
+	wp_enqueue_script( 'braican_script_main', get_template_directory_uri() . '/js/build/production.min.js', array(), false, true );
     wp_enqueue_style( 'braican__style', get_template_directory_uri() . '/styles/build/style.css' );
 }
 add_action( 'wp_enqueue_scripts', 'braican_scripts' );
