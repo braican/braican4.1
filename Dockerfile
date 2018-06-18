@@ -33,6 +33,9 @@ RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.ph
 # Download WordPress
 RUN wp core download
 
+# Copy the rest of this theme into place
+COPY . /var/www/html
+
 # Copy custom configuration files into location expected by nginx-php-fpm.
 # See https://github.com/richarvey/nginx-php-fpm/blob/master/docs/nginx_configs.md
 COPY conf /var/www/html/conf
@@ -41,5 +44,3 @@ COPY conf /var/www/html/conf
 # See https://github.com/richarvey/nginx-php-fpm/blob/master/docs/scripting_templating.md
 COPY scripts /var/www/html/scripts
 
-# Copy the rest of this theme into place
-COPY . /var/www/html
