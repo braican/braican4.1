@@ -5,6 +5,7 @@ error_log
 
 # config files
 wp-config.php
+.env
 
 # the uploads directory
 webroot/wp-content/uploads/*
