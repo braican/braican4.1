@@ -1,20 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html <?php language_attributes(); ?>>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <!-- <meta content="0; URL='http://braican.com''" http-equiv"refresh"> -->
-</head>
-<body>
-    
-<h1>TEST</h1>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
 
-<!-- just in case the meta tag is not read properly, here is plan B: a JS redirect -->
-<!-- <script type="text/javascript"> -->
-  <!-- window.location = 'http://braican.com'; -->
-<!-- </script> -->
+	<?php wp_head(); ?>
+</head>
+<body <?php body_class(); ?>>
+
+
+<main>
+	<?php
+	if ( have_posts() ) :
+		/* Start the Loop */
+		while ( have_posts() ) :
+			the_post(); ?>
+
+		<article <?php post_class(); ?>>
+			<header>
+				<h1><?php the_title(); ?></h1>
+			</header>
+			<div>
+				<?php the_content(); ?>
+			</div>
+		</article>
+
+	<?php
+		endwhile;
+	else :
+	?>
+	<h2>No posts found.</h2>
+	<?php
+	endif;
+	?>
+</main>
+
+<?php wp_footer(); ?>
+
 </body>
 </html>
-

@@ -3,8 +3,6 @@ services:
     wordpress:
         build:
             context: .
-            args:
-                - braican-api
         volumes:
             - ./webroot:/var/www/html
         depends_on:
