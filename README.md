@@ -27,7 +27,7 @@ Created using HTML/CSS/JavaScript, with WordPress being the back end of the blog
 
 Way back machine.
 
-![v2](master/assets/braican.com-v2.jpg?raw=true)
+![v2](assets/braican.com-v2.jpg?raw=true)
 
 ## Version 1
 
