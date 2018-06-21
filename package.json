@@ -14,7 +14,7 @@
     "gulp-help-four": "^0.2.3",
     "gulp-inject-string": "^1.1.0",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
+    "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.1",
     "gulp-uglify": "^3.0.0",
     "vinyl-buffer": "^1.0.0",
