@@ -6,7 +6,7 @@
  * ============================================================== */
 
 $padding: 20px;
-$contentContainer: 680px;
+$contentContainer: 740px;
 
 .l-container{
     margin: 0 auto;
@@ -77,6 +77,7 @@ $contentContainer: 680px;
 
     @include gt-mobile{
         height: 90vh;
+        height: calc(100vh - 6rem);
         display: flex;
         align-items: center;
         justify-content: center;
