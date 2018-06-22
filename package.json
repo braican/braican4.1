@@ -1,0 +1,26 @@
+{
+  "name": "braican",
+  "version": "5.1.0",
+  "description": "Brand site for Nick Braica",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/braican/braican.com.git"
+  },
+  "author": "Nick Braica",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/braican/braican.com/issues"
+  },
+  "homepage": "https://github.com/braican/braican.com#readme",
+  "devDependencies": {
+    "browser-sync": "^2.24.4",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-clean-css": "^3.9.4",
+    "gulp-sass": "^4.0.1"
+  }
+}
