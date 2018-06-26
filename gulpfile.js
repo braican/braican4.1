@@ -12,7 +12,7 @@ const cleanCss = require('gulp-clean-css');
 // const hugo = require('./gulp/hugo');
 // const server = require('./gulp/server');
 
-const scssPath = 'src/scss/**/*.scss';
+const scssPath = 'src/static/scss/**/*.scss';
 const destPath = 'site/static/';
 
 gulp.task('sass', () =>

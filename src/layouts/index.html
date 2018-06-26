@@ -1,2 +1,16 @@
-<h1>TEST</h1>
-{{.Content}}
+
+{{ define "main" -}}
+
+{{ $title := 'Nick Braica' }}
+
+{{ if (fileExists "/data/home.json") -}}
+
+    {{ $home := getJSON "/data/home.json" }}
+    {{ $intro := $home.braican_intro_copy }}
+
+    {{ $intro }}
+
+{{- end }}
+
+{{- end }}
+
