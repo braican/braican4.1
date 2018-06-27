@@ -1,6 +1,6 @@
 ---
 title: "%post_title%"
-description: "%custom_fields.braican_project_excerpt%"
+description: "%project_excerpt%"
 type: page
 layout: project
 ---
