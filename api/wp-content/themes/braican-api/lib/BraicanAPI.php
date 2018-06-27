@@ -14,12 +14,12 @@ class BraicanAPI {
     public function register_route() {
         // project routes
 
-        register_rest_route( $this->namespace, '/projects', array(
+        register_rest_route( $this->namespace, '/projects.json', array(
             'methods' => 'GET',
             'callback' => array($this, 'get_projects'),
         ));
 
-        register_rest_route( $this->namespace, '/project/(?P<id>\d+)', array(
+        register_rest_route( $this->namespace, '/project/(?P<id>\d+).json', array(
             'methods' => 'GET',
             'callback' => array($this, 'get_project_by_id'),
             'args' => array(
@@ -34,7 +34,7 @@ class BraicanAPI {
 
         // other content
         
-        register_rest_route( $this->namespace, '/home', array(
+        register_rest_route( $this->namespace, '/home.json', array(
             'methods' => 'GET',
             'callback' => array($this, 'get_home'),
         ));
@@ -70,7 +70,7 @@ class BraicanAPI {
             return new WP_Error( 'no_project', 'No project with that ID', array( 'status' => 404 ) );
         }
 
-        return array_map(array('BraicanUtil', 'map_acf_fields'), $project);
+        return BraicanUtil::map_acf_fields($project);
     }
 
 
