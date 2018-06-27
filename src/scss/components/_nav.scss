@@ -1,0 +1,17 @@
+
+/* --------------------------------------------
+ * --main nav
+ * -------------------------------------------- */
+.main-navigation ul li {
+    display: inline-block;
+    position: relative;
+
+    a{
+        display: block;
+        text-decoration: none;
+    }
+}
+/* Small menu */
+.menu-toggle {
+    display: none;
+}

@@ -1,0 +1,121 @@
+/* ==============================================================
+ *
+ * Typography
+ *
+ * ============================================================== */
+
+
+/* ------------------------------------------
+ * --base
+ * ------------------------------------------ */
+
+html{
+    font-size: $font-size;
+    @include lt-mobile{
+        font-size: $font-size - 2;
+    }
+}
+body,
+button,
+input,
+select,
+textarea {
+    @include type-main;
+    color: $c-text-color;
+    font-size: $font-size;
+    line-height: $line-height;
+}
+
+
+
+/* --------------------------------------------
+ * --basic
+ * -------------------------------------------- */
+
+p + p{
+    margin-top: 1em;
+}
+a {
+    color: $c-link-color;
+}
+
+button,
+input[type="submit"]{
+    border: 0;
+    background-color: transparent;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+.a-cta,
+.article__content a{
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    text-decoration: none;
+    transition: all .2s;
+    vertical-align: bottom;
+    padding-left: 2px;
+    padding-right: 2px;
+    &:after{
+        content:"";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        transform: translateY(95%);
+        transition: all .2s;
+        background-color: $c-link-color;
+        z-index: -1;
+    }
+    &:hover{
+        color: $c-white;
+
+        &:after{
+            transform: translateY(0);
+        }
+    }
+}
+
+/* ------------------------------------
+ * --cta
+ * ------------------------------------*/
+
+.a-btn,
+input.a-btn{
+    display: inline-block;
+    background-color: $c-orange;
+    padding: .5em 1.5em;
+    color: $c-white;
+    text-decoration: none;
+    font-size: 0.65em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    position: relative;
+    transition: all .2s;
+    overflow: hidden;
+    z-index: 3;
+    transition: padding-left .2s;
+
+    &:after{
+        content:"";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        transform: translateX(-100%);
+        transition: all .2s;
+        background-color: $c-link-color;
+        z-index: -1;
+    }
+    &:hover{
+        padding-left: 1.75em;
+        &:after{
+            transform: translateX(0);
+        }
+    }
+}
+

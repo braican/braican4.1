@@ -5,6 +5,7 @@ const browserSync = require('browser-sync').create();
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCss = require('gulp-clean-css');
+const sourcemaps = require('gulp-sourcemaps');
 
 // const scripts = require('./gulp/scripts');
 // const redirects = require('./gulp/redirects');
@@ -12,8 +13,8 @@ const cleanCss = require('gulp-clean-css');
 // const hugo = require('./gulp/hugo');
 // const server = require('./gulp/server');
 
-const scssPath = 'src/static/scss/**/*.scss';
-const destPath = 'site/static/';
+const scssPath = 'src/scss/**/*.scss';
+const destPath = 'frontend/static/';
 
 gulp.task('sass', () =>
     gulp
@@ -39,7 +40,7 @@ gulp.task('sass', () =>
                 compatibility: 'ie8',
             })
         )
-        .pipe($.sourcemaps.write())
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(destPath))
 );
 
@@ -58,7 +59,7 @@ gulp.task('sass', () =>
 //   runSequence(tasks, 'browser-sync', 'hugo', 'redirects');
 // });
 
-gulp.task('default', (done) => {
+gulp.task('default', gulp.series('sass'), (done) => {
     console.log('test');
     done();
 });

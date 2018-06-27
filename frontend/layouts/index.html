@@ -1,8 +1,6 @@
 
 {{ define "main" -}}
 
-{{ $title := 'Nick Braica' }}
-
 {{ if (fileExists "/data/home.json") -}}
 
     {{ $home := getJSON "/data/home.json" }}
