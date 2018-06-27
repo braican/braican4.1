@@ -2,20 +2,59 @@ const braicanAPI = 'https://api.braican.com/wp-json/braican/v1/';
 
 const gulp = require('gulp');
 const browserSync = require('browser-sync').create();
+
+// sass
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCss = require('gulp-clean-css');
 const sourcemaps = require('gulp-sourcemaps');
 
-// const scripts = require('./gulp/scripts');
-// const redirects = require('./gulp/redirects');
-// const prismic = require('./gulp/prismic/');
-// const hugo = require('./gulp/hugo');
-// const server = require('./gulp/server');
+// hugo
+const { spawn } = require('child_process');
+const hugo = require('hugo-bin');
 
+/**
+ * Config
+ */
 const scssPath = 'src/scss/**/*.scss';
 const destPath = 'frontend/static/';
 
+const hugoServerArgs = ['-F', '--cleanDestinationDir', '-s', 'frontend'];
+
+/**
+ * Hugo
+ */
+gulp.task('hugo', (cb) =>
+    spawn(hugo, hugoServerArgs, { stdio: 'inherit' }).on('close', (code) => {
+        if (code === 0) {
+            browserSync.reload();
+            cb();
+        } else {
+            browserSync.notify('Hugo build failed');
+            cb('Hugo build failed');
+        }
+    })
+);
+
+/**
+ * Browser-sync
+ */
+gulp.task('browser-sync', () => {
+    browserSync.init({
+        notify: false,
+        reloadDelay: 500,
+        open: false,
+        ghostMode: false,
+        server: { baseDir: './dist' },
+    });
+
+    gulp.watch('frontend/**/*', gulp.series('hugo'));
+    gulp.watch('src/scss/**/*.scss', gulp.series('sass'));
+});
+
+/**
+ * Compile sass
+ */
 gulp.task('sass', () =>
     gulp
         .src(scssPath)
@@ -44,22 +83,4 @@ gulp.task('sass', () =>
         .pipe(gulp.dest(destPath))
 );
 
-// // Registering Tasks
-// [sass, scripts, redirects, prismic, modernizr, hugo, server].forEach(task => {
-//   task({ gulp, argv, browserSync });
-// });
-
-// const tasks = ['modernizr', 'sass', 'scripts', 'prismic'];
-
-// gulp.task('build', () => {
-//   runSequence(tasks, 'hugo', 'redirects');
-// });
-
-// gulp.task('default', () => {
-//   runSequence(tasks, 'browser-sync', 'hugo', 'redirects');
-// });
-
-gulp.task('default', gulp.series('sass'), (done) => {
-    console.log('test');
-    done();
-});
+gulp.task('default', gulp.series('sass', 'hugo', 'browser-sync'), (done) => done());
