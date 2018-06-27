@@ -15,6 +15,8 @@ const hugo = require('hugo-bin');
 
 // download
 const download = require('gulp-download');
+const fs = require('fs');
+const rename = require('gulp-rename');
 
 /**
  * Config
@@ -60,10 +62,28 @@ gulp.task('browser-sync', () => {
 /**
  * Retrieve API
  */
-gulp.task('braican-api', (done) => {
+
+function getMainData() {
     const home = `${braicanAPI}/home.json`;
-    const projects = `${braicanAPI}/projects.json`;
-    download([home, projects]).pipe(gulp.dest(dataPath));
+    const projectsData = `${braicanAPI}/projects.json`;
+
+    return new Promise((resolve, reject) => {
+        download([home, projectsData])
+            .pipe(gulp.dest(dataPath))
+            .on('end', resolve)
+            .on('error', reject);
+    });
+}
+gulp.task('braican-api', (done) => {
+    getMainData().then((resp) => {
+        const json = JSON.parse(fs.readFileSync('./frontend/data/projects.json'));
+        json.forEach((project) => {
+            download(`${braicanAPI}/project/${project.ID}.json`)
+                .pipe(rename(`project-${project.post_name}.json`))
+                .pipe(gulp.dest(dataPath));
+        });
+    });
+
     done();
 });
 
