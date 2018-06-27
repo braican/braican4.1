@@ -1,4 +1,4 @@
-const braicanAPI = 'https://api.braican.com/wp-json/braican/v1/';
+const braicanAPI = 'https://api.braican.com/wp-json/braican/v1';
 
 const gulp = require('gulp');
 const browserSync = require('browser-sync').create();
@@ -13,11 +13,16 @@ const sourcemaps = require('gulp-sourcemaps');
 const { spawn } = require('child_process');
 const hugo = require('hugo-bin');
 
+// download
+const download = require('gulp-download');
+
 /**
  * Config
  */
 const scssPath = 'src/scss/**/*.scss';
 const destPath = 'frontend/static/';
+
+const dataPath = 'frontend/data';
 
 const hugoServerArgs = ['-F', '--cleanDestinationDir', '-s', 'frontend'];
 
@@ -53,6 +58,16 @@ gulp.task('browser-sync', () => {
 });
 
 /**
+ * Retrieve API
+ */
+gulp.task('braican-api', (done) => {
+    const home = `${braicanAPI}/home.json`;
+    const projects = `${braicanAPI}/projects.json`;
+    download([home, projects]).pipe(gulp.dest(dataPath));
+    done();
+});
+
+/**
  * Compile sass
  */
 gulp.task('sass', () =>
@@ -83,4 +98,5 @@ gulp.task('sass', () =>
         .pipe(gulp.dest(destPath))
 );
 
-gulp.task('default', gulp.series('sass', 'hugo', 'browser-sync'), (done) => done());
+gulp.task('build', gulp.series('sass', 'braican-api', 'hugo'));
+gulp.task('default', gulp.series('sass', 'braican-api', 'hugo', 'browser-sync'), (done) => done());
