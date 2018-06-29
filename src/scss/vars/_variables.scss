@@ -6,9 +6,10 @@
 
 $c-white:            #fff;
 $c-text-color:       #404040;
-$c-link-color:       #666;
+$c-link-color:       rgba($c-text-color, .8);
 $c-form-placeholder: #aaa;
 $c-orange:           #c60;
+$c-dull-orange:      rgba($c-orange, .4);
 $c-red:              #c00;
 
 
@@ -18,8 +19,9 @@ $c-red:              #c00;
  *
  * ============================================================== */
 
-$font-size: 18px;
+$font-size: 16px;
 $line-height: 1.4;
+$line-height-s: 1.1;
 $bold: 700;
 
 $t-sans-serif: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
@@ -47,8 +49,9 @@ $container: 1280px;
 $container_small: 680px;
 $gutter: 24px;
 
-$spacer: 120px;
-$spacer-s: 60px;
+$spacing: 120px;
+$spacing-s: 60px;
+
 
 /* ==============================================================
  *
@@ -56,4 +59,4 @@ $spacer-s: 60px;
  *
  * ============================================================== */
 
-$ux_timing: .2s;
+$transition: .2s;

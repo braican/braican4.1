@@ -7,8 +7,8 @@
 
 html{
     font-size: $font-size;
-    @include lt-mobile{
-        font-size: $font-size - 2;
+    @include gt($mobile){
+        font-size: $font-size + 2;
     }
 }
 body,
@@ -43,34 +43,14 @@ input[type="submit"]{
     cursor: pointer;
 }
 
-.a-cta,
-.article__content a{
-    position: relative;
-    display: inline-block;
-    overflow: hidden;
+.intro__main a{
+    box-shadow: inset 0 -2px 0 $c-dull-orange;
     text-decoration: none;
-    transition: all .2s;
-    vertical-align: bottom;
-    padding-left: 2px;
-    padding-right: 2px;
-    &:after{
-        content:"";
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        transform: translateY(95%);
-        transition: all .2s;
-        background-color: $c-link-color;
-        z-index: -1;
-    }
+    transition: all $transition;
+
     &:hover{
         color: $c-white;
-
-        &:after{
-            transform: translateY(0);
-        }
+        box-shadow: inset 0 -1.2em $c-orange;
     }
 }
 
@@ -78,22 +58,20 @@ input[type="submit"]{
  * --cta
  * ------------------------------------*/
 
-.a-btn,
-input.a-btn{
+.a-btn {
     display: inline-block;
     background-color: $c-orange;
     padding: .5em 1.5em;
     color: $c-white;
     text-decoration: none;
-    font-size: 0.65em;
-    font-weight: 700;
+    font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     position: relative;
     transition: all .2s;
     overflow: hidden;
     z-index: 3;
-    transition: padding-left .2s;
+    transition: padding-left $transition;
 
     &:after{
         content:"";

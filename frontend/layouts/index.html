@@ -42,12 +42,15 @@
 
     <section id="contact" class="l-container l-container--small l-block">
         <p>Ready to start your next great project? Drop me a line below and I'll get in touch as soon as I can.</p>
-        <form>
+        <form class="contactform">
+            <p class="contact__intro">Hey Nick,</p>
             <p>
-                Hey Nick,<br>
-                My name is <input type="text" placeholder="your name"> and you can get in touch with me at <input type="email" placeholder="your email">. I was hoping you help me out with <textarea placeholder="your great idea"></textarea>
+                <span>My name is <input type="text" placeholder="your name" name="name" class="contact__name"></span>
+                <span>and you can get in touch with me at <input type="email" name="email" class="contact__email" placeholder="your email">.&nbsp;&nbsp;</span>
+                <span>I was hoping you help me out with</span>
+                <textarea class="contact__message" name="message" placeholder="your great idea"></textarea>
             </p>
-            <button type="submi" class="a-btn">Submit</button>
+            <button type="submit" class="a-btn">Submit</button>
         </form>
     </section>
 

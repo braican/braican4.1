@@ -9,16 +9,12 @@
 }
 
 .project__title{
-    font-weight: $bold;
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+    
 }
 
 .project__promo{
     text-decoration: none;
     text-align: center;
-    font-weight: $bold;
-    transition: all $ux_timing;
 }
 .project__thumb--promo{
     position: relative;
@@ -36,7 +32,7 @@
         background-image: $icon_plus;
         transform: translateY(0);
         opacity: 0;
-        transition: all $ux_timing;
+        transition: all $transition;
     }
 
     &:hover{

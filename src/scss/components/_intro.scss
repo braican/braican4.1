@@ -1,0 +1,14 @@
+.intro__hey{
+    font-family: $t-serif;
+    font-size: 4rem;
+    line-height: $line-height-s;
+
+    @include gt($tablet){
+        position: relative;
+        left: -4rem;
+    }
+}
+
+.intro__main{
+    padding-top: 4rem;
+}

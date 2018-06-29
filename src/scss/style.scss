@@ -11,7 +11,6 @@
 @import 'vars/fonts';
 
 // base
-@import 'base/media-queries';
 @import 'base/base';
 @import 'base/layout';
 @import 'base/type';
@@ -20,9 +19,9 @@
 
 // components
 @import 'components/header';
+@import 'components/intro';
 @import 'components/projectgallery';
 @import 'components/lifestyle';
 @import 'components/contact';
-// @import 'components/singleproject';
 @import 'components/footer';
 

@@ -44,9 +44,6 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-body {
-	line-height: 1;
-}
 ol, ul {
 	list-style: none;
 }
@@ -103,7 +100,6 @@ object {
     color: #21759b;
     display: block;
     font-size: 14px;
-    font-weight: bold;
     height: auto;
     left: 5px;
     line-height: normal;
