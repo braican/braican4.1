@@ -9,19 +9,25 @@ const autoprefixer = require('gulp-autoprefixer');
 const cleanCss = require('gulp-clean-css');
 const sourcemaps = require('gulp-sourcemaps');
 
+// scripts
+const babelify = require('babelify');
+const watchify = require('watchify');
+const browserify = require('browserify');
+const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
+
 // hugo
 const { spawn } = require('child_process');
 const hugo = require('hugo-bin');
 
 // download
 const download = require('gulp-download');
-const fs = require('fs');
-const rename = require('gulp-rename');
 
 /**
  * Config
  */
 const scssPath = 'src/scss/**/*.scss';
+const jsPath = 'src/js/main.js';
 const destPath = 'frontend/static/';
 
 const dataPath = 'frontend/data';
@@ -111,6 +117,26 @@ gulp.task('sass', () =>
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(destPath))
 );
+
+/**
+ * Compile js scripts
+ */
+gulp.task('scripts', () => {
+    const bundler = watchify(
+        browserify(jsPath, { debug: true }).transform(babelify, {
+            presets: ['env'],
+            sourceMaps: true,
+        })
+    );
+    return bundler
+        .bundle()
+        .on('error', (err) => console.log(err))
+        .pipe(source(destPath))
+        .pipe(buffer())
+        .pipe(sourcemaps.init({ loadMaps: true }))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest(destPath));
+});
 
 gulp.task('build', gulp.series('sass', 'braican-api', 'hugo'));
 gulp.task('default', gulp.series('sass', 'braican-api', 'hugo', 'browser-sync'), (done) => done());
