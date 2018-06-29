@@ -5,10 +5,6 @@
  * ============================================================== */
 
 
-/* ------------------------------------------
- * --base
- * ------------------------------------------ */
-
 html{
     font-size: $font-size;
     @include lt-mobile{
@@ -20,9 +16,9 @@ button,
 input,
 select,
 textarea {
-    @include type-main;
+    font-family: $t-sans-serif;
     color: $c-text-color;
-    font-size: $font-size;
+    font-size: 1rem;
     line-height: $line-height;
 }
 

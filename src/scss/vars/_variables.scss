@@ -22,6 +22,9 @@ $font-size: 18px;
 $line-height: 1.4;
 $bold: 700;
 
+$t-sans-serif: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
+$t-serif: 'Vollkorn', 'Georgia', serif;
+
 
 /* ==============================================================
  *
@@ -41,7 +44,8 @@ $mobile: 580px;
  * ============================================================== */
 
 $padding: 20px;
-$contentContainer: 680px;
+$container: 680px;
+$gutter: 24px;
 
 
 /* ==============================================================

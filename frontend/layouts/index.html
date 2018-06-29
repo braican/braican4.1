@@ -7,17 +7,15 @@
     {{ $intro := $home.braican_intro_copy }}
     {{ $main := $home.braican_main_copy }}
 
-    <article>
+    <section class="intro">
         <div class="article__intro">
-            <p class="article__introtext">
-                {{ $intro }}
-            </p>
+            <h1 class="article__introtext">{{ $intro }}</h1>
         </div>
 
         <div class="article__content content__main l-container">
             {{ $main | safeHTML }}
         </div>
-    </article>
+    </section>
 
     <section class="projectgallery">
         {{ if (fileExists "/data/projects.json") }}

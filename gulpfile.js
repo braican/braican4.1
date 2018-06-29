@@ -55,14 +55,13 @@ gulp.task('browser-sync', () => {
         server: { baseDir: './dist' },
     });
 
-    gulp.watch('frontend/**/*', gulp.series('hugo'));
+    // gulp.watch('frontend/**/*', gulp.series('hugo'));
     gulp.watch('src/scss/**/*.scss', gulp.series('sass'));
 });
 
 /**
- * Retrieve API
+ * Retrieve data
  */
-
 function getMainData() {
     const home = `${braicanAPI}/home.json`;
     const projectsData = `${braicanAPI}/projects.json`;
@@ -87,6 +86,8 @@ gulp.task('sass', () =>
     gulp
         .src(scssPath)
 
+        .pipe(sourcemaps.init())
+
         .pipe(
             sass({
                 outputStyle: 'expanded',
@@ -107,7 +108,7 @@ gulp.task('sass', () =>
                 compatibility: 'ie8',
             })
         )
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(destPath))
 );
 
