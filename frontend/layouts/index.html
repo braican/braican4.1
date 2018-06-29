@@ -5,8 +5,49 @@
 
     {{ $home := getJSON "/data/home.json" }}
     {{ $intro := $home.braican_intro_copy }}
+    {{ $main := $home.braican_main_copy }}
+    
 
-    {{ $intro }}
+    <article>
+        <div class="article__intro">
+            <p class="article__introtext">
+                {{ $intro }}
+            </p>
+        </div>
+
+        <div class="article__content content__main l-container">
+            {{ $main | safeHTML }}
+        </div>
+    </article>
+
+    <section class="projectgallery">
+        {{ if (fileExists "/data/projects.json") }}
+            {{ $projects := getJSON "/data/projects.json" }}
+            {{ range $projects }}
+                <div class="projectgallery__thumb">
+                    <div class="projectgallery__wrapper">
+                        <div class="projectgallery__details">
+                            <div class="projectgallery__wrap">
+                                <h3 class="projectgallery__title">{{ .post_title }}</h3>
+                                <div class="projectgallery__excerpt">{{ .custom_fields.braican_project_excerpt }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{ end }}
+        {{- end }}
+
+        <a href="#colophon" class="projectgallery__thumb projectgallery__thumb--promo">
+            <div class="projectgallery__wrapper">
+                <p class="projectgallery__promo">Let's get going on your project</p>
+            </div>
+        </a>
+    </section>
+            
+
+    <section class="lifestyleshot">
+        <img src="/img/lifestyle-desk-1.jpg" alt="A desk and a guitar">
+    </section>
 
 {{- end }}
 

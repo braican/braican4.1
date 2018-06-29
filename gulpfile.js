@@ -75,16 +75,9 @@ function getMainData() {
     });
 }
 gulp.task('braican-api', (done) => {
-    getMainData().then((resp) => {
-        const json = JSON.parse(fs.readFileSync('./frontend/data/projects.json'));
-        json.forEach((project) => {
-            download(`${braicanAPI}/project/${project.ID}.json`)
-                .pipe(rename(`project-${project.post_name}.json`))
-                .pipe(gulp.dest(dataPath));
-        });
+    getMainData().then(() => {
+        done();
     });
-
-    done();
 });
 
 /**
