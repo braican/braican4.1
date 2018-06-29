@@ -11,7 +11,6 @@ const sourcemaps = require('gulp-sourcemaps');
 
 // scripts
 const babelify = require('babelify');
-const watchify = require('watchify');
 const browserify = require('browserify');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
@@ -26,9 +25,11 @@ const download = require('gulp-download');
 /**
  * Config
  */
-const scssPath = 'src/scss/**/*.scss';
-const jsPath = 'src/js/main.js';
-const destPath = 'frontend/static/';
+const scssSrc = 'src/scss/**/*.scss';
+const scssDest = 'frontend/static';
+
+const jsSrc = 'src/js/main.js';
+const jsDest = 'frontend/static';
 
 const dataPath = 'frontend/data';
 
@@ -63,6 +64,7 @@ gulp.task('browser-sync', () => {
 
     gulp.watch('frontend/**/*', gulp.series('hugo'));
     gulp.watch('src/scss/**/*.scss', gulp.series('sass'));
+    gulp.watch('src/js/**/*.js', gulp.series('scripts'));
 });
 
 /**
@@ -90,7 +92,7 @@ gulp.task('braican-api', (done) => {
  */
 gulp.task('sass', () =>
     gulp
-        .src(scssPath)
+        .src(scssSrc)
 
         .pipe(sourcemaps.init())
 
@@ -115,28 +117,32 @@ gulp.task('sass', () =>
             })
         )
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(destPath))
+        .pipe(gulp.dest(scssDest))
 );
 
 /**
  * Compile js scripts
  */
-gulp.task('scripts', () => {
-    const bundler = watchify(
-        browserify(jsPath, { debug: true }).transform(babelify, {
+gulp.task('scripts', (done) => {
+    browserify(jsSrc, { debug: true })
+        .transform(babelify, {
             presets: ['env'],
             sourceMaps: true,
         })
-    );
-    return bundler
         .bundle()
         .on('error', (err) => console.log(err))
-        .pipe(source(destPath))
+        .pipe(source('main.js'))
         .pipe(buffer())
         .pipe(sourcemaps.init({ loadMaps: true }))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(destPath));
+        .pipe(gulp.dest(jsDest));
+
+    done();
 });
 
-gulp.task('build', gulp.series('sass', 'braican-api', 'hugo'));
-gulp.task('default', gulp.series('sass', 'braican-api', 'hugo', 'browser-sync'), (done) => done());
+gulp.task('build', gulp.series('sass', 'scripts', 'braican-api', 'hugo'));
+gulp.task(
+    'default',
+    gulp.series('sass', 'scripts', 'braican-api', 'hugo', 'browser-sync'),
+    (done) => done()
+);
