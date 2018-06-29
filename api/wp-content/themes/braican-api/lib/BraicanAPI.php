@@ -9,6 +9,8 @@ class BraicanAPI {
     function __construct() {
 
         add_action('rest_api_init', array($this, 'register_route'));
+
+        new BraicanUtil();
     }
 
     public function register_route() {
@@ -55,7 +57,9 @@ class BraicanAPI {
             return new WP_Error( 'no_projects', 'No projects', array( 'status' => 404 ) );
         }
 
-        return array_map(array('BraicanUtil', 'map_acf_fields'), $projects);
+        return array_map(function($project) {
+            return apply_filters('braican_api_project', $project);
+        }, $projects);
     }
 
     /**
@@ -70,7 +74,7 @@ class BraicanAPI {
             return new WP_Error( 'no_project', 'No project with that ID', array( 'status' => 404 ) );
         }
 
-        return BraicanUtil::map_acf_fields($project);
+        return apply_filters('braican_api_project', $project);
     }
 
 
