@@ -7,17 +7,15 @@
     {{ $intro := $home.braican_intro_copy }}
     {{ $main := $home.braican_main_copy }}
 
-    <section class="intro">
-        <div class="article__intro">
-            <h1 class="article__introtext">{{ $intro }}</h1>
-        </div>
+    <section class="intro l-container l-container--small l-block">
+        <h1 class="intro__hey">{{ $intro }}</h1>
 
-        <div class="article__content content__main l-container">
+        <div class="intro__main">
             {{ $main | safeHTML }}
         </div>
     </section>
 
-    <section class="projectgallery">
+    <section class="projectgallery l-container l-block">
         {{ if (fileExists "/data/projects.json") }}
             {{ $projects := getJSON "/data/projects.json" }}
             {{ range $projects }}
@@ -37,14 +35,20 @@
             <p class="project__promo">Let's get going on your project</p>
         </a>
     </section>
-            
 
     <section class="lifestyleshot">
         <img src="/img/lifestyle-desk-1.jpg" alt="A desk and a guitar">
     </section>
 
-    <section id="contact">
-
+    <section id="contact" class="l-container l-container--small l-block">
+        <p>Ready to start your next great project? Drop me a line below and I'll get in touch as soon as I can.</p>
+        <form>
+            <p>
+                Hey Nick,<br>
+                My name is <input type="text" placeholder="your name"> and you can get in touch with me at <input type="email" placeholder="your email">. I was hoping you help me out with <textarea placeholder="your great idea"></textarea>
+            </p>
+            <button type="submi" class="a-btn">Submit</button>
+        </form>
     </section>
 
 {{- end }}

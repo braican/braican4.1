@@ -18,3 +18,12 @@
     }
 }
 
+.l-container--small{
+    max-width: $container_small
+}
+
+
+.l-block{
+    padding-top: $spacer;
+    padding-bottom: $spacer;
+}
