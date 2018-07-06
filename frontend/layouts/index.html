@@ -21,11 +21,17 @@
             {{ range $projects }}
                 <div class="project">
                     {{ if .thumbnail }}
-                        <img src="{{ .thumbnail }}" alt="{{ .post_title }} thumbnail">
+                        <div class="product__thumb">
+                            <img src="{{ .thumbnail }}" alt="{{ .post_title }} thumbnail">
+                        </div>
                     {{ end }}
                     <div class="project__details">
                         <h3 class="project__title">{{ .post_title }}</h3>
-                        <div class="project__excerpt">{{ .custom_fields.braican_project_excerpt }}</div>
+                        <div class="project__excerpt">{{ .braican_project_excerpt }}</div>
+
+                        {{ with .braican_project_link }}
+                            <a class="a-btn" href="{{ .url }}">{{ .title }}</a>
+                        {{ end }}
                     </div>
                 </div>
             {{ end }}

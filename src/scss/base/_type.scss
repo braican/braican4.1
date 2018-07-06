@@ -44,13 +44,13 @@ input[type="submit"]{
 }
 
 .intro__main a{
-    box-shadow: inset 0 -2px 0 $c-dull-orange;
+    box-shadow: inset 0 -2px 0 $c-orange-hover;
     text-decoration: none;
     transition: all $transition;
 
     &:hover{
-        color: $c-white;
-        box-shadow: inset 0 -1.2em $c-orange;
+        color: $c-text-color;
+        box-shadow: inset 0 -4px $c-orange;
     }
 }
 
@@ -61,35 +61,21 @@ input[type="submit"]{
 .a-btn {
     display: inline-block;
     background-color: $c-orange;
-    padding: .5em 1.5em;
+    padding: 1em 1.5em;
     color: $c-white;
     text-decoration: none;
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     position: relative;
-    transition: all .2s;
     overflow: hidden;
     z-index: 3;
-    transition: padding-left $transition;
+    transition: all $transition;
+    box-shadow: 0 0 0 $c-orange-hover;
 
-    &:after{
-        content:"";
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        transform: translateX(-100%);
-        transition: all .2s;
-        background-color: $c-link-color;
-        z-index: -1;
-    }
     &:hover{
-        padding-left: 1.75em;
-        &:after{
-            transform: translateX(0);
-        }
+        box-shadow: 4px 4px 0 $c-orange-hover;
+        background-color: $c-orange-dark;
     }
 }
 

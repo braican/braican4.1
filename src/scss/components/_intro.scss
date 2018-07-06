@@ -1,11 +1,11 @@
 .intro__hey{
     font-family: $t-serif;
-    font-size: 4rem;
+    font-size: $font-size-xlg;
     line-height: $line-height-s;
 
     @include gt($tablet){
         position: relative;
-        left: -4rem;
+        left: -$font-size-xlg;
     }
 }
 

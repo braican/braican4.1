@@ -1,15 +1,46 @@
 .project{
     overflow: hidden;
-    width: 100%;
-}
+    width: 90%;
+    display: flex;
+    padding-bottom: 25vh;
+    align-items: flex-start;
 
+    &:nth-child(even){
+        position: relative;
+        left: 10%;
+    }
+}
+.product__thumb{
+    flex: 0 0 40%;
+    box-shadow: 28px 28px 0 $c-orange;
+
+    .project:nth-child(even) &{
+        margin-right: 28px;
+    }
+
+    img{
+        display: block;
+        width: 100%;
+    }
+}
 .project__details{
-    display: block;
-    padding: 40px;
+    padding-left: 100px;
+    padding-top: 100px;
+    .project:nth-child(even) &{
+        order: -1;
+        padding-left: 0;
+        padding-right: 100px;
+    }
 }
 
 .project__title{
-    
+    font-family: $t-serif;
+    font-size: $font-size-xlg;
+    line-height: $line-height-s;
+}
+.project__excerpt{
+    margin-top: 1em;
+    margin-bottom: 2em;
 }
 
 .project__promo{
