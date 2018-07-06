@@ -16,3 +16,8 @@ echo "Starting WordPress..."
 echo
 docker-compose up -d
 echo
+
+echo "Running build tasks"
+echo
+gulp
+echo
