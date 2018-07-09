@@ -1,145 +1,164 @@
-//
-// npm packages
-//
+const braicanAPI = 'https://api.braican.com/wp-json/braican/v1';
+
 const gulp = require('gulp');
-const help = require('gulp-help-four');
-
-const exit = require('gulp-exit');
-const rename = require('gulp-rename');
-
-// babel
-const babelify = require('babelify');
-const watchify = require('watchify');
-const browserify = require('browserify');
-const source = require('vinyl-source-stream');
-const buffer = require('vinyl-buffer');
-
-// concat/uglify
-const uglify = require('gulp-uglify');
+const gulpif = require('gulp-if');
+var argv = require('yargs').argv;
+const browserSync = require('browser-sync').create();
+const del = require('del');
 
 // sass
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
+const cleanCss = require('gulp-clean-css');
 const sourcemaps = require('gulp-sourcemaps');
 
+// scripts
+const babelify = require('babelify');
+const browserify = require('browserify');
+const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
 
-help(gulp, {});
+// hugo
+const { spawn } = require('child_process');
+const hugo = require('hugo-bin');
 
-//
-// Config
-//
+// download
+const download = require('gulp-download');
 
-const config = {};
+/**
+ * Config
+ */
+const scssSrc = 'src/scss/**/*.scss';
+const scssDest = 'frontend/static';
 
-config.sass = {
-    errLogToConsole : true,
-    outputStyle     : 'compressed',
-};
+const jsSrc = 'src/js/main.js';
+const jsDest = 'frontend/static';
 
+const dataPath = 'frontend/data';
 
-config.sourcemaps = {
-    includeContent : false,
-    sourceRoot     : 'src',
-};
+const hugoServerArgs = ['-F', '--cleanDestinationDir', '-s', 'frontend'];
 
-config.autoprefixer = {};
+/**
+ * Clean
+ */
+gulp.task('clean', (done) => {
+    const deletable = [
+        'frontend/static/style.css',
+        'frontend/static/main.js',
+        'frontend/static/*.map',
+    ];
 
-config.browserify = {
-    debug : true,
-};
-
-config.babelify = {
-    presets    : ['env'],
-    sourceMaps : true,
-};
-
-
-//
-// File system
-//
-
-const themeDir = 'webroot/wp-content/themes/braican';
-
-const files = {};
-
-files.sass = {
-    dir   : `${themeDir}/styles`,
-    src   : `${themeDir}/styles/sass/**/*.scss`,
-    build : `${themeDir}/styles/build`,
-};
-
-files.js = {
-    src   : `${themeDir}/js/src/main.js`,
-    build : `${themeDir}/js/build`,
-};
-
-
-/* --------------------------------------------
- * --javascript
- * -------------------------------------------- */
-
-function compileJs(watchIt) {
-    const bundler = watchify(browserify(files.js.src, config.browserify)
-        .transform(babelify, config.babelify));
-
-    function rebundle() {
-        return bundler
-            .bundle()
-            .on('error', function (err) {
-                console.error(err);
-                this.emit('end');
-            })
-            .pipe(source(files.js.build))
-            .pipe(buffer())
-            .pipe(sourcemaps.init({ loadMaps : true }))
-            .pipe(rename('production.js'))
-            .pipe(sourcemaps.write('.'))
-            .pipe(gulp.dest(files.js.build));
-    }
-
-    if (watchIt) {
-        bundler.on('update', () => {
-            console.log('--> rebundle...done');
-            rebundle();
-        });
-        rebundle();
-    } else {
-        rebundle().pipe(exit());
-    }
-}
-
-gulp.task('build', 'Build the Javascript and compile down to ES5', () => compileJs());
-
-gulp.task('minify', 'Minify the compiled Javascript', ['build'], () => gulp.src(`${themeDir}/js/build/production.js`)
-    .pipe(uglify())
-    .pipe(rename({ extname : '.min.js' }))
-    .pipe(gulp.dest(files.js.build)));
-
-
-/* --------------------------------------------
- * --sass
- * -------------------------------------------- */
-
-function compileSass() {
-    return gulp.src(files.sass.src)
-        .pipe(sourcemaps.init())
-        .pipe(sass(config.sass).on('error', sass.logError))
-        .pipe(autoprefixer(config.autoprefixer).on('error', (err) => { console.log(err); }))
-        .pipe(sourcemaps.write('.', config.sourcemaps))
-        .pipe(gulp.dest(files.sass.build));
-}
-
-gulp.task('styles', 'Compile that sass.', compileSass);
-
-
-/* --------------------------------------------
- * --default
- * -------------------------------------------- */
-
-
-gulp.task('watch', 'Watch the `javascript` and `styles` directories for changes', () => {
-    compileJs(true);
-    gulp.watch(files.sass.src, gulp.series('styles'));
+    return del(deletable);
 });
 
-gulp.task('default', 'Run the watch task', gulp.parallel('watch'));
+/**
+ * Hugo
+ */
+gulp.task('hugo', (cb) =>
+    spawn(hugo, hugoServerArgs, { stdio: 'inherit' }).on('close', (code) => {
+        if (code === 0) {
+            browserSync.reload();
+            cb();
+        } else {
+            browserSync.notify('Hugo build failed');
+            cb('Hugo build failed');
+        }
+    })
+);
+
+/**
+ * Browser-sync
+ */
+gulp.task('browser-sync', () => {
+    browserSync.init({
+        notify: false,
+        reloadDelay: 500,
+        open: false,
+        ghostMode: false,
+        server: { baseDir: './dist' },
+    });
+    gulp.watch('frontend/**/*', gulp.series('hugo'));
+    gulp.watch('src/scss/**/*.scss', gulp.series('sass'));
+    gulp.watch('src/js/**/*.js', gulp.series('scripts'));
+});
+
+/**
+ * Retrieve data
+ */
+function getMainData() {
+    const home = `${braicanAPI}/home.json`;
+    const projectsData = `${braicanAPI}/projects.json`;
+
+    return new Promise((resolve, reject) => {
+        download([home, projectsData])
+            .pipe(gulp.dest(dataPath))
+            .on('end', resolve)
+            .on('error', reject);
+    });
+}
+gulp.task('braican-api', (done) => {
+    getMainData().then(() => {
+        done();
+    });
+});
+
+/**
+ * Compile sass
+ */
+gulp.task('sass', () =>
+    gulp
+        .src(scssSrc)
+
+        .pipe(gulpif(!argv.production, sourcemaps.init()))
+
+        .pipe(
+            sass({
+                outputStyle: 'compressed',
+            })
+        )
+
+        .on('error', sass.logError)
+
+        .pipe(
+            autoprefixer({
+                browsers: ['last 2 versions'],
+                cascade: false,
+            })
+        )
+
+        .pipe(
+            cleanCss({
+                compatibility: 'ie8',
+            })
+        )
+        .pipe(gulpif(!argv.production, sourcemaps.write('.')))
+        .pipe(gulp.dest(scssDest))
+);
+
+/**
+ * Compile js scripts
+ */
+gulp.task('scripts', (done) => {
+    browserify(jsSrc, { debug: !argv.production })
+        .transform(babelify, {
+            presets: ['env'],
+            sourceMaps: !argv.production,
+        })
+        .bundle()
+        .on('error', (err) => console.log(err))
+        .pipe(source('main.js'))
+        .pipe(buffer())
+        .pipe(gulpif(!argv.production, sourcemaps.init({ loadMaps: true })))
+        .pipe(gulpif(!argv.production, sourcemaps.write('.')))
+        .pipe(gulp.dest(jsDest));
+
+    done();
+});
+
+gulp.task('build', gulp.series('clean', 'sass', 'scripts', 'braican-api', 'hugo'));
+
+gulp.task(
+    'default',
+    gulp.series('sass', 'scripts', 'braican-api', 'hugo', 'browser-sync'),
+    (done) => done()
+);

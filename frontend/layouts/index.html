@@ -1,0 +1,66 @@
+
+{{ define "main" -}}
+
+{{ if (fileExists "/data/home.json") -}}
+
+    {{ $home := getJSON "/data/home.json" }}
+    {{ $intro := $home.braican_intro_copy }}
+    {{ $main := $home.braican_main_copy }}
+
+    <section class="intro l-container l-container--small l-block">
+        <h1 class="intro__hey">{{ $intro }}</h1>
+
+        <div class="intro__main">
+            {{ $main | safeHTML }}
+        </div>
+    </section>
+
+    <section class="projectgallery l-container l-block">
+        {{ if (fileExists "/data/projects.json") }}
+            {{ $projects := getJSON "/data/projects.json" }}
+            {{ range $projects }}
+                <div class="project">
+                    {{ if .thumbnail }}
+                        <div class="product__thumb">
+                            <img src="{{ .thumbnail }}" alt="{{ .post_title }} thumbnail">
+                        </div>
+                    {{ end }}
+                    <div class="project__details">
+                        <h3 class="project__title">{{ .post_title }}</h3>
+                        <div class="project__excerpt">{{ .braican_project_excerpt }}</div>
+
+                        {{ with .braican_project_link }}
+                            <a class="a-btn" href="{{ .url }}" target="_blank">{{ .title }}</a>
+                        {{ end }}
+                    </div>
+                </div>
+            {{ end }}
+        {{- end }}
+
+        <a href="#contact" class="project__thumb project__thumb--promo">
+            <p class="project__promo">Let's get going on your project</p>
+        </a>
+    </section>
+
+    <section class="lifestyleshot l-container">
+        <img src="/img/lifestyle-desk-1.jpg" alt="A desk and a guitar">
+    </section>
+
+    <section id="contact" class="l-container l-container--small l-block">
+        <p>Ready to start your next great project? Drop me a line below and I'll get in touch as soon as I can.</p>
+        <form class="contactform">
+            <p class="contact__intro">Hey Nick,</p>
+            <p>
+                <span>My name is <input type="text" placeholder="your name" name="name" class="contact__name"></span>
+                <span>and you can get in touch with me at <input type="email" name="email" class="contact__email" placeholder="your email">.&nbsp;&nbsp;</span>
+                <span>I was hoping you help me out with</span>
+                <textarea class="contact__message" name="message" placeholder="your great idea"></textarea>
+            </p>
+            <button type="submit" class="a-btn">Submit</button>
+        </form>
+    </section>
+
+{{- end }}
+
+{{- end }}
+

@@ -1,0 +1,83 @@
+/* ==============================================================
+ *
+ * Typography
+ *
+ * ============================================================== */
+
+
+html{
+  font-size: $font-size;
+  @include gt($mobile){
+    font-size: $font-size + 2;
+  }
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: $t-sans-serif;
+  color: $c-text-color;
+  font-size: 1rem;
+  line-height: $line-height;
+}
+
+
+
+/* --------------------------------------------
+ * --basic
+ * -------------------------------------------- */
+
+p + p{
+  margin-top: 1em;
+}
+
+a {
+  color: $c-link-color;
+}
+
+button,
+input[type='submit']{
+  border: 0;
+  background-color: transparent;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.intro__main a{
+  box-shadow: inset 0 -2px 0 $c-orange-hover;
+  text-decoration: none;
+  transition: all $transition;
+
+  &:hover{
+    color: $c-text-color;
+    box-shadow: inset 0 -4px $c-orange;
+  }
+}
+
+/* ------------------------------------
+ * --cta
+ * ------------------------------------*/
+
+.a-btn {
+  display: inline-block;
+  background-color: $c-orange;
+  padding: 1em 1.5em;
+  color: $c-white;
+  text-decoration: none;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  position: relative;
+  overflow: hidden;
+  z-index: 3;
+  transition: all $transition;
+  box-shadow: 0 0 0 $c-orange-hover;
+
+  &:hover{
+    box-shadow: 4px 4px 0 $c-orange-hover;
+    background-color: $c-orange-dark;
+  }
+}
+
