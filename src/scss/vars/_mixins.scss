@@ -6,9 +6,9 @@
 
 
 @mixin gt($size) {
-    @media screen and (min-width: $size) {
-        @content;
-    }
+  @media screen and (min-width: $size) {
+    @content;
+  }
 }
 
 
@@ -20,5 +20,5 @@
 
 
 @mixin block-shadow($offset) {
-    box-shadow: $offset $offset 0 $c-orange;
+  box-shadow: $offset $offset 0 $c-orange;
 }

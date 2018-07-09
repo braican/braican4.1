@@ -4,7 +4,7 @@
   "description": "Brand site for Nick Braica",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint:scripts": "eslint src/js/**/*.js --cache"
   },
   "repository": {
     "type": "git",
@@ -18,11 +18,15 @@
   "homepage": "https://github.com/braican/braican.com#readme",
   "devDependencies": {
     "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.5",
     "babel-preset-env": "^1.7.0",
     "babelify": "^8.0.0",
     "browser-sync": "^2.24.4",
     "browserify": "^16.2.2",
     "del": "^3.0.0",
+    "eslint": "^5.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.2",
     "fs": "0.0.1-security",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^5.0.0",
@@ -33,6 +37,7 @@
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4",
     "hugo-bin": "^0.29.0",
+    "prettier": "^1.13.7",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0",
     "yargs": "^12.0.1"

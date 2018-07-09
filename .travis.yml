@@ -1,6 +1,15 @@
 language: php
 php:
-- '7.2'
+  - '7.2'
 cache:
   directories:
-  - node_modules
+    - node_modules
+
+before_install:
+  - nvm install
+
+install:
+  - npm install
+
+script:
+  - npm run lint:scripts

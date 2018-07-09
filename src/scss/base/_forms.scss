@@ -3,45 +3,49 @@ button,
 input,
 select,
 textarea {
-    font-size: 100%; /* Corrects font size not being inherited in all browsers */
-    margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
-    vertical-align: baseline; /* Improves appearance and consistency in all browsers */
+  font-size: 100%; /* Corrects font size not being inherited in all browsers */
+  margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+  vertical-align: baseline; /* Improves appearance and consistency in all browsers */
 }
 
-input[type="text"],
-input[type="email"],
-textarea{
-    border: 0;
-    box-shadow: inset 0 -1px $c-orange-hover;
-    padding: 6px 6px 4px 6px;
-    border-radius: 0;
-    color: $c-orange;
-    background-color: transparent;
-    transition: all $transition;
+input[type='text'],
+input[type='email'],
+textarea {
+  border: 0;
+  box-shadow: inset 0 -1px $c-orange-hover;
+  padding: 6px 6px 4px;
+  border-radius: 0;
+  color: $c-orange;
+  background-color: transparent;
+  transition: all $transition;
 
-    &:focus{
-        outline: none;
-        box-shadow: inset 0 -2px $c-orange;
-    }
+  &:focus {
+    outline: none;
+    box-shadow: inset 0 -2px $c-orange;
+  }
 }
 
-textarea{
-    display: block;
-    width: 100%;
+textarea {
+  display: block;
+  width: 100%;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color: $c-form-placeholder;
+  color: $c-form-placeholder;
 }
+
 ::-moz-placeholder { /* Firefox 19+ */
-    color: $c-form-placeholder;
+  color: $c-form-placeholder;
 }
+
 :-ms-input-placeholder { /* IE 10+ */
-    color: $c-form-placeholder;
+  color: $c-form-placeholder;
 }
+
 :-moz-placeholder { /* Firefox 18- */
-    color: $c-form-placeholder;
+  color: $c-form-placeholder;
 }
+
 ::placeholder {
-    color: $c-form-placeholder;
+  color: $c-form-placeholder;
 }

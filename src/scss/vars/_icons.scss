@@ -9,76 +9,76 @@ $icon_plus: url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F
  * ------------------------------------*/
 
 @mixin icon-right( $svg, $width: 1em, $height: 1em, $margin: 10px, $fromRight: 0 ){
-    position: relative;
-    padding-right: calc(#{$width} + #{$margin});
+  position: relative;
+  padding-right: calc(#{$width} + #{$margin});
 
-    &:after{
-        content: "";
-        display: block;
-        position: absolute;
-        top: 50%;
-        right: $fromRight;
-        width: $width;
-        height: $height;
-        margin-top: #{$height / -2};
-        background-image: $svg;
-        background-repeat:no-repeat;
-        background-position:center center;
-        background-size: contain;
-    }
+  &::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: $fromRight;
+    width: $width;
+    height: $height;
+    margin-top: #{$height / -2};
+    background-image: $svg;
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size: contain;
+  }
 }
 
 @mixin icon-left( $svg, $width: 1em, $height: 1em, $margin: 10px, $fromLeft: 0 ){
-    position: relative;
-    padding-left: calc(#{$width} + #{$margin});
+  position: relative;
+  padding-left: calc(#{$width} + #{$margin});
 
-    &:after{
-        content: "";
-        display: block;
-        position: absolute;
-        top: 50%;
-        left: $fromLeft;
-        width: $width;
-        height: $height;
-        margin-top: #{$height / -2};
-        background-image: $svg;
-        background-repeat:no-repeat;
-        background-position:center center;
-        background-size: contain;
-    }
+  &::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: $fromLeft;
+    width: $width;
+    height: $height;
+    margin-top: #{$height / -2};
+    background-image: $svg;
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size: contain;
+  }
 }
 
 @mixin icon-top-right( $svg, $width: 1em, $height: 1em, $fromTop: 0, $fromRight: 0 ){
-    position: relative;
-    padding-right: calc(#{$width} + 10px);
+  position: relative;
+  padding-right: calc(#{$width} + 10px);
 
-    &:after{
-        content: "";
-        display: block;
-        position: absolute;
-        top: $fromTop;
-        right: $fromRight;
-        width: $width;
-        height: $height;
-        background-image: $svg;
-        background-repeat:no-repeat;
-        background-position:center center;
-        background-size: contain;
-    }
-}
-
-@mixin icon( $svg, $width, $height, $bgsz: contain ){
-    display: inline-block;
-    vertical-align: middle;
+  &::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: $fromTop;
+    right: $fromRight;
     width: $width;
     height: $height;
     background-image: $svg;
     background-repeat:no-repeat;
     background-position:center center;
-    background-size: $bgsz;
-    text-indent: -9999px;
+    background-size: contain;
+  }
+}
+
+@mixin icon( $svg, $width, $height, $bgsz: contain ){
+  display: inline-block;
+  vertical-align: middle;
+  width: $width;
+  height: $height;
+  background-image: $svg;
+  background-repeat:no-repeat;
+  background-position:center center;
+  background-size: $bgsz;
+  text-indent: -9999px;
 }
 
 @mixin flip{
-    transform: scaleY(-1);
+  transform: scaleY(-1);
 }

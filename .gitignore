@@ -13,6 +13,10 @@ api/wp-content/uploads/*
 # npm
 node_modules/*
 
+# linting caches
+.eslintcache
+.stylelintcache
+
 # dist
 dist
 frontend/data/*.json
