@@ -1,4 +1,7 @@
-.lifestyleshot img{
-    display: block;
-    width: 100%;
+.lifestyleshot {
+    img{
+        @include block-shadow(32px);
+        display: block;
+        width: 100%;
+    }
 }

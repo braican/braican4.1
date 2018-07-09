@@ -12,7 +12,7 @@
 }
 .product__thumb{
     flex: 0 0 40%;
-    box-shadow: 28px 28px 0 $c-orange;
+    @include block-shadow(28px);
 
     .project:nth-child(even) &{
         margin-right: 28px;
