@@ -8,9 +8,18 @@ wp-config.php
 .env
 
 # the uploads directory
-webroot/wp-content/uploads/*
-wp-content/uploads/*
+api/wp-content/uploads/*
 
 # npm
 node_modules/*
 
+# linting caches
+.eslintcache
+.stylelintcache
+
+# dist
+dist
+frontend/data/*.json
+frontend/static/style.css
+frontend/static/main.js
+*.map

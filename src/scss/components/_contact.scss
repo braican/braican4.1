@@ -1,0 +1,24 @@
+.contactform{
+  padding-top: 2em;
+  font-family: $t-serif;
+  line-height: 2;
+}
+
+.contact__intro{
+  font-size: $font-size-lg;
+  display: block;
+
+  + p{
+    margin-top: 0;
+  }
+}
+
+.contact__email{
+  width: 12em;
+}
+
+.contact__message{
+  margin-top: 1em;
+  margin-bottom: 2em;
+  display: block;
+}

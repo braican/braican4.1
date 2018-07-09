@@ -1,0 +1,27 @@
+/* ==============================================================
+ *
+ * STYLES
+ *
+ * ============================================================== */
+
+// vars
+@import 'vars/variables';
+@import 'vars/mixins';
+@import 'vars/icons';
+@import 'vars/fonts';
+
+// base
+@import 'base/base';
+@import 'base/layout';
+@import 'base/type';
+@import 'base/forms';
+
+
+// components
+@import 'components/header';
+@import 'components/intro';
+@import 'components/projectgallery';
+@import 'components/lifestyle';
+@import 'components/contact';
+@import 'components/footer';
+

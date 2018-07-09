@@ -3,10 +3,8 @@ services:
     wordpress:
         build:
             context: .
-            args:
-                - braican-api
         volumes:
-            - ./webroot:/var/www/html
+            - ./api:/var/www/html
         depends_on:
             - db
         env_file: .env
