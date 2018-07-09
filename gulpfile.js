@@ -1,7 +1,10 @@
 const braicanAPI = 'https://api.braican.com/wp-json/braican/v1';
 
 const gulp = require('gulp');
+const gulpif = require('gulp-if');
+var argv = require('yargs').argv;
 const browserSync = require('browser-sync').create();
+const del = require('del');
 
 // sass
 const sass = require('gulp-sass');
@@ -36,6 +39,19 @@ const dataPath = 'frontend/data';
 const hugoServerArgs = ['-F', '--cleanDestinationDir', '-s', 'frontend'];
 
 /**
+ * Clean
+ */
+gulp.task('clean', (done) => {
+    const deletable = [
+        'frontend/static/style.css',
+        'frontend/static/main.js',
+        'frontend/static/*.map',
+    ];
+
+    return del(deletable);
+});
+
+/**
  * Hugo
  */
 gulp.task('hugo', (cb) =>
@@ -61,7 +77,6 @@ gulp.task('browser-sync', () => {
         ghostMode: false,
         server: { baseDir: './dist' },
     });
-
     gulp.watch('frontend/**/*', gulp.series('hugo'));
     gulp.watch('src/scss/**/*.scss', gulp.series('sass'));
     gulp.watch('src/js/**/*.js', gulp.series('scripts'));
@@ -94,11 +109,11 @@ gulp.task('sass', () =>
     gulp
         .src(scssSrc)
 
-        .pipe(sourcemaps.init())
+        .pipe(gulpif(!argv.production, sourcemaps.init()))
 
         .pipe(
             sass({
-                outputStyle: 'expanded',
+                outputStyle: 'compressed',
             })
         )
 
@@ -116,7 +131,7 @@ gulp.task('sass', () =>
                 compatibility: 'ie8',
             })
         )
-        .pipe(sourcemaps.write('.'))
+        .pipe(gulpif(!argv.production, sourcemaps.write('.')))
         .pipe(gulp.dest(scssDest))
 );
 
@@ -124,23 +139,24 @@ gulp.task('sass', () =>
  * Compile js scripts
  */
 gulp.task('scripts', (done) => {
-    browserify(jsSrc, { debug: true })
+    browserify(jsSrc, { debug: !argv.production })
         .transform(babelify, {
             presets: ['env'],
-            sourceMaps: true,
+            sourceMaps: !argv.production,
         })
         .bundle()
         .on('error', (err) => console.log(err))
         .pipe(source('main.js'))
         .pipe(buffer())
-        .pipe(sourcemaps.init({ loadMaps: true }))
-        .pipe(sourcemaps.write('.'))
+        .pipe(gulpif(!argv.production, sourcemaps.init({ loadMaps: true })))
+        .pipe(gulpif(!argv.production, sourcemaps.write('.')))
         .pipe(gulp.dest(jsDest));
 
     done();
 });
 
-gulp.task('build', gulp.series('sass', 'scripts', 'braican-api', 'hugo'));
+gulp.task('build', gulp.series('clean', 'sass', 'scripts', 'braican-api', 'hugo'));
+
 gulp.task(
     'default',
     gulp.series('sass', 'scripts', 'braican-api', 'hugo', 'browser-sync'),
