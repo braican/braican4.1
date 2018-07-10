@@ -5,6 +5,7 @@ const gulpif = require('gulp-if');
 var argv = require('yargs').argv;
 const browserSync = require('browser-sync').create();
 const del = require('del');
+var uglify = require('gulp-uglify');
 
 // sass
 const sass = require('gulp-sass');
@@ -149,6 +150,7 @@ gulp.task('scripts', (done) => {
         .pipe(source('main.js'))
         .pipe(buffer())
         .pipe(gulpif(!argv.production, sourcemaps.init({ loadMaps: true })))
+        .pipe(gulpif(argv.production, uglify()))
         .pipe(gulpif(!argv.production, sourcemaps.write('.')))
         .pipe(gulp.dest(jsDest));
 
