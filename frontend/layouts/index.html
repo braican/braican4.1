@@ -37,9 +37,7 @@
             {{ end }}
         {{- end }}
 
-        <a href="#contact" class="project__thumb project__thumb--promo">
-            <p class="project__promo">Let's get going on your project</p>
-        </a>
+        <a href="#contact" class="project__promo">Let's get going on your project</a>
     </section>
 
     <section class="lifestyleshot l-container">
@@ -48,7 +46,8 @@
 
     <section id="contact" class="l-container l-container--small l-block">
         <p>Ready to start your next great project? Drop me a line below and I'll get in touch as soon as I can.</p>
-        <form class="contactform">
+        <form id="contact-braican" action="/thanks" class="contactform" netlify netlify-honeypot="bot-field">
+            <p class="contact__honeypot"><input name="bot-field"></p>
             <p class="contact__intro">Hey Nick,</p>
             <p>
                 <span>My name is <input type="text" placeholder="your name" name="name" class="contact__name"></span>
@@ -63,4 +62,3 @@
 {{- end }}
 
 {{- end }}
-

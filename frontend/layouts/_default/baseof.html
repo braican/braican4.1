@@ -5,12 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ $.Param "title" }}</title>
   <meta name="description" content="{{ $.Param "description" }}" />
-  
+
   <meta property="og:description" content="{{ $.Param "description" }}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="website">
-  
-  
+
   <link rel="stylesheet" type="text/css" href="/style.css">
 
   <script>
@@ -23,8 +22,7 @@
 		ga('send', 'pageview', {
 			'page': location.pathname + location.search  + location.hash
 		});
-
-	</script>
+    </script>
 </head>
 <body class="body--{{ .Kind }} {{ with .Layout }}body--{{ . }}{{ end }}">
 
