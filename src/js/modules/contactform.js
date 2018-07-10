@@ -37,6 +37,8 @@ export default function contactform() {
             }
             // 4 = Response from server has been completely loaded.
             else if (request.readyState === 4) {
+                console.log(request);
+
                 // 200 - 299 = successful
                 messageEl.innerHTML =
                     request.status == 200 && request.status < 300 ? message.success : message.error;
