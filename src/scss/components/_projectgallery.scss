@@ -1,23 +1,24 @@
 .project{
   overflow: hidden;
-  width: 90%;
-  display: flex;
-  padding-bottom: 25vh;
-  align-items: flex-start;
+  padding-bottom: $spacing;
 
-  &:nth-child(even){
-    position: relative;
-    left: 10%;
+  @include gt($tablet) {
+    padding-bottom: 25vh;
+    width: 90%;
+    align-items: flex-start;
+    display: flex;
+
+    &:nth-child(even){
+      position: relative;
+      left: 10%;
+    }
   }
 }
 
 .product__thumb{
-  @include block-shadow(28px);
+  @include block-shadow();
   flex: 0 0 40%;
-
-  .project:nth-child(even) &{
-    margin-right: 28px;
-  }
+  margin-right: 18px;
 
   img{
     display: block;
@@ -25,26 +26,31 @@
   }
 }
 
-.project__details{
-  padding-left: 100px;
-  padding-top: 100px;
 
-  .project:nth-child(even) &{
-    order: -1;
-    padding-left: 0;
-    padding-right: 100px;
-  }
+.project__details{
+    padding-top: 80px;
+
+    @include gt($tablet) {
+        padding-left: 40px;
+
+        .project:nth-child(even) &{
+            order: -1;
+            padding-left: 0;
+            padding-right: 40px;
+        }
+    }
 }
 
 .project__title{
   font-family: $t-serif;
-  font-size: $font-size-xlg;
+  font-size: $font-size-l;
   line-height: $line-height-s;
 }
 
 .project__excerpt{
   margin-top: 1em;
   margin-bottom: 2em;
+  max-width: 580px;
 }
 
 .project__promo{
@@ -52,34 +58,40 @@
   text-align: center;
 }
 
-.project__thumb--promo{
-  position: relative;
-
-  &::after{
-    content:'';
+.project__promo{
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    font-family: $t-serif;
     display: block;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-left: -16px;
-    margin-top: -16px;
-    width: 32px;
-    height: 32px;
-    background-image: $icon_plus;
-    transform: translateY(0);
-    opacity: 0;
-    transition: all $transition;
-  }
+    position: relative;
+    padding-top: 40px;
+    padding-bottom: $spacing;
+    text-decoration: none;
+    text-align: center;
+    font-size: $font-size-l;
+    line-height: $line-height-s;
+    color: $c-text-color;
+    transition: color $transition;
 
-  &:hover{
 
     &::after{
-      transform: translateY(-20px);
-      opacity: 1;
+        content:'';
+        display: block;
+        position: absolute;
+        left: 50%;
+        bottom: $spacing - 60px;
+        width: 32px;
+        height: 32px;
+        margin-left: -16px;
+        background-image: $icon_plus;
+        transition: all $transition;
     }
 
-    .project__promo{
-      transform: translateY(20px);
+    &:hover{
+        color: $c-orange-dark;
+        &:after{
+            transform: translateY(-10px);
+        }
     }
-  }
 }
