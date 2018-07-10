@@ -9,9 +9,20 @@ This is the public repository of [braican.com](http://braican.com), [Nick Braica
 ### Version 6
 `released 07/09/2018`
 
+![v6](assets/braican.com-v6.png?raw=true)
+
 Version six is a slight aesthetic improvement, but a total overhaul in the technology and the code behind the site. I kept WordPress on to handle my content, but am using it solely as a platform to create a content API that provides json endpoints for the data. The front end is handled by Hugo, a static site generator. The json data is downloaded via a gulp task that Hugo then renders.
 
 The reasoning for the change was simple - I don't have that much content, and I didn't need an entire CMS to handle just some case studies and an introduction.
+
+#### Changelog
+
+**`Version 6.0.1`** - Released 07/10/2018
+
+* Locks down mobile styles.
+* Adds Netlify support to forms, and handles submissions via ajax.
+* Build taks enhancement - minify javascript for production.
+
 
 
 ### Version 5
@@ -39,8 +50,6 @@ Moving to a CMS driven site for the first time, I developed a custom, one page W
 Another static site with WordPress driving the blogging funtionality. This iteration was a complete redesign from the previous site, and featured large banners across each page with a fixed, full-screen image. This site is not responsive, but does include some nifty animations throughout. And man, I really liked those sliders on the homepage.
 
 This is the site that was live when I was hired as a co-op at The Boston Globe, as well as when I graduated from college and was hired full-time by Tank Design. So I guess you could say that this one was good enough to get me a couple jobs.
-
-** Interesting
 
 
 ### Version 2
