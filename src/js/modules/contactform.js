@@ -7,7 +7,7 @@ export default function contactform() {
 
     const messageEl = document.createElement('p');
     const statusMessage = {
-        success: "Thanks for the note! I'll get back to you as soon as I can.",
+        success: "Thanks for the note! I'll be in touch as soon as I can.",
         error:
             'There was an error submitting the form. You can always send me a note at <a href="mailto:nick.braica@gmail.com">nick.braica@gmail.com</a>, or try again later.',
     };
@@ -29,7 +29,6 @@ export default function contactform() {
             'Content-Type',
             'application/x-www-form-urlencoded; charset=UTF-8'
         );
-        console.log(formData);
 
         request.send(formData);
 
@@ -41,21 +40,15 @@ export default function contactform() {
         request.onreadystatechange = () => {
             if (request.readyState === 4) {
                 // 200 - 299 = successful
-                messageEl.innerHTML =
-                    request.status == 200 && request.status < 300
-                        ? statusMessage.success
-                        : statusMessage.error;
+                const isSuccess = request.status == 200 && request.status < 300;
+
+                messageEl.innerHTML = isSuccess ? statusMessage.success : statusMessage.error;
                 $form.parentNode.appendChild(messageEl);
+
+                if (isSuccess) {
+                    $form.reset();
+                }
             }
         };
     });
-
-    // $('#contact-braican').submit(function(e) {
-    //     e.preventDefault();
-
-    //     var $form = $(this);
-    //     $.post($form.attr('action'), $form.serialize()).then(function() {
-    //         alert('Thank you!');
-    //     });
-    // });
 }
