@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ $.Param "title" }}</title>
   <meta name="description" content="{{ $.Param "description" }}" />
-  
+
   <meta property="og:description" content="{{ $.Param "description" }}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="website">
-  
-  
+
+
   <link rel="stylesheet" type="text/css" href="/style.css">
 
   <script>
@@ -24,7 +24,12 @@
 			'page': location.pathname + location.search  + location.hash
 		});
 
-	</script>
+    </script>
+
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
 </head>
 <body class="body--{{ .Kind }} {{ with .Layout }}body--{{ . }}{{ end }}">
 
