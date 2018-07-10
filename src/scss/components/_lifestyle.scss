@@ -1,7 +1,7 @@
 .lifestyleshot {
-
+    padding-right: $gutter + 18px;
   img{
-    @include block-shadow(32px);
+    @include block-shadow();
     display: block;
     width: 100%;
   }

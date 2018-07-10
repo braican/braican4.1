@@ -19,6 +19,6 @@
  * ============================================================== */
 
 
-@mixin block-shadow($offset) {
+@mixin block-shadow($offset: 18px) {
   box-shadow: $offset $offset 0 $c-orange;
 }
