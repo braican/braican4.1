@@ -18,7 +18,11 @@ export default function contactform() {
         e.preventDefault();
 
         const request = new XMLHttpRequest();
-        const formData = new FormData($form);
+        const formName = $form.id;
+        const name = encodeURIComponent($form.name.value);
+        const email = encodeURIComponent($form.email.value);
+        const message = encodeURIComponent($form.message.value);
+        const formData = `form-name=${formName}&bot-field=&name${name}&email=${email}&message=${$message}`;
 
         request.open('POST', $form.getAttribute('action'), true);
         request.setRequestHeader(
@@ -27,7 +31,7 @@ export default function contactform() {
         );
         console.log($($form).serialize());
 
-        request.send($($form).serialize());
+        request.send(formData);
 
         // remove the message
         if (messageEl.parentNode) {
