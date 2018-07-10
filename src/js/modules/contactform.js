@@ -22,7 +22,7 @@ export default function contactform() {
         const name = encodeURIComponent($form.name.value);
         const email = encodeURIComponent($form.email.value);
         const message = encodeURIComponent($form.message.value);
-        const formData = `form-name=${formName}&bot-field=&name${name}&email=${email}&message=${message}`;
+        const formData = `form-name=${formName}&bot-field=&name=${name}&email=${email}&message=${message}`;
 
         request.open('POST', $form.getAttribute('action'), true);
         request.setRequestHeader(
