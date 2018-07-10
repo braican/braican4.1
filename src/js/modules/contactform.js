@@ -25,7 +25,9 @@ export default function contactform() {
             'Content-Type',
             'application/x-www-form-urlencoded; charset=UTF-8'
         );
-        request.send($form.serialize());
+        console.log($($form).serialize());
+
+        request.send($($form).serialize());
 
         // remove the message
         if (messageEl.parentNode) {
