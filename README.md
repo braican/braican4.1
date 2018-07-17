@@ -17,6 +17,12 @@ The reasoning for the change was simple - I don't have that much content, and I 
 
 #### Changelog
 
+**`Version 6.1.0`** - Released 07/17/2018
+
+* Adds social media links in footer.
+* Enables post thumbnail capability within WordPress.
+* Updates WordPress and ACF plugins.
+
 **`Version 6.0.1`** - Released 07/10/2018
 
 * Locks down mobile styles.
