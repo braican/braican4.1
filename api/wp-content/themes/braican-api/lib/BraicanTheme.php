@@ -3,6 +3,7 @@
 
 class BraicanTheme {
     function __construct() {
+        add_theme_support( 'post-thumbnails' );
         
         // register post types and taxonomies
         add_action('init', array($this, 'register_custom_types'));
