@@ -88,3 +88,23 @@ input[type='submit']{
   }
 }
 
+.a-cta{
+  @include icon-right($icon_arrow, 20px, 18px, 6px);
+  text-decoration: none;
+  line-height: 1;
+  color: $c-orange;
+  transition: color $transition;
+
+  &:after{
+    transition: all $transition;
+  }
+
+  &:hover{
+    color: $c-orange-hover;
+
+    &:after{
+      transform: translateX(4px);
+    }
+  }
+}
+
