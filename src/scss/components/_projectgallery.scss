@@ -21,7 +21,10 @@
   @include block-shadow();
   flex: 1;
   margin-right: 18px;
-  min-width: 400px;
+  
+  @include gt($tablet) {
+    min-width: 400px;
+  }
 
   img{
     display: block;
@@ -53,8 +56,12 @@
 
 .project__excerpt{
   margin-top: 1em;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   max-width: 540px;
+
+  @include gt($tablet){
+    margin-bottom: 2em;
+  }
 }
 
 .project__promo{
