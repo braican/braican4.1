@@ -4,20 +4,20 @@
 
   @include gt($tablet) {
     padding-bottom: 25vh;
-    width: 90%;
+    width: 86%;
     align-items: flex-start;
     display: flex;
 
     &:nth-child(even){
       position: relative;
-      left: 10%;
+      left: 14%;
     }
   }
 }
 
 .product__thumb{
   @include block-shadow();
-  flex: 0 0 50%;
+  flex: 1;
   margin-right: 18px;
 
   img{
@@ -29,6 +29,7 @@
 
 .project__details{
     padding-top: $spacing-s;
+    flex: 0 0 600px;
 
     @include gt($tablet) {
         padding-left: $spacing-s;
@@ -50,7 +51,7 @@
 .project__excerpt{
   margin-top: 1em;
   margin-bottom: 2em;
-  max-width: 580px;
+  max-width: 540px;
 }
 
 .project__promo{
