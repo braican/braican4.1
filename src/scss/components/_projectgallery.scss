@@ -17,7 +17,7 @@
 
 .product__thumb{
   @include block-shadow();
-  flex: 0 0 40%;
+  flex: 0 0 50%;
   margin-right: 18px;
 
   img{
@@ -28,15 +28,15 @@
 
 
 .project__details{
-    padding-top: 80px;
+    padding-top: $spacing-s;
 
     @include gt($tablet) {
-        padding-left: 40px;
+        padding-left: $spacing-s;
 
         .project:nth-child(even) &{
             order: -1;
             padding-left: 0;
-            padding-right: 40px;
+            padding-right: $spacing-s;
         }
     }
 }
