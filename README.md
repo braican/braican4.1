@@ -1,7 +1,23 @@
 # braican.com
 
 
-This is the public repository of [braican.com](http://braican.com), [Nick Braica's](http://twitter.com/braican) portfolio site.
+This is the public repository of [braican.com](http://braican.com), [Nick Braica's](http://twitter.com/braican) portfolio site. This repo includes both the `frontend` and the `api` end, which is set up with WordPress.
+
+
+## Setup and build the front end
+
+To set up a local environment to make changes to the front end of the site, you should run the following:
+
+```
+# Make sure you're using the right node version.
+nvm install
+
+# Install node dependencies.
+yarn install
+
+# Run gulp to retrieve the API data, spin up the local server, build the hugo stuff, and watch files.
+gulp
+```
 
 
 ## The Versions
