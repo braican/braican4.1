@@ -36,7 +36,7 @@ The reasoning for the change was simple - I don't have that much content, and I 
 **`Version 6.2.2`** - Released 10/10/2018
 
 * Various style updates.
-* REfactoring some JavaScript to ES6 classes, and reformatting based on style settings.
+* Refactoring some JavaScript to ES6 classes, and reformatting based on style settings.
 * Additional documentation for environment setup.
 * Switch to using `yarn` vs. `npm`.
 
