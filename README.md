@@ -1,7 +1,23 @@
 # braican.com
 
 
-This is the public repository of [braican.com](http://braican.com), [Nick Braica's](http://twitter.com/braican) portfolio site.
+This is the public repository of [braican.com](http://braican.com), [Nick Braica's](http://twitter.com/braican) portfolio site. This repo includes both the `frontend` and the `api` end, which is set up with WordPress.
+
+
+## Setup and build the front end
+
+To set up a local environment to make changes to the front end of the site, you should run the following:
+
+```
+# Make sure you're using the right node version.
+nvm install
+
+# Install node dependencies.
+yarn install
+
+# Run gulp to retrieve the API data, spin up the local server, build the hugo stuff, and watch files.
+gulp
+```
 
 
 ## The Versions
@@ -16,6 +32,13 @@ Version six is a slight aesthetic improvement, but a total overhaul in the techn
 The reasoning for the change was simple - I don't have that much content, and I didn't need an entire CMS to handle just some case studies and an introduction.
 
 #### Changelog
+
+**`Version 6.2.2`** - Released 10/10/2018
+
+* Various style updates.
+* Refactoring some JavaScript to ES6 classes, and reformatting based on style settings.
+* Additional documentation for environment setup.
+* Switch to using `yarn` vs. `npm`.
 
 **`Version 6.2.1`** - Released 07/19/2018
 

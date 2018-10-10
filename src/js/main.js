@@ -1,3 +1,5 @@
-import contactform from './modules/contactform';
+import Contact from './modules/contact';
+import Links from './modules/links';
 
-contactform();
+new Contact();
+new Links();

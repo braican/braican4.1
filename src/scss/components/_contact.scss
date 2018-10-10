@@ -1,34 +1,33 @@
-.contactform{
-  padding-top: 2em;
-  font-family: $t-serif;
-  line-height: 2;
+.contactform {
+    padding-top: 2em;
+    line-height: 2;
 }
 
-.contact__honeypot{
+.contact__honeypot {
     display: none;
 }
 
-.contact__intro{
-  font-size: $font-size-m;
-  display: block;
+.contact__intro {
+    font-family: $t-serif;
+    font-size: $font-size-l;
+    display: block;
 
-  + p{
-    margin-top: 0;
-  }
+    + p {
+        margin-top: 0;
+    }
 }
 
-.contact__email{
-  width: 12em;
+.contact__email {
+    width: 12em;
 }
 
-.contact__message{
-  margin-top: 1em;
-  margin-bottom: 2em;
-  display: block;
+.contact__message {
+    margin-top: 1em;
+    margin-bottom: 2em;
+    display: block;
 }
-
 
 // submission
-.submission__message{
+.submission__message {
     margin-top: 1em;
 }

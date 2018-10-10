@@ -1,6 +1,6 @@
 {
   "name": "braican",
-  "version": "6.2.1",
+  "version": "6.2.2",
   "description": "Brand site for Nick Braica",
   "main": "gulpfile.js",
   "scripts": {
