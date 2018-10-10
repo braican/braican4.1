@@ -1,43 +1,45 @@
-.project{
-  overflow: hidden;
-  padding-bottom: $spacing;
+.project {
+    overflow: hidden;
+    padding-bottom: $spacing;
 
-  @include gt($tablet) {
-    padding-bottom: 25vh;
-    align-items: flex-start;
-    display: flex;
-  }
-
-  @include gt($large_tablet){
-    width: 86%;
-    &:nth-child(even){
-      position: relative;
-      left: 14%;
+    @include gt($tablet) {
+        padding-bottom: 25vh;
+        align-items: flex-start;
+        display: flex;
     }
-  }
+
+    @include gt($large_tablet) {
+        width: 86%;
+        &:nth-child(even) {
+            position: relative;
+            left: 14%;
+        }
+    }
 }
 
-.product__thumb{
-  @include block-shadow();
-  flex: 1;
-  margin-right: 18px;
-  min-width: 400px;
+.product__thumb {
+    @include block-shadow();
+    flex: 1;
+    margin-right: 18px;
 
-  img{
-    display: block;
-    width: 100%;
-  }
+    @include gt($tablet) {
+        min-width: 400px;
+    }
+
+    img {
+        display: block;
+        width: 100%;
+    }
 }
 
-
-.project__details{
+.project__details {
     padding-top: $spacing-s;
     flex: 0 1 600px;
 
     @include gt($tablet) {
         padding-left: $spacing-s;
 
-        .project:nth-child(even) &{
+        .project:nth-child(even) & {
             order: -1;
             padding-left: 0;
             padding-right: $spacing-s;
@@ -45,24 +47,28 @@
     }
 }
 
-.project__title{
-  font-family: $t-serif;
-  font-size: $font-size-l;
-  line-height: $line-height-s;
+.project__title {
+    font-family: $t-serif;
+    font-size: $font-size-l;
+    line-height: $line-height-s;
 }
 
-.project__excerpt{
-  margin-top: 1em;
-  margin-bottom: 2em;
-  max-width: 540px;
+.project__excerpt {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    max-width: 540px;
+
+    @include gt($tablet) {
+        margin-bottom: 2em;
+    }
 }
 
-.project__promo{
-  text-decoration: none;
-  text-align: center;
+.project__promo {
+    text-decoration: none;
+    text-align: center;
 }
 
-.project__promo{
+.project__promo {
     width: 100%;
     max-width: 400px;
     margin: auto;
@@ -78,9 +84,8 @@
     color: $c-text-color;
     transition: color $transition;
 
-
-    &::after{
-        content:'';
+    &::after {
+        content: '';
         display: block;
         position: absolute;
         left: 50%;
@@ -88,13 +93,15 @@
         width: 32px;
         height: 32px;
         margin-left: -16px;
-        background-image: $icon_plus;
+        background-image: $icon_arrow_down;
+        background-repeat: no-repeat;
+        background-position: center center;
         transition: all $transition;
     }
 
-    &:hover{
+    &:hover {
         color: $c-orange-dark;
-        &:after{
+        &:after {
             transform: translateY(-10px);
         }
     }
