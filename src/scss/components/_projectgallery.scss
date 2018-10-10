@@ -93,7 +93,9 @@
         width: 32px;
         height: 32px;
         margin-left: -16px;
-        background-image: $icon_plus;
+        background-image: $icon_arrow_down;
+        background-repeat: no-repeat;
+        background-position: center center;
         transition: all $transition;
     }
 
