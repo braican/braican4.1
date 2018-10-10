@@ -33,6 +33,13 @@ The reasoning for the change was simple - I don't have that much content, and I 
 
 #### Changelog
 
+**`Version 6.2.2`** - Released 10/10/2018
+
+* Various style updates.
+* REfactoring some JavaScript to ES6 classes, and reformatting based on style settings.
+* Additional documentation for environment setup.
+* Switch to using `yarn` vs. `npm`.
+
 **`Version 6.2.1`** - Released 07/19/2018
 
 * Style updates around layout and project gallery.
