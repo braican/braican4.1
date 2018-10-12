@@ -4,53 +4,38 @@
 
     @include gt($tablet) {
         padding-bottom: 25vh;
-        align-items: flex-start;
         display: flex;
-    }
-
-    @include gt($large_tablet) {
-        width: 86%;
-        &:nth-child(even) {
-            position: relative;
-            left: 14%;
-        }
     }
 }
 
 .product__thumb {
-    @include block-shadow();
-    flex: 1;
-    margin-right: 18px;
+    flex: 0 0 $l-six-col;
+    padding-right: 18px;
 
     @include gt($tablet) {
-        min-width: 400px;
+        padding-right: 60px;
+        width: $l-six-col;
     }
 
     img {
         display: block;
         width: 100%;
+        @include block-shadow();
     }
 }
 
 .project__details {
     padding-top: $spacing-s;
-    flex: 0 1 600px;
+    flex: 0 0 $l-six-col;
 
     @include gt($tablet) {
-        padding-left: $spacing-s;
-
-        .project:nth-child(even) & {
-            order: -1;
-            padding-left: 0;
-            padding-right: $spacing-s;
-        }
+        width: $l-six-col;
     }
 }
 
 .project__title {
-    font-family: $t-serif;
+    @include headline;
     font-size: $font-size-l;
-    line-height: $line-height-s;
 }
 
 .project__excerpt {
@@ -69,18 +54,16 @@
 }
 
 .project__promo {
+    @include headline;
     width: 100%;
     max-width: 400px;
     margin: auto;
-    font-family: $t-serif;
     display: block;
     position: relative;
-    padding-top: 40px;
     padding-bottom: $spacing;
     text-decoration: none;
     text-align: center;
     font-size: $font-size-l;
-    line-height: $line-height-s;
     color: $c-text-color;
     transition: color $transition;
 
@@ -102,7 +85,7 @@
     &:hover {
         color: $c-orange-dark;
         &:after {
-            transform: translateY(-10px);
+            transform: translateY(10px);
         }
     }
 }

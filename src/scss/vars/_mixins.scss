@@ -4,13 +4,11 @@
  *
  * ============================================================== */
 
-
 @mixin gt($size) {
-  @media screen and (min-width: $size) {
-    @content;
-  }
+    @media screen and (min-width: $size) {
+        @content;
+    }
 }
-
 
 /* ==============================================================
  *
@@ -18,7 +16,18 @@
  *
  * ============================================================== */
 
-
 @mixin block-shadow($offset: 18px) {
-  box-shadow: $offset $offset 0 $c-orange;
+    box-shadow: $offset $offset 0 $c-orange;
+}
+
+/* ==============================================================
+ *
+ * Type
+ *
+ * ============================================================== */
+
+@mixin headline() {
+    font-family: $t-headline;
+    font-weight: $bold;
+    line-height: $line-height-m;
 }

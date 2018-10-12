@@ -1,14 +1,26 @@
-.intro__hey{
-  font-family: $t-serif;
-  font-size: $font-size-xl;
-  line-height: $line-height-s;
+.intro {
+    @include gt($tablet) {
+        display: flex;
+    }
+}
+.intro__hey {
+    @include headline;
+    font-size: 3rem;
 
-  @include gt($tablet){
-    position: relative;
-    left: -$font-size-xl;
-  }
+    @include gt($tablet) {
+        font-size: $font-size-xl;
+        margin-left: $l-one-col;
+        width: $l-five-col;
+        padding-right: 60px;
+    }
 }
 
-.intro__main{
-  padding-top: $font-size-xl;
+.intro__main {
+    padding-top: 1rem;
+
+    @include gt($tablet) {
+        padding-top: 20vh;
+        margin-right: $l-two-col;
+        width: $l-four-col;
+    }
 }
