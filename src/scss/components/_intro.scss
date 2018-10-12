@@ -1,16 +1,26 @@
 .intro {
-    display: flex;
+    @include gt($tablet) {
+        display: flex;
+    }
 }
 .intro__hey {
     @include headline;
-    font-size: $font-size-xl;
-    margin-left: $l-two-col;
-    width: $l-four-col;
-    padding-right: 60px;
+    font-size: 3rem;
+
+    @include gt($tablet) {
+        font-size: $font-size-xl;
+        margin-left: $l-one-col;
+        width: $l-five-col;
+        padding-right: 60px;
+    }
 }
 
 .intro__main {
-    padding-top: 20vh;
-    margin-right: $l-two-col;
-    width: $l-four-col;
+    padding-top: 1rem;
+
+    @include gt($tablet) {
+        padding-top: 20vh;
+        margin-right: $l-two-col;
+        width: $l-four-col;
+    }
 }

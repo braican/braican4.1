@@ -10,8 +10,12 @@
 
 .product__thumb {
     flex: 0 0 $l-six-col;
-    width: $l-six-col;
-    padding-right: 60px;
+    padding-right: 18px;
+
+    @include gt($tablet) {
+        padding-right: 60px;
+        width: $l-six-col;
+    }
 
     img {
         display: block;
@@ -23,7 +27,10 @@
 .project__details {
     padding-top: $spacing-s;
     flex: 0 0 $l-six-col;
-    width: $l-six-col;
+
+    @include gt($tablet) {
+        width: $l-six-col;
+    }
 }
 
 .project__title {
@@ -53,7 +60,6 @@
     margin: auto;
     display: block;
     position: relative;
-    padding-top: $spacing;
     padding-bottom: $spacing;
     text-decoration: none;
     text-align: center;

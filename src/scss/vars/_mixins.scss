@@ -29,4 +29,5 @@
 @mixin headline() {
     font-family: $t-headline;
     font-weight: $bold;
+    line-height: $line-height-m;
 }
