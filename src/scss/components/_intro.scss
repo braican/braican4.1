@@ -1,14 +1,16 @@
-.intro__hey{
-  font-family: $t-serif;
-  font-size: $font-size-xl;
-  line-height: $line-height-s;
-
-  @include gt($tablet){
-    position: relative;
-    left: -$font-size-xl;
-  }
+.intro {
+    display: flex;
+}
+.intro__hey {
+    @include headline;
+    font-size: $font-size-xl;
+    margin-left: $l-two-col;
+    width: $l-four-col;
+    padding-right: 60px;
 }
 
-.intro__main{
-  padding-top: $font-size-xl;
+.intro__main {
+    padding-top: 20vh;
+    margin-right: $l-two-col;
+    width: $l-four-col;
 }
