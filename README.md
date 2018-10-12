@@ -33,6 +33,12 @@ The reasoning for the change was simple - I don't have that much content, and I 
 
 #### Changelog
 
+**`Version 6.2.3`** - Released 10/12/2018
+
+* Updated headline typeface to Futura, because I sure do love Futura.
+* Adjust intro layout.
+* Other miscellaneous aesthetic improvements.
+
 **`Version 6.2.2`** - Released 10/10/2018
 
 * Various style updates.
