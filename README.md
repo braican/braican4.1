@@ -25,13 +25,19 @@ gulp
 ### Version 6
 `released 07/09/2018`
 
-![v6](assets/braican.com-v6.png?raw=true)
+![v6](assets/braican.com-v6.2.3.png?raw=true)
 
 Version six is a slight aesthetic improvement, but a total overhaul in the technology and the code behind the site. I kept WordPress on to handle my content, but am using it solely as a platform to create a content API that provides json endpoints for the data. The front end is handled by Hugo, a static site generator. The json data is downloaded via a gulp task that Hugo then renders.
 
 The reasoning for the change was simple - I don't have that much content, and I didn't need an entire CMS to handle just some case studies and an introduction.
 
 #### Changelog
+
+**`Version 6.2.3`** - Released 10/12/2018
+
+* Updated headline typeface to Futura, because I sure do love Futura.
+* Adjust intro layout.
+* Other miscellaneous aesthetic improvements.
 
 **`Version 6.2.2`** - Released 10/10/2018
 
