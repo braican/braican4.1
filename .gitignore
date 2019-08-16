@@ -67,3 +67,7 @@ yarn-error.log
 
 # Local scripts
 bin/*.local.sh
+
+# Ignore the default composer file, since it has private keys in it.
+composer.json
+composer.lock

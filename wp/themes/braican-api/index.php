@@ -1,6 +1,11 @@
-<meta content="0; URL='http://braican.com''" http-equiv"refresh">
+<?php
+/**
+ * Index file for the Markup theme. Since WordPress is only being used to provide a REST API, this
+ * theme file will just redirect the user to the admin.
+ *
+ * @package BraicanApi
+ */
 
-<!-- just in case the meta tag is not read properly, here is plan B: a JS redirect -->
-<script type="text/javascript">
-  window.location = 'http://braican.com';
-</script>
+header( 'HTTP/1.1 301 Moved Permanently' );
+header( 'Location: ' . get_admin_url() );
+exit();
