@@ -1,5 +1,7 @@
 FROM richarvey/nginx-php-fpm:1.5.0
 
+RUN apk update
+
 RUN apk add \
   mysql-client \
   openssl \
@@ -28,19 +30,19 @@ RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.ph
 	# Add bash completons for interactive usage.
 	wget https://github.com/wp-cli/wp-cli/raw/master/utils/wp-completion.bash; \
 	mv wp-completion.bash $HOME; \
-	echo -e "source $HOME/wp-completion.bash\n" > $HOME/.bashrc 
+	echo -e "source $HOME/wp-completion.bash\n" > $HOME/.bashrc
 
 # Download WordPress
-#RUN wp core download
+RUN wp core download --version=5.2.2
 
 # Copy custom configuration files into location expected by nginx-php-fpm.
 # See https://github.com/richarvey/nginx-php-fpm/blob/master/docs/nginx_configs.md
-#COPY conf /var/www/html/conf
+COPY wp/conf /var/www/html/conf
 
 # Copy startup scripts into location expected by nginx-php-fpm.
 # See https://github.com/richarvey/nginx-php-fpm/blob/master/docs/scripting_templating.md
-#COPY scripts /var/www/html/scripts
+COPY wp/scripts /var/www/html/scripts
 
-# Copy the rest of this theme into place
-COPY webroot /var/www/html
+# Copy the uploads into place
+COPY wp/uploads /var/www/html/wp-content/uploads
 
