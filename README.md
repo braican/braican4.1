@@ -22,8 +22,8 @@ gulp
 
 ## The Versions
 
-### Version 6
-`released 07/09/2018`
+### v6
+Released 07/09/2018
 
 ![v6](assets/braican.com-v6.2.3.png?raw=true)
 
@@ -31,41 +31,9 @@ Version six is a slight aesthetic improvement, but a total overhaul in the techn
 
 The reasoning for the change was simple - I don't have that much content, and I didn't need an entire CMS to handle just some case studies and an introduction.
 
-#### Changelog
 
-**`Version 6.2.3`** - Released 10/12/2018
-
-* Updated headline typeface to Futura, because I sure do love Futura.
-* Adjust intro layout.
-* Other miscellaneous aesthetic improvements.
-
-**`Version 6.2.2`** - Released 10/10/2018
-
-* Various style updates.
-* Refactoring some JavaScript to ES6 classes, and reformatting based on style settings.
-* Additional documentation for environment setup.
-* Switch to using `yarn` vs. `npm`.
-
-**`Version 6.2.1`** - Released 07/19/2018
-
-* Style updates around layout and project gallery.
-
-**`Version 6.2.0`** - Released 07/17/2018
-
-* Adds social media links in footer.
-* Enables post thumbnail capability within WordPress.
-* Updates WordPress and ACF plugins.
-
-**`Version 6.1.0`** - Released 07/10/2018
-
-* Locks down mobile styles.
-* Adds Netlify support to forms, and handles submissions via ajax.
-* Build taks enhancement - minify javascript for production.
-
-
-
-### Version 5
-`released 01/06/2018`
+### v5
+Released 01/06/2018
 
 ![v5](assets/braican.com-v5.jpg?raw=true)
 
@@ -74,15 +42,15 @@ The fifth iteration of braican.com saw a focus on a simpler approach. A brief in
 I started working on the site on December 8, 2017, and initially launched it about a month later.
 
 
-### Version 4
-`released 03/19/2014`
+### v4
+Released 03/19/2014
 
 ![v4](assets/braican.com-v4.jpg?raw=true)
 
 Moving to a CMS driven site for the first time, I developed a custom, one page WordPress theme that consisted of sections for my work, about me, and contact links. This is the first braican.com iteration to be fully responsive. I utilized AJAX and the HTML5 history API to navigate to the portfolio items and case studies. To date, this has been the longest running braican.com iteration.
 
-### Version 3
-`released 09/30/2011`
+### v3
+Released 09/30/2011
 
 ![v3](assets/braican.com-v3.jpg?raw=true)
 
@@ -91,8 +59,8 @@ Another static site with WordPress driving the blogging funtionality. This itera
 This is the site that was live when I was hired as a co-op at The Boston Globe, as well as when I graduated from college and was hired full-time by Tank Design. So I guess you could say that this one was good enough to get me a couple jobs.
 
 
-### Version 2
-`released 10/20/2010`
+### v2
+Released 10/20/2010
 
 ![v2](assets/braican.com-v2.jpg?raw=true)
 
@@ -100,8 +68,8 @@ A modification of the first iteration, this was a static html site that used Wor
 
 I was also able to highlight The Girl From Last Night, perhaps the college project I'm most proud of.
 
-### Version 1
+### v1
 
-`released ??/??/??`
+Released ??/??/??
 
 This one's been lost to time. It was a very basic, static site that highlighted some schoolwork. There was a really cool grayscale gradient background.
