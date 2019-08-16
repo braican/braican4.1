@@ -1,0 +1,12 @@
+{
+  "name": "braican/braican-brand-wp-theme",
+  "description": "Headless WordPress theme for Nick Braica's brand website.",
+  "version": "7.0.0",
+  "type": "wordpress-theme",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ]
+}
