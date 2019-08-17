@@ -23,15 +23,11 @@
 
   svg {
     width: 40px;
-
-    @include mq($bp--mobile) {
-      transform: rotate(-45deg);
-    }
   }
 }
 
 .footer {
-  padding: 1em;
+  padding-left: 1em;
   width: 50vh;
   transform-origin: 0 100%;
   transform: translateX(3em) rotate(-90deg);
