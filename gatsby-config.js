@@ -1,3 +1,5 @@
+const path = require('path');
+
 require('dotenv').config();
 
 module.exports = {
@@ -8,13 +10,14 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `images`,
+    //     path: `${__dirname}/src/images`,
+    //   },
+    // },
+
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -30,6 +33,21 @@ module.exports = {
         verboseOutput: false,
 
         includedRoutes: ['**/*/*/projects', '**/braican/v1/front'],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        typekit: {
+          id: 'vcr6sxy',
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        data: `@import 'abstracts';`,
+        includePaths: [path.resolve(__dirname, 'src/styles')],
       },
     },
   ],

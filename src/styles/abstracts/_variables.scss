@@ -1,0 +1,34 @@
+// Color
+// -----------
+
+$c--orange: #f48c3d;
+
+// Type
+// -----------
+
+$ff--sans: nimbus-sans, sans-serif;
+$ff--main: $ff--sans;
+
+$fw--normal: 400;
+$fw--bold: 700;
+
+$fs--small: 0.8rem;
+$fs--base: 20px;
+$fs--large: 2rem;
+
+$lh--base: 1.4;
+
+// Layout
+// -----------
+
+$spacing--base: 20px;
+$spacing: $spacing--base;
+$mobile-spacing: 6vw;
+$sidebar-width: 100px;
+$sidebar-width-small: 60px;
+
+// Breakpoints
+// -----------
+
+$bp--desktop: 880px;
+$bp--mobile: 600px;

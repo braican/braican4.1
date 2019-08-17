@@ -1,0 +1,20 @@
+html {
+  font-size: $fs--base;
+}
+
+body {
+  font-family: $ff--sans;
+  font-weight: $fw--normal;
+  font-style: normal;
+  line-height: $lh--base;
+}
+
+.headline {
+  font-size: $fs--base;
+  font-weight: $fw--bold;
+  margin-bottom: 1em;
+}
+
+.stack > * + * {
+  margin-top: 1em;
+}

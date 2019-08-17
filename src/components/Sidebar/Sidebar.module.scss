@@ -1,0 +1,42 @@
+.sidebar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include mq($bp--mobile) {
+    width: $sidebar-width;
+  }
+}
+
+.logo {
+  padding: $mobile-spacing;
+
+  @include mq($bp--mobile) {
+    text-align: center;
+    padding: spacing(8) $spacing 0;
+  }
+
+  svg {
+    width: 40px;
+
+    @include mq($bp--mobile) {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.footer {
+  padding: 1em;
+  width: 50vh;
+  transform-origin: 0 100%;
+  transform: translateX(3em) rotate(-90deg);
+
+  @include mq($bp--mobile, max) {
+    display: none;
+  }
+}

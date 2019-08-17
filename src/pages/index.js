@@ -1,19 +1,38 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
 
-import Layout from '../components/layout';
-import Image from '../components/image';
-import SEO from '../components/seo';
+import Layout from '../layouts/Base';
+import SEO from '../components/Seo';
+import Intro from '../components/Intro';
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-  </Layout>
-);
+const IndexPage = ({ data }) => {
+  const { lead, main } = data.wordpressBraicanFront;
+
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <Intro headline={lead} body={main} />
+    </Layout>
+  );
+};
+
+IndexPage.propTypes = {
+  data: PropTypes.shape({
+    wordpressBraicanFront: PropTypes.shape({
+      lead: PropTypes.string,
+      main: PropTypes.string,
+    }),
+  }),
+};
+
+export const query = graphql`
+  query FrontPageQuery {
+    wordpressBraicanFront {
+      lead
+      main
+    }
+  }
+`;
 
 export default IndexPage;

@@ -1,0 +1,17 @@
+.layout__main {
+  padding: spacing(8) $mobile-spacing spacing(2) $mobile-spacing;
+  max-width: 1020px;
+
+  @include mq($bp--mobile) {
+    padding-left: spacing(4) + $sidebar-width;
+    padding-right: spacing(4);
+  }
+}
+
+.mobileFooter {
+  font-size: $fs--small;
+  margin-top: spacing(6);
+  @include mq($bp--mobile) {
+    display: none;
+  }
+}
