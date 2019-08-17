@@ -8,7 +8,8 @@ create_containers() {
 
 # Begin the installation
 
-read -p 'Copy over the .env.sample file? (y/n) ' COPY_ENV
+read -sp 'Copy over the .env.sample file? (y/n) ' COPY_ENV
+echo
 
 if [ $COPY_ENV = 'y' ] || [ $COPY_ENV = 'Y' ]; then
   echo "Setting up .env ..."

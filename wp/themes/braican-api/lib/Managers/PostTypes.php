@@ -1,15 +1,14 @@
 <?php
+/**
+ * Add the custom post types.
+ *
+ * @package BraicanApi.
+ */
 
+namespace BraicanApi\Managers;
 
-class BraicanTheme {
-    function __construct() {
-        add_theme_support( 'post-thumbnails' );
-        
-        // register post types and taxonomies
-        add_action('init', array($this, 'register_custom_types'));
-    }
-
-    public function register_custom_types() {
+class PostTypes {
+    public static function register() {
         /**
          * Project, single page
          */
@@ -29,7 +28,7 @@ class BraicanTheme {
             'public'    => true,
             'menu_icon' => 'dashicons-hammer',
             'rewrite'   => array(
-                'slug' => 'work'
+                'slug' => 'work',
             ),
         ));
     }
