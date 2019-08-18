@@ -2,7 +2,7 @@
 
 This is the public repository of [braican.com](http://braican.com), [Nick Braica's](http://twitter.com/braican) portfolio site. This repo includes both the `frontend` and the `api` end, which is set up with WordPress.
 
-## Setup and build the front end
+## Setup and development
 
 To set up a local environment to make changes to the front end of the site, you should run the following:
 
@@ -10,11 +10,11 @@ To set up a local environment to make changes to the front end of the site, you 
 # Make sure you're using the right node version.
 nvm install
 
-# Install node dependencies.
-yarn install
+# Install the docker container for wordpress and node dependencies.
+./bin/install
 
-# Run gulp to retrieve the API data, spin up the local server, build the hugo stuff, and watch files.
-gulp
+# Start all the things.
+./bin/start
 ```
 
 ## The Versions
