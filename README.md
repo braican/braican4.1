@@ -1,8 +1,6 @@
 # braican.com
 
-
 This is the public repository of [braican.com](http://braican.com), [Nick Braica's](http://twitter.com/braican) portfolio site. This repo includes both the `frontend` and the `api` end, which is set up with WordPress.
-
 
 ## Setup and build the front end
 
@@ -19,10 +17,18 @@ yarn install
 gulp
 ```
 
-
 ## The Versions
 
+### v7
+
+Released 08/18/2019
+
+![v7](assets/braican.com-v7.png?raw=true)
+
+Version seven moves the tech stack to using Gatsby to generate the static, single page site. The design moves to a more text-centric approach; no more corny images for projects, for example.
+
 ### v6
+
 Released 07/09/2018
 
 ![v6](assets/braican.com-v6.2.3.png?raw=true)
@@ -31,8 +37,8 @@ Version six is a slight aesthetic improvement, but a total overhaul in the techn
 
 The reasoning for the change was simple - I don't have that much content, and I didn't need an entire CMS to handle just some case studies and an introduction.
 
-
 ### v5
+
 Released 01/06/2018
 
 ![v5](assets/braican.com-v5.jpg?raw=true)
@@ -41,8 +47,8 @@ The fifth iteration of braican.com saw a focus on a simpler approach. A brief in
 
 I started working on the site on December 8, 2017, and initially launched it about a month later.
 
-
 ### v4
+
 Released 03/19/2014
 
 ![v4](assets/braican.com-v4.jpg?raw=true)
@@ -50,6 +56,7 @@ Released 03/19/2014
 Moving to a CMS driven site for the first time, I developed a custom, one page WordPress theme that consisted of sections for my work, about me, and contact links. This is the first braican.com iteration to be fully responsive. I utilized AJAX and the HTML5 history API to navigate to the portfolio items and case studies. To date, this has been the longest running braican.com iteration.
 
 ### v3
+
 Released 09/30/2011
 
 ![v3](assets/braican.com-v3.jpg?raw=true)
@@ -58,8 +65,8 @@ Another static site with WordPress driving the blogging funtionality. This itera
 
 This is the site that was live when I was hired as a co-op at The Boston Globe, as well as when I graduated from college and was hired full-time by Tank Design. So I guess you could say that this one was good enough to get me a couple jobs.
 
-
 ### v2
+
 Released 10/20/2010
 
 ![v2](assets/braican.com-v2.jpg?raw=true)
