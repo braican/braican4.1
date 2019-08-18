@@ -1,4 +1,0 @@
-baseURL = "https://braican.com/"
-languageCode = "en-us"
-title = "Nick Braica builds websites"
-publishDir = "../dist"

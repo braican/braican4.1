@@ -9,7 +9,7 @@ before_install:
   - nvm install
 
 install:
-  - npm install
+  - yarn install
 
 script:
-  - npm run lint:scripts
+  - yarn lint:scripts
