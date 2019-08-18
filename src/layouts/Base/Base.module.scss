@@ -16,15 +16,15 @@
 }
 
 .headline {
-  @include mq($bp--max) {
-    width: 440px;
-  }
-
   @include mq($bp--desktop) {
     width: 32%;
     width: calc(50% - #{$sidebar-width + spacing(2)});
     position: fixed;
     padding-right: 2em;
+  }
+
+  @include mq($bp--max) {
+    width: 440px;
   }
 }
 
