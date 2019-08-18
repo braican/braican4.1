@@ -3,15 +3,15 @@ html {
 }
 
 body {
-  font-family: $ff--sans;
+  @include pragmatica;
   font-weight: $fw--normal;
   font-style: normal;
   line-height: $lh--base;
 }
 
 .headline {
+  @include pragmatica-extended;
   font-size: $fs--base;
-  font-weight: $fw--bold;
   margin-bottom: 1em;
 }
 
