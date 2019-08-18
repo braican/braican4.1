@@ -3,6 +3,7 @@
 
 $c--orange: #f48c3d;
 $c--orange-dark: darken($c--orange, 14%);
+$c--gray-c: #cccccc;
 
 // Type
 // -----------
@@ -28,5 +29,6 @@ $sidebar-width-small: 60px;
 // Breakpoints
 // -----------
 
+$bp--max: 1180px;
 $bp--desktop: 880px;
 $bp--mobile: 600px;

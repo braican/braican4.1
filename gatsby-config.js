@@ -30,9 +30,9 @@ module.exports = {
         useACF: false,
 
         // DEBUG - set to true to debug gatsby running to get data from the endpoints.
-        verboseOutput: false,
+        verboseOutput: true,
 
-        includedRoutes: ['**/*/*/projects', '**/braican/v1/front'],
+        includedRoutes: ['**/braican/v1/projects', '**/braican/v1/front'],
       },
     },
     {
@@ -48,6 +48,12 @@ module.exports = {
       options: {
         data: `@import 'abstracts';`,
         includePaths: [path.resolve(__dirname, 'src/styles')],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-20596099-3',
       },
     },
   ],

@@ -1,9 +1,0 @@
-.intro {
-  @include mq($bp--desktop) {
-    display: flex;
-
-    > * {
-      flex: 1;
-    }
-  }
-}

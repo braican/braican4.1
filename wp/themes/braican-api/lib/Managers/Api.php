@@ -29,7 +29,7 @@ class API {
 		// Remove default WordPress endpoints, but only if the current user is not logged in since
 		// the Gutenberg relies on the default REST API.
 		if ( ! is_user_logged_in() ) {
-			// add_filter( 'rest_endpoints', array( $api, 'remove_default_endpoints' ) );
+			add_filter( 'rest_endpoints', array( $api, 'remove_default_endpoints' ) );
 		}
 
 		// Create endpoints.
@@ -51,6 +51,10 @@ class API {
 
 		foreach ( $endpoints as $endpoint => $details ) {
 			$valid = false;
+
+			if ( '/' === $endpoint ) {
+				continue;
+			}
 
 			foreach ( $whitelist as $allowed ) {
 				if ( fnmatch( '/' . $allowed . '/*', $endpoint, FNM_CASEFOLD ) ) {
@@ -74,5 +78,6 @@ class API {
 	 */
 	public function setup_endpoints() {
 		$front_page = new \BraicanApi\Endpoints\FrontPage( 'front' );
+		$projects   = new \BraicanApi\Endpoints\Projects( 'projects' );
 	}
 }

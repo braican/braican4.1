@@ -9,12 +9,14 @@ import styles from './Base.module.scss';
 // Import global styles.
 import '../../styles/globals.scss';
 
-const BaseLayout = ({ children }) => (
+const BaseLayout = ({ children, headline }) => (
   <div className={styles.layout}>
     <Sidebar />
 
     <main className={styles.layout__main}>
-      {children}
+      {headline && <h1 className={`headline ${styles.headline}`}>{headline}</h1>}
+
+      <div className={styles.body}>{children}</div>
 
       <Footer className={styles.mobileFooter} />
     </main>
@@ -23,6 +25,7 @@ const BaseLayout = ({ children }) => (
 
 BaseLayout.propTypes = {
   children: PropTypes.node.isRequired,
+  headline: PropTypes.string,
 };
 
 export default BaseLayout;

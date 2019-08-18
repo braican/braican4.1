@@ -1,6 +1,6 @@
 .layout__main {
-  padding: spacing(8) $mobile-spacing spacing(2) $mobile-spacing;
-  max-width: 1020px;
+  padding: spacing(8) $mobile-spacing spacing(4) $mobile-spacing;
+  max-width: 1180px;
 
   @include mq($bp--mobile) {
     padding-left: spacing(4) + $sidebar-width;
@@ -9,9 +9,27 @@
 }
 
 .mobileFooter {
-  font-size: $fs--small;
   margin-top: spacing(6);
   @include mq($bp--mobile) {
     display: none;
+  }
+}
+
+.headline {
+  @include mq($bp--max) {
+    width: 440px;
+  }
+
+  @include mq($bp--desktop) {
+    width: 32%;
+    width: calc(50% - #{$sidebar-width + spacing(2)});
+    position: fixed;
+    padding-right: 2em;
+  }
+}
+
+.body {
+  @include mq($bp--desktop) {
+    margin-left: 50%;
   }
 }

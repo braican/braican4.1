@@ -5,14 +5,16 @@ import { graphql } from 'gatsby';
 import Layout from '../layouts/Base';
 import SEO from '../components/Seo';
 import Intro from '../components/Intro';
+import Projects from '../components/Projects';
 
 const IndexPage = ({ data }) => {
   const { lead, main } = data.wordpressBraicanFront;
 
   return (
-    <Layout>
+    <Layout headline={lead}>
       <SEO title="Home" />
       <Intro headline={lead} body={main} />
+      <Projects />
     </Layout>
   );
 };

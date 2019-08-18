@@ -19,12 +19,14 @@ class FrontPage extends Base {
 	 * @return array
 	 */
 	public function get_content( $request ) {
-		$lead = get_field( 'braican_lead', 'option' );
-		$main = get_field( 'braican_main', 'option' );
+		$lead          = get_field( 'braican_lead', 'option' );
+		$main          = get_field( 'braican_main', 'option' );
+		$project_intro = get_field( 'braican_project_intro', 'option' );
 		return array(
-			'wordpress_id' => 1,
-			'lead'         => $lead,
-			'main'         => $main,
+			'wordpress_id'  => 1,
+			'lead'          => $lead,
+			'main'          => $main,
+			'project_intro' => $project_intro,
 		);
 	}
 
