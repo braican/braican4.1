@@ -6,7 +6,8 @@
     transform: translate3d(0, 10px, 0);
   }
 
-  :global(.wf-active) & {
+  :global(.wf-active) &,
+  :global(.wf-inactive) & {
     opacity: 1;
 
     @if $transform {
