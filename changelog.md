@@ -6,6 +6,11 @@ Released 08/18/2019
 
 ![v7](assets/braican.com-v7.png?raw=true)
 
+**`7.0.1`** - Released 11/20/2019
+
+- Introduce a loading animation for the fonts, with an appropriate backup if they aren't loaded or javascript isn't enabled.
+- Adds a favicon (can't believe I hadn't dont that already...).
+
 **`7.0.0`**
 
 - Moves the site infrastructure to a Gatsby static site.
