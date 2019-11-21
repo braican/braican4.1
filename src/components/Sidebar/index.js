@@ -11,7 +11,7 @@ const Sidebar = () => (
       <Logo />
     </div>
 
-    <Footer className={styles.footer} />
+    <Footer className={`${styles.footer} site-footer`} />
   </div>
 );
 

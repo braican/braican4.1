@@ -27,6 +27,7 @@
 }
 
 .footer {
+  @include font-load();
   padding-left: 1em;
   padding-top: 1em;
   width: 100vh;
