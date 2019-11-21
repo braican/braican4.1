@@ -5,7 +5,7 @@ require('dotenv').config();
 module.exports = {
   siteMetadata: {
     title: `Nick Braica builds things`,
-    description: `Nick Braica is a builder of web things from Portland, OR.`,
+    description: `Nick Braica is a design-focused web developer who builds exceptional online experiences.`,
     author: `Nick Braica <nick.braica@gmail.com>`,
   },
   plugins: [
@@ -24,7 +24,7 @@ module.exports = {
       resolve: 'gatsby-source-wordpress',
       options: {
         baseUrl: process.env.WORDPRESS_SOURCE_URL,
-        protocol: `http`,
+        protocol: `https`,
         hostingWPCOM: false,
 
         useACF: false,
