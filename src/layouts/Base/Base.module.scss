@@ -1,6 +1,7 @@
 .layout__main {
+  @include font-load(true);
   padding: spacing(8) $mobile-spacing spacing(4) $mobile-spacing;
-  max-width: 1180px;
+  max-width: 1280px;
 
   @include mq($bp--mobile) {
     padding-left: spacing(4) + $sidebar-width;
