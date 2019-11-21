@@ -9,7 +9,8 @@ Released 08/18/2019
 **`7.0.1`** - Released 11/20/2019
 
 - Introduce a loading animation for the fonts, with an appropriate backup if they aren't loaded or javascript isn't enabled.
-- Adds a favicon (can't believe I hadn't dont that already...).
+- Small type style enhancement.
+- Adds a favicon (can't believe I hadn't done that already...).
 
 **`7.0.0`**
 
